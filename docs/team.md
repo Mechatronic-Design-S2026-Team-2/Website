@@ -18,27 +18,28 @@
     Add a photo and short bio for each member.
 
 ## Team members
-### Member 1 — Name
+# All team members contributed equally to this project.
+### Member 1 — Yechen Zhang
 - Role(s): TBD  
 - Background: TBD  
 - Responsibilities: TBD
 
-### Member 2 — Name
+### Member 2 — Hongfei Liu
 - Role(s): TBD  
 - Background: TBD  
 - Responsibilities: TBD
 
-### Member 3 — Name
+### Member 3 — Hongru Liu
 - Role(s): TBD  
 - Background: TBD  
 - Responsibilities: TBD
 
-### Member 4 — Name
+### Member 4 — Dan Lazaro
 - Role(s): TBD  
 - Background: TBD  
 - Responsibilities: TBD
 
-### Member 5 — Name
+### Member 5 — Zhengya Bi
 - Role(s): TBD  
 - Background: TBD  
 - Responsibilities: TBD

@@ -1,0 +1,21 @@
+<div class="pm-links" aria-label="Edit links">
+  {% if include.project_url %}
+    <a class="pm-linkbtn" href="{{ include.project_url }}" target="_blank" rel="noreferrer">GitHub Project</a>
+  {% endif %}
+
+  {% if include.issues_url %}
+    <a class="pm-linkbtn" href="{{ include.issues_url }}" target="_blank" rel="noreferrer">Issues</a>
+  {% endif %}
+
+  {% if include.milestones_url %}
+    <a class="pm-linkbtn" href="{{ include.milestones_url }}" target="_blank" rel="noreferrer">Milestones</a>
+  {% endif %}
+
+  {% if include.repo_url %}
+    <a class="pm-linkbtn" href="{{ include.repo_url }}" target="_blank" rel="noreferrer">Repo</a>
+  {% endif %}
+
+  {% if include.csv_url %}
+    <a class="pm-linkbtn" href="{{ include.csv_url | relative_url }}">CSV</a>
+  {% endif %}
+</div>

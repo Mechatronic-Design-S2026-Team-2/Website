@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{{ '/assets/css/nav.css' | relative_url }}">
+
+<nav class="site-nav" aria-label="Site">
+  {% assign current = page.url | downcase %}
+
+  <a class="nav-item {% if current == '/' or current endswith '/index.html' or current endswith '/index' %}is-active{% endif %}"
+     href="{{ '/' | relative_url }}">Home</a>
+
+  <a class="nav-item {% if current contains '/problem' %}is-active{% endif %}"
+     href="{{ '/problem' | relative_url }}">Problem</a>
+
+  <a class="nav-item {% if current contains '/design' %}is-active{% endif %}"
+     href="{{ '/design' | relative_url }}">Design</a>
+
+  <a class="nav-item {% if current contains '/implementation' %}is-active{% endif %}"
+     href="{{ '/implementation' | relative_url }}">Implementation</a>
+
+  <a class="nav-item {% if current contains '/performance' %}is-active{% endif %}"
+     href="{{ '/performance' | relative_url }}">Performance</a>
+
+  <a class="nav-item {% if current contains '/management' %}is-active{% endif %}"
+     href="{{ '/management' | relative_url }}">Project Management</a>
+
+  <a class="nav-item {% if current contains '/media' %}is-active{% endif %}"
+     href="{{ '/media' | relative_url }}">Media</a>
+
+  <a class="nav-item {% if current contains '/documents' %}is-active{% endif %}"
+     href="{{ '/documents' | relative_url }}">Documents</a>
+</nav>

@@ -1,21 +1,8 @@
-    ---
-    title: "Documents (Workbook)"
-    ---
+---
+title: "Documents (Workbook)"
+---
 
-    [Home](index.md) •
-[Problem](problem.md) •
-[Design](design.md) •
-[Implementation](implementation.md) •
-[Performance](performance.md) •
-[Project Management](management.md) •
-[Media](media.md) •
-[Documents](documents.md) •
-[Team](team.md)
-
-
-    # Documents (Workbook)
-
-    This section should function like a **living lab workbook**: notes, artifacts, and a change log.
+{% include nav.html %}
 
 ## Change log
 - [Change Log](documents/change_log.md)

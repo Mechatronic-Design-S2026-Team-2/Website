@@ -1,4 +1,4 @@
-.team2-status {
+.team2-status-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
@@ -6,8 +6,13 @@
 }
 
 @media (min-width: 900px) {
-  .team2-status {
+  .team2-status-grid {
     grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .status-now {
+    grid-column: 1 / -1; /* full width */
   }
 }
 
@@ -19,14 +24,33 @@
 }
 
 .status-card h3 {
-  margin-top: 0;
+  margin: 0 0 10px;
 }
 
 .status-card ul {
   margin: 8px 0 0 18px;
 }
 
+.status-card li {
+  margin: 6px 0;
+}
+
 .status-card small {
   opacity: 0.75;
   font-size: 0.95rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.04);
+  font-size: 0.85rem;
+  margin-left: 6px;
+  vertical-align: baseline;
+}
+
+.status-assignees {
+  opacity: 0.8;
 }

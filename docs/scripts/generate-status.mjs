@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { GraphQLClient, gql } from "graphql-request";
 
 const GH_TOKEN = process.env.GH_TOKEN;
@@ -336,14 +337,25 @@ async function run() {
     }
   };
 
+  import { fileURLToPath } from "node:url";
+
+// ...
+
   const siteRoot = process.env.SITE_ROOT || "docs"; // Pages source folder
-  const outDir = path.join(siteRoot, "assets", "data");
+
+  // Resolve paths relative to the repository root (works even if Actions runs in /docs)
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  // docs/scripts -> repo root is two levels up
+  const repoRoot = path.resolve(__dirname, "..", "..");
+
+  const outDir = path.join(repoRoot, siteRoot, "assets", "data");
+  const outPath = path.join(outDir, "status.json");
 
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(path.join(outDir, "status.json"), JSON.stringify(out, null, 2));
+  fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
 
-  console.log(`Wrote ${path.join(outDir, "status.json")}`);
-
+  console.log(`Wrote ${outPath}`);
 }
 
 run().catch(err => {

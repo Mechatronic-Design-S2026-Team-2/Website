@@ -38,24 +38,22 @@
   background: rgba(0,0,0,0.05);
 }
 
-B) Add a tiny include for “Edit links” on the homepage cards
-docs/_includes/home-card-links.html (NEW)
+/* Responsive video embed inside a card */
+.t2-video {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.03);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  aspect-ratio: 16 / 9;
+}
 
-<!-- docs/_includes/home-card-links.html -->
-<div class="t2-links" aria-label="Quick links">
-  {% if include.project_url %}
-    <a class="t2-linkbtn" href="{{ include.project_url }}" target="_blank" rel="noreferrer">GitHub Project</a>
-  {% endif %}
-  {% if include.robot_repo_url %}
-    <a class="t2-linkbtn" href="{{ include.robot_repo_url }}" target="_blank" rel="noreferrer">Robot repo</a>
-  {% endif %}
-  {% if include.website_repo_url %}
-    <a class="t2-linkbtn" href="{{ include.website_repo_url }}" target="_blank" rel="noreferrer">Website repo</a>
-  {% endif %}
-  {% if include.issues_url %}
-    <a class="t2-linkbtn" href="{{ include.issues_url }}" target="_blank" rel="noreferrer">Issues</a>
-  {% endif %}
-  {% if include.milestones_url %}
-    <a class="t2-linkbtn" href="{{ include.milestones_url }}" target="_blank" rel="noreferrer">Milestones</a>
-  {% endif %}
-</div>
+.t2-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -2,8 +2,15 @@
 
 <nav class="site-nav" aria-label="Site">
   {% assign current = page.url | downcase %}
+  {% assign is_home = false %}
 
-  <a class="nav-item {% if current == '/' or current endswith '/index.html' or current endswith '/index' %}is-active{% endif %}"
+  {%- if current == "/" -%}
+    {% assign is_home = true %}
+  {%- elsif current contains "index" -%}
+    {% assign is_home = true %}
+  {%- endif -%}
+
+  <a class="nav-item {% if is_home %}is-active{% endif %}"
      href="{{ '/' | relative_url }}">Home</a>
 
   <a class="nav-item {% if current contains '/problem' %}is-active{% endif %}"

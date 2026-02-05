@@ -1,0 +1,54 @@
+name: Generate status.json
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 15 * * *"  # ~8am in winter (EST), 9am in summer (EDT)
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled, milestoned, demilestoned]
+  pull_request:
+    types: [opened, edited, closed, reopened, synchronize]
+
+# Needed to commit the generated JSON back into the repo
+permissions:
+  contents: write
+
+jobs:
+  build-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: |
+          npm init -y
+          npm i graphql-request
+
+      - name: Generate assets/data/status.json
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+
+          ORG: Mechatronic-Design-S2026-Team-2
+          ROBOT_REPO: Design
+
+          PROJECT_NUMBER: "4"
+
+          # Customize these to match your Project field names (exact spelling)
+          STATUS_FIELD: "Status"
+          DUE_FIELD: "Due date"
+          TARGET_DEMO_FIELD: "Target Demo"
+        run: node scripts/generate-status.mjs
+
+      - name: Commit status.json
+        run: |
+          git config user.name "status-bot"
+          git config user.email "status-bot@users.noreply.github.com"
+          git add assets/data/status.json
+          git commit -m "Update status.json" || echo "No changes"
+          git push

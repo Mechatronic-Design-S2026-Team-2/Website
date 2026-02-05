@@ -106,3 +106,7 @@
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.12);
 }
+.t2-card .team {
+  padding: 0 !important;
+  margin: 0 !important;
+}

@@ -1,21 +1,8 @@
-    ---
-    title: "System Implementation"
-    ---
+---
+title: "System Implementation"
+---
 
-    [Home](index.md) •
-[Problem](problem.md) •
-[Design](design.md) •
-[Implementation](implementation.md) •
-[Performance](performance.md) •
-[Project Management](management.md) •
-[Media](media.md) •
-[Documents](documents.md) •
-[Team](team.md)
-
-
-    # System Implementation
-
-    Use this page to show **progress over time** with photos, diagrams, screenshots, plots, and short videos.
+{% include nav.html %}
 
 ## Subsystem build logs
 ### Mechanical

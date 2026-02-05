@@ -1,27 +1,30 @@
 <link rel="stylesheet" href="{{ '/assets/css/status.css' | relative_url }}">
 
-<section class="team2-status">
-  <div class="status-card">
-    <h3>Current milestone</h3>
-    <div id="milestoneBox">Loading…</div>
-  </div>
-
-  <div class="status-card">
-    <h3>Schedule</h3>
-    <ul id="scheduleList"></ul>
-  </div>
-
-  <div class="status-card">
-    <h3>Latest update</h3>
-    <div id="updateBox">Loading…</div>
-  </div>
-
-  <div class="status-card">
+<section class="team2-status-grid">
+  <!-- Row 1: NOW (full width) -->
+  <div class="status-card status-now">
     <h3>Now</h3>
     <ul id="nowList"></ul>
   </div>
 
-  <div class="status-card">
+  <!-- Row 2: Current milestone (left) + Latest update (right) -->
+  <div class="status-card status-milestone">
+    <h3>Current milestone</h3>
+    <div id="milestoneBox">Loading…</div>
+  </div>
+
+  <div class="status-card status-update">
+    <h3>Latest update</h3>
+    <div id="updateBox">Loading…</div>
+  </div>
+
+  <!-- Row 3: Schedule (left) + Recently updated issues (right) -->
+  <div class="status-card status-schedule">
+    <h3>Schedule</h3>
+    <ul id="scheduleList"></ul>
+  </div>
+
+  <div class="status-card status-issues">
     <h3>Recently updated issues</h3>
     <ul id="issueList"></ul>
   </div>

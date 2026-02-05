@@ -1,32 +1,33 @@
+<link rel="stylesheet" href="{{ '/assets/css/status.css' | relative_url }}">
+
 <section class="team2-status">
-  <div class="card">
+  <div class="status-card">
     <h3>Current milestone</h3>
     <div id="milestoneBox">Loading…</div>
   </div>
 
-  <div class="card">
+  <div class="status-card">
     <h3>Schedule</h3>
     <ul id="scheduleList"></ul>
   </div>
 
-  <div class="card">
+  <div class="status-card">
     <h3>Latest update</h3>
     <div id="updateBox">Loading…</div>
   </div>
 
-  <div class="card">
+  <div class="status-card">
     <h3>Now</h3>
     <ul id="nowList"></ul>
   </div>
 
-  <div class="card">
+  <div class="status-card">
     <h3>Recently updated issues</h3>
     <ul id="issueList"></ul>
   </div>
 </section>
 
 <script>
-  // Baseurl-safe path to the generated JSON
   window.STATUS_JSON_URL = "{{ '/assets/data/status.json' | relative_url }}";
 </script>
 <script src="{{ '/assets/js/render-status.js' | relative_url }}" defer></script>

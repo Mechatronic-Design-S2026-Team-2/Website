@@ -1,21 +1,10 @@
-    ---
-    title: "System Design"
-    ---
+---
+title: "System Design"
+---
 
-    [Home](index.md) •
-[Problem](problem.md) •
-[Design](design.md) •
-[Implementation](implementation.md) •
-[Performance](performance.md) •
-[Project Management](management.md) •
-[Media](media.md) •
-[Documents](documents.md) •
-[Team](team.md)
+{% include nav.html %}
 
-
-    # System Design
-
-    ## A) System requirements (specs + your derived constraints)
+## A) System requirements (specs + your derived constraints)
 Create a small table or bullet list of:
 - Physical constraints (size/weight/payload)
 - Mobility requirements (directions, turning, speed range)

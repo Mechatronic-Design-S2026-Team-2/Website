@@ -1,21 +1,8 @@
-    ---
-    title: "System Performance"
-    ---
+---
+title: "System Performance"
+---
 
-    [Home](index.md) •
-[Problem](problem.md) •
-[Design](design.md) •
-[Implementation](implementation.md) •
-[Performance](performance.md) •
-[Project Management](management.md) •
-[Media](media.md) •
-[Documents](documents.md) •
-[Team](team.md)
-
-
-    # System Performance
-
-    This page is where you prove the system meets requirements.
+{% include nav.html %}
 
 ## Requirements compliance table
 Create a table:

@@ -16,12 +16,11 @@ We’re building a legged, human-carrying mobility robot for Kinematic/Kinesthet
 
 This project matters because it treats assistive technology as an expressive medium, not just a medical device. Instead of “fixing” disability by imitating non-disabled movement, the goal is to explore unfamiliar and potentially “superhuman” motion—expanding how we think about ability, embodiment, and performance through engineered movement. 
 
-## Team
 {% include team.html %}
 
-## Status
-- **Current milestone:** Working on Design Proposal  
-- **Latest update:** Finished
+## Project status
+
+{% include status-widget.html %}
 
 ## Highlights (media)
 Add one representative photo and/or a short video clip once you have it.

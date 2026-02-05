@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
+
+<div class="t2-card">
+  {% include hero-carousel.html %}
+
+  <h2>About this project</h2>
+  <p>
+    We’re building a legged, human-carrying mobility robot for Kinematic/Kinesthetic, a live performance by the pioneering
+    “physically integrated” AXIS Dance Company. The machine transports a wheelchair user without wheels as the primary
+    locomotor, using articulated legs to move forward/backward and rotate in place (zero-radius turning), while remaining
+    compact, robust, and safe for performance use (including an emergency stop and low-noise operation).
+  </p>
+  <p>
+    This project matters because it treats assistive technology as an expressive medium, not just a medical device.
+    Instead of “fixing” disability by imitating non-disabled movement, the goal is to explore unfamiliar and potentially
+    “superhuman” motion—expanding how we think about ability, embodiment, and performance through engineered movement.
+  </p>
+
+  {% include home-card-links.html
+     project_url="https://github.com/orgs/Mechatronic-Design-S2026-Team-2/projects/4"
+     robot_repo_url="https://github.com/Mechatronic-Design-S2026-Team-2/Design"
+     website_repo_url="https://github.com/Mechatronic-Design-S2026-Team-2/Website"
+  %}
+</div>

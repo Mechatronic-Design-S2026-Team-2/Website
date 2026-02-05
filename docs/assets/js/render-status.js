@@ -1,6 +1,8 @@
 (async function () {
-  const res = await fetch("/assets/data/status.json", { cache: "no-store" });
+  const url = window.STATUS_JSON_URL || "/assets/data/status.json";
+  const res = await fetch(url, { cache: "no-store" });
   const data = await res.json();
+
 
   const fmtDate = (iso) => iso ? new Date(iso).toLocaleDateString() : "—";
   const esc = (s) => String(s ?? "")

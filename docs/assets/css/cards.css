@@ -1,0 +1,61 @@
+.t2-card {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 18px;
+  padding: 18px;
+  background: #fff;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.08);
+  margin: 22px 0;
+}
+
+.t2-card h2 {
+  margin-top: 0;
+}
+
+.t2-card .t2-sub {
+  opacity: 0.78;
+  margin-top: -6px;
+  margin-bottom: 12px;
+}
+
+.t2-card .t2-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.t2-card .t2-linkbtn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: rgba(0,0,0,0.02);
+  font-size: 0.92rem;
+}
+
+.t2-card .t2-linkbtn:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+B) Add a tiny include for “Edit links” on the homepage cards
+docs/_includes/home-card-links.html (NEW)
+
+<!-- docs/_includes/home-card-links.html -->
+<div class="t2-links" aria-label="Quick links">
+  {% if include.project_url %}
+    <a class="t2-linkbtn" href="{{ include.project_url }}" target="_blank" rel="noreferrer">GitHub Project</a>
+  {% endif %}
+  {% if include.robot_repo_url %}
+    <a class="t2-linkbtn" href="{{ include.robot_repo_url }}" target="_blank" rel="noreferrer">Robot repo</a>
+  {% endif %}
+  {% if include.website_repo_url %}
+    <a class="t2-linkbtn" href="{{ include.website_repo_url }}" target="_blank" rel="noreferrer">Website repo</a>
+  {% endif %}
+  {% if include.issues_url %}
+    <a class="t2-linkbtn" href="{{ include.issues_url }}" target="_blank" rel="noreferrer">Issues</a>
+  {% endif %}
+  {% if include.milestones_url %}
+    <a class="t2-linkbtn" href="{{ include.milestones_url }}" target="_blank" rel="noreferrer">Milestones</a>
+  {% endif %}
+</div>

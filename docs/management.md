@@ -4,19 +4,32 @@ title: "Project Management"
 
 {% include nav.html %}
 
-## Schedule
-- Put a Gantt chart image here **or** keep a living schedule doc.
-- Link: [Schedule](project_management/schedule.md)
+<link rel="stylesheet" href="{{ '/assets/css/pm-widget.css' | relative_url }}">
 
 ## Parts list / budget
 - Link: [Parts & Budget (CSV)](project_management/parts_list.csv)
 
-## Issues log (design changes)
-- Link: [Issues Log (CSV)](project_management/issues_log.csv)
+<div id="pmWidget" class="pm-widget" data-status-json="{{ '/assets/data/status.json' | relative_url }}">
+  ## Schedule
+  {% include pm-schedule.html %}
+
+  ## Issues log (design changes)
+  {% include pm-issues-log.html %}
+</div>
 
 ## Presenter rotation
-- Link: [Presenter Rotation](project_management/presenter_rotation.md)
+- Sensor Lab: Daniel
+- Motors Lab: Daniel
+- System Demo 1:
+- System Demo 2:
+- System Demo 3:
+- System Demo 4:
+- System Demo 5:
+- System Demo 6:
+- System Demo 7:
+- Final System Demo:
+- Final System Demo Encore:
 
-## Meeting notes / decisions (optional but recommended)
-Add links to key decisions and weekly meeting notes in the Documents section.
+## Meeting notes / decisions
 
+<script defer src="{{ '/assets/js/render-management.js' | relative_url }}"></script>

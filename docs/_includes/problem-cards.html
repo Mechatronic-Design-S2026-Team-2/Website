@@ -1,0 +1,217 @@
+<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
+
+<!-- Card 1: Need/context + video -->
+<div class="t2-card">
+  <h2>Need / context</h2>
+  <div class="t2-sub">
+    Background on the performance context and why this robot exists (placeholder video — replace later).
+  </div>
+
+  <div class="t2-video">
+    <!-- Replace VIDEO_ID and START_SECONDS when you have the real video -->
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/VIDEO_ID?start=START_SECONDS&rel=0"
+      title="Project context video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="t2-links" aria-label="Video links">
+    <a class="t2-linkbtn"
+       href="https://www.youtube.com/watch?v=VIDEO_ID&t=START_SECONDSs"
+       target="_blank" rel="noreferrer">Watch on YouTube</a>
+  </div>
+
+  <p>
+    We are designing an assistive mobility device for <strong>Kinematic/Kinesthetic</strong>, a live performance by the
+    “physically integrated” <strong>AXIS Dance Company</strong>. The intent is not to “fix” disability by imitating
+    non-disabled movement, but to treat engineered locomotion as an expressive medium—exploring unfamiliar,
+    “species-atypical,” and/or “superhuman” movement that expands how audiences understand ability and embodiment.
+  </p>
+
+  <h3>User</h3>
+  <p>
+    The primary rider is a <strong>wheelchair user</strong> transported during performance. The user may sit
+    <strong>cross-legged</strong> or in a standard seated posture and must retain a clear line of sight.
+  </p>
+
+  <h3>What the device must do</h3>
+  <p>
+    The robot must move a seated rider using <strong>leg-initiated locomotion</strong> (wheels may exist as auxiliary
+    load support, but legs must initiate/control motion). It must translate forward/backward, rotate in place (zero-radius
+    turning), and be safe, robust, and not excessively loud for live performance.
+  </p>
+
+  <h3>Goal</h3>
+  <p>
+    Build a <strong>leg-controlled</strong> mobility device that can <strong>transport a seated rider to a designated point
+    within 6 inches in 1 minute</strong>, while remaining safe, robust, portable, and performance-appropriate.
+  </p>
+</div>
+
+<!-- Card 2: Constraints & assumptions (summary + accordion) -->
+<div class="t2-card">
+  <h2>Constraints &amp; assumptions</h2>
+  <div class="t2-sub">Quick summary, with full details in expandable sections.</div>
+
+  <ul>
+    <li><strong>Footprint:</strong> ≤ 5’ × 5’</li>
+    <li><strong>Mass:</strong> ≤ 150 lb</li>
+    <li><strong>Payload:</strong> up to ~170 lb (evaluation tasks at 150 lb)</li>
+    <li><strong>Mobility:</strong> forward, backward, rotate in place (zero turning radius)</li>
+    <li><strong>Accuracy:</strong> 6” tolerance in ≤ 1 minute</li>
+    <li><strong>Runtime:</strong> ≥ 30 minutes on-board power</li>
+    <li><strong>Portability:</strong> pack into ~3’ cube, ≤ 7 parts, assemble ≤ 15 minutes</li>
+    <li><strong>Noise:</strong> keep normal operation under ~70 dB at 5 ft</li>
+    <li><strong>Safety:</strong> E-stop + safe construction</li>
+    <li><strong>Platform restriction:</strong> no laptop in final machine</li>
+  </ul>
+
+  <details class="t2-acc">
+    <summary>Full constraints &amp; assumptions</summary>
+    <div class="t2-acc-body">
+
+      <h3>Environment assumptions</h3>
+      <ul>
+        <li>Development testbed is approximately <strong>10’ × 10’</strong>.</li>
+        <li>Final demo tasks use tape-defined channels/roadways for straight and curvilinear routes.</li>
+      </ul>
+
+      <h3>Size, mass, payload, geometry</h3>
+      <ul>
+        <li>Footprint ≤ 5’ × 5’</li>
+        <li>Rider height 2’–3’ off the ground</li>
+        <li>Device mass ≤ 150 lb</li>
+        <li>Carry up to ~170 lb rider; final scoring tasks run with a 150 lb payload</li>
+      </ul>
+
+      <h3>Locomotion / motion</h3>
+      <ul>
+        <li>Legs must initiate/control locomotion (aux wheels/treads permitted only as support).</li>
+        <li>Must move forward and backward.</li>
+        <li>Must rotate CW/CCW in place (zero turning radius).</li>
+        <li>Must hit 6” tolerance within 1 minute (navigation accuracy).</li>
+      </ul>
+
+      <h3>Portability / setup</h3>
+      <ul>
+        <li>Pack into ~3’ × 3’ × 3’ shipping case.</li>
+        <li>Disassemble into ≤ 7 parts.</li>
+        <li>Assemble in ≤ 15 minutes without soldering/heavy machinery.</li>
+        <li>Preferred: fits through a 36” door when folded.</li>
+      </ul>
+
+      <h3>Power, budget, build quality</h3>
+      <ul>
+        <li>On-board power; ≥ 30 minutes runtime.</li>
+        <li>Budget guideline around ~$900 (course guideline).</li>
+        <li>Clean, robust build: avoid “rat’s nest” wiring; appearance matters.</li>
+      </ul>
+
+      <h3>Sound</h3>
+      <ul>
+        <li>Normal operation under ~70 dB at 5 ft (brief peaks allowed but limited).</li>
+      </ul>
+
+      <h3>Safety</h3>
+      <ul>
+        <li>No rough edges/burrs/exposed fasteners; safe around nearby people.</li>
+        <li>Ride should be safe without strapping the user in.</li>
+        <li>Emergency stop controls required.</li>
+      </ul>
+
+      <h3>Allowed control modes</h3>
+      <ol>
+        <li>Pre-programmed path, or</li>
+        <li>Remote control by an operator (20’–50’ away), or</li>
+        <li>User control (e.g., joystick).</li>
+      </ol>
+
+      <h3>Platform restriction</h3>
+      <ul>
+        <li>No laptop in the final machine (okay for testing/debugging only).</li>
+      </ul>
+
+    </div>
+  </details>
+</div>
+
+<!-- Card 3: Success criteria (summary + accordion) -->
+<div class="t2-card">
+  <h2>Success criteria</h2>
+  <div class="t2-sub">High-level must-haves, plus demo-oriented details and stretch goals.</div>
+
+  <h3>Must-haves</h3>
+  <ul>
+    <li>Leg-initiated locomotion (aux wheels/treads only as support)</li>
+    <li>Forward + backward travel; rotate in place</li>
+    <li>Reach a designated point within 6” tolerance in ≤ 1 minute</li>
+    <li>≥ 30 minutes runtime on-board power</li>
+    <li>Safe operation + E-stop + robust/clean build</li>
+  </ul>
+
+  <details class="t2-acc">
+    <summary>Demo-oriented requirements &amp; stretch goals</summary>
+    <div class="t2-acc-body">
+
+      <h3>Final demo tasks (typical)</h3>
+      <p>While carrying a 150 lb payload, complete taped-lane tasks such as:</p>
+      <ul>
+        <li>10’ straight within ~1 minute</li>
+        <li>10’ curvilinear within ~90 seconds</li>
+        <li>10’ backward straight within ~90 seconds</li>
+        <li>10’ backward curvilinear within ~2 minutes</li>
+      </ul>
+
+      <h3>Impact / robustness</h3>
+      <p>Survive an impact-style robustness test (e.g., dropped mass onto the structure) without loss of safe function.</p>
+
+      <h3>Stretch goals / coolness factors</h3>
+      <ul>
+        <li>Additional expressive motions beyond locomotion (e.g., leg extension, “plié/relevé”-like behavior)</li>
+        <li>Variable speed capability (suggested 1–4 mph range)</li>
+        <li>More complex navigation (mapping/sensor fusion), safer human-aware behavior</li>
+        <li>Distinctive, intentional aesthetic / form factor</li>
+      </ul>
+
+    </div>
+  </details>
+</div>
+
+<!-- Card 4: Why this is hard -->
+<div class="t2-card">
+  <h2>Why this is hard</h2>
+  <ul>
+    <li>
+      <strong>High payload + low mass + compact footprint:</strong>
+      carrying a person while staying stable and under weight/size limits drives actuator sizing, structural stiffness, and stability margins.
+    </li>
+    <li>
+      <strong>Leg locomotion + repeatable navigation:</strong>
+      legs introduce slip/compliance and intermittent contact, which complicates estimation and consistent point-to-point performance.
+    </li>
+    <li>
+      <strong>Safety without restraints:</strong>
+      the rider must be safe without being strapped in, pushing conservative acceleration, smooth motion, and highly reliable stopping.
+    </li>
+    <li>
+      <strong>Noise under load:</strong>
+      footfalls, impacts, and drivetrain noise must be controlled while moving heavy loads.
+    </li>
+    <li>
+      <strong>Portability + fast setup:</strong>
+      the machine must break down cleanly into modules with reliable connectors and repeatable alignment.
+    </li>
+    <li>
+      <strong>Robustness + aesthetics:</strong>
+      clean wiring, protected electronics, and good-looking fabrication must be built in—not tacked on late.
+    </li>
+  </ul>
+</div>
+
+<!-- Card 5: Key risks and mitigations -->
+<div class="t2-card">
+  <h2>Key risks and mitigations</h2>
+</div>

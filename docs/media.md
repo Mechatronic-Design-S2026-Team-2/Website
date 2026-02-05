@@ -1,21 +1,10 @@
-    ---
-    title: "Media"
-    ---
+---
+title: "Media"
+---
 
-    [Home](index.md) •
-[Problem](problem.md) •
-[Design](design.md) •
-[Implementation](implementation.md) •
-[Performance](performance.md) •
-[Project Management](management.md) •
-[Media](media.md) •
-[Documents](documents.md) •
-[Team](team.md)
+{% include nav.html %}
 
-
-    # Media
-
-    ## Videos
+## Videos
 - Add short clips throughout the semester.
 - Add your final “system video” here when ready.
 

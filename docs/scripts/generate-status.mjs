@@ -10,15 +10,10 @@ const ORG = process.env.ORG;
 const ROBOT_REPO = process.env.ROBOT_REPO;
 const PROJECT_NUMBER = Number(process.env.PROJECT_NUMBER);
 
-if (!ORG) throw new Error("Missing ORG env var");
-if (!ROBOT_REPO) throw new Error("Missing ROBOT_REPO env var");
-if (!PROJECT_NUMBER) throw new Error("Missing PROJECT_NUMBER env var");
-
 const STATUS_FIELD = process.env.STATUS_FIELD || "Status";
 const DUE_FIELD = process.env.DUE_FIELD || "Due date";
 const TARGET_DEMO_FIELD = process.env.TARGET_DEMO_FIELD || "Target Demo";
 
-// Consider “Now” as any of these Status values (edit to match your project)
 const NOW_STATUSES = new Set(["In Progress", "Doing", "Ready", "Blocked"]);
 
 const client = new GraphQLClient("https://api.github.com/graphql", {
@@ -95,26 +90,34 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
         title
         url
         dueOn
-        openIssues: issues(first: 1, states: [OPEN]) { totalCount }
-        closedIssues: issues(first: 1, states: [CLOSED]) { totalCount }
+        openIssues: issues(states: [OPEN]) { totalCount }
+        closedIssues: issues(states: [CLOSED]) { totalCount }
       }
     }
 
-    issues(first: 60, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+    openIssues: issues(first: 40, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
         number title url updatedAt
-        labels(first: 20) { nodes { name } }
         assignees(first: 10) { nodes { login } }
+        labels(first: 20) { nodes { name } }
         milestone { title dueOn }
       }
     }
 
-    closedIssuesRecent: issues(first: 30, states: [CLOSED], orderBy: {field: CLOSED_AT, direction: DESC}) {
+    closedIssues: issues(first: 40, states: [CLOSED], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
-        number title url closedAt
-        labels(first: 20) { nodes { name } }
+        number title url updatedAt closedAt
         assignees(first: 10) { nodes { login } }
+        labels(first: 20) { nodes { name } }
         milestone { title dueOn }
+      }
+    }
+
+    mergedPRs: pullRequests(first: 30, states: [MERGED], orderBy: {field: UPDATED_AT, direction: DESC}) {
+      nodes {
+        number title url updatedAt mergedAt
+        assignees(first: 10) { nodes { login } }
+        labels(first: 20) { nodes { name } }
       }
     }
   }
@@ -128,7 +131,6 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
     projectV2(number: $projectNumber) {
       title
       url
-
       items(first: 100) {
         nodes {
           id
@@ -187,26 +189,34 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
         title
         url
         dueOn
-        openIssues: issues(first: 1, states: [OPEN]) { totalCount }
-        closedIssues: issues(first: 1, states: [CLOSED]) { totalCount }
+        openIssues: issues(states: [OPEN]) { totalCount }
+        closedIssues: issues(states: [CLOSED]) { totalCount }
       }
     }
 
-    issues(first: 60, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+    openIssues: issues(first: 40, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
         number title url updatedAt
-        labels(first: 20) { nodes { name } }
         assignees(first: 10) { nodes { login } }
+        labels(first: 20) { nodes { name } }
         milestone { title dueOn }
       }
     }
 
-    closedIssuesRecent: issues(first: 30, states: [CLOSED], orderBy: {field: CLOSED_AT, direction: DESC}) {
+    closedIssues: issues(first: 40, states: [CLOSED], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
-        number title url closedAt
-        labels(first: 20) { nodes { name } }
+        number title url updatedAt closedAt
         assignees(first: 10) { nodes { login } }
+        labels(first: 20) { nodes { name } }
         milestone { title dueOn }
+      }
+    }
+
+    mergedPRs: pullRequests(first: 30, states: [MERGED], orderBy: {field: UPDATED_AT, direction: DESC}) {
+      nodes {
+        number title url updatedAt mergedAt
+        assignees(first: 10) { nodes { login } }
+        labels(first: 20) { nodes { name } }
       }
     }
   }
@@ -228,19 +238,29 @@ function normalizeFieldValues(fieldValues) {
   return out;
 }
 
-function repoRootFallback() {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  return path.resolve(__dirname, "..", "..");
+function mapRepoIssue(i) {
+  return {
+    number: i.number,
+    title: i.title,
+    url: i.url,
+    updatedAt: i.updatedAt,
+    closedAt: i.closedAt ?? null,
+    labels: (i.labels?.nodes ?? []).map(l => l.name),
+    assignees: (i.assignees?.nodes ?? []).map(a => a.login),
+    milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
+  };
 }
 
-function asLogins(nodes) {
-  return (nodes ?? []).map(n => n.login).filter(Boolean);
-}
-
-function safeDate(d) {
-  const t = Date.parse(d);
-  return Number.isFinite(t) ? t : NaN;
+function mapPR(p) {
+  return {
+    number: p.number,
+    title: p.title,
+    url: p.url,
+    updatedAt: p.updatedAt,
+    mergedAt: p.mergedAt ?? null,
+    labels: (p.labels?.nodes ?? []).map(l => l.name),
+    assignees: (p.assignees?.nodes ?? []).map(a => a.login)
+  };
 }
 
 async function run() {
@@ -262,11 +282,10 @@ async function run() {
   const project = data.organization?.projectV2;
   const repo = data.repository;
 
-  // Milestone schedule (existing)
   const milestones = repo?.milestones?.nodes ?? [];
   const schedule = milestones
     .filter(m => m?.dueOn)
-    .sort((a, b) => safeDate(a.dueOn) - safeDate(b.dueOn))
+    .sort((a, b) => new Date(a.dueOn) - new Date(b.dueOn))
     .map(m => ({
       title: m.title,
       url: m.url,
@@ -277,29 +296,10 @@ async function run() {
 
   const currentMilestone = schedule.length ? schedule[0] : null;
 
-  // Repo open issues (existing, with assignees)
-  const issues = (repo?.issues?.nodes ?? []).map(i => ({
-    number: i.number,
-    title: i.title,
-    url: i.url,
-    updatedAt: i.updatedAt,
-    labels: (i.labels?.nodes ?? []).map(l => l.name),
-    assignees: asLogins(i.assignees?.nodes),
-    milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
-  }));
+  const openIssues = (repo?.openIssues?.nodes ?? []).map(mapRepoIssue);
+  const closedIssues = (repo?.closedIssues?.nodes ?? []).map(mapRepoIssue);
+  const mergedPRs = (repo?.mergedPRs?.nodes ?? []).map(mapPR);
 
-  // NEW: Recently closed issues
-  const closedIssuesRecent = (repo?.closedIssuesRecent?.nodes ?? []).map(i => ({
-    number: i.number,
-    title: i.title,
-    url: i.url,
-    closedAt: i.closedAt,
-    labels: (i.labels?.nodes ?? []).map(l => l.name),
-    assignees: asLogins(i.assignees?.nodes),
-    milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
-  }));
-
-  // Project items (existing)
   const projectItems = (project?.items?.nodes ?? [])
     .map(n => {
       const c = n.content;
@@ -326,7 +326,7 @@ async function run() {
         url: c.url,
         state: c.state,
         updatedAt: c.updatedAt,
-        assignees: asLogins(c.assignees?.nodes),
+        assignees: (c.assignees?.nodes ?? []).map(a => a.login),
         labels: (c.labels?.nodes ?? []).map(l => l.name),
         milestone: c.milestone ? { title: c.milestone.title, dueOn: c.milestone.dueOn } : null,
         fields
@@ -334,19 +334,15 @@ async function run() {
     })
     .filter(Boolean);
 
-  // NOW (existing)
   const now = projectItems
     .filter(it => {
       const status = it.fields?.[STATUS_FIELD];
       return status ? NOW_STATUSES.has(status) : false;
     })
-    .sort((a, b) => safeDate(b.updatedAt) - safeDate(a.updatedAt))
-    .slice(0, 15);
+    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+    .slice(0, 25);
 
-  // Latest update (existing)
-  const projectUpdateNode = project?.statusUpdates?.nodes?.[0] ?? null;
-  const latestIssue = issues[0] ?? null;
-
+  const projectUpdateNode = data.organization?.projectV2?.statusUpdates?.nodes?.[0] ?? null;
   const latestUpdate = projectUpdateNode
     ? {
         source: "project_status_update",
@@ -355,69 +351,13 @@ async function run() {
         targetDate: projectUpdateNode.targetDate,
         createdAt: projectUpdateNode.createdAt
       }
-    : (latestIssue
+    : (openIssues[0]
         ? {
             source: "latest_issue",
-            body: `Latest issue updated: #${latestIssue.number} ${latestIssue.title}`,
-            createdAt: latestIssue.updatedAt
+            body: `Latest open issue updated: #${openIssues[0].number} ${openIssues[0].title}`,
+            createdAt: openIssues[0].updatedAt
           }
         : null);
-
-  // Combined schedule items (existing)
-  const scheduleItems = [];
-
-  for (const m of schedule) {
-    scheduleItems.push({
-      type: "milestone",
-      title: m.title,
-      url: m.url,
-      dueOn: m.dueOn,
-      assignees: [],
-      meta: { openIssues: m.openIssues, closedIssues: m.closedIssues }
-    });
-  }
-
-  for (const it of projectItems) {
-    const due = it.fields?.[DUE_FIELD] ?? null;
-    if (!due) continue;
-
-    scheduleItems.push({
-      type:
-        it.type === "Issue" ? "issue" :
-        it.type === "PullRequest" ? "pull_request" :
-        "draft",
-      title: it.title,
-      url: it.url,
-      dueOn: due,
-      assignees: it.assignees ?? [],
-      meta: {
-        number: it.number ?? null,
-        status: it.fields?.[STATUS_FIELD] ?? null,
-        targetDemo: it.fields?.[TARGET_DEMO_FIELD] ?? null
-      }
-    });
-  }
-
-  const scheduledUrls = new Set(scheduleItems.map(s => s.url).filter(Boolean));
-  for (const i of issues) {
-    const due = i.milestone?.dueOn ?? null;
-    if (!due) continue;
-    if (scheduledUrls.has(i.url)) continue;
-
-    scheduleItems.push({
-      type: "issue",
-      title: i.title,
-      url: i.url,
-      dueOn: due,
-      assignees: i.assignees ?? [],
-      meta: {
-        number: i.number ?? null,
-        milestone: i.milestone?.title ?? null
-      }
-    });
-  }
-
-  scheduleItems.sort((a, b) => safeDate(a.dueOn) - safeDate(b.dueOn));
 
   const out = {
     generatedAt: new Date().toISOString(),
@@ -427,13 +367,19 @@ async function run() {
 
     currentMilestone,
     schedule,
+
     latestUpdate,
 
-    issues,              // open issues
-    closedIssuesRecent,  // NEW
+    // Keep legacy name (if older widgets read data.issues)
+    issues: openIssues,
+
+    // New, explicit buckets:
+    openIssues,
+    closedIssues,
+    mergedPRs,
+
     now,
     projectItems,
-    scheduleItems,
 
     fieldNames: {
       status: STATUS_FIELD,
@@ -443,17 +389,16 @@ async function run() {
   };
 
   const siteRoot = process.env.SITE_ROOT || "docs";
-  const workspace = process.env.GITHUB_WORKSPACE
-    ? path.resolve(process.env.GITHUB_WORKSPACE)
-    : repoRootFallback();
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  const repoRoot = path.resolve(__dirname, "..", "..");
 
-  const outDir = path.join(workspace, siteRoot, "assets", "data");
+  const outDir = path.join(repoRoot, siteRoot, "assets", "data");
   const outPath = path.join(outDir, "status.json");
 
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
 
-  if (!fs.existsSync(outPath)) throw new Error(`status.json not written: ${outPath}`);
   console.log(`Wrote ${outPath}`);
 }
 

@@ -22,7 +22,7 @@
     return "Item";
   };
 
-  // ---- NOW items (full width)
+  // ---- NOW (full width)
   const now = data.now ?? [];
   const statusField = data.fieldNames?.status ?? "Status";
   const dueField = data.fieldNames?.due ?? "Due date";
@@ -48,7 +48,7 @@
     `;
   }).join("") || "<li>No active items found (check Status field names / values).</li>";
 
-  // ---- Current milestone (half width, left on desktop)
+  // ---- Current milestone
   const m = data.currentMilestone;
   document.getElementById("milestoneBox").innerHTML = m
     ? `
@@ -58,13 +58,13 @@
     `
     : `<div>None set.</div>`;
 
-  // ---- Latest update (half width, right on desktop)
+  // ---- Latest update
   const u = data.latestUpdate;
   document.getElementById("updateBox").innerHTML = u
     ? `<div>${esc(u.body)}</div><small>${fmtDate(u.createdAt)}</small>`
     : `<div>No updates found.</div>`;
 
-  // ---- Schedule (milestones + due-dated issues/items) (half width, left on desktop)
+  // ---- Schedule (milestones + due-dated items)
   const scheduleItems = data.scheduleItems ?? [];
   const schedEl = document.getElementById("scheduleList");
 
@@ -86,16 +86,17 @@
     `;
   }).join("") || "<li>No due-dated items found (set Due date field or milestone due dates).</li>";
 
-  // ---- Recently updated issues (half width, right on desktop) + assignees
-  const issues = data.issues ?? [];
-  const issuesEl = document.getElementById("issueList");
-  issuesEl.innerHTML = issues.slice(0, 12).map(i => {
+  // ---- Recently closed issues (right-bottom)
+  const closed = data.closedIssuesRecent ?? [];
+  const closedEl = document.getElementById("closedIssueList");
+
+  closedEl.innerHTML = closed.slice(0, 12).map(i => {
     const who = fmtAssignees(i.assignees);
     return `
       <li>
         <a href="${i.url}" target="_blank" rel="noreferrer">#${i.number} ${esc(i.title)}</a>
-        <small class="status-assignees"> — updated ${fmtDate(i.updatedAt)} • ${esc(who)}</small>
+        <small class="status-assignees"> — closed ${fmtDate(i.closedAt)} • ${esc(who)}</small>
       </li>
     `;
-  }).join("") || "<li>No open issues found.</li>";
+  }).join("") || "<li>No recently closed issues found.</li>";
 })();

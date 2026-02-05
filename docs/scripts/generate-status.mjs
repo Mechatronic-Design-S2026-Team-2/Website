@@ -89,12 +89,14 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
 
     milestones(first: 50, states: [OPEN]) {
       nodes {
-        title url dueOn
-        openIssues { totalCount }
-        closedIssues { totalCount }
+        title
+        url
+        dueOn
+        openIssues: issues(states: [OPEN]) { totalCount }
+        closedIssues: issues(states: [CLOSED]) { totalCount }
       }
     }
-
+    
     issues(first: 30, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
         number title url updatedAt

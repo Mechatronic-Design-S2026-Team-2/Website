@@ -1,1 +1,1187 @@
-
+{
+  "generatedAt": "2026-02-05T19:43:17.915Z",
+  "org": "Mechatronic-Design-S2026-Team-2",
+  "repos": {
+    "robot": "Design",
+    "website": "Website"
+  },
+  "project": {
+    "number": 4,
+    "title": "Team 2 - Dance Robot",
+    "url": "https://github.com/orgs/Mechatronic-Design-S2026-Team-2/projects/4"
+  },
+  "currentMilestone": {
+    "title": "Pre-proposal Presentation",
+    "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2",
+    "dueOn": "2026-02-09T00:00:00Z",
+    "openIssues": 7,
+    "closedIssues": 0
+  },
+  "schedule": [
+    {
+      "title": "Pre-proposal Presentation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2",
+      "dueOn": "2026-02-09T00:00:00Z",
+      "openIssues": 7,
+      "closedIssues": 0
+    },
+    {
+      "title": "Design Proposal",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3",
+      "dueOn": "2026-02-13T00:00:00Z",
+      "openIssues": 10,
+      "closedIssues": 0
+    },
+    {
+      "title": "System Demo 1",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
+      "dueOn": "2026-02-16T00:00:00Z",
+      "openIssues": 1,
+      "closedIssues": 0
+    },
+    {
+      "title": "System Demo 2",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4",
+      "dueOn": "2026-02-23T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "System Demo 3",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5",
+      "dueOn": "2026-03-09T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "Midsemester Presentation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/6",
+      "dueOn": "2026-03-11T00:00:00Z",
+      "openIssues": 4,
+      "closedIssues": 0
+    },
+    {
+      "title": "System Demo 4",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7",
+      "dueOn": "2026-03-23T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "System Demo 5",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/8",
+      "dueOn": "2026-03-30T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "System Demo 6",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/9",
+      "dueOn": "2026-04-06T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "System Demo 7",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/10",
+      "dueOn": "2026-04-13T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "Final System Demo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/11",
+      "dueOn": "2026-04-15T00:00:00Z",
+      "openIssues": 8,
+      "closedIssues": 0
+    },
+    {
+      "title": "Final Demo Encore",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/12",
+      "dueOn": "2026-04-22T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "Public Presentation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/13",
+      "dueOn": "2026-04-29T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "Final Report",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/14",
+      "dueOn": "2026-05-01T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    },
+    {
+      "title": "Lab Cleanup",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/15",
+      "dueOn": "2026-05-05T00:00:00Z",
+      "openIssues": 0,
+      "closedIssues": 0
+    }
+  ],
+  "latestUpdate": {
+    "source": "latest_issue",
+    "body": "Latest issue updated: #31 “No manual intervention” drill + recovery plan",
+    "createdAt": "2026-01-29T23:50:14Z"
+  },
+  "issues": [
+    {
+      "number": 31,
+      "title": "“No manual intervention” drill + recovery plan",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/31",
+      "updatedAt": "2026-01-29T23:50:14Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 30,
+      "title": "Dedicated power system compliance (no benchtop PSU)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/30",
+      "updatedAt": "2026-01-29T23:49:57Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 29,
+      "title": "Impact robustness test plan (withstand 25-lb weight drop from 5 ft)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/29",
+      "updatedAt": "2026-01-29T23:49:40Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 28,
+      "title": "Backwards straight + backwards curvilinear tests",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/28",
+      "updatedAt": "2026-01-29T23:49:24Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 27,
+      "title": "Curvilinear path test (10 ft in ≤ 90 s) with payload",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/27",
+      "updatedAt": "2026-01-29T23:49:10Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 26,
+      "title": "Straight path test (10 ft in ≤ 1 min) with payload",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/26",
+      "updatedAt": "2026-01-29T23:49:00Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 25,
+      "title": "Validate payload capacity ≥ 150 lb (static + dynamic)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/25",
+      "updatedAt": "2026-01-29T23:48:43Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 24,
+      "title": "Final Demo readiness (FSD)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/24",
+      "updatedAt": "2026-01-29T23:48:28Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      }
+    },
+    {
+      "number": 23,
+      "title": "Create risk slide (design/schedule/budget + mitigations)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/23",
+      "updatedAt": "2026-01-29T23:47:39Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      }
+    },
+    {
+      "number": 22,
+      "title": "Create budget slide (purchased vs required; totals)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/22",
+      "updatedAt": "2026-01-29T23:47:20Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      }
+    },
+    {
+      "number": 21,
+      "title": "Create schedule slide (weekly granularity; dates not “Week 7”)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/21",
+      "updatedAt": "2026-01-29T23:47:02Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      }
+    },
+    {
+      "number": 20,
+      "title": "Midsemester deck (10 min) + Q&A prep",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/20",
+      "updatedAt": "2026-01-29T23:46:31Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      }
+    },
+    {
+      "number": 19,
+      "title": "SD1 demo plan + artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/19",
+      "updatedAt": "2026-01-29T23:45:30Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 18,
+      "title": "References (papers, datasheets, docs)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/18",
+      "updatedAt": "2026-01-29T23:41:53Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 17,
+      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
+      "updatedAt": "2026-01-29T23:41:48Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 16,
+      "title": "Section — System depiction/description (subsystems)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
+      "updatedAt": "2026-01-29T23:41:34Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 15,
+      "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
+      "updatedAt": "2026-01-29T23:39:24Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 14,
+      "title": "Section — Trade studies (decision matrices)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
+      "updatedAt": "2026-01-29T23:39:14Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 13,
+      "title": "Section — Functional architecture diagram + text",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
+      "updatedAt": "2026-01-29T23:37:44Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 12,
+      "title": "Section — Design requirements (explicit + implied + coolness)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
+      "updatedAt": "2026-01-29T23:37:35Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 11,
+      "title": "Section — Project description (1–2 paragraphs, crisp)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
+      "updatedAt": "2026-01-29T23:37:23Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 10,
+      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
+      "updatedAt": "2026-01-29T23:37:14Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 9,
+      "title": "Design Proposal PDF (complete + compliant)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
+      "updatedAt": "2026-01-29T23:37:01Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      }
+    },
+    {
+      "number": 8,
+      "title": "Project management slide (schedule + responsibilities + budget + risk)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/8",
+      "updatedAt": "2026-01-29T23:36:06Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      }
+    },
+    {
+      "number": 7,
+      "title": "Trade study plan (what decisions must be made by Feb 13?)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/7",
+      "updatedAt": "2026-01-29T23:35:26Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      }
+    },
+    {
+      "number": 6,
+      "title": "Cyberphysical architecture (block diagram) draft",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/6",
+      "updatedAt": "2026-01-29T23:34:08Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      }
+    },
+    {
+      "number": 5,
+      "title": "Functional architecture (block diagram) draft",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/5",
+      "updatedAt": "2026-01-29T23:34:02Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      }
+    },
+    {
+      "number": 4,
+      "title": "Requirements list draft (explicit + implied + coolness)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/4",
+      "updatedAt": "2026-01-29T23:33:50Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      }
+    },
+    {
+      "number": 3,
+      "title": "Draft one-slide “system depiction” for early alignment",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
+      "updatedAt": "2026-01-29T23:33:28Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      }
+    },
+    {
+      "number": 2,
+      "title": "Pre-proposal deck (15 min) + rehearsal",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/2",
+      "updatedAt": "2026-01-29T23:33:07Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      }
+    }
+  ],
+  "now": [
+    {
+      "type": "Issue",
+      "number": 3,
+      "title": "Create site IA (information architecture) + navigation map",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/3",
+      "state": "OPEN",
+      "updatedAt": "2026-01-30T17:00:09Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Create site IA (information architecture) + navigation map",
+        "Status": "In Progress"
+      }
+    }
+  ],
+  "projectItems": [
+    {
+      "type": "Issue",
+      "number": 1,
+      "title": "Team Website 0 (scaffold + required pages)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/1",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:18:42Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Team Website 0 (scaffold + required pages)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 9,
+      "title": "Design Proposal PDF (complete + compliant)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:37:01Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Design Proposal PDF (complete + compliant)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 19,
+      "title": "SD1 demo plan + artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/19",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:45:30Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "SD1 demo plan + artifacts",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 20,
+      "title": "Midsemester deck (10 min) + Q&A prep",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/20",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:46:31Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Midsemester deck (10 min) + Q&A prep",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 24,
+      "title": "Final Demo readiness (FSD)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/24",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:48:28Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Final Demo readiness (FSD)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 2,
+      "title": "Pre-proposal deck (15 min) + rehearsal",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/2",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:33:07Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Pre-proposal deck (15 min) + rehearsal",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 3,
+      "title": "Draft one-slide “system depiction” for early alignment",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:33:28Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Draft one-slide “system depiction” for early alignment",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 4,
+      "title": "Requirements list draft (explicit + implied + coolness)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/4",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:33:50Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Requirements list draft (explicit + implied + coolness)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 5,
+      "title": "Functional architecture (block diagram) draft",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/5",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:34:02Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Functional architecture (block diagram) draft",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 6,
+      "title": "Cyberphysical architecture (block diagram) draft",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/6",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:34:08Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Cyberphysical architecture (block diagram) draft",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 10,
+      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:37:14Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 11,
+      "title": "Section — Project description (1–2 paragraphs, crisp)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:37:23Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Section — Project description (1–2 paragraphs, crisp)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 12,
+      "title": "Section — Design requirements (explicit + implied + coolness)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:37:35Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Section — Design requirements (explicit + implied + coolness)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 13,
+      "title": "Section — Functional architecture diagram + text",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:37:44Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Section — Functional architecture diagram + text",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 14,
+      "title": "Section — Trade studies (decision matrices)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:39:14Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Section — Trade studies (decision matrices)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 15,
+      "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:39:24Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Section — Cyberphysical architecture (HW/SW block diagram)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 16,
+      "title": "Section — System depiction/description (subsystems)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:41:34Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Section — System depiction/description (subsystems)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 17,
+      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:41:48Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Section — Project management (schedule, responsibilities, budget, risk)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 18,
+      "title": "References (papers, datasheets, docs)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/18",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:41:53Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z"
+      },
+      "fields": {
+        "Title": "References (papers, datasheets, docs)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 25,
+      "title": "Validate payload capacity ≥ 150 lb (static + dynamic)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/25",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:48:43Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Validate payload capacity ≥ 150 lb (static + dynamic)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 26,
+      "title": "Straight path test (10 ft in ≤ 1 min) with payload",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/26",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:49:00Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Straight path test (10 ft in ≤ 1 min) with payload",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 27,
+      "title": "Curvilinear path test (10 ft in ≤ 90 s) with payload",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/27",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:49:10Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Curvilinear path test (10 ft in ≤ 90 s) with payload",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 28,
+      "title": "Backwards straight + backwards curvilinear tests",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/28",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:49:24Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Backwards straight + backwards curvilinear tests",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 29,
+      "title": "Impact robustness test plan (withstand 25-lb weight drop from 5 ft)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/29",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:49:40Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Impact robustness test plan (withstand 25-lb weight drop from 5 ft)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 30,
+      "title": "Dedicated power system compliance (no benchtop PSU)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/30",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:49:57Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Dedicated power system compliance (no benchtop PSU)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 31,
+      "title": "“No manual intervention” drill + recovery plan",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/31",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:50:14Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z"
+      },
+      "fields": {
+        "Title": "“No manual intervention” drill + recovery plan",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 21,
+      "title": "Create schedule slide (weekly granularity; dates not “Week 7”)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/21",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:47:02Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Create schedule slide (weekly granularity; dates not “Week 7”)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 22,
+      "title": "Create budget slide (purchased vs required; totals)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/22",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:47:20Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Create budget slide (purchased vs required; totals)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 23,
+      "title": "Create risk slide (design/schedule/budget + mitigations)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/23",
+      "state": "OPEN",
+      "updatedAt": "2026-01-29T23:47:39Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Create risk slide (design/schedule/budget + mitigations)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 2,
+      "title": "Setup GitHub Pages deployment (repo settings + branch)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/2",
+      "state": "CLOSED",
+      "updatedAt": "2026-01-30T17:00:06Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Setup GitHub Pages deployment (repo settings + branch)",
+        "Status": "Done"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 3,
+      "title": "Create site IA (information architecture) + navigation map",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/3",
+      "state": "OPEN",
+      "updatedAt": "2026-01-30T17:00:09Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Create site IA (information architecture) + navigation map",
+        "Status": "In Progress"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 4,
+      "title": "Create “Documents (Lab Workbook)” structure + index",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/4",
+      "state": "OPEN",
+      "updatedAt": "2026-01-30T17:00:16Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Create “Documents (Lab Workbook)” structure + index",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 5,
+      "title": "Add PM page skeleton (schedule + responsibilities + budget + issues log)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/5",
+      "state": "OPEN",
+      "updatedAt": "2026-01-30T17:00:19Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Add PM page skeleton (schedule + responsibilities + budget + issues log)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 6,
+      "title": "Create presenter rotation schedule (round-robin list)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/6",
+      "state": "OPEN",
+      "updatedAt": "2026-01-30T17:00:21Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Create presenter rotation schedule (round-robin list)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 7,
+      "title": "Team page bios (placeholder)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/7",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-05T14:02:49Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Team page bios (placeholder)",
+        "Status": "Done"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 8,
+      "title": "Media section placeholder + gallery scaffolding",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/8",
+      "state": "OPEN",
+      "updatedAt": "2026-01-30T17:00:27Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Media section placeholder + gallery scaffolding",
+        "Status": "Todo"
+      }
+    }
+  ],
+  "fieldNames": {
+    "status": "Status",
+    "due": "Due date",
+    "targetDemo": "Target Demo"
+  }
+}

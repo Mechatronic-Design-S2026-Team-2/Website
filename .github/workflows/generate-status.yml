@@ -30,7 +30,7 @@ jobs:
           npm init -y
           npm i graphql-request
 
-      - name: Generate assets/data/status.json
+      - name: Generate docs/assets/data/status.json
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
 
@@ -49,6 +49,6 @@ jobs:
         run: |
           git config user.name "status-bot"
           git config user.email "status-bot@users.noreply.github.com"
-          git add assets/data/status.json
+          git add docs/assets/data/status.json
           git commit -m "Update status.json" || echo "No changes"
           git push

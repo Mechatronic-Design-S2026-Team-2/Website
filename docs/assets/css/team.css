@@ -1,0 +1,108 @@
+.team { padding: 48px 0; }
+.team h2 { margin: 0 0 16px; }
+
+.team-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+
+.team-card {
+  appearance: none;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.team-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.team-card:focus {
+  outline: 3px solid rgba(0,0,0,0.25);
+  outline-offset: 2px;
+}
+
+.team-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.team-card-name {
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.04);
+}
+
+.team-card-role {
+  margin-top: 8px;
+  padding: 0 10px;
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+/* Modal */
+.team-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.team-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(640px, calc(100vw - 32px));
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 20px 18px;
+  z-index: 1000;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+}
+
+.team-modal-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: none;
+  background: rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.team-modal-role {
+  margin: 6px 0 12px;
+  opacity: 0.8;
+}
+
+.team-modal-links a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 8px;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+}

@@ -108,6 +108,15 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
         milestone { title dueOn }
       }
     }
+
+    closedIssuesRecent: issues(first: 30, states: [CLOSED], orderBy: {field: CLOSED_AT, direction: DESC}) {
+      nodes {
+        number title url closedAt
+        labels(first: 20) { nodes { name } }
+        assignees(first: 10) { nodes { login } }
+        milestone { title dueOn }
+      }
+    }
   }
 }
 `;
@@ -191,6 +200,15 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
         milestone { title dueOn }
       }
     }
+
+    closedIssuesRecent: issues(first: 30, states: [CLOSED], orderBy: {field: CLOSED_AT, direction: DESC}) {
+      nodes {
+        number title url closedAt
+        labels(first: 20) { nodes { name } }
+        assignees(first: 10) { nodes { login } }
+        milestone { title dueOn }
+      }
+    }
   }
 }
 `;
@@ -213,7 +231,7 @@ function normalizeFieldValues(fieldValues) {
 function repoRootFallback() {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-  return path.resolve(__dirname, "..", ".."); // docs/scripts -> repo root
+  return path.resolve(__dirname, "..", "..");
 }
 
 function asLogins(nodes) {
@@ -244,7 +262,7 @@ async function run() {
   const project = data.organization?.projectV2;
   const repo = data.repository;
 
-  // ---- Milestone schedule (existing)
+  // Milestone schedule (existing)
   const milestones = repo?.milestones?.nodes ?? [];
   const schedule = milestones
     .filter(m => m?.dueOn)
@@ -259,7 +277,7 @@ async function run() {
 
   const currentMilestone = schedule.length ? schedule[0] : null;
 
-  // ---- Repo issues (existing, but include assignees array)
+  // Repo open issues (existing, with assignees)
   const issues = (repo?.issues?.nodes ?? []).map(i => ({
     number: i.number,
     title: i.title,
@@ -270,7 +288,18 @@ async function run() {
     milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
   }));
 
-  // ---- Project items (existing)
+  // NEW: Recently closed issues
+  const closedIssuesRecent = (repo?.closedIssuesRecent?.nodes ?? []).map(i => ({
+    number: i.number,
+    title: i.title,
+    url: i.url,
+    closedAt: i.closedAt,
+    labels: (i.labels?.nodes ?? []).map(l => l.name),
+    assignees: asLogins(i.assignees?.nodes),
+    milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
+  }));
+
+  // Project items (existing)
   const projectItems = (project?.items?.nodes ?? [])
     .map(n => {
       const c = n.content;
@@ -291,7 +320,7 @@ async function run() {
       }
 
       return {
-        type: c.__typename, // Issue or PullRequest
+        type: c.__typename,
         number: c.number,
         title: c.title,
         url: c.url,
@@ -305,7 +334,7 @@ async function run() {
     })
     .filter(Boolean);
 
-  // ---- NOW (existing)
+  // NOW (existing)
   const now = projectItems
     .filter(it => {
       const status = it.fields?.[STATUS_FIELD];
@@ -314,7 +343,7 @@ async function run() {
     .sort((a, b) => safeDate(b.updatedAt) - safeDate(a.updatedAt))
     .slice(0, 15);
 
-  // ---- Latest update (existing)
+  // Latest update (existing)
   const projectUpdateNode = project?.statusUpdates?.nodes?.[0] ?? null;
   const latestIssue = issues[0] ?? null;
 
@@ -334,14 +363,9 @@ async function run() {
           }
         : null);
 
-  // ---- NEW: Combined schedule items (milestones + due-dated issues/items)
-  // Rule: include anything with a due date we can discover:
-  // 1) Milestones dueOn (repo)
-  // 2) Project items with Due date field (project)
-  // 3) Repo issues that have a milestone with dueOn (fallback)
+  // Combined schedule items (existing)
   const scheduleItems = [];
 
-  // 1) milestones
   for (const m of schedule) {
     scheduleItems.push({
       type: "milestone",
@@ -353,7 +377,6 @@ async function run() {
     });
   }
 
-  // 2) project items with Due date field
   for (const it of projectItems) {
     const due = it.fields?.[DUE_FIELD] ?? null;
     if (!due) continue;
@@ -375,8 +398,6 @@ async function run() {
     });
   }
 
-  // 3) repo issues whose milestone has dueOn (only if not already included as a due-dated project item)
-  // Deduplicate by URL
   const scheduledUrls = new Set(scheduleItems.map(s => s.url).filter(Boolean));
   for (const i of issues) {
     const due = i.milestone?.dueOn ?? null;
@@ -404,15 +425,14 @@ async function run() {
     repos: { robot: ROBOT_REPO, website: "Website" },
     project: project ? { number: PROJECT_NUMBER, title: project.title, url: project.url } : null,
 
-    // existing
     currentMilestone,
     schedule,
     latestUpdate,
-    issues,
+
+    issues,              // open issues
+    closedIssuesRecent,  // NEW
     now,
     projectItems,
-
-    // new
     scheduleItems,
 
     fieldNames: {

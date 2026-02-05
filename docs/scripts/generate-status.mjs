@@ -25,7 +25,6 @@ const client = new GraphQLClient("https://api.github.com/graphql", {
   headers: { Authorization: `Bearer ${GH_TOKEN}` }
 });
 
-// Query that attempts to read Project status updates (may not exist/enabled in some projects)
 const QUERY_WITH_UPDATES = gql`
 query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
   organization(login: $org) {
@@ -44,29 +43,18 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
           content {
             __typename
             ... on Issue {
-              number
-              title
-              url
-              state
-              updatedAt
-              assignees(first: 5) { nodes { login } }
+              number title url state updatedAt
+              assignees(first: 10) { nodes { login } }
               milestone { title dueOn }
               labels(first: 20) { nodes { name } }
             }
             ... on PullRequest {
-              number
-              title
-              url
-              state
-              updatedAt
-              assignees(first: 5) { nodes { login } }
+              number title url state updatedAt
+              assignees(first: 10) { nodes { login } }
               labels(first: 20) { nodes { name } }
             }
             ... on DraftIssue {
-              title
-              body
-              createdAt
-              updatedAt
+              title body createdAt updatedAt
             }
           }
           fieldValues(first: 50) {
@@ -89,9 +77,7 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
                 field { ... on ProjectV2FieldCommon { name } }
               }
               ... on ProjectV2ItemFieldIterationValue {
-                title
-                startDate
-                duration
+                title startDate duration
                 field { ... on ProjectV2FieldCommon { name } }
               }
             }
@@ -114,14 +100,11 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
       }
     }
 
-    issues(first: 30, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+    issues(first: 60, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
-        number
-        title
-        url
-        updatedAt
+        number title url updatedAt
         labels(first: 20) { nodes { name } }
-        assignees(first: 5) { nodes { login } }
+        assignees(first: 10) { nodes { login } }
         milestone { title dueOn }
       }
     }
@@ -129,7 +112,6 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
 }
 `;
 
-// Fallback query that does NOT require project status updates
 const QUERY_NO_UPDATES = gql`
 query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int!) {
   organization(login: $org) {
@@ -144,29 +126,18 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
           content {
             __typename
             ... on Issue {
-              number
-              title
-              url
-              state
-              updatedAt
-              assignees(first: 5) { nodes { login } }
+              number title url state updatedAt
+              assignees(first: 10) { nodes { login } }
               milestone { title dueOn }
               labels(first: 20) { nodes { name } }
             }
             ... on PullRequest {
-              number
-              title
-              url
-              state
-              updatedAt
-              assignees(first: 5) { nodes { login } }
+              number title url state updatedAt
+              assignees(first: 10) { nodes { login } }
               labels(first: 20) { nodes { name } }
             }
             ... on DraftIssue {
-              title
-              body
-              createdAt
-              updatedAt
+              title body createdAt updatedAt
             }
           }
           fieldValues(first: 50) {
@@ -189,9 +160,7 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
                 field { ... on ProjectV2FieldCommon { name } }
               }
               ... on ProjectV2ItemFieldIterationValue {
-                title
-                startDate
-                duration
+                title startDate duration
                 field { ... on ProjectV2FieldCommon { name } }
               }
             }
@@ -214,14 +183,11 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
       }
     }
 
-    issues(first: 30, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+    issues(first: 60, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
-        number
-        title
-        url
-        updatedAt
+        number title url updatedAt
         labels(first: 20) { nodes { name } }
-        assignees(first: 5) { nodes { login } }
+        assignees(first: 10) { nodes { login } }
         milestone { title dueOn }
       }
     }
@@ -244,11 +210,19 @@ function normalizeFieldValues(fieldValues) {
   return out;
 }
 
-function getRepoRootFallback() {
-  // docs/scripts -> repo root is two levels up
+function repoRootFallback() {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-  return path.resolve(__dirname, "..", "..");
+  return path.resolve(__dirname, "..", ".."); // docs/scripts -> repo root
+}
+
+function asLogins(nodes) {
+  return (nodes ?? []).map(n => n.login).filter(Boolean);
+}
+
+function safeDate(d) {
+  const t = Date.parse(d);
+  return Number.isFinite(t) ? t : NaN;
 }
 
 async function run() {
@@ -259,7 +233,7 @@ async function run() {
       robotRepo: ROBOT_REPO,
       projectNumber: PROJECT_NUMBER
     });
-  } catch (e) {
+  } catch {
     data = await client.request(QUERY_NO_UPDATES, {
       org: ORG,
       robotRepo: ROBOT_REPO,
@@ -270,10 +244,11 @@ async function run() {
   const project = data.organization?.projectV2;
   const repo = data.repository;
 
+  // ---- Milestone schedule (existing)
   const milestones = repo?.milestones?.nodes ?? [];
   const schedule = milestones
     .filter(m => m?.dueOn)
-    .sort((a, b) => new Date(a.dueOn) - new Date(b.dueOn))
+    .sort((a, b) => safeDate(a.dueOn) - safeDate(b.dueOn))
     .map(m => ({
       title: m.title,
       url: m.url,
@@ -284,21 +259,22 @@ async function run() {
 
   const currentMilestone = schedule.length ? schedule[0] : null;
 
+  // ---- Repo issues (existing, but include assignees array)
   const issues = (repo?.issues?.nodes ?? []).map(i => ({
     number: i.number,
     title: i.title,
     url: i.url,
     updatedAt: i.updatedAt,
     labels: (i.labels?.nodes ?? []).map(l => l.name),
-    assignees: (i.assignees?.nodes ?? []).map(a => a.login),
+    assignees: asLogins(i.assignees?.nodes),
     milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
   }));
 
+  // ---- Project items (existing)
   const projectItems = (project?.items?.nodes ?? [])
     .map(n => {
       const c = n.content;
       const fields = normalizeFieldValues(n.fieldValues);
-
       if (!c) return null;
 
       if (c.__typename === "DraftIssue") {
@@ -307,18 +283,21 @@ async function run() {
           title: c.title,
           url: project?.url,
           updatedAt: c.updatedAt,
+          assignees: [],
+          labels: [],
+          milestone: null,
           fields
         };
       }
 
       return {
-        type: c.__typename,
+        type: c.__typename, // Issue or PullRequest
         number: c.number,
         title: c.title,
         url: c.url,
         state: c.state,
         updatedAt: c.updatedAt,
-        assignees: (c.assignees?.nodes ?? []).map(a => a.login),
+        assignees: asLogins(c.assignees?.nodes),
         labels: (c.labels?.nodes ?? []).map(l => l.name),
         milestone: c.milestone ? { title: c.milestone.title, dueOn: c.milestone.dueOn } : null,
         fields
@@ -326,14 +305,16 @@ async function run() {
     })
     .filter(Boolean);
 
+  // ---- NOW (existing)
   const now = projectItems
     .filter(it => {
       const status = it.fields?.[STATUS_FIELD];
       return status ? NOW_STATUSES.has(status) : false;
     })
-    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+    .sort((a, b) => safeDate(b.updatedAt) - safeDate(a.updatedAt))
     .slice(0, 15);
 
+  // ---- Latest update (existing)
   const projectUpdateNode = project?.statusUpdates?.nodes?.[0] ?? null;
   const latestIssue = issues[0] ?? null;
 
@@ -353,20 +334,86 @@ async function run() {
           }
         : null);
 
+  // ---- NEW: Combined schedule items (milestones + due-dated issues/items)
+  // Rule: include anything with a due date we can discover:
+  // 1) Milestones dueOn (repo)
+  // 2) Project items with Due date field (project)
+  // 3) Repo issues that have a milestone with dueOn (fallback)
+  const scheduleItems = [];
+
+  // 1) milestones
+  for (const m of schedule) {
+    scheduleItems.push({
+      type: "milestone",
+      title: m.title,
+      url: m.url,
+      dueOn: m.dueOn,
+      assignees: [],
+      meta: { openIssues: m.openIssues, closedIssues: m.closedIssues }
+    });
+  }
+
+  // 2) project items with Due date field
+  for (const it of projectItems) {
+    const due = it.fields?.[DUE_FIELD] ?? null;
+    if (!due) continue;
+
+    scheduleItems.push({
+      type:
+        it.type === "Issue" ? "issue" :
+        it.type === "PullRequest" ? "pull_request" :
+        "draft",
+      title: it.title,
+      url: it.url,
+      dueOn: due,
+      assignees: it.assignees ?? [],
+      meta: {
+        number: it.number ?? null,
+        status: it.fields?.[STATUS_FIELD] ?? null,
+        targetDemo: it.fields?.[TARGET_DEMO_FIELD] ?? null
+      }
+    });
+  }
+
+  // 3) repo issues whose milestone has dueOn (only if not already included as a due-dated project item)
+  // Deduplicate by URL
+  const scheduledUrls = new Set(scheduleItems.map(s => s.url).filter(Boolean));
+  for (const i of issues) {
+    const due = i.milestone?.dueOn ?? null;
+    if (!due) continue;
+    if (scheduledUrls.has(i.url)) continue;
+
+    scheduleItems.push({
+      type: "issue",
+      title: i.title,
+      url: i.url,
+      dueOn: due,
+      assignees: i.assignees ?? [],
+      meta: {
+        number: i.number ?? null,
+        milestone: i.milestone?.title ?? null
+      }
+    });
+  }
+
+  scheduleItems.sort((a, b) => safeDate(a.dueOn) - safeDate(b.dueOn));
+
   const out = {
     generatedAt: new Date().toISOString(),
     org: ORG,
     repos: { robot: ROBOT_REPO, website: "Website" },
     project: project ? { number: PROJECT_NUMBER, title: project.title, url: project.url } : null,
 
+    // existing
     currentMilestone,
     schedule,
-
     latestUpdate,
     issues,
-
     now,
     projectItems,
+
+    // new
+    scheduleItems,
 
     fieldNames: {
       status: STATUS_FIELD,
@@ -376,11 +423,9 @@ async function run() {
   };
 
   const siteRoot = process.env.SITE_ROOT || "docs";
-
-  // In Actions, this is the repo root. Locally, fall back to resolving from this script.
   const workspace = process.env.GITHUB_WORKSPACE
     ? path.resolve(process.env.GITHUB_WORKSPACE)
-    : getRepoRootFallback();
+    : repoRootFallback();
 
   const outDir = path.join(workspace, siteRoot, "assets", "data");
   const outPath = path.join(outDir, "status.json");
@@ -388,10 +433,7 @@ async function run() {
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
 
-  if (!fs.existsSync(outPath)) {
-    throw new Error(`status.json not written: ${outPath}`);
-  }
-
+  if (!fs.existsSync(outPath)) throw new Error(`status.json not written: ${outPath}`);
   console.log(`Wrote ${outPath}`);
 }
 

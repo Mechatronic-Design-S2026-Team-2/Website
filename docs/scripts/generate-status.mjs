@@ -10,6 +10,10 @@ const ORG = process.env.ORG;
 const ROBOT_REPO = process.env.ROBOT_REPO;
 const PROJECT_NUMBER = Number(process.env.PROJECT_NUMBER);
 
+if (!ORG) throw new Error("Missing ORG env var");
+if (!ROBOT_REPO) throw new Error("Missing ROBOT_REPO env var");
+if (!PROJECT_NUMBER) throw new Error("Missing PROJECT_NUMBER env var");
+
 const STATUS_FIELD = process.env.STATUS_FIELD || "Status";
 const DUE_FIELD = process.env.DUE_FIELD || "Due date";
 const TARGET_DEMO_FIELD = process.env.TARGET_DEMO_FIELD || "Target Demo";
@@ -21,8 +25,7 @@ const client = new GraphQLClient("https://api.github.com/graphql", {
   headers: { Authorization: `Bearer ${GH_TOKEN}` }
 });
 
-// Try a query that includes Project status updates; if your project doesn’t use them,
-// we fall back gracefully to “latest updated issue” as the update signal.
+// Query that attempts to read Project status updates (may not exist/enabled in some projects)
 const QUERY_WITH_UPDATES = gql`
 query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
   organization(login: $org) {
@@ -41,18 +44,29 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
           content {
             __typename
             ... on Issue {
-              number title url state updatedAt
+              number
+              title
+              url
+              state
+              updatedAt
               assignees(first: 5) { nodes { login } }
               milestone { title dueOn }
               labels(first: 20) { nodes { name } }
             }
             ... on PullRequest {
-              number title url state updatedAt
+              number
+              title
+              url
+              state
+              updatedAt
               assignees(first: 5) { nodes { login } }
               labels(first: 20) { nodes { name } }
             }
             ... on DraftIssue {
-              title body createdAt updatedAt
+              title
+              body
+              createdAt
+              updatedAt
             }
           }
           fieldValues(first: 50) {
@@ -75,7 +89,9 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
                 field { ... on ProjectV2FieldCommon { name } }
               }
               ... on ProjectV2ItemFieldIterationValue {
-                title startDate duration
+                title
+                startDate
+                duration
                 field { ... on ProjectV2FieldCommon { name } }
               }
             }
@@ -93,14 +109,17 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
         title
         url
         dueOn
-        openIssues: issues(states: [OPEN]) { totalCount }
-        closedIssues: issues(states: [CLOSED]) { totalCount }
+        openIssues: issues(first: 1, states: [OPEN]) { totalCount }
+        closedIssues: issues(first: 1, states: [CLOSED]) { totalCount }
       }
     }
-    
+
     issues(first: 30, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
-        number title url updatedAt
+        number
+        title
+        url
+        updatedAt
         labels(first: 20) { nodes { name } }
         assignees(first: 5) { nodes { login } }
         milestone { title dueOn }
@@ -110,6 +129,7 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
 }
 `;
 
+// Fallback query that does NOT require project status updates
 const QUERY_NO_UPDATES = gql`
 query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int!) {
   organization(login: $org) {
@@ -117,24 +137,36 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
     projectV2(number: $projectNumber) {
       title
       url
+
       items(first: 100) {
         nodes {
           id
           content {
             __typename
             ... on Issue {
-              number title url state updatedAt
+              number
+              title
+              url
+              state
+              updatedAt
               assignees(first: 5) { nodes { login } }
               milestone { title dueOn }
               labels(first: 20) { nodes { name } }
             }
             ... on PullRequest {
-              number title url state updatedAt
+              number
+              title
+              url
+              state
+              updatedAt
               assignees(first: 5) { nodes { login } }
               labels(first: 20) { nodes { name } }
             }
             ... on DraftIssue {
-              title body createdAt updatedAt
+              title
+              body
+              createdAt
+              updatedAt
             }
           }
           fieldValues(first: 50) {
@@ -157,7 +189,9 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
                 field { ... on ProjectV2FieldCommon { name } }
               }
               ... on ProjectV2ItemFieldIterationValue {
-                title startDate duration
+                title
+                startDate
+                duration
                 field { ... on ProjectV2FieldCommon { name } }
               }
             }
@@ -175,14 +209,17 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
         title
         url
         dueOn
-        openIssues: issues(states: [OPEN]) { totalCount }
-        closedIssues: issues(states: [CLOSED]) { totalCount }
+        openIssues: issues(first: 1, states: [OPEN]) { totalCount }
+        closedIssues: issues(first: 1, states: [CLOSED]) { totalCount }
       }
     }
 
     issues(first: 30, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
-        number title url updatedAt
+        number
+        title
+        url
+        updatedAt
         labels(first: 20) { nodes { name } }
         assignees(first: 5) { nodes { login } }
         milestone { title dueOn }
@@ -191,6 +228,28 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
   }
 }
 `;
+
+function normalizeFieldValues(fieldValues) {
+  const out = {};
+  for (const v of (fieldValues?.nodes ?? [])) {
+    const fieldName = v?.field?.name;
+    if (!fieldName) continue;
+
+    if (v.__typename === "ProjectV2ItemFieldSingleSelectValue") out[fieldName] = v.name;
+    else if (v.__typename === "ProjectV2ItemFieldTextValue") out[fieldName] = v.text;
+    else if (v.__typename === "ProjectV2ItemFieldDateValue") out[fieldName] = v.date;
+    else if (v.__typename === "ProjectV2ItemFieldNumberValue") out[fieldName] = v.number;
+    else if (v.__typename === "ProjectV2ItemFieldIterationValue") out[fieldName] = v.title;
+  }
+  return out;
+}
+
+function getRepoRootFallback() {
+  // docs/scripts -> repo root is two levels up
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  return path.resolve(__dirname, "..", "..");
+}
 
 async function run() {
   let data;
@@ -201,7 +260,6 @@ async function run() {
       projectNumber: PROJECT_NUMBER
     });
   } catch (e) {
-    // fallback if statusUpdates isn’t available/used
     data = await client.request(QUERY_NO_UPDATES, {
       org: ORG,
       robotRepo: ROBOT_REPO,
@@ -236,51 +294,37 @@ async function run() {
     milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
   }));
 
-  function normalizeFieldValues(fieldValues) {
-    const out = {};
-    for (const v of (fieldValues?.nodes ?? [])) {
-      const fieldName = v?.field?.name;
-      if (!fieldName) continue;
+  const projectItems = (project?.items?.nodes ?? [])
+    .map(n => {
+      const c = n.content;
+      const fields = normalizeFieldValues(n.fieldValues);
 
-      if (v.__typename === "ProjectV2ItemFieldSingleSelectValue") out[fieldName] = v.name;
-      else if (v.__typename === "ProjectV2ItemFieldTextValue") out[fieldName] = v.text;
-      else if (v.__typename === "ProjectV2ItemFieldDateValue") out[fieldName] = v.date;
-      else if (v.__typename === "ProjectV2ItemFieldNumberValue") out[fieldName] = v.number;
-      else if (v.__typename === "ProjectV2ItemFieldIterationValue") out[fieldName] = v.title;
-    }
-    return out;
-  }
+      if (!c) return null;
 
-  const projectItems = (project?.items?.nodes ?? []).map(n => {
-    const c = n.content;
-    const fields = normalizeFieldValues(n.fieldValues);
+      if (c.__typename === "DraftIssue") {
+        return {
+          type: "DraftIssue",
+          title: c.title,
+          url: project?.url,
+          updatedAt: c.updatedAt,
+          fields
+        };
+      }
 
-    // Issues/PRs have numbers+urls; DraftIssues do not
-    if (!c) return null;
-
-    if (c.__typename === "DraftIssue") {
       return {
-        type: "DraftIssue",
+        type: c.__typename,
+        number: c.number,
         title: c.title,
-        url: project?.url, // best available link target
+        url: c.url,
+        state: c.state,
         updatedAt: c.updatedAt,
+        assignees: (c.assignees?.nodes ?? []).map(a => a.login),
+        labels: (c.labels?.nodes ?? []).map(l => l.name),
+        milestone: c.milestone ? { title: c.milestone.title, dueOn: c.milestone.dueOn } : null,
         fields
       };
-    }
-
-    return {
-      type: c.__typename,
-      number: c.number,
-      title: c.title,
-      url: c.url,
-      state: c.state,
-      updatedAt: c.updatedAt,
-      assignees: (c.assignees?.nodes ?? []).map(a => a.login),
-      labels: (c.labels?.nodes ?? []).map(l => l.name),
-      milestone: c.milestone ? { title: c.milestone.title, dueOn: c.milestone.dueOn } : null,
-      fields
-    };
-  }).filter(Boolean);
+    })
+    .filter(Boolean);
 
   const now = projectItems
     .filter(it => {
@@ -290,9 +334,7 @@ async function run() {
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
     .slice(0, 15);
 
-  const projectUpdateNode =
-    data.organization?.projectV2?.statusUpdates?.nodes?.[0] ?? null;
-
+  const projectUpdateNode = project?.statusUpdates?.nodes?.[0] ?? null;
   const latestIssue = issues[0] ?? null;
 
   const latestUpdate = projectUpdateNode
@@ -323,13 +365,9 @@ async function run() {
     latestUpdate,
     issues,
 
-    // For your dashboard / “Now” view:
     now,
-
-    // Full project items (optional—keep if you want richer pages later)
     projectItems,
 
-    // Useful for rendering in the UI without hardcoding names:
     fieldNames: {
       status: STATUS_FIELD,
       due: DUE_FIELD,
@@ -337,23 +375,22 @@ async function run() {
     }
   };
 
-  import { fileURLToPath } from "node:url";
+  const siteRoot = process.env.SITE_ROOT || "docs";
 
-// ...
+  // In Actions, this is the repo root. Locally, fall back to resolving from this script.
+  const workspace = process.env.GITHUB_WORKSPACE
+    ? path.resolve(process.env.GITHUB_WORKSPACE)
+    : getRepoRootFallback();
 
-  const siteRoot = process.env.SITE_ROOT || "docs"; // Pages source folder
-
-  // Resolve paths relative to the repository root (works even if Actions runs in /docs)
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  // docs/scripts -> repo root is two levels up
-  const repoRoot = path.resolve(__dirname, "..", "..");
-
-  const outDir = path.join(repoRoot, siteRoot, "assets", "data");
+  const outDir = path.join(workspace, siteRoot, "assets", "data");
   const outPath = path.join(outDir, "status.json");
 
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
+
+  if (!fs.existsSync(outPath)) {
+    throw new Error(`status.json not written: ${outPath}`);
+  }
 
   console.log(`Wrote ${outPath}`);
 }

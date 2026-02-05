@@ -2,54 +2,27 @@
   --t2-red-900: #941120;
   --t2-red-700: #C41230;
   --t2-red-500: #EF3A47;
-
-  /* Cayman theme variables (used by header gradient + links in many places) */
-  --header-heading-color: #ffffff;
-  --header-bg-color: var(--t2-red-700);
-  --header-bg-color-secondary: var(--t2-red-500);
-
-  --section-headings-color: var(--t2-red-700);
-  --body-link-color: var(--t2-red-700);
-
-  /* Subtle borders / code blocks */
-  --border-color: rgba(0, 0, 0, 0.12);
 }
 
-/* Header gradient (Cayman) */
+/* Cayman header gradient (force override) */
+header.page-header,
 .page-header {
-  /* Cayman uses these variables; this forces the gradient even if it changes */
-  background-color: var(--t2-red-700);
-  background-image: linear-gradient(120deg, var(--t2-red-700), var(--t2-red-500));
+  background-color: var(--t2-red-700) !important;
+  background-image: linear-gradient(120deg, var(--t2-red-900), var(--t2-red-500)) !important;
 }
 
-/* Titles in header */
-.project-name,
-.project-tagline {
-  color: #fff;
+/* Header text */
+.page-header .project-name,
+.page-header .project-tagline {
+  color: #fff !important;
 }
 
-/* Link styling */
-a {
-  color: var(--t2-red-700);
-}
-a:hover {
+/* Use darkest red for section headings (inside the content column) */
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
   color: var(--t2-red-900);
-}
-
-/* Buttons in Cayman (Download buttons etc.) */
-.btn {
-  border-color: rgba(255, 255, 255, 0.55);
-}
-.btn:hover {
-  border-color: rgba(255, 255, 255, 0.85);
-}
-
-/* Optional: make selection highlight match */
-::selection {
-  background: rgba(196, 18, 48, 0.25);
-}
-
-/* Optional: tone down code highlight color a bit */
-code, pre {
-  border-color: rgba(0,0,0,0.10);
 }

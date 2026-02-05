@@ -1,21 +1,10 @@
-    ---
-    title: "Project Management"
-    ---
+---
+title: "Project Management"
+---
 
-    [Home](index.md) •
-[Problem](problem.md) •
-[Design](design.md) •
-[Implementation](implementation.md) •
-[Performance](performance.md) •
-[Project Management](management.md) •
-[Media](media.md) •
-[Documents](documents.md) •
-[Team](team.md)
+{% include nav.html %}
 
-
-    # Project Management
-
-    ## Schedule
+## Schedule
 - Put a Gantt chart image here **or** keep a living schedule doc.
 - Link: [Schedule](project_management/schedule.md)
 

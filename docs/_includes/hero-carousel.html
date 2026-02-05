@@ -3,29 +3,60 @@
 <section class="hero-carousel" aria-label="Robot highlights">
   <div class="carousel" data-carousel>
     <div class="carousel-track" data-track>
-      <!-- Replace src files with your real media later -->
+      <!-- Slide 1 -->
       <figure class="carousel-slide is-active" data-slide>
-        <img src="{{ '/assets/img/robot-1.gif' | relative_url }}" alt="Robot highlight 1">
+        <div class="carousel-media">
+          <!-- Blurred background fill -->
+          <img class="carousel-bg"
+               src="{{ '/assets/img/robot-1.jpg' | relative_url }}"
+               alt=""
+               aria-hidden="true"
+               loading="eager">
+
+          <!-- Foreground (never cropped) -->
+          <img class="carousel-fg"
+               src="{{ '/assets/img/robot-1.jpg' | relative_url }}"
+               alt="Robot highlight 1"
+               loading="eager">
+        </div>
         <figcaption>Prototype concept — placeholder</figcaption>
       </figure>
 
+      <!-- Slide 2 -->
       <figure class="carousel-slide" data-slide>
-        <img src="{{ '/assets/img/robot-2.gif' | relative_url }}" alt="Robot highlight 2">
+        <div class="carousel-media">
+          <img class="carousel-bg"
+               src="{{ '/assets/img/robot-2.jpg' | relative_url }}"
+               alt=""
+               aria-hidden="true"
+               loading="lazy">
+          <img class="carousel-fg"
+               src="{{ '/assets/img/robot-2.jpg' | relative_url }}"
+               alt="Robot highlight 2"
+               loading="lazy">
+        </div>
         <figcaption>Mechanism test — placeholder</figcaption>
       </figure>
 
+      <!-- Slide 3 -->
       <figure class="carousel-slide" data-slide>
-        <img src="{{ '/assets/img/robot-3.gif' | relative_url }}" alt="Robot highlight 3">
+        <div class="carousel-media">
+          <img class="carousel-bg"
+               src="{{ '/assets/img/robot-3.jpg' | relative_url }}"
+               alt=""
+               aria-hidden="true"
+               loading="lazy">
+          <img class="carousel-fg"
+               src="{{ '/assets/img/robot-3.jpg' | relative_url }}"
+               alt="Robot highlight 3"
+               loading="lazy">
+        </div>
         <figcaption>System integration — placeholder</figcaption>
       </figure>
     </div>
 
-    <button class="carousel-btn prev" type="button" aria-label="Previous slide" data-prev>
-      ‹
-    </button>
-    <button class="carousel-btn next" type="button" aria-label="Next slide" data-next>
-      ›
-    </button>
+    <button class="carousel-btn prev" type="button" aria-label="Previous slide" data-prev>‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Next slide" data-next>›</button>
 
     <div class="carousel-dots" role="tablist" aria-label="Carousel pagination" data-dots></div>
   </div>

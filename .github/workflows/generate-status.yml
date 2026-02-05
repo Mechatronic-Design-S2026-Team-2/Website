@@ -43,7 +43,7 @@ jobs:
           STATUS_FIELD: "Status"
           DUE_FIELD: "Due date"
           TARGET_DEMO_FIELD: "Target Demo"
-        run: node scripts/generate-status.mjs
+        run: node docs/scripts/generate-status.mjs
 
       - name: Commit status.json
         run: |

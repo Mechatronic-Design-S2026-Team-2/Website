@@ -40,7 +40,7 @@
         if (ad !== bd) return ad - bd;
         return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
       })
-      .slice(0, 60);
+      .slice(0, 20);
 
     // Group by Target Demo if present
     const groups = new Map();

@@ -1,0 +1,26 @@
+/* Widen Cayman’s content column globally */
+.main-content {
+  max-width: 92rem;          /* ~1470px at 16px base */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Keep it comfortable on small screens */
+@media (max-width: 520px) {
+  .main-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Widen the top header area too (Cayman uses large side padding) */
+.page-header {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media (max-width: 520px) {
+  .page-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

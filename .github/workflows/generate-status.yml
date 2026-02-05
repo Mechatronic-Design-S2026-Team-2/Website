@@ -3,22 +3,25 @@ name: Generate status.json
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 15 * * *"  # ~8am in winter (EST), 9am in summer (EDT)
+    - cron: "0 15 * * *"  # 15:00 UTC daily (~9am CST / ~10am CDT)
   issues:
     types: [opened, edited, closed, reopened, labeled, unlabeled, milestoned, demilestoned]
   pull_request:
     types: [opened, edited, closed, reopened, synchronize]
 
-# Needed to commit the generated JSON back into the repo
+# Allow this workflow to commit back into the repo using GITHUB_TOKEN
 permissions:
   contents: write
 
 jobs:
   build-status:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -33,14 +36,18 @@ jobs:
       - name: Generate docs/assets/data/status.json
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
+
           ORG: Mechatronic-Design-S2026-Team-2
           ROBOT_REPO: Design
           PROJECT_NUMBER: "4"
+
           STATUS_FIELD: "Status"
           DUE_FIELD: "Due date"
           TARGET_DEMO_FIELD: "Target Demo"
+
           SITE_ROOT: docs
-        run: node docs/scripts/generate-status.mjs
+        run: |
+          node docs/scripts/generate-status.mjs
 
       - name: Verify generated file exists
         run: |
@@ -50,13 +57,18 @@ jobs:
           ls -la docs || true
           ls -la docs/assets || true
           ls -la docs/assets/data || true
-          find . -maxdepth 5 -name status.json -print
+          find . -maxdepth 6 -name status.json -print
           test -f docs/assets/data/status.json
-          
+
       - name: Commit status.json
         run: |
           git config user.name "status-bot"
           git config user.email "status-bot@users.noreply.github.com"
+
           git add docs/assets/data/status.json
+
+          git status --porcelain
+
           git commit -m "Update status.json" || echo "No changes"
+
           git push

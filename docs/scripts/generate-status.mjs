@@ -336,9 +336,14 @@ async function run() {
     }
   };
 
-  fs.mkdirSync(path.join("assets", "data"), { recursive: true });
-  fs.writeFileSync(path.join("assets", "data", "status.json"), JSON.stringify(out, null, 2));
-  console.log("Wrote assets/data/status.json");
+  const siteRoot = process.env.SITE_ROOT || "docs"; // Pages source folder
+  const outDir = path.join(siteRoot, "assets", "data");
+
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, "status.json"), JSON.stringify(out, null, 2));
+
+  console.log(`Wrote ${path.join(outDir, "status.json")}`);
+
 }
 
 run().catch(err => {

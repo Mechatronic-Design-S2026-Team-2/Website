@@ -16,6 +16,3 @@ This project matters because it treats assistive technology as an expressive med
 ## Project status
 
 {% include status-widget.html %}
-
-## Highlights (media)
-Add one representative photo and/or a short video clip once you have it.

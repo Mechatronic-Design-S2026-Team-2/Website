@@ -42,6 +42,15 @@ jobs:
           SITE_ROOT: docs
         run: node docs/scripts/generate-status.mjs
 
+      - name: Verify generated file exists
+        run: |
+          pwd
+          ls -la docs || true
+          ls -la docs/assets || true
+          ls -la docs/assets/data || true
+          test -f docs/assets/data/status.json
+
+
       - name: Commit status.json
         run: |
           git config user.name "status-bot"

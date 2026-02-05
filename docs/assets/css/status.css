@@ -1,0 +1,32 @@
+.team2-status {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 900px) {
+  .team2-status {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.status-card {
+  padding: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.status-card h3 {
+  margin-top: 0;
+}
+
+.status-card ul {
+  margin: 8px 0 0 18px;
+}
+
+.status-card small {
+  opacity: 0.75;
+  font-size: 0.95rem;
+}

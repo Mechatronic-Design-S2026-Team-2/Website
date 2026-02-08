@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-08T21:13:32.926Z",
+  "generatedAt": "2026-02-08T21:34:37.730Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -36,7 +36,7 @@
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 1,
+      "openIssues": 2,
       "closedIssues": 0
     },
     {
@@ -126,10 +126,25 @@
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest open issue updated: #31 “No manual intervention” drill + recovery plan",
-    "createdAt": "2026-01-29T23:50:14Z"
+    "body": "Latest open issue updated: #32 Klann Linkage Leg Design Prototype",
+    "createdAt": "2026-02-08T21:27:09Z"
   },
   "issues": [
+    {
+      "number": 32,
+      "title": "Klann Linkage Leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
+      "updatedAt": "2026-02-08T21:27:09Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
     {
       "number": 31,
       "title": "“No manual intervention” drill + recovery plan",
@@ -538,6 +553,21 @@
     }
   ],
   "openIssues": [
+    {
+      "number": 32,
+      "title": "Klann Linkage Leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
+      "updatedAt": "2026-02-08T21:27:09Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
     {
       "number": 31,
       "title": "“No manual intervention” drill + recovery plan",
@@ -1027,7 +1057,8 @@
       "fields": {
         "Title": "SD1 demo plan + artifacts",
         "Status": "Todo",
-        "End date": "2026-02-05"
+        "End date": "2026-02-16",
+        "Start date": "2026-02-10"
       }
     },
     {
@@ -1639,6 +1670,43 @@
       },
       "fields": {
         "Title": "Media section placeholder + gallery scaffolding",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 32,
+      "title": "Klann Linkage Leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:27:09Z",
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Klann Linkage Leg Design Prototype",
+        "Status": "Todo",
+        "End date": "2026-02-16",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 9,
+      "title": "Chassis Design",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/9",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:34:24Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": null,
+      "fields": {
+        "Title": "Chassis Design",
         "Status": "Todo"
       }
     }

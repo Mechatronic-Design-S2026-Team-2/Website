@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-08T23:19:00.963Z",
+  "generatedAt": "2026-02-08T23:19:20.236Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -1207,26 +1207,6 @@
         "Title": "Media section placeholder + gallery scaffolding",
         "Status": "In Progress"
       }
-    },
-    {
-      "type": "Issue",
-      "number": 3,
-      "title": "Create site IA (information architecture) + navigation map",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/3",
-      "state": "OPEN",
-      "updatedAt": "2026-01-30T17:00:09Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z"
-      },
-      "fields": {
-        "Title": "Create site IA (information architecture) + navigation map",
-        "Status": "In Progress"
-      }
     }
   ],
   "projectItems": [
@@ -1787,8 +1767,8 @@
       "number": 3,
       "title": "Create site IA (information architecture) + navigation map",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/3",
-      "state": "OPEN",
-      "updatedAt": "2026-01-30T17:00:09Z",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-08T23:19:08Z",
       "assignees": [
         "dgl7"
       ],
@@ -1799,7 +1779,7 @@
       },
       "fields": {
         "Title": "Create site IA (information architecture) + navigation map",
-        "Status": "In Progress"
+        "Status": "Done"
       }
     },
     {
@@ -1827,8 +1807,8 @@
       "number": 5,
       "title": "Add PM page skeleton (schedule + responsibilities + budget + issues log)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/5",
-      "state": "OPEN",
-      "updatedAt": "2026-01-30T17:00:19Z",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-08T23:19:09Z",
       "assignees": [
         "dgl7"
       ],
@@ -1839,7 +1819,7 @@
       },
       "fields": {
         "Title": "Add PM page skeleton (schedule + responsibilities + budget + issues log)",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {

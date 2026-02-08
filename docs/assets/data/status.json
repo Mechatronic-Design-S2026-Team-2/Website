@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-08T15:26:23.534Z",
+  "generatedAt": "2026-02-08T21:13:32.926Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -987,7 +987,9 @@
       },
       "fields": {
         "Title": "Team Website 0 (scaffold + required pages)",
-        "Status": "Todo"
+        "Status": "Todo",
+        "End date": "2026-02-08",
+        "Start date": "2026-02-05"
       }
     },
     {
@@ -1005,7 +1007,8 @@
       },
       "fields": {
         "Title": "Design Proposal PDF (complete + compliant)",
-        "Status": "Todo"
+        "Status": "Todo",
+        "End date": "2026-02-11"
       }
     },
     {
@@ -1023,7 +1026,8 @@
       },
       "fields": {
         "Title": "SD1 demo plan + artifacts",
-        "Status": "Todo"
+        "Status": "Todo",
+        "End date": "2026-02-05"
       }
     },
     {
@@ -1077,7 +1081,9 @@
       },
       "fields": {
         "Title": "Pre-proposal deck (15 min) + rehearsal",
-        "Status": "Todo"
+        "Status": "Todo",
+        "Start date": "2026-02-04",
+        "End date": "2026-02-09"
       }
     },
     {
@@ -1149,7 +1155,9 @@
       },
       "fields": {
         "Title": "Cyberphysical architecture (block diagram) draft",
-        "Status": "Todo"
+        "Status": "Todo",
+        "Start date": "2026-02-09",
+        "End date": "2026-02-09"
       }
     },
     {

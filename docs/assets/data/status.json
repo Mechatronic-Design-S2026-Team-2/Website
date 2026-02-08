@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-08T21:42:04.237Z",
+  "generatedAt": "2026-02-08T23:19:00.963Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -36,7 +36,7 @@
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 5,
+      "openIssues": 9,
       "closedIssues": 0
     },
     {
@@ -126,15 +126,30 @@
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest open issue updated: #35 Gazebo Simulation",
-    "createdAt": "2026-02-08T21:40:23Z"
+    "body": "Latest open issue updated: #39 Assemble System for testing on Gazebo",
+    "createdAt": "2026-02-08T21:49:24Z"
   },
   "issues": [
     {
-      "number": 35,
-      "title": "Gazebo Simulation",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
-      "updatedAt": "2026-02-08T21:40:23Z",
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-08T21:49:24Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 37,
+      "title": "Set up environment for Jetson",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
+      "updatedAt": "2026-02-08T21:48:03Z",
       "closedAt": null,
       "labels": [],
       "assignees": [
@@ -149,10 +164,57 @@
       "number": 34,
       "title": "Side leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
-      "updatedAt": "2026-02-08T21:38:38Z",
+      "updatedAt": "2026-02-08T21:48:00Z",
       "closedAt": null,
       "labels": [],
-      "assignees": [],
+      "assignees": [
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 38,
+      "title": "Acquire and setup rtos for esp32 controllers",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
+      "updatedAt": "2026-02-08T21:44:45Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 36,
+      "title": "System schematics for motors and sensors",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
+      "updatedAt": "2026-02-08T21:42:44Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 35,
+      "title": "Gazebo Simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
+      "updatedAt": "2026-02-08T21:40:23Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
       "milestone": {
         "title": "System Demo 1",
         "dueOn": "2026-02-16T00:00:00Z"
@@ -597,10 +659,25 @@
   ],
   "openIssues": [
     {
-      "number": 35,
-      "title": "Gazebo Simulation",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
-      "updatedAt": "2026-02-08T21:40:23Z",
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-08T21:49:24Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 37,
+      "title": "Set up environment for Jetson",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
+      "updatedAt": "2026-02-08T21:48:03Z",
       "closedAt": null,
       "labels": [],
       "assignees": [
@@ -615,10 +692,57 @@
       "number": 34,
       "title": "Side leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
-      "updatedAt": "2026-02-08T21:38:38Z",
+      "updatedAt": "2026-02-08T21:48:00Z",
       "closedAt": null,
       "labels": [],
-      "assignees": [],
+      "assignees": [
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 38,
+      "title": "Acquire and setup rtos for esp32 controllers",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
+      "updatedAt": "2026-02-08T21:44:45Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 36,
+      "title": "System schematics for motors and sensors",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
+      "updatedAt": "2026-02-08T21:42:44Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 35,
+      "title": "Gazebo Simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
+      "updatedAt": "2026-02-08T21:40:23Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
       "milestone": {
         "title": "System Demo 1",
         "dueOn": "2026-02-16T00:00:00Z"
@@ -1066,6 +1190,26 @@
   "now": [
     {
       "type": "Issue",
+      "number": 8,
+      "title": "Media section placeholder + gallery scaffolding",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/8",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-08T23:18:55Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Media section placeholder + gallery scaffolding",
+        "Status": "In Progress"
+      }
+    },
+    {
+      "type": "Issue",
       "number": 3,
       "title": "Create site IA (information architecture) + navigation map",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/3",
@@ -1103,7 +1247,6 @@
       },
       "fields": {
         "Title": "Team Website 0 (scaffold + required pages)",
-        "Status": "Todo",
         "End date": "2026-02-08",
         "Start date": "2026-02-05"
       }
@@ -1664,8 +1807,8 @@
       "number": 4,
       "title": "Create “Documents (Lab Workbook)” structure + index",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/4",
-      "state": "OPEN",
-      "updatedAt": "2026-01-30T17:00:16Z",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-08T23:18:48Z",
       "assignees": [
         "dgl7"
       ],
@@ -1676,7 +1819,7 @@
       },
       "fields": {
         "Title": "Create “Documents (Lab Workbook)” structure + index",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {
@@ -1704,8 +1847,8 @@
       "number": 6,
       "title": "Create presenter rotation schedule (round-robin list)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/6",
-      "state": "OPEN",
-      "updatedAt": "2026-01-30T17:00:21Z",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-08T23:18:52Z",
       "assignees": [
         "dgl7"
       ],
@@ -1716,7 +1859,7 @@
       },
       "fields": {
         "Title": "Create presenter rotation schedule (round-robin list)",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {
@@ -1744,8 +1887,8 @@
       "number": 8,
       "title": "Media section placeholder + gallery scaffolding",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/8",
-      "state": "OPEN",
-      "updatedAt": "2026-01-30T17:00:27Z",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-08T23:18:55Z",
       "assignees": [
         "dgl7"
       ],
@@ -1756,7 +1899,7 @@
       },
       "fields": {
         "Title": "Media section placeholder + gallery scaffolding",
-        "Status": "Todo"
+        "Status": "In Progress"
       }
     },
     {
@@ -1809,8 +1952,10 @@
       "title": "Side leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
       "state": "OPEN",
-      "updatedAt": "2026-02-08T21:38:38Z",
-      "assignees": [],
+      "updatedAt": "2026-02-08T21:48:00Z",
+      "assignees": [
+        "liu3304697516"
+      ],
       "labels": [],
       "milestone": {
         "title": "System Demo 1",
@@ -1847,19 +1992,90 @@
     },
     {
       "type": "Issue",
-      "number": 11,
-      "title": "Generic schematics for motors and sensors",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/11",
+      "number": 36,
+      "title": "System schematics for motors and sensors",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
       "state": "OPEN",
-      "updatedAt": "2026-02-08T21:41:52Z",
+      "updatedAt": "2026-02-08T21:42:44Z",
       "assignees": [
         "dgl7"
       ],
       "labels": [],
-      "milestone": null,
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
       "fields": {
-        "Title": "Generic schematics for motors and sensors",
-        "Status": "Todo"
+        "Title": "System schematics for motors and sensors",
+        "Status": "Todo",
+        "Start date": "2026-02-11",
+        "End date": "2026-02-15"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 37,
+      "title": "Set up environment for Jetson",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:48:03Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Set up environment for Jetson",
+        "Status": "Todo",
+        "Start date": "2026-02-08",
+        "End date": "2026-02-13"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 38,
+      "title": "Acquire and setup rtos for esp32 controllers",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:44:45Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Acquire and setup rtos for esp32 controllers",
+        "Status": "Todo",
+        "Start date": "2026-02-08",
+        "End date": "2026-02-15"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:49:24Z",
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Assemble System for testing on Gazebo",
+        "Status": "Todo",
+        "End date": "2026-02-13",
+        "Start date": "2026-02-14"
       }
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-08T21:34:37.730Z",
+  "generatedAt": "2026-02-08T21:36:39.577Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -36,7 +36,7 @@
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 2,
+      "openIssues": 3,
       "closedIssues": 0
     },
     {
@@ -126,10 +126,25 @@
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest open issue updated: #32 Klann Linkage Leg Design Prototype",
-    "createdAt": "2026-02-08T21:27:09Z"
+    "body": "Latest open issue updated: #33 Chassis Design",
+    "createdAt": "2026-02-08T21:35:20Z"
   },
   "issues": [
+    {
+      "number": 33,
+      "title": "Chassis Design",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/33",
+      "updatedAt": "2026-02-08T21:35:20Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
     {
       "number": 32,
       "title": "Klann Linkage Leg Design Prototype",
@@ -553,6 +568,21 @@
     }
   ],
   "openIssues": [
+    {
+      "number": 33,
+      "title": "Chassis Design",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/33",
+      "updatedAt": "2026-02-08T21:35:20Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
     {
       "number": 32,
       "title": "Klann Linkage Leg Design Prototype",
@@ -1691,22 +1721,46 @@
       "fields": {
         "Title": "Klann Linkage Leg Design Prototype",
         "Status": "Todo",
-        "End date": "2026-02-16",
+        "End date": "2026-02-15",
         "Start date": "2026-02-11"
       }
     },
     {
       "type": "Issue",
-      "number": 9,
+      "number": 33,
       "title": "Chassis Design",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/9",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/33",
       "state": "OPEN",
-      "updatedAt": "2026-02-08T21:34:24Z",
-      "assignees": [],
+      "updatedAt": "2026-02-08T21:35:20Z",
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Chassis Design",
+        "Status": "Todo",
+        "Start date": "2026-02-11",
+        "End date": "2026-02-15"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 10,
+      "title": "Side Leg Design",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/10",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:36:26Z",
+      "assignees": [
+        "liu3304697516"
+      ],
       "labels": [],
       "milestone": null,
       "fields": {
-        "Title": "Chassis Design",
+        "Title": "Side Leg Design",
         "Status": "Todo"
       }
     }

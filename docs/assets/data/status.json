@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-08T21:36:39.577Z",
+  "generatedAt": "2026-02-08T21:42:04.237Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -36,7 +36,7 @@
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 3,
+      "openIssues": 5,
       "closedIssues": 0
     },
     {
@@ -126,10 +126,38 @@
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest open issue updated: #33 Chassis Design",
-    "createdAt": "2026-02-08T21:35:20Z"
+    "body": "Latest open issue updated: #35 Gazebo Simulation",
+    "createdAt": "2026-02-08T21:40:23Z"
   },
   "issues": [
+    {
+      "number": 35,
+      "title": "Gazebo Simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
+      "updatedAt": "2026-02-08T21:40:23Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 34,
+      "title": "Side leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
+      "updatedAt": "2026-02-08T21:38:38Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
     {
       "number": 33,
       "title": "Chassis Design",
@@ -568,6 +596,34 @@
     }
   ],
   "openIssues": [
+    {
+      "number": 35,
+      "title": "Gazebo Simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
+      "updatedAt": "2026-02-08T21:40:23Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
+    {
+      "number": 34,
+      "title": "Side leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
+      "updatedAt": "2026-02-08T21:38:38Z",
+      "closedAt": null,
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      }
+    },
     {
       "number": 33,
       "title": "Chassis Design",
@@ -1721,7 +1777,7 @@
       "fields": {
         "Title": "Klann Linkage Leg Design Prototype",
         "Status": "Todo",
-        "End date": "2026-02-15",
+        "End date": "2026-02-14",
         "Start date": "2026-02-11"
       }
     },
@@ -1744,23 +1800,65 @@
         "Title": "Chassis Design",
         "Status": "Todo",
         "Start date": "2026-02-11",
-        "End date": "2026-02-15"
+        "End date": "2026-02-14"
       }
     },
     {
       "type": "Issue",
-      "number": 10,
-      "title": "Side Leg Design",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/10",
+      "number": 34,
+      "title": "Side leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
       "state": "OPEN",
-      "updatedAt": "2026-02-08T21:36:26Z",
+      "updatedAt": "2026-02-08T21:38:38Z",
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Side leg Design Prototype",
+        "Status": "Todo",
+        "Start date": "2026-02-11",
+        "End date": "2026-02-14"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 35,
+      "title": "Gazebo Simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:40:23Z",
       "assignees": [
-        "liu3304697516"
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z"
+      },
+      "fields": {
+        "Title": "Gazebo Simulation",
+        "Status": "Todo",
+        "Start date": "2026-02-13",
+        "End date": "2026-02-16"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 11,
+      "title": "Generic schematics for motors and sensors",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/11",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:41:52Z",
+      "assignees": [
+        "dgl7"
       ],
       "labels": [],
       "milestone": null,
       "fields": {
-        "Title": "Side Leg Design",
+        "Title": "Generic schematics for motors and sensors",
         "Status": "Todo"
       }
     }

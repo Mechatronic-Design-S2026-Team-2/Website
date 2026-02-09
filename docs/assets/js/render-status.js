@@ -15,7 +15,7 @@
   const statusField = data.fieldNames?.status ?? "Status";
   const dueField = data.fieldNames?.due ?? "Due date";
 
-  // ----- Current milestone -----
+  // ----- Current milestone (repo milestones) -----
   const m = data.currentMilestone;
   const milestoneBox = document.getElementById("milestoneBox");
   if (milestoneBox) {
@@ -26,24 +26,6 @@
         <div>${m.openIssues} open / ${m.closedIssues} closed</div>
       `
       : `<div>None set.</div>`;
-  }
-
-  // ----- Schedule (repo milestones) -----
-  const schedule = data.schedule ?? [];
-  const schedEl = document.getElementById("scheduleList");
-  if (schedEl) {
-    schedEl.innerHTML =
-      schedule
-        .slice(0, 10)
-        .map(
-          (s) => `
-          <li>
-            <a href="${s.url}" target="_blank" rel="noreferrer">${esc(s.title)}</a>
-            <small> — due ${fmtDate(s.dueOn)} (${s.openIssues} open)</small>
-          </li>
-        `
-        )
-        .join("") || "<li>No upcoming milestones with due dates.</li>";
   }
 
   // ----- Latest update -----
@@ -82,10 +64,39 @@
           `;
         })
         .join("") ||
-      "<li>No active items found (check Status field names / values).</li>";
+      "<li>No active items found (check Status values).</li>";
   }
 
-  // ----- Recent “Done” issues (from Project Status) -----
+  // ----- Upcoming project items (ISSUE-BASED schedule) -----
+  const upcoming = data.scheduleItems ?? [];
+  const upcomingEl = document.getElementById("upcomingList");
+  if (upcomingEl) {
+    upcomingEl.innerHTML =
+      upcoming
+        .slice(0, 10)
+        .map((it) => {
+          const who =
+            (it.assignees ?? []).length ? (it.assignees ?? []).join(", ") : "unassigned";
+          const status = it.status ?? "—";
+          const due = it.due ?? it.milestone?.dueOn ?? null;
+          const ms = it.milestone?.title ?? null;
+          const label = it.number ? `#${it.number}` : "Draft";
+
+          return `
+            <li>
+              <a href="${it.url}" target="_blank" rel="noreferrer">${esc(label)} ${esc(it.title)}</a>
+              <small>
+                — ${esc(status)} • ${esc(who)}
+                ${ms ? " • ms: " + esc(ms) : ""}
+                ${due ? " • due " + fmtDate(due) : ""}
+              </small>
+            </li>
+          `;
+        })
+        .join("") || "<li>No upcoming project items found.</li>";
+  }
+
+  // ----- Recently “Done” issues (from Project Status) -----
   const done = data.doneItemsRecent ?? [];
   const doneEl = document.getElementById("doneIssueList");
   if (doneEl) {
@@ -103,6 +114,6 @@
             </li>
           `;
         })
-        .join("") || "<li>No Done items found (check Status values).</li>";
+        .join("") || "<li>No Done items found.</li>";
   }
 })();

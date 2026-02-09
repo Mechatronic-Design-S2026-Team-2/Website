@@ -1,8 +1,10 @@
+<link rel="stylesheet" href="{{ '/assets/css/pm-widget.css' | relative_url }}">
+
 <div class="pm-card">
   <div class="pm-head">
-    <h3>Issues log</h3>
+    <h3>Issues log (design changes)</h3>
     <div class="pm-sub">
-      Recent issues marked <strong>Done</strong> in the GitHub Project (status column), which we use as our design-changes log.
+      Recent issues marked <strong>Done</strong> in the GitHub Project (status column).
     </div>
   </div>
 
@@ -12,7 +14,7 @@
   %}
 
   <div class="pm-block">
-    <h4 class="pm-h4">Recently marked Done (max 25)</h4>
+    <h4 class="pm-h4">Recently marked Done</h4>
     <ul id="pmDoneItems" class="pm-list">
       <li class="pm-loading">Loading…</li>
     </ul>

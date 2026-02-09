@@ -1,78 +1,91 @@
+/* Project Management page widget styles */
+
 .pm-widget {
-  margin-top: 12px;
+  display: grid;
+  gap: 18px;
 }
 
 .pm-card {
   border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 16px;
-  padding: 14px;
+  border-radius: 18px;
+  padding: 18px;
   background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  margin: 16px 0;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.08);
 }
 
 .pm-head h3 {
-  margin: 0 0 6px;
+  margin: 0 0 8px;
 }
 
 .pm-sub {
-  opacity: 0.75;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
+  opacity: 0.78;
+  margin-top: -2px;
+  line-height: 1.4;
 }
 
-.pm-section {
-  margin-top: 16px;
+.pm-block {
+  margin-top: 14px;
 }
 
 .pm-h4 {
-  margin: 0 0 10px;
-}
-
-.pm-two {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-@media (max-width: 900px) {
-  .pm-two {
-    grid-template-columns: 1fr;
-  }
+  margin: 18px 0 8px;
+  font-weight: 800;
 }
 
 .pm-list {
-  list-style: none;
-  padding-left: 0;
   margin: 0;
+  padding-left: 18px;
 }
 
 .pm-list li {
-  padding: 10px 10px;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 12px;
-  margin-bottom: 10px;
-  background: rgba(0,0,0,0.015);
+  margin: 6px 0;
 }
 
-.pm-meta {
-  margin-top: 6px;
-  font-size: 0.92rem;
+.pm-list small {
   opacity: 0.75;
 }
 
-.pm-muted {
-  opacity: 0.75;
+.pm-loading {
+  opacity: 0.7;
+  font-style: italic;
 }
 
-.pm-pill {
-  display: inline-block;
-  padding: 2px 8px;
+.pm-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 8px;
+}
+
+.pm-summary > div {
+  padding: 8px 10px;
   border-radius: 999px;
   border: 1px solid rgba(0,0,0,0.12);
-  background: rgba(0,0,0,0.03);
-  font-size: 0.85rem;
-  margin-right: 6px;
+  background: rgba(0,0,0,0.02);
+  font-size: 0.92rem;
+}
+
+/* Grouped upcoming items (milestone -> table) */
+
+.pm-group {
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.02);
+}
+
+.pm-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.pm-group-sub {
+  opacity: 0.75;
+  font-size: 0.92rem;
 }
 
 .pm-table-wrap {
@@ -82,45 +95,52 @@
 .pm-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 720px;
 }
 
-.pm-th, .pm-td {
-  text-align: left;
-  padding: 10px 10px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+.pm-table th,
+.pm-table td {
+  padding: 10px 8px;
+  border-top: 1px solid rgba(0,0,0,0.10);
   vertical-align: top;
 }
 
-.pm-tight {
-  width: 1%;
-  white-space: nowrap;
-}
-
-.pm-loading {
-  opacity: 0.7;
-  padding: 8px 0;
-}
-
-/* --- Edit links row --- */
-.pm-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 8px 0 12px;
-}
-
-.pm-linkbtn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 7px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.14);
-  background: rgba(0,0,0,0.02);
+.pm-table thead th {
+  border-top: none;
+  opacity: 0.85;
   font-size: 0.92rem;
 }
 
-.pm-linkbtn:hover {
-  background: rgba(0,0,0,0.05);
+.pm-title a {
+  text-decoration: none;
 }
 
+.pm-title a:hover {
+  text-decoration: underline;
+}
+
+.pm-meta {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  opacity: 0.85;
+  font-size: 0.90rem;
+}
+
+.pm-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+}
+
+.pm-who {
+  opacity: 0.85;
+}
+
+.pm-due {
+  white-space: nowrap;
+  opacity: 0.9;
+}

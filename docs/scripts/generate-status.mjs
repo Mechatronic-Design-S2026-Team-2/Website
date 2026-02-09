@@ -12,14 +12,19 @@ const PROJECT_NUMBER = Number(process.env.PROJECT_NUMBER);
 
 const STATUS_FIELD = process.env.STATUS_FIELD || "Status";
 const DUE_FIELD = process.env.DUE_FIELD || "Due date";
-const TARGET_DEMO_FIELD = process.env.TARGET_DEMO_FIELD || "Target Demo";
 
+// Status values considered “Now” (edit to match your project)
 const NOW_STATUSES = new Set(["In Progress", "Doing", "Ready", "Blocked"]);
+
+// Status values considered “Done”
+const DONE_STATUSES = new Set(["Done", "Completed", "Complete"]);
 
 const client = new GraphQLClient("https://api.github.com/graphql", {
   headers: { Authorization: `Bearer ${GH_TOKEN}` }
 });
 
+// Try a query that includes Project status updates; if your project doesn’t use them,
+// we fall back gracefully to “latest updated issue” as the update signal.
 const QUERY_WITH_UPDATES = gql`
 query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
   organization(login: $org) {
@@ -38,13 +43,13 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
           content {
             __typename
             ... on Issue {
-              number title url state updatedAt
+              number title url state updatedAt closedAt
               assignees(first: 10) { nodes { login } }
-              milestone { title dueOn }
+              milestone { title dueOn url }
               labels(first: 20) { nodes { name } }
             }
             ... on PullRequest {
-              number title url state updatedAt
+              number title url state updatedAt mergedAt
               assignees(first: 10) { nodes { login } }
               labels(first: 20) { nodes { name } }
             }
@@ -95,29 +100,13 @@ query Dashboard($org: String!, $robotRepo: String!, $projectNumber: Int!) {
       }
     }
 
-    openIssues: issues(first: 40, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+    issues(first: 50, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+      totalCount
       nodes {
         number title url updatedAt
-        assignees(first: 10) { nodes { login } }
         labels(first: 20) { nodes { name } }
-        milestone { title dueOn }
-      }
-    }
-
-    closedIssues: issues(first: 40, states: [CLOSED], orderBy: {field: UPDATED_AT, direction: DESC}) {
-      nodes {
-        number title url updatedAt closedAt
         assignees(first: 10) { nodes { login } }
-        labels(first: 20) { nodes { name } }
-        milestone { title dueOn }
-      }
-    }
-
-    mergedPRs: pullRequests(first: 30, states: [MERGED], orderBy: {field: UPDATED_AT, direction: DESC}) {
-      nodes {
-        number title url updatedAt mergedAt
-        assignees(first: 10) { nodes { login } }
-        labels(first: 20) { nodes { name } }
+        milestone { title dueOn url }
       }
     }
   }
@@ -137,13 +126,13 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
           content {
             __typename
             ... on Issue {
-              number title url state updatedAt
+              number title url state updatedAt closedAt
               assignees(first: 10) { nodes { login } }
-              milestone { title dueOn }
+              milestone { title dueOn url }
               labels(first: 20) { nodes { name } }
             }
             ... on PullRequest {
-              number title url state updatedAt
+              number title url state updatedAt mergedAt
               assignees(first: 10) { nodes { login } }
               labels(first: 20) { nodes { name } }
             }
@@ -194,34 +183,24 @@ query DashboardNoUpdates($org: String!, $robotRepo: String!, $projectNumber: Int
       }
     }
 
-    openIssues: issues(first: 40, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+    issues(first: 50, states: [OPEN], orderBy: {field: UPDATED_AT, direction: DESC}) {
+      totalCount
       nodes {
         number title url updatedAt
-        assignees(first: 10) { nodes { login } }
         labels(first: 20) { nodes { name } }
-        milestone { title dueOn }
-      }
-    }
-
-    closedIssues: issues(first: 40, states: [CLOSED], orderBy: {field: UPDATED_AT, direction: DESC}) {
-      nodes {
-        number title url updatedAt closedAt
         assignees(first: 10) { nodes { login } }
-        labels(first: 20) { nodes { name } }
-        milestone { title dueOn }
-      }
-    }
-
-    mergedPRs: pullRequests(first: 30, states: [MERGED], orderBy: {field: UPDATED_AT, direction: DESC}) {
-      nodes {
-        number title url updatedAt mergedAt
-        assignees(first: 10) { nodes { login } }
-        labels(first: 20) { nodes { name } }
+        milestone { title dueOn url }
       }
     }
   }
 }
 `;
+
+function parseDate(iso) {
+  if (!iso) return null;
+  const d = new Date(iso);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
 
 function normalizeFieldValues(fieldValues) {
   const out = {};
@@ -238,29 +217,13 @@ function normalizeFieldValues(fieldValues) {
   return out;
 }
 
-function mapRepoIssue(i) {
-  return {
-    number: i.number,
-    title: i.title,
-    url: i.url,
-    updatedAt: i.updatedAt,
-    closedAt: i.closedAt ?? null,
-    labels: (i.labels?.nodes ?? []).map(l => l.name),
-    assignees: (i.assignees?.nodes ?? []).map(a => a.login),
-    milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn } : null
-  };
-}
-
-function mapPR(p) {
-  return {
-    number: p.number,
-    title: p.title,
-    url: p.url,
-    updatedAt: p.updatedAt,
-    mergedAt: p.mergedAt ?? null,
-    labels: (p.labels?.nodes ?? []).map(l => l.name),
-    assignees: (p.assignees?.nodes ?? []).map(a => a.login)
-  };
+function isDoneStatus(status) {
+  if (!status) return false;
+  const s = String(status).trim().toLowerCase();
+  for (const v of DONE_STATUSES) {
+    if (s === String(v).trim().toLowerCase()) return true;
+  }
+  return false;
 }
 
 async function run() {
@@ -271,7 +234,7 @@ async function run() {
       robotRepo: ROBOT_REPO,
       projectNumber: PROJECT_NUMBER
     });
-  } catch {
+  } catch (e) {
     data = await client.request(QUERY_NO_UPDATES, {
       org: ORG,
       robotRepo: ROBOT_REPO,
@@ -282,6 +245,7 @@ async function run() {
   const project = data.organization?.projectV2;
   const repo = data.repository;
 
+  // Milestone schedule (repo milestones)
   const milestones = repo?.milestones?.nodes ?? [];
   const schedule = milestones
     .filter(m => m?.dueOn)
@@ -296,10 +260,18 @@ async function run() {
 
   const currentMilestone = schedule.length ? schedule[0] : null;
 
-  const openIssues = (repo?.openIssues?.nodes ?? []).map(mapRepoIssue);
-  const closedIssues = (repo?.closedIssues?.nodes ?? []).map(mapRepoIssue);
-  const mergedPRs = (repo?.mergedPRs?.nodes ?? []).map(mapPR);
+  // Recent open issues (repo issues)
+  const issues = (repo?.issues?.nodes ?? []).map(i => ({
+    number: i.number,
+    title: i.title,
+    url: i.url,
+    updatedAt: i.updatedAt,
+    labels: (i.labels?.nodes ?? []).map(l => l.name),
+    assignees: (i.assignees?.nodes ?? []).map(a => a.login),
+    milestone: i.milestone ? { title: i.milestone.title, dueOn: i.milestone.dueOn, url: i.milestone.url } : null
+  }));
 
+  // Project items (project board)
   const projectItems = (project?.items?.nodes ?? [])
     .map(n => {
       const c = n.content;
@@ -312,10 +284,10 @@ async function run() {
           title: c.title,
           url: project?.url,
           updatedAt: c.updatedAt,
+          fields,
           assignees: [],
           labels: [],
-          milestone: null,
-          fields
+          milestone: null
         };
       }
 
@@ -326,23 +298,79 @@ async function run() {
         url: c.url,
         state: c.state,
         updatedAt: c.updatedAt,
+        closedAt: c.closedAt ?? null,
+        mergedAt: c.mergedAt ?? null,
         assignees: (c.assignees?.nodes ?? []).map(a => a.login),
         labels: (c.labels?.nodes ?? []).map(l => l.name),
-        milestone: c.milestone ? { title: c.milestone.title, dueOn: c.milestone.dueOn } : null,
+        milestone: c.milestone ? { title: c.milestone.title, dueOn: c.milestone.dueOn, url: c.milestone.url } : null,
         fields
       };
     })
     .filter(Boolean);
 
+  // “Now” view
   const now = projectItems
     .filter(it => {
       const status = it.fields?.[STATUS_FIELD];
       return status ? NOW_STATUSES.has(status) : false;
     })
     .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
-    .slice(0, 25);
+    .slice(0, 15);
 
+  // Upcoming project items: Issues/Drafts with Due date or Milestone
+  // (Filters out items that are BOTH past-due AND marked Done at generation time; UI also filters again)
+  const nowTs = Date.now();
+
+  function effectiveDueISO(it) {
+    return it.fields?.[DUE_FIELD] || it.milestone?.dueOn || null;
+  }
+
+  const scheduleItems = projectItems
+    .filter(it => it.type === "Issue" || it.type === "DraftIssue")
+    .map(it => ({
+      type: it.type,
+      number: it.number ?? null,
+      title: it.title,
+      url: it.url,
+      updatedAt: it.updatedAt,
+      status: it.fields?.[STATUS_FIELD] ?? null,
+      due: effectiveDueISO(it),
+      assignees: it.assignees ?? [],
+      milestone: it.milestone ?? null
+    }))
+    .filter(it => it.due || it.milestone?.title) // “scheduled” = has due or milestone label
+    .filter(it => {
+      const due = parseDate(it.due);
+      if (!due) return true;
+      const pastDue = due.getTime() < nowTs;
+      return !(pastDue && isDoneStatus(it.status));
+    })
+    .sort((a, b) => {
+      const ad = parseDate(a.due)?.getTime() ?? Number.POSITIVE_INFINITY;
+      const bd = parseDate(b.due)?.getTime() ?? Number.POSITIVE_INFINITY;
+      if (ad !== bd) return ad - bd;
+      return new Date(b.updatedAt) - new Date(a.updatedAt);
+    })
+    .slice(0, 20);
+
+  // Recent items marked Done (from Project Status, not GitHub closed state)
+  const doneItemsRecent = projectItems
+    .filter(it => it.type === "Issue" && isDoneStatus(it.fields?.[STATUS_FIELD]))
+    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+    .slice(0, 20)
+    .map(it => ({
+      number: it.number,
+      title: it.title,
+      url: it.url,
+      updatedAt: it.updatedAt,
+      assignees: it.assignees ?? [],
+      milestone: it.milestone ?? null
+    }));
+
+  // Latest update: prefer Project status update, fallback to latest updated open issue
   const projectUpdateNode = data.organization?.projectV2?.statusUpdates?.nodes?.[0] ?? null;
+  const latestIssue = issues[0] ?? null;
+
   const latestUpdate = projectUpdateNode
     ? {
         source: "project_status_update",
@@ -351,11 +379,11 @@ async function run() {
         targetDate: projectUpdateNode.targetDate,
         createdAt: projectUpdateNode.createdAt
       }
-    : (openIssues[0]
+    : (latestIssue
         ? {
             source: "latest_issue",
-            body: `Latest open issue updated: #${openIssues[0].number} ${openIssues[0].title}`,
-            createdAt: openIssues[0].updatedAt
+            body: `Latest issue updated: #${latestIssue.number} ${latestIssue.title}`,
+            createdAt: latestIssue.updatedAt
           }
         : null);
 
@@ -368,23 +396,27 @@ async function run() {
     currentMilestone,
     schedule,
 
+    // For “Now” / dashboard
+    now,
+
+    // Schedule that includes issues (not just milestones)
+    scheduleItems,
+
+    // Recent “Done” items (from Project Status)
+    doneItemsRecent,
+
     latestUpdate,
 
-    // Keep legacy name (if older widgets read data.issues)
-    issues: openIssues,
+    // Recent open issues (repo)
+    issues,
+    openIssues: repo?.issues?.totalCount ?? issues.length,
 
-    // New, explicit buckets:
-    openIssues,
-    closedIssues,
-    mergedPRs,
-
-    now,
+    // Full project items (optional)
     projectItems,
 
     fieldNames: {
       status: STATUS_FIELD,
-      due: DUE_FIELD,
-      targetDemo: TARGET_DEMO_FIELD
+      due: DUE_FIELD
     }
   };
 
@@ -398,7 +430,6 @@ async function run() {
 
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(out, null, 2));
-
   console.log(`Wrote ${outPath}`);
 }
 

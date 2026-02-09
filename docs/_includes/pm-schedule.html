@@ -2,7 +2,9 @@
   <div class="pm-head">
     <h3>Schedule</h3>
     <div class="pm-sub">
-      From GitHub Project fields (<code>Target Demo</code>, <code>Due date</code>, <code>Status</code>) + repo milestones.
+      Upcoming project items are pulled from the GitHub Project board and grouped by <strong>Milestone</strong>.
+      Due dates come from the Project <code>Due date</code> field when present, otherwise from the attached milestone due date.
+      Items that are <em>both</em> past-due <em>and</em> marked <strong>Done</strong> are hidden.
     </div>
   </div>
 
@@ -11,7 +13,19 @@
      milestones_url="https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestones"
   %}
 
-  <div id="pmSchedule" class="pm-block">
-    <div class="pm-loading">Loading schedule…</div>
+  <div class="pm-summary" id="pmSummaryCounts">
+    <div class="pm-loading">Loading…</div>
+  </div>
+
+  <div class="pm-block">
+    <h4 class="pm-h4">Upcoming project items (max 20)</h4>
+    <div id="pmUpcoming" class="pm-block-inner">
+      <div class="pm-loading">Loading…</div>
+    </div>
+
+    <h4 class="pm-h4">Milestones</h4>
+    <ul id="pmMilestones" class="pm-list">
+      <li class="pm-loading">Loading…</li>
+    </ul>
   </div>
 </div>

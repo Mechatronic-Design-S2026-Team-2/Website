@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="{{ '/assets/css/pm-widget.css' | relative_url }}">
+
 <div class="pm-card">
   <div class="pm-head">
     <h3>Schedule</h3>
     <div class="pm-sub">
-      Upcoming project items are pulled from the GitHub Project board and grouped by <strong>Milestone</strong>.
-      Due dates come from the Project <code>Due date</code> field when present, otherwise from the attached milestone due date.
-      Items that are <em>both</em> past-due <em>and</em> marked <strong>Done</strong> are hidden.
+      Upcoming items come from the GitHub Project board (issues + drafts), grouped by milestone.
+      Items that are past-due and marked <strong>Done</strong> are hidden.
     </div>
   </div>
 
@@ -18,7 +19,7 @@
   </div>
 
   <div class="pm-block">
-    <h4 class="pm-h4">Upcoming project items (max 20)</h4>
+    <h4 class="pm-h4">Upcoming project items</h4>
     <div id="pmUpcoming" class="pm-block-inner">
       <div class="pm-loading">Loading…</div>
     </div>

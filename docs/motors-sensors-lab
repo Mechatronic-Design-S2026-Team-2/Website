@@ -18,16 +18,14 @@ title: "Motors/Sensors Lab"
 <div class="t2-card">
   <h2>KiCad schematic</h2>
   <div class="t2-sub">
-    Interactive viewer (pan/zoom). Replace the GitHub file URL in the include with your actual <code>.kicad_sch</code> (or <code>.kicad_pcb</code>) link.
+    Interactive viewer. KiCad file is in this repo under <code>docs/assets/designs/sensor_motor_lab/</code>.
   </div>
 
   {% include kicad-embed.html
-     github_file="https://github.com/Mechatronic-Design-S2026-Team-2/Design/blob/main/path/to/your_schematic.kicad_sch"
+     repo="Mechatronic-Design-S2026-Team-2/Website"
+     ref="main"
+     path="docs/assets/designs/sensor_motor_lab/PUT_YOUR_FILE_HERE.kicad_sch"
   %}
-
-  <p class="lab-note">
-    Tip: the embed expects a GitHub <code>blob</code> URL to the KiCad file.
-  </p>
 </div>
 
 <div class="t2-card">
@@ -35,16 +33,12 @@ title: "Motors/Sensors Lab"
   <div class="t2-sub">Commands / logs (console-style) for flashing + testing.</div>
 
   {% include repo-button.html
-     url="https://github.com/Mechatronic-Design-S2026-Team-2/Design"
-     label="Open repository"
+     url="https://github.com/Mechatronic-Design-S2026-Team-2/Website/tree/main/docs/assets/designs/sensor_motor_lab"
+     label="Open lab folder"
   %}
 
   <pre class="console"><code># Example: ESP32 serial monitor (adjust port)
 idf.py -p /dev/ttyUSB0 flash monitor
-
-# Example: Arduino CLI compile/upload (adjust FQBN + port)
-arduino-cli compile --fqbn esp32:esp32:esp32dev .
-arduino-cli upload  --fqbn esp32:esp32:esp32dev -p /dev/ttyUSB0 .
 
 # Example: sanity checks
 # - Verify IMU responds on I2C

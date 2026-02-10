@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-10T16:06:13.066Z",
+  "generatedAt": "2026-02-10T22:43:27.316Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -36,8 +36,8 @@
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 9,
-      "closedIssues": 0
+      "openIssues": 8,
+      "closedIssues": 1
     },
     {
       "title": "System Demo 2",
@@ -201,54 +201,6 @@
     },
     {
       "type": "Issue",
-      "number": 8,
-      "title": "Media section placeholder + gallery scaffolding",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/8",
-      "state": "CLOSED",
-      "updatedAt": "2026-02-08T23:18:55Z",
-      "closedAt": "2026-02-08T23:18:55Z",
-      "mergedAt": null,
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
-      },
-      "fields": {
-        "Title": "Media section placeholder + gallery scaffolding",
-        "Status": "In Progress"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 37,
-      "title": "Set up environment for Jetson",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
-      "state": "OPEN",
-      "updatedAt": "2026-02-08T21:48:03Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      },
-      "fields": {
-        "Title": "Set up environment for Jetson",
-        "Status": "In Progress",
-        "Start date": "2026-02-08",
-        "Due date": "2026-02-13"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 34,
       "title": "Side leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
@@ -270,6 +222,31 @@
         "Status": "In Progress",
         "Start date": "2026-02-11",
         "Due date": "2026-02-14"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 38,
+      "title": "Acquire and setup rtos for esp32 controllers",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:44:45Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      },
+      "fields": {
+        "Title": "Acquire and setup rtos for esp32 controllers",
+        "Status": "In Progress",
+        "Start date": "2026-02-08",
+        "Due date": "2026-02-15"
       }
     },
     {
@@ -296,68 +273,9 @@
         "Due date": "2026-02-14",
         "Start date": "2026-02-11"
       }
-    },
-    {
-      "type": "Issue",
-      "number": 1,
-      "title": "Team Website 0 (scaffold + required pages)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/1",
-      "state": "OPEN",
-      "updatedAt": "2026-01-29T23:18:42Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
-      },
-      "fields": {
-        "Title": "Team Website 0 (scaffold + required pages)",
-        "Due date": "2026-02-08",
-        "Start date": "2026-02-05",
-        "Status": "In Progress"
-      }
     }
   ],
   "scheduleItems": [
-    {
-      "type": "Issue",
-      "number": 8,
-      "title": "Media section placeholder + gallery scaffolding",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/8",
-      "updatedAt": "2026-02-08T23:18:55Z",
-      "status": "In Progress",
-      "due": "2026-02-06T00:00:00Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 1,
-      "title": "Team Website 0 (scaffold + required pages)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/1",
-      "updatedAt": "2026-01-29T23:18:42Z",
-      "status": "In Progress",
-      "due": "2026-02-08",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
-      }
-    },
     {
       "type": "Issue",
       "number": 54,
@@ -504,14 +422,14 @@
     },
     {
       "type": "Issue",
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-08T21:49:24Z",
-      "status": "Todo",
+      "number": 37,
+      "title": "Set up environment for Jetson",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
+      "updatedAt": "2026-02-10T18:13:41Z",
+      "status": "Done",
       "due": "2026-02-13",
       "assignees": [
-        "yechenz-wq"
+        "dgl7"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -521,14 +439,14 @@
     },
     {
       "type": "Issue",
-      "number": 37,
-      "title": "Set up environment for Jetson",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
-      "updatedAt": "2026-02-08T21:48:03Z",
-      "status": "In Progress",
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-08T21:49:24Z",
+      "status": "Todo",
       "due": "2026-02-13",
       "assignees": [
-        "dgl7"
+        "yechenz-wq"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -640,9 +558,67 @@
         "dueOn": "2026-02-13T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
       }
+    },
+    {
+      "type": "Issue",
+      "number": 11,
+      "title": "Section — Project description (1–2 paragraphs, crisp)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
+      "updatedAt": "2026-01-29T23:37:23Z",
+      "status": "Todo",
+      "due": "2026-02-13T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 10,
+      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
+      "updatedAt": "2026-01-29T23:37:14Z",
+      "status": "Todo",
+      "due": "2026-02-13T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
     }
   ],
   "doneItemsRecent": [
+    {
+      "number": 1,
+      "title": "Team Website 0 (scaffold + required pages)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/1",
+      "updatedAt": "2026-02-10T22:42:52Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
+      }
+    },
+    {
+      "number": 37,
+      "title": "Set up environment for Jetson",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
+      "updatedAt": "2026-02-10T18:13:41Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
     {
       "number": 4,
       "title": "Requirements list draft (explicit + implied + coolness) ",
@@ -690,6 +666,20 @@
       "title": "Create site IA (information architecture) + navigation map",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/3",
       "updatedAt": "2026-02-08T23:19:08Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Team Website 0",
+        "dueOn": "2026-02-06T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
+      }
+    },
+    {
+      "number": 8,
+      "title": "Media section placeholder + gallery scaffolding",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/8",
+      "updatedAt": "2026-02-08T23:18:55Z",
       "assignees": [
         "dgl7"
       ],
@@ -1065,21 +1055,6 @@
       }
     },
     {
-      "number": 37,
-      "title": "Set up environment for Jetson",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
-      "updatedAt": "2026-02-08T21:48:03Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
       "number": 34,
       "title": "Side leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
@@ -1441,18 +1416,31 @@
         "dueOn": "2026-02-13T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
       }
+    },
+    {
+      "number": 9,
+      "title": "Design Proposal PDF (complete + compliant)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
+      "updatedAt": "2026-01-29T23:37:01Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
     }
   ],
-  "openIssues": 52,
+  "openIssues": 51,
   "projectItems": [
     {
       "type": "Issue",
       "number": 1,
       "title": "Team Website 0 (scaffold + required pages)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/1",
-      "state": "OPEN",
-      "updatedAt": "2026-01-29T23:18:42Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-10T22:42:52Z",
+      "closedAt": "2026-02-10T22:42:52Z",
       "mergedAt": null,
       "assignees": [
         "dgl7"
@@ -1467,7 +1455,7 @@
         "Title": "Team Website 0 (scaffold + required pages)",
         "Due date": "2026-02-08",
         "Start date": "2026-02-05",
-        "Status": "In Progress"
+        "Status": "Done"
       }
     },
     {
@@ -2241,7 +2229,7 @@
       },
       "fields": {
         "Title": "Media section placeholder + gallery scaffolding",
-        "Status": "In Progress"
+        "Status": "Done"
       }
     },
     {
@@ -2374,9 +2362,9 @@
       "number": 37,
       "title": "Set up environment for Jetson",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
-      "state": "OPEN",
-      "updatedAt": "2026-02-08T21:48:03Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-10T18:13:41Z",
+      "closedAt": "2026-02-10T18:13:41Z",
       "mergedAt": null,
       "assignees": [
         "dgl7"
@@ -2389,7 +2377,7 @@
       },
       "fields": {
         "Title": "Set up environment for Jetson",
-        "Status": "In Progress",
+        "Status": "Done",
         "Start date": "2026-02-08",
         "Due date": "2026-02-13"
       }
@@ -2414,7 +2402,7 @@
       },
       "fields": {
         "Title": "Acquire and setup rtos for esp32 controllers",
-        "Status": "Todo",
+        "Status": "In Progress",
         "Start date": "2026-02-08",
         "Due date": "2026-02-15"
       }

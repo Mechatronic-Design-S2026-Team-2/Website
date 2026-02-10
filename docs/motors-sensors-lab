@@ -24,7 +24,7 @@ title: "Motors/Sensors Lab"
   {% include kicad-embed.html
      repo="Mechatronic-Design-S2026-Team-2/Website"
      ref="main"
-     path="docs/assets/designs/sensor_motor_lab/PUT_YOUR_FILE_HERE.kicad_sch"
+     path="docs/assets/designs/sensor_motor_lab/18758sensor.kicad_sch"
   %}
 </div>
 

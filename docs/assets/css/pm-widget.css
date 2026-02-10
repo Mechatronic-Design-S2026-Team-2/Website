@@ -144,3 +144,44 @@
   white-space: nowrap;
   opacity: 0.9;
 }
+
+/* ===== PM tables: force full-width, no shrink-to-fit ===== */
+
+.pm-table-wrap {
+  width: 100%;
+  display: block;
+}
+
+.pm-table {
+  width: 100%;
+  max-width: 100%;
+  display: table;          /* avoid inline-table shrink behavior */
+  table-layout: fixed;     /* makes the table consume full width predictably */
+  border-collapse: collapse;
+}
+
+/* Give the title column all remaining space */
+.pm-table th:first-child,
+.pm-table td.pm-title {
+  width: 100%;
+}
+
+/* Make the due column a consistent fixed width */
+.pm-table th:last-child,
+.pm-table td.pm-due {
+  width: 9.5rem;           /* adjust as you like */
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Allow long titles to wrap instead of forcing horizontal shrink */
+.pm-table td.pm-title {
+  overflow-wrap: anywhere; /* wraps long words/URLs nicely */
+  word-break: break-word;
+}
+
+/* Keep the link from acting like a block with weird sizing */
+.pm-table td.pm-title a {
+  display: inline;
+}
+

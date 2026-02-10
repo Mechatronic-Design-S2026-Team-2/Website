@@ -1,1 +1,39 @@
+{% comment %}
+Usage #1 (direct):
+  {% include kicad-embed.html github_file="https://github.com/<org>/<repo>/blob/<ref>/docs/assets/designs/sensor_motor_lab/18578sensor.kicad_sch" %}
+
+Usage #2 (same repo):
+  {% include kicad-embed.html
+     repo="Mechatronic-Design-S2026-Team-2/Website"
+     ref="main"
+     path="docs/assets/designs/sensor_motor_lab/18578sensor.kicad_sch"
+  %}
+{% endcomment %}
+
+{% assign repo = include.repo | default: site.github.repository_nwo %}
+{% assign ref  = include.ref  | default: "main" %}
+{% assign p    = include.path %}
+
+{% if include.github_file %}
+  {% assign github_url = include.github_file %}
+{% else %}
+  {% assign github_url = "https://github.com/" | append: repo | append: "/blob/" | append: ref | append: "/" | append: p %}
+{% endif %}
+
+{% assign gh = github_url | url_encode %}
+
+<div class="kicad-embed">
+  <iframe
+    class="kicad-frame"
+    loading="lazy"
+    src="https://kicanvas.org/?github={{ gh }}"
+    title="KiCad viewer"
+    referrerpolicy="no-referrer"
+    allowfullscreen>
+  </iframe>
+
+  <div class="kicad-fallback">
+    <a href="{{ github_url }}" target="_blank" rel="noreferrer">Open the KiCad file on GitHub</a>
+  </div>
+</div>
 

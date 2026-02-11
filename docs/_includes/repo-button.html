@@ -1,6 +1,19 @@
-<div class="t2-links">
+{%- assign href = include.href | default: include.url | default: "" -%}
+{%- assign label = include.label | default: "Repository" -%}
+
+{%- if href == "" -%}
+  <span class="t2-linkbtn" style="opacity:.65;">Missing repo URL</span>
+{%- else -%}
+  {%- if href contains '://' -%}
+    {%- assign final = href -%}
+  {%- else -%}
+    {%- assign final = href | relative_url -%}
+  {%- endif -%}
+
   <a class="t2-linkbtn"
-     href="{{ https://github.com/Mechatronic-Design-S2026-Team-2/Sensors-Motors-Lab }}"
+     href="{{ final }}"
      target="_blank"
-     rel="noreferrer">{{ include.label | default: "Repository" }}</a>
-</div>
+     rel="noreferrer">
+    {{ label }}
+  </a>
+{%- endif -%}

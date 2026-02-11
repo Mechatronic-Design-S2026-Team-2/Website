@@ -1,0 +1,67 @@
+{%- comment -%}
+Usage:
+{% include pdf-card.html
+   title="Design Proposal"
+   pdf="/assets/docs/design_proposal.pdf"
+   subtitle="16:9 slides • updated automatically"
+   height="70vh" %}
+
+- pdf: can be absolute (/assets/...) or relative path.
+- height: optional; defaults to 70vh.
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/pdf-card.css' | relative_url }}">
+
+{%- assign title = include.title | default: "Presentation" -%}
+{%- assign subtitle = include.subtitle | default: "" -%}
+{%- assign pdf = include.pdf | default: "" -%}
+{%- assign height = include.height | default: "70vh" -%}
+
+{%- if pdf == "" -%}
+  <div class="t2-card">
+    <h2>{{ title }}</h2>
+    <div class="t2-sub">Missing <code>pdf=</code> parameter.</div>
+  </div>
+{%- else -%}
+  {%- if pdf contains '://' -%}
+    {%- assign pdf_url = pdf -%}
+  {%- else -%}
+    {%- assign pdf_url = pdf | relative_url -%}
+  {%- endif -%}
+
+  <div class="t2-card pdf-card">
+    <div class="pdf-card-head">
+      <div>
+        <h2 class="pdf-card-title">{{ title }}</h2>
+        {%- if subtitle != "" -%}
+          <div class="t2-sub">{{ subtitle }}</div>
+        {%- endif -%}
+      </div>
+
+      <div class="pdf-card-actions">
+        <a class="t2-linkbtn" href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open PDF</a>
+        <a class="t2-linkbtn" href="{{ pdf_url }}#page=1" target="_blank" rel="noreferrer">Start</a>
+      </div>
+    </div>
+
+    <!-- 16:9 responsive embed area (fills width, preserves aspect) -->
+    <div class="pdf-embed" style="--pdf-height: {{ height }};">
+      <iframe
+        class="pdf-iframe"
+        src="{{ pdf_url }}#view=FitH"
+        title="{{ title }}"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+      ></iframe>
+    </div>
+
+    <noscript>
+      <p><a href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open {{ title }} (PDF)</a></p>
+    </noscript>
+
+    <div class="pdf-fallback">
+      If the PDF doesn’t render in your browser, use <a href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open PDF</a>.
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/model.css' | relative_url }}">
+
+{%- assign title = include.title | default: "CAD Model" -%}
+{%- assign file = include.file | default: "/assets/models/model.glb" -%}
+{%- assign poster = include.poster | default: "" -%}
+
+{%- assign file_rel = file | relative_url -%}
+{%- assign poster_rel = poster | relative_url -%}
+
+<div class="t2-card">
+  <div class="pm-head">
+    <h2>{{ title }}</h2>
+    <div class="t2-sub">
+      Drag to rotate • Scroll to zoom • Right-drag to pan
+    </div>
+
+    {%- if include.repo_url -%}
+      <div class="t2-links">
+        <a class="t2-linkbtn" href="{{ include.repo_url }}" target="_blank" rel="noreferrer">Open repo</a>
+      </div>
+    {%- endif -%}
+  </div>
+
+  <!-- model-viewer loader (once per page is fine; harmless if duplicated) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <div class="t2-model-wrap">
+    <model-viewer
+      class="t2-model"
+      src="{{ file_rel }}"
+      {%- if poster and poster != "" -%} poster="{{ poster_rel }}" {%- endif -%}
+      alt="{{ title | escape }}"
+      camera-controls
+      interaction-prompt="auto"
+      shadow-intensity="0.8"
+      exposure="1.0"
+      environment-image="neutral"
+      auto-rotate
+      auto-rotate-delay="1500"
+      loading="lazy"
+      ar
+      ar-modes="webxr scene-viewer quick-look">
+    </model-viewer>
+  </div>
+
+  <div class="t2-model-fallback">
+    <a class="t2-linkbtn" href="{{ file_rel }}" target="_blank" rel="noreferrer">Download .GLB</a>
+  </div>
+</div>

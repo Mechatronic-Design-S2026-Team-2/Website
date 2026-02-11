@@ -28,9 +28,8 @@ title: "Motors/Sensors Lab"
   <h2>Mainfile</h2>
 
   {% include repo-button.html
-     url="https://github.com/Mechatronic-Design-S2026-Team-2/Sensors-Motors-Lab"
-     label="Open lab folder"
-  %}
+   label="Sensors/Motors Lab repo"
+   href="https://github.com/Mechatronic-Design-S2026-Team-2/Sensors-Motors-Lab" %}
 
   {% include lab-code.html %}
 

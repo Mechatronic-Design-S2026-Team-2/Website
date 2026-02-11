@@ -10,16 +10,12 @@ title: "Motors/Sensors Lab"
 
 <div class="t2-card">
   <h2>Lab highlights</h2>
-  <div class="t2-sub">Photos + a quick clip from our Motors/Sensors Lab work (placeholders for now).</div>
 
   {% include lab-carousel.html %}
 </div>
 
 <div class="t2-card">
   <h2>KiCad schematic</h2>
-  <div class="t2-sub">
-    Interactive viewer. KiCad file is in this repo under <code>docs/assets/designs/sensor_motor_lab/</code>.
-  </div>
 
   {% include kicad-embed.html
      repo="Mechatronic-Design-S2026-Team-2/Website"
@@ -29,22 +25,15 @@ title: "Motors/Sensors Lab"
 </div>
 
 <div class="t2-card">
-  <h2>Bring-up notes</h2>
-  <div class="t2-sub">Commands / logs (console-style) for flashing + testing.</div>
+  <h2>Mainfile</h2>
 
   {% include repo-button.html
-     url="https://github.com/Mechatronic-Design-S2026-Team-2/Website/tree/main/docs/assets/designs/sensor_motor_lab"
+     url="https://github.com/Mechatronic-Design-S2026-Team-2/Sensors-Motors-Lab"
      label="Open lab folder"
   %}
 
-  <pre class="console"><code># Example: ESP32 serial monitor (adjust port)
-idf.py -p /dev/ttyUSB0 flash monitor
+  <{% include lab-code.html %}
 
-# Example: sanity checks
-# - Verify IMU responds on I2C
-# - Verify ultrasonic reads stable distances
-# - Verify encoder ticks increment in correct direction
-  </code></pre>
 </div>
 
 <div class="t2-card" id="ilrs">

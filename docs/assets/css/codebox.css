@@ -1,0 +1,50 @@
+.t2-accordion {
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  background: rgba(0,0,0,0.02);
+  overflow: hidden;
+}
+
+.t2-acc-summary {
+  cursor: pointer;
+  padding: 12px 14px;
+  font-weight: 800;
+  list-style: none;
+}
+
+.t2-accordion summary::-webkit-details-marker { display: none; }
+
+.t2-acc-body {
+  padding: 12px 14px 14px;
+}
+
+/* --- Console look for Jekyll/Rouge highlighted blocks --- */
+/* Jekyll/Rouge emits <div class="highlight"><pre class="highlight"><code>... */
+.highlight {
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: #0b1020;              /* dark console */
+  color: #e5e7eb;                   /* light text */
+  padding: 14px;
+  overflow-x: auto;
+}
+
+.highlight pre {
+  margin: 0;
+  background: transparent !important;
+}
+
+.highlight code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  white-space: pre;
+}
+
+/* Minimal token coloring (Rouge classes). Not exhaustive, but helps a lot. */
+.highlight .c, .highlight .cm, .highlight .c1 { color: #94a3b8; }  /* comments */
+.highlight .k, .highlight .kd, .highlight .kt { color: #EF3A47; }  /* keywords/types */
+.highlight .s, .highlight .s1, .highlight .s2 { color: #fca5a5; }  /* strings */
+.highlight .mi, .highlight .mf { color: #fda4af; }                 /* numbers */
+.highlight .nf { color: #fecaca; }                                 /* function names */
+.highlight .nb { color: #e5e7eb; }                                 /* builtins */

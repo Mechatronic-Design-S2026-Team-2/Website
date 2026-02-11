@@ -14,6 +14,7 @@ title: "System Design"
   title="2-DOF Side Leg Design"
   alt="2-DOF Side Leg Design"
   src="/assets/designs/articulated-leg.glb"
-  caption="Rotate/zoom to inspect." %}
+  caption="Rotate/zoom to inspect." 
+  force_gray="true" %}
 
 

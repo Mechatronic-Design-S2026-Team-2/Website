@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-10T22:43:27.316Z",
+  "generatedAt": "2026-02-11T16:01:36.200Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -127,6 +127,56 @@
   "now": [
     {
       "type": "Issue",
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "state": "OPEN",
+      "updatedAt": "2026-02-11T01:15:05Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      },
+      "fields": {
+        "Title": "Assemble System for testing on Gazebo",
+        "Status": "In Progress",
+        "Due date": "2026-02-13",
+        "Start date": "2026-02-14"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 32,
+      "title": "Klann Linkage Leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
+      "state": "OPEN",
+      "updatedAt": "2026-02-11T01:14:41Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      },
+      "fields": {
+        "Title": "Klann Linkage Leg Design Prototype",
+        "Status": "In Progress",
+        "Due date": "2026-02-14",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
       "number": 3,
       "title": "Showcase klann leg subassembly progress",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
@@ -247,31 +297,6 @@
         "Status": "In Progress",
         "Start date": "2026-02-08",
         "Due date": "2026-02-15"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 32,
-      "title": "Klann Linkage Leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
-      "state": "OPEN",
-      "updatedAt": "2026-02-08T21:27:09Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      },
-      "fields": {
-        "Title": "Klann Linkage Leg Design Prototype",
-        "Status": "In Progress",
-        "Due date": "2026-02-14",
-        "Start date": "2026-02-11"
       }
     }
   ],
@@ -422,14 +447,14 @@
     },
     {
       "type": "Issue",
-      "number": 37,
-      "title": "Set up environment for Jetson",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
-      "updatedAt": "2026-02-10T18:13:41Z",
-      "status": "Done",
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-11T01:15:05Z",
+      "status": "In Progress",
       "due": "2026-02-13",
       "assignees": [
-        "dgl7"
+        "yechenz-wq"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -439,14 +464,14 @@
     },
     {
       "type": "Issue",
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-08T21:49:24Z",
-      "status": "Todo",
+      "number": 37,
+      "title": "Set up environment for Jetson",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/37",
+      "updatedAt": "2026-02-10T18:13:41Z",
+      "status": "Done",
       "due": "2026-02-13",
       "assignees": [
-        "yechenz-wq"
+        "dgl7"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -748,10 +773,40 @@
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest issue updated: #54 Risk management plan",
-    "createdAt": "2026-02-09T02:14:40Z"
+    "body": "Latest issue updated: #39 Assemble System for testing on Gazebo",
+    "createdAt": "2026-02-11T01:15:05Z"
   },
   "issues": [
+    {
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-11T01:15:05Z",
+      "labels": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
+    {
+      "number": 32,
+      "title": "Klann Linkage Leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
+      "updatedAt": "2026-02-11T01:14:41Z",
+      "labels": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
     {
       "number": 54,
       "title": "Risk management plan",
@@ -1040,21 +1095,6 @@
       }
     },
     {
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-08T21:49:24Z",
-      "labels": [],
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
       "number": 34,
       "title": "Side leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
@@ -1122,21 +1162,6 @@
       "labels": [],
       "assignees": [
         "hongfeil-beep"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 32,
-      "title": "Klann Linkage Leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
-      "updatedAt": "2026-02-08T21:27:09Z",
-      "labels": [],
-      "assignees": [
-        "yechenz-wq"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -2238,7 +2263,7 @@
       "title": "Klann Linkage Leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
       "state": "OPEN",
-      "updatedAt": "2026-02-08T21:27:09Z",
+      "updatedAt": "2026-02-11T01:14:41Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
@@ -2413,7 +2438,7 @@
       "title": "Assemble System for testing on Gazebo",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
       "state": "OPEN",
-      "updatedAt": "2026-02-08T21:49:24Z",
+      "updatedAt": "2026-02-11T01:15:05Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
@@ -2427,7 +2452,7 @@
       },
       "fields": {
         "Title": "Assemble System for testing on Gazebo",
-        "Status": "Todo",
+        "Status": "In Progress",
         "Due date": "2026-02-13",
         "Start date": "2026-02-14"
       }

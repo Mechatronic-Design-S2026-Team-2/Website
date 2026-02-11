@@ -1,0 +1,48 @@
+/* Card head layout */
+.pdf-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.pdf-card-title {
+  margin: 0;
+}
+
+/* Reuse your pill buttons if present */
+.pdf-card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* 16:9 embed region */
+.pdf-embed {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.02);
+
+  /* Prefer a comfortable viewport-based height */
+  height: var(--pdf-height, 70vh);
+
+  /* But don't let it get ridiculous */
+  min-height: 420px;
+  max-height: 920px;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Small helper text */
+.pdf-fallback {
+  margin-top: 10px;
+  opacity: 0.78;
+  font-size: 0.92rem;
+}

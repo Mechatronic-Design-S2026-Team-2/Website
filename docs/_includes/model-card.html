@@ -14,9 +14,9 @@
     <h2 style="margin-bottom:10px;">{{ include.title }}</h2>
   {% endif %}
 
-  <div class="t2-model-stage">
+  <div class="t2-model-stage t2-model-stage-dark">
     <model-viewer
-      class="t2-model-viewer {% if include.force_gray == 'true' %}t2-model-darken{% endif %}"
+      class="t2-model-viewer"
       src="{{ include.file | relative_url }}"
       {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
       alt="{{ include.alt | default: '3D model' }}"
@@ -24,12 +24,14 @@
       auto-rotate
       rotation-per-second="12deg"
       interaction-prompt="auto"
+  
       environment-image="neutral"
-      exposure="1.0"
-      shadow-intensity="1.1"
-      shadow-softness="0.6">
+      exposure="1.15"
+      shadow-intensity="1.25"
+      shadow-softness="0.7">
     </model-viewer>
   </div>
+
 
   {% if include.caption %}
     <div class="t2-model-caption">{{ include.caption }}</div>

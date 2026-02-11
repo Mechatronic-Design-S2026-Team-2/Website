@@ -1,15 +1,12 @@
 <link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/model.css' | relative_url }}">
 
-<script>
-  (function(){
-    if (window.__t2_model_viewer_loaded) return;
+<script type="module">
+  // Load model-viewer once (official CDN). This avoids older/broken builds.
+  if (!window.__t2_model_viewer_loaded) {
     window.__t2_model_viewer_loaded = true;
-    const s = document.createElement('script');
-    s.type = 'module';
-    s.src = 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js';
-    document.head.appendChild(s);
-  })();
+    import('https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js');
+  }
 </script>
 
 <div class="t2-card">
@@ -19,7 +16,7 @@
 
   <div class="t2-model-stage">
     <model-viewer
-      class="t2-model-viewer"
+      class="t2-model-viewer {% if include.force_gray == 'true' %}t2-model-darken{% endif %}"
       src="{{ include.file | relative_url }}"
       {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
       alt="{{ include.alt | default: '3D model' }}"
@@ -27,9 +24,8 @@
       auto-rotate
       rotation-per-second="12deg"
       interaction-prompt="auto"
-
       environment-image="neutral"
-      exposure="1.05"
+      exposure="1.0"
       shadow-intensity="1.1"
       shadow-softness="0.6">
     </model-viewer>
@@ -42,37 +38,47 @@
 
 {% if include.force_gray == "true" %}
 <script type="module">
-  // Force a significantly darker gray for all materials.
-  // If you want to avoid touching textured materials, uncomment the "if (pbr.baseColorTexture) continue;" line.
+  // Try to force materials darker via scene-graph API.
+  // If that API isn't available, CSS filter still darkens it (see t2-model-darken class).
   const card = document.currentScript.previousElementSibling;
   const mv = card?.querySelector?.('model-viewer');
+  if (!mv) return;
 
-  if (mv) {
-    mv.addEventListener('load', () => {
-      try {
-        const model = mv.model;
-        if (!model) return;
+  await customElements.whenDefined('model-viewer');
 
-        // Dark neutral gray (try 0.18–0.30 range)
-        const DARK = [0.15, 0.15, 0.15, 1.0];
+  function tryDarkenMaterials() {
+    const model = mv.model;
+    if (!model || !model.materials) return false;
 
-        for (const mat of model.materials) {
-          const pbr = mat.pbrMetallicRoughness;
-          if (!pbr) continue;
+    const DARK = [0.15, 0.15, 0.15, 1.0]; // very dark gray
 
-          // If you DON'T want to darken textured materials, use this:
-          // if (pbr.baseColorTexture) continue;
+    for (const mat of model.materials) {
+      const pbr = mat.pbrMetallicRoughness;
+      if (!pbr) continue;
 
-          pbr.setBaseColorFactor(DARK);
+      // If you want to keep textures, uncomment:
+      // if (pbr.baseColorTexture) continue;
 
-          // Keep it matte so lighting reads nicely (less "white plastic" look)
-          pbr.setMetallicFactor(0.0);
-          pbr.setRoughnessFactor(1.0);
-        }
-      } catch (e) {
-        // no-op if scene-graph API isn't available
-      }
-    });
+      pbr.setBaseColorFactor(DARK);
+      pbr.setMetallicFactor(0.0);
+      pbr.setRoughnessFactor(1.0);
+    }
+    return true;
   }
+
+  // Run after model load; also retry once after a short delay (helps some builds).
+  mv.addEventListener('load', () => {
+    const ok = tryDarkenMaterials();
+    // If ok=false, CSS filter will still make it darker, so nothing else needed.
+    if (!ok) {
+      // Optional: uncomment to debug in browser console
+      // console.log("model-viewer scene-graph not available; using CSS darken fallback");
+    } else {
+      // If scene-graph succeeded, we can reduce CSS filter strength slightly:
+      mv.classList.add('t2-model-darken-soft');
+    }
+  });
+
+  setTimeout(() => { tryDarkenMaterials(); }, 500);
 </script>
 {% endif %}

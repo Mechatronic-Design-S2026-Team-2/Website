@@ -1,37 +1,65 @@
 <link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/model.css' | relative_url }}">
+
+<!-- Load model-viewer once (safe if included multiple times) -->
+<script>
+  (function(){
+    if (window.__t2_model_viewer_loaded) return;
+    window.__t2_model_viewer_loaded = true;
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js';
+    document.head.appendChild(s);
+  })();
+</script>
 
 <div class="t2-card">
-  <h2 style="margin:0 0 10px;">{{ include.title | default: "3D Model" }}</h2>
+  {% if include.title %}
+    <h2 style="margin-bottom:10px;">{{ include.title }}</h2>
+  {% endif %}
 
-  <!-- Load model-viewer once per page safely -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-  <model-viewer
-    class="t2-model"
-    src="{{ include.src | relative_url }}"
-    alt="{{ include.alt | default: include.title | escape }}"
-    camera-controls
-    interaction-prompt="auto"
-    shadow-intensity="0.8"
-    environment-image="neutral"
-    auto-rotate
-    auto-rotate-delay="1500"
-    loading="lazy">
-  </model-viewer>
+  <div class="t2-model-stage">
+    <model-viewer
+      class="t2-model-viewer"
+      src="{{ include.file | relative_url }}"
+      {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
+      alt="{{ include.alt | default: '3D model' }}"
+      camera-controls
+      auto-rotate
+      rotation-per-second="12deg"
+      interaction-prompt="auto"
+      environment-image="neutral"
+      exposure="1.05"
+      shadow-intensity="1.1"
+      shadow-softness="0.6"
+      ar="false">
+    </model-viewer>
+  </div>
 
   {% if include.caption %}
-    <div class="t2-sub" style="margin-top:10px;">{{ include.caption }}</div>
+    <div class="t2-model-caption">{{ include.caption }}</div>
   {% endif %}
 </div>
 
-<style>
-  .t2-model{
-    width: 100%;
-    height: 520px;
-    background: rgba(0,0,0,0.03);
-    border-radius: 16px;
+{% if include.force_gray == "true" %}
+<script type="module">
+  const stage = document.currentScript.previousElementSibling;
+  const mv = stage?.querySelector?.('model-viewer');
+  if (mv) {
+    mv.addEventListener('load', () => {
+      try {
+        const model = mv.model;
+        if (!model) return;
+
+        for (const mat of model.materials) {
+          const pbr = mat.pbrMetallicRoughness;
+          if (!pbr) continue;
+
+          pbr.setBaseColorFactor([0.62, 0.62, 0.62, 1.0]); // neutral gray
+        }
+      } catch (e) {
+      }
+    });
   }
-  @media (max-width: 520px){
-    .t2-model{ height: 380px; }
-  }
-</style>
+</script>
+{% endif %}

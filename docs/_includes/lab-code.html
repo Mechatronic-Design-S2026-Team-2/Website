@@ -1,15 +1,13 @@
 <link rel="stylesheet" href="{{ '/assets/css/codebox.css' | relative_url }}">
 
 <div class="t2-card">
-  <h2>Firmware</h2>
-  <div class="t2-sub">Arduino (.ino) source used for the Motors/Sensors lab.</div>
 
   <details class="t2-accordion">
     <summary class="t2-acc-summary">Open Arduino code (main.ino)</summary>
     <div class="t2-acc-body">
-      {% raw %}{% highlight cpp %}{% endraw %}
-{% raw %}{% include code/main.ino %}{% endraw %}
-      {% raw %}{% endhighlight %}{% endraw %}
+      {% highlight cpp %}
+      {% include code/main.ino %}
+      {% endhighlight %}
     </div>
   </details>
 </div>

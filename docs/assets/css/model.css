@@ -24,3 +24,54 @@
   opacity: 0.8;
   line-height: 1.35;
 }
+
+/* Dark stage so white models have contrast */
+.t2-model-stage-dark {
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* Deep gray “studio” */
+  background: radial-gradient(1200px 600px at 50% 30%,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.02) 45%,
+    rgba(0,0,0,0.92) 100%
+  );
+
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Optional subtle grid for depth (remove if you want flat) */
+.t2-model-stage-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.10;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Ensure pseudo-element positioning works */
+.t2-model-stage {
+  position: relative;
+  width: 100%;
+}
+
+/* Model viewer fills the stage */
+.t2-model-viewer {
+  width: 100%;
+  height: min(520px, 70vh);
+
+  /* Important: make the canvas transparent so stage shows through */
+  background: transparent;
+}
+
+/* Caption */
+.t2-model-caption {
+  margin-top: 10px;
+  opacity: 0.8;
+  line-height: 1.35;
+}
+

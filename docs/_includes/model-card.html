@@ -1,86 +1,67 @@
 <link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/model.css' | relative_url }}">
 
-<script type="module">
-  // Load model-viewer once (official CDN). This avoids older/broken builds.
-  if (!window.__t2_model_viewer_loaded) {
-    window.__t2_model_viewer_loaded = true;
-    import('https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js');
-  }
-</script>
+<!-- <model-viewer> web component -->
+<script type="module"
+  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 <div class="t2-card">
   {% if include.title %}
-    <h2 style="margin-bottom:10px;">{{ include.title }}</h2>
+    <h2 style="margin:0 0 10px;">{{ include.title }}</h2>
   {% endif %}
 
-  <div class="t2-model-stage t2-model-stage-dark">
-    <model-viewer
-      class="t2-model-viewer"
-      src="{{ include.file | relative_url }}"
-      {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
-      alt="{{ include.alt | default: '3D model' }}"
-      camera-controls
-      auto-rotate
-      rotation-per-second="12deg"
-      interaction-prompt="auto"
-  
-      environment-image="neutral"
-      exposure="1.15"
-      shadow-intensity="1.25"
-      shadow-softness="0.7">
-    </model-viewer>
-  </div>
-
+  <model-viewer
+    id="t2ModelViewer-{{ include.id | default: include.file | slugify }}"
+    src="{{ include.file | relative_url }}"
+    {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
+    alt="{{ include.alt | default: include.title | default: '3D model' }}"
+    camera-controls
+    touch-action="pan-y"
+    autoplay
+    shadow-intensity="1.1"
+    exposure="0.9"
+    environment-image="neutral"
+    style="width:100%; height:520px; background: transparent; border-radius:16px; overflow:hidden;"
+  >
+  </model-viewer>
 
   {% if include.caption %}
-    <div class="t2-model-caption">{{ include.caption }}</div>
+    <div class="t2-sub" style="margin-top:10px;">{{ include.caption }}</div>
   {% endif %}
 </div>
 
-{% if include.force_gray == "true" %}
-<script type="module">
-  // Try to force materials darker via scene-graph API.
-  // If that API isn't available, CSS filter still darkens it (see t2-model-darken class).
-  const card = document.currentScript.previousElementSibling;
-  const mv = card?.querySelector?.('model-viewer');
+<script>
+(function () {
+  const id = "t2ModelViewer-{{ include.id | default: include.file | slugify }}";
+  const mv = document.getElementById(id);
   if (!mv) return;
 
-  await customElements.whenDefined('model-viewer');
+  // Dark gray target color (RGB 0..1)
+  const DARK_GRAY = [0.20, 0.20, 0.22, 1.0]; // slightly cool dark gray
 
-  function tryDarkenMaterials() {
-    const model = mv.model;
-    if (!model || !model.materials) return false;
-
-    const DARK = [0.15, 0.15, 0.15, 1.0]; // very dark gray
-
-    for (const mat of model.materials) {
-      const pbr = mat.pbrMetallicRoughness;
-      if (!pbr) continue;
-
-      // If you want to keep textures, uncomment:
-      // if (pbr.baseColorTexture) continue;
-
-      pbr.setBaseColorFactor(DARK);
-      pbr.setMetallicFactor(0.0);
-      pbr.setRoughnessFactor(1.0);
-    }
-    return true;
-  }
-
-  // Run after model load; also retry once after a short delay (helps some builds).
   mv.addEventListener('load', () => {
-    const ok = tryDarkenMaterials();
-    // If ok=false, CSS filter will still make it darker, so nothing else needed.
-    if (!ok) {
-      // Optional: uncomment to debug in browser console
-      // console.log("model-viewer scene-graph not available; using CSS darken fallback");
-    } else {
-      // If scene-graph succeeded, we can reduce CSS filter strength slightly:
-      mv.classList.add('t2-model-darken-soft');
+    try {
+      const mats = mv.model?.materials || [];
+      for (const m of mats) {
+        // PBR base color factor
+        if (m.pbrMetallicRoughness && m.pbrMetallicRoughness.baseColorFactor) {
+          m.pbrMetallicRoughness.setBaseColorFactor(DARK_GRAY);
+        }
+
+        // Keep it mostly matte so it reads well
+        if (m.pbrMetallicRoughness) {
+          m.pbrMetallicRoughness.setMetallicFactor(0.05);
+          m.pbrMetallicRoughness.setRoughnessFactor(0.85);
+        }
+
+        // If emissive is set, kill it so it doesn't blow out
+        if (m.emissiveFactor) {
+          m.setEmissiveFactor([0, 0, 0]);
+        }
+      }
+    } catch (e) {
+      // If anything goes wrong, fail silently—viewer still shows the model.
+      console.warn("Material override failed:", e);
     }
   });
-
-  setTimeout(() => { tryDarkenMaterials(); }, 500);
+})();
 </script>
-{% endif %}

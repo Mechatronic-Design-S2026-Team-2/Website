@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/model.css' | relative_url }}">
 
-<!-- Load model-viewer once (safe if included multiple times) -->
 <script>
   (function(){
     if (window.__t2_model_viewer_loaded) return;
@@ -28,11 +27,11 @@
       auto-rotate
       rotation-per-second="12deg"
       interaction-prompt="auto"
+
       environment-image="neutral"
       exposure="1.05"
       shadow-intensity="1.1"
-      shadow-softness="0.6"
-      ar="false">
+      shadow-softness="0.6">
     </model-viewer>
   </div>
 
@@ -43,21 +42,35 @@
 
 {% if include.force_gray == "true" %}
 <script type="module">
-  const stage = document.currentScript.previousElementSibling;
-  const mv = stage?.querySelector?.('model-viewer');
+  // Force a significantly darker gray for all materials.
+  // If you want to avoid touching textured materials, uncomment the "if (pbr.baseColorTexture) continue;" line.
+  const card = document.currentScript.previousElementSibling;
+  const mv = card?.querySelector?.('model-viewer');
+
   if (mv) {
     mv.addEventListener('load', () => {
       try {
         const model = mv.model;
         if (!model) return;
 
+        // Dark neutral gray (try 0.18–0.30 range)
+        const DARK = [0.22, 0.22, 0.22, 1.0];
+
         for (const mat of model.materials) {
           const pbr = mat.pbrMetallicRoughness;
           if (!pbr) continue;
 
-          pbr.setBaseColorFactor([0.62, 0.62, 0.62, 1.0]); // neutral gray
+          // If you DON'T want to darken textured materials, use this:
+          // if (pbr.baseColorTexture) continue;
+
+          pbr.setBaseColorFactor(DARK);
+
+          // Keep it matte so lighting reads nicely (less "white plastic" look)
+          pbr.setMetallicFactor(0.0);
+          pbr.setRoughnessFactor(1.0);
         }
       } catch (e) {
+        // no-op if scene-graph API isn't available
       }
     });
   }

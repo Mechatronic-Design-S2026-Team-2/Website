@@ -32,7 +32,7 @@ title: "Motors/Sensors Lab"
      label="Open lab folder"
   %}
 
-  <{% include lab-code.html %}
+  {% include lab-code.html %}
 
 </div>
 

@@ -6,7 +6,7 @@ title: "System Design"
 
 {% include pdf-card.html
    title="Design Proposal"
-   subtitle="16:9 slide deck"
+   subtitle="Presented to class 2/11/2026"
    pdf="/assets/pdfs/design_proposal.pdf"
    height="75vh" %}
 

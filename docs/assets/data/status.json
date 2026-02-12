@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-11T16:01:36.200Z",
+  "generatedAt": "2026-02-12T15:54:36.655Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -14,16 +14,16 @@
     "title": "Pre-proposal Presentation",
     "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2",
     "dueOn": "2026-02-09T00:00:00Z",
-    "openIssues": 8,
-    "closedIssues": 2
+    "openIssues": 0,
+    "closedIssues": 10
   },
   "schedule": [
     {
       "title": "Pre-proposal Presentation",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2",
       "dueOn": "2026-02-09T00:00:00Z",
-      "openIssues": 8,
-      "closedIssues": 2
+      "openIssues": 0,
+      "closedIssues": 10
     },
     {
       "title": "Design Proposal",
@@ -36,15 +36,15 @@
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 8,
-      "closedIssues": 1
+      "openIssues": 6,
+      "closedIssues": 3
     },
     {
       "title": "System Demo 2",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4",
       "dueOn": "2026-02-23T00:00:00Z",
-      "openIssues": 12,
-      "closedIssues": 0
+      "openIssues": 9,
+      "closedIssues": 3
     },
     {
       "title": "System Demo 3",
@@ -127,6 +127,183 @@
   "now": [
     {
       "type": "Issue",
+      "number": 11,
+      "title": "Section — Project description (1–2 paragraphs, crisp)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
+      "state": "OPEN",
+      "updatedAt": "2026-02-12T11:28:52Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      },
+      "fields": {
+        "Title": "Section — Project description (1–2 paragraphs, crisp)",
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 12,
+      "title": "Section — Design requirements (explicit + implied + coolness)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
+      "state": "OPEN",
+      "updatedAt": "2026-02-12T11:28:46Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      },
+      "fields": {
+        "Title": "Section — Design requirements (explicit + implied + coolness)",
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 17,
+      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
+      "state": "OPEN",
+      "updatedAt": "2026-02-12T11:28:23Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      },
+      "fields": {
+        "Title": "Section — Project management (schedule, responsibilities, budget, risk)",
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 16,
+      "title": "Section — System depiction/description (subsystems)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
+      "state": "OPEN",
+      "updatedAt": "2026-02-12T11:28:19Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      },
+      "fields": {
+        "Title": "Section — System depiction/description (subsystems)",
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 15,
+      "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
+      "state": "OPEN",
+      "updatedAt": "2026-02-12T11:28:11Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      },
+      "fields": {
+        "Title": "Section — Cyberphysical architecture (HW/SW block diagram)",
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 13,
+      "title": "Section — Functional architecture diagram + text",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
+      "state": "OPEN",
+      "updatedAt": "2026-02-12T11:28:05Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      },
+      "fields": {
+        "Title": "Section — Functional architecture diagram + text",
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 32,
+      "title": "Klann Linkage Leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:24:46Z",
+      "closedAt": "2026-02-12T11:24:46Z",
+      "mergedAt": null,
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      },
+      "fields": {
+        "Title": "Klann Linkage Leg Design Prototype",
+        "Status": "In Progress",
+        "Due date": "2026-02-14",
+        "Start date": "2026-02-11"
+      }
+    },
+    {
+      "type": "Issue",
       "number": 39,
       "title": "Assemble System for testing on Gazebo",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
@@ -148,130 +325,6 @@
         "Status": "In Progress",
         "Due date": "2026-02-13",
         "Start date": "2026-02-14"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 32,
-      "title": "Klann Linkage Leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
-      "state": "OPEN",
-      "updatedAt": "2026-02-11T01:14:41Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      },
-      "fields": {
-        "Title": "Klann Linkage Leg Design Prototype",
-        "Status": "In Progress",
-        "Due date": "2026-02-14",
-        "Start date": "2026-02-11"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 3,
-      "title": "Showcase klann leg subassembly progress",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:08:36Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      },
-      "fields": {
-        "Title": "Showcase klann leg subassembly progress",
-        "Status": "In Progress"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 5,
-      "title": "Functional architecture (block diagram) draft",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/5",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:07:12Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      },
-      "fields": {
-        "Title": "Functional architecture (block diagram) draft",
-        "Status": "In Progress"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 2,
-      "title": "Pre-proposal deck (15 min) + rehearsal",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/2",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:07:05Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq",
-        "liu3304697516"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      },
-      "fields": {
-        "Title": "Pre-proposal deck (15 min) + rehearsal",
-        "Status": "In Progress",
-        "Start date": "2026-02-04",
-        "Due date": "2026-02-09"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 34,
-      "title": "Side leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
-      "state": "OPEN",
-      "updatedAt": "2026-02-08T21:48:00Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "liu3304697516"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      },
-      "fields": {
-        "Title": "Side leg Design Prototype",
-        "Status": "In Progress",
-        "Start date": "2026-02-11",
-        "Due date": "2026-02-14"
       }
     },
     {
@@ -298,136 +351,49 @@
         "Start date": "2026-02-08",
         "Due date": "2026-02-15"
       }
+    },
+    {
+      "type": "Issue",
+      "number": 33,
+      "title": "Chassis Design",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/33",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:35:20Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      },
+      "fields": {
+        "Title": "Chassis Design",
+        "Status": "In Progress",
+        "Start date": "2026-02-11",
+        "Due date": "2026-02-14"
+      }
     }
   ],
   "scheduleItems": [
     {
       "type": "Issue",
-      "number": 54,
-      "title": "Risk management plan",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/54",
-      "updatedAt": "2026-02-09T02:14:40Z",
+      "number": 10,
+      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
+      "updatedAt": "2026-02-12T11:29:07Z",
       "status": "Todo",
-      "due": "2026-02-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 53,
-      "title": "Estimated budget slide",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/53",
-      "updatedAt": "2026-02-09T02:14:24Z",
-      "status": "Todo",
-      "due": "2026-02-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 52,
-      "title": "Showcase side leg assembly progress",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/52",
-      "updatedAt": "2026-02-09T02:14:02Z",
-      "status": "Todo",
-      "due": "2026-02-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 8,
-      "title": "Project management slide (schedule + responsibilities)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/8",
-      "updatedAt": "2026-02-09T02:13:42Z",
-      "status": "Todo",
-      "due": "2026-02-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 7,
-      "title": "Trade study summarized showcase",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/7",
-      "updatedAt": "2026-02-09T02:13:27Z",
-      "status": "Todo",
-      "due": "2026-02-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 3,
-      "title": "Showcase klann leg subassembly progress",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
-      "updatedAt": "2026-02-09T02:08:36Z",
-      "status": "In Progress",
-      "due": "2026-02-09T00:00:00Z",
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 5,
-      "title": "Functional architecture (block diagram) draft",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/5",
-      "updatedAt": "2026-02-09T02:07:12Z",
-      "status": "In Progress",
-      "due": "2026-02-09T00:00:00Z",
+      "due": "2026-02-12",
       "assignees": [
         "dgl7"
       ],
       "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 2,
-      "title": "Pre-proposal deck (15 min) + rehearsal",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/2",
-      "updatedAt": "2026-02-09T02:07:05Z",
-      "status": "In Progress",
-      "due": "2026-02-09",
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq",
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
       }
     },
     {
@@ -435,9 +401,150 @@
       "number": 9,
       "title": "Design Proposal PDF (complete + compliant)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
-      "updatedAt": "2026-01-29T23:37:01Z",
+      "updatedAt": "2026-02-12T11:28:59Z",
       "status": "Todo",
-      "due": "2026-02-11",
+      "due": "2026-02-12",
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 11,
+      "title": "Section — Project description (1–2 paragraphs, crisp)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
+      "updatedAt": "2026-02-12T11:28:52Z",
+      "status": "In Progress",
+      "due": "2026-02-12",
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 12,
+      "title": "Section — Design requirements (explicit + implied + coolness)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
+      "updatedAt": "2026-02-12T11:28:46Z",
+      "status": "In Progress",
+      "due": "2026-02-12",
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 14,
+      "title": "Section — Trade studies (decision matrices)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
+      "updatedAt": "2026-02-12T11:28:29Z",
+      "status": "Todo",
+      "due": "2026-02-12",
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 17,
+      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
+      "updatedAt": "2026-02-12T11:28:23Z",
+      "status": "In Progress",
+      "due": "2026-02-12",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 16,
+      "title": "Section — System depiction/description (subsystems)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
+      "updatedAt": "2026-02-12T11:28:19Z",
+      "status": "In Progress",
+      "due": "2026-02-12",
+      "assignees": [
+        "dgl7",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 15,
+      "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
+      "updatedAt": "2026-02-12T11:28:11Z",
+      "status": "In Progress",
+      "due": "2026-02-12",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 13,
+      "title": "Section — Functional architecture diagram + text",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
+      "updatedAt": "2026-02-12T11:28:05Z",
+      "status": "In Progress",
+      "due": "2026-02-12",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 18,
+      "title": "References (papers, datasheets, docs)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/18",
+      "updatedAt": "2026-01-29T23:41:53Z",
+      "status": "Todo",
+      "due": "2026-02-12",
       "assignees": [],
       "milestone": {
         "title": "Design Proposal",
@@ -481,141 +588,308 @@
     },
     {
       "type": "Issue",
-      "number": 18,
-      "title": "References (papers, datasheets, docs)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/18",
-      "updatedAt": "2026-01-29T23:41:53Z",
-      "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
+      "number": 32,
+      "title": "Klann Linkage Leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
+      "updatedAt": "2026-02-12T11:24:46Z",
+      "status": "In Progress",
+      "due": "2026-02-14",
+      "assignees": [
+        "yechenz-wq"
+      ],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
       "type": "Issue",
-      "number": 17,
-      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
-      "updatedAt": "2026-01-29T23:41:48Z",
-      "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
+      "number": 34,
+      "title": "Side leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
+      "updatedAt": "2026-02-12T11:24:44Z",
+      "status": "Done",
+      "due": "2026-02-14",
+      "assignees": [
+        "liu3304697516"
+      ],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
       "type": "Issue",
-      "number": 16,
-      "title": "Section — System depiction/description (subsystems)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
-      "updatedAt": "2026-01-29T23:41:34Z",
-      "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
+      "number": 33,
+      "title": "Chassis Design",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/33",
+      "updatedAt": "2026-02-08T21:35:20Z",
+      "status": "In Progress",
+      "due": "2026-02-14",
+      "assignees": [
+        "hongfeil-beep"
+      ],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
       "type": "Issue",
-      "number": 15,
-      "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
-      "updatedAt": "2026-01-29T23:39:24Z",
-      "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
+      "number": 38,
+      "title": "Acquire and setup rtos for esp32 controllers",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
+      "updatedAt": "2026-02-08T21:44:45Z",
+      "status": "In Progress",
+      "due": "2026-02-15",
+      "assignees": [
+        "dgl7"
+      ],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
       "type": "Issue",
-      "number": 14,
-      "title": "Section — Trade studies (decision matrices)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
-      "updatedAt": "2026-01-29T23:39:14Z",
+      "number": 36,
+      "title": "System schematics for motors and sensors",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
+      "updatedAt": "2026-02-08T21:42:44Z",
       "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
+      "due": "2026-02-15",
+      "assignees": [
+        "dgl7"
+      ],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
       "type": "Issue",
-      "number": 13,
-      "title": "Section — Functional architecture diagram + text",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
-      "updatedAt": "2026-01-29T23:37:44Z",
+      "number": 19,
+      "title": "SD1 demo plan + artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/19",
+      "updatedAt": "2026-02-09T02:05:50Z",
       "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
+      "due": "2026-02-16",
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
       "type": "Issue",
-      "number": 12,
-      "title": "Section — Design requirements (explicit + implied + coolness)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
-      "updatedAt": "2026-01-29T23:37:35Z",
+      "number": 35,
+      "title": "Gazebo Simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
+      "updatedAt": "2026-02-08T21:40:23Z",
       "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
+      "due": "2026-02-16",
+      "assignees": [
+        "dgl7"
+      ],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
       "type": "Issue",
-      "number": 11,
-      "title": "Section — Project description (1–2 paragraphs, crisp)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
-      "updatedAt": "2026-01-29T23:37:23Z",
-      "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
+      "number": 49,
+      "title": "Select sensors for side articulated leg control",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/49",
+      "updatedAt": "2026-02-12T11:26:02Z",
+      "status": "Done",
+      "due": "2026-02-23T00:00:00Z",
       "assignees": [],
       "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 10,
-      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
-      "updatedAt": "2026-01-29T23:37:14Z",
-      "status": "Todo",
-      "due": "2026-02-13T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
       }
     }
   ],
   "doneItemsRecent": [
+    {
+      "number": 54,
+      "title": "Risk management plan",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/54",
+      "updatedAt": "2026-02-12T11:27:27Z",
+      "assignees": [
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
+    {
+      "number": 53,
+      "title": "Estimated budget slide",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/53",
+      "updatedAt": "2026-02-12T11:27:22Z",
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
+    {
+      "number": 52,
+      "title": "Showcase side leg assembly progress",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/52",
+      "updatedAt": "2026-02-12T11:27:14Z",
+      "assignees": [
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
+    {
+      "number": 8,
+      "title": "Project management slide (schedule + responsibilities)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/8",
+      "updatedAt": "2026-02-12T11:27:05Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
+    {
+      "number": 7,
+      "title": "Trade study summarized showcase",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/7",
+      "updatedAt": "2026-02-12T11:26:44Z",
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
+    {
+      "number": 49,
+      "title": "Select sensors for side articulated leg control",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/49",
+      "updatedAt": "2026-02-12T11:26:02Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "number": 45,
+      "title": "Select appropriate motors for side articulated leg",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
+      "updatedAt": "2026-02-12T11:25:43Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "number": 42,
+      "title": "Calculate torque specifications for side leg assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/42",
+      "updatedAt": "2026-02-12T11:25:41Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "number": 34,
+      "title": "Side leg Design Prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
+      "updatedAt": "2026-02-12T11:24:44Z",
+      "assignees": [
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
+    {
+      "number": 5,
+      "title": "Functional architecture (block diagram) draft",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/5",
+      "updatedAt": "2026-02-11T21:59:59Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
+    {
+      "number": 3,
+      "title": "Showcase klann leg subassembly progress",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
+      "updatedAt": "2026-02-11T21:59:58Z",
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
+    {
+      "number": 2,
+      "title": "Pre-proposal deck (15 min) + rehearsal",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/2",
+      "updatedAt": "2026-02-11T21:59:56Z",
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "Pre-proposal Presentation",
+        "dueOn": "2026-02-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
+      }
+    },
     {
       "number": 1,
       "title": "Team Website 0 (scaffold + required pages)",
@@ -727,56 +1001,167 @@
         "dueOn": "2026-02-06T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
       }
-    },
-    {
-      "number": 4,
-      "title": "Create “Documents (Lab Workbook)” structure + index",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/4",
-      "updatedAt": "2026-02-08T23:18:48Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
-      }
-    },
-    {
-      "number": 7,
-      "title": "Team page bios (placeholder)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/7",
-      "updatedAt": "2026-02-05T14:02:49Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
-      }
-    },
-    {
-      "number": 2,
-      "title": "Setup GitHub Pages deployment (repo settings + branch)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/2",
-      "updatedAt": "2026-01-30T17:00:06Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Team Website 0",
-        "dueOn": "2026-02-06T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/milestone/1"
-      }
     }
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest issue updated: #39 Assemble System for testing on Gazebo",
-    "createdAt": "2026-02-11T01:15:05Z"
+    "body": "Latest issue updated: #10 Proposal skeleton + formatting (title page, TOC, page numbers)",
+    "createdAt": "2026-02-12T11:29:07Z"
   },
   "issues": [
+    {
+      "number": 10,
+      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
+      "updatedAt": "2026-02-12T11:29:07Z",
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 9,
+      "title": "Design Proposal PDF (complete + compliant)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
+      "updatedAt": "2026-02-12T11:28:59Z",
+      "labels": [],
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 11,
+      "title": "Section — Project description (1–2 paragraphs, crisp)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
+      "updatedAt": "2026-02-12T11:28:52Z",
+      "labels": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 12,
+      "title": "Section — Design requirements (explicit + implied + coolness)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
+      "updatedAt": "2026-02-12T11:28:46Z",
+      "labels": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 14,
+      "title": "Section — Trade studies (decision matrices)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
+      "updatedAt": "2026-02-12T11:28:29Z",
+      "labels": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 17,
+      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
+      "updatedAt": "2026-02-12T11:28:23Z",
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 16,
+      "title": "Section — System depiction/description (subsystems)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
+      "updatedAt": "2026-02-12T11:28:19Z",
+      "labels": [],
+      "assignees": [
+        "dgl7",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 15,
+      "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
+      "updatedAt": "2026-02-12T11:28:11Z",
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 13,
+      "title": "Section — Functional architecture diagram + text",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
+      "updatedAt": "2026-02-12T11:28:05Z",
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "Design Proposal",
+        "dueOn": "2026-02-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
+      }
+    },
+    {
+      "number": 41,
+      "title": "Calculate torque specifications for klann leg assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
+      "updatedAt": "2026-02-12T11:25:28Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
     {
       "number": 39,
       "title": "Assemble System for testing on Gazebo",
@@ -790,134 +1175,6 @@
         "title": "System Demo 1",
         "dueOn": "2026-02-16T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 32,
-      "title": "Klann Linkage Leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
-      "updatedAt": "2026-02-11T01:14:41Z",
-      "labels": [],
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 54,
-      "title": "Risk management plan",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/54",
-      "updatedAt": "2026-02-09T02:14:40Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "number": 53,
-      "title": "Estimated budget slide",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/53",
-      "updatedAt": "2026-02-09T02:14:24Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "number": 52,
-      "title": "Showcase side leg assembly progress",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/52",
-      "updatedAt": "2026-02-09T02:14:02Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "number": 8,
-      "title": "Project management slide (schedule + responsibilities)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/8",
-      "updatedAt": "2026-02-09T02:13:42Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "number": 7,
-      "title": "Trade study summarized showcase",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/7",
-      "updatedAt": "2026-02-09T02:13:27Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "number": 3,
-      "title": "Showcase klann leg subassembly progress",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
-      "updatedAt": "2026-02-09T02:08:36Z",
-      "labels": [],
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "number": 5,
-      "title": "Functional architecture (block diagram) draft",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/5",
-      "updatedAt": "2026-02-09T02:07:12Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
-      }
-    },
-    {
-      "number": 2,
-      "title": "Pre-proposal deck (15 min) + rehearsal",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/2",
-      "updatedAt": "2026-02-09T02:07:05Z",
-      "labels": [],
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq",
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "Pre-proposal Presentation",
-        "dueOn": "2026-02-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/2"
       }
     },
     {
@@ -956,19 +1213,6 @@
       "title": "Estimate raw material needs for assemblies",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/50",
       "updatedAt": "2026-02-09T02:03:14Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 49,
-      "title": "Select sensors for side articulated leg control",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/49",
-      "updatedAt": "2026-02-09T02:01:48Z",
       "labels": [],
       "assignees": [],
       "milestone": {
@@ -1017,19 +1261,6 @@
       }
     },
     {
-      "number": 45,
-      "title": "Select appropriate motors for side articulated leg",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
-      "updatedAt": "2026-02-09T01:58:47Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
       "number": 44,
       "title": "Select appropriate motor for klann linked leg",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/44",
@@ -1056,32 +1287,6 @@
       }
     },
     {
-      "number": 41,
-      "title": "Calculate torque specifications for both leg assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
-      "updatedAt": "2026-02-09T01:55:44Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 42,
-      "title": "Calculate torque specifications for side leg assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/42",
-      "updatedAt": "2026-02-09T01:54:29Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
       "number": 40,
       "title": "SD2 Demo Plan + Artifacts",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/40",
@@ -1092,21 +1297,6 @@
         "title": "System Demo 2",
         "dueOn": "2026-02-23T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 34,
-      "title": "Side leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
-      "updatedAt": "2026-02-08T21:48:00Z",
-      "labels": [],
-      "assignees": [
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
@@ -1339,124 +1529,22 @@
       }
     },
     {
-      "number": 17,
-      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
-      "updatedAt": "2026-01-29T23:41:48Z",
+      "number": 1,
+      "title": "write up",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/1",
+      "updatedAt": "2026-01-29T23:25:53Z",
       "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 16,
-      "title": "Section — System depiction/description (subsystems)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
-      "updatedAt": "2026-01-29T23:41:34Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 15,
-      "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
-      "updatedAt": "2026-01-29T23:39:24Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 14,
-      "title": "Section — Trade studies (decision matrices)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
-      "updatedAt": "2026-01-29T23:39:14Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 13,
-      "title": "Section — Functional architecture diagram + text",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
-      "updatedAt": "2026-01-29T23:37:44Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 12,
-      "title": "Section — Design requirements (explicit + implied + coolness)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
-      "updatedAt": "2026-01-29T23:37:35Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 11,
-      "title": "Section — Project description (1–2 paragraphs, crisp)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
-      "updatedAt": "2026-01-29T23:37:23Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 10,
-      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
-      "updatedAt": "2026-01-29T23:37:14Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 9,
-      "title": "Design Proposal PDF (complete + compliant)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
-      "updatedAt": "2026-01-29T23:37:01Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-13T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
+      "assignees": [
+        "dgl7",
+        "Wilheimbeta",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": null
     }
   ],
-  "openIssues": 51,
+  "openIssues": 38,
   "projectItems": [
     {
       "type": "Issue",
@@ -1489,10 +1577,15 @@
       "title": "Design Proposal PDF (complete + compliant)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:37:01Z",
+      "updatedAt": "2026-02-12T11:28:59Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1502,7 +1595,8 @@
       "fields": {
         "Title": "Design Proposal PDF (complete + compliant)",
         "Status": "Todo",
-        "Due date": "2026-02-11"
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1580,9 +1674,9 @@
       "number": 2,
       "title": "Pre-proposal deck (15 min) + rehearsal",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/2",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:07:05Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-11T21:59:56Z",
+      "closedAt": "2026-02-11T21:59:55Z",
       "mergedAt": null,
       "assignees": [
         "dgl7",
@@ -1598,9 +1692,9 @@
       },
       "fields": {
         "Title": "Pre-proposal deck (15 min) + rehearsal",
-        "Status": "In Progress",
+        "Status": "Done",
         "Start date": "2026-02-04",
-        "Due date": "2026-02-09"
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -1608,9 +1702,9 @@
       "number": 3,
       "title": "Showcase klann leg subassembly progress",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/3",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:08:36Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-11T21:59:58Z",
+      "closedAt": "2026-02-11T21:59:58Z",
       "mergedAt": null,
       "assignees": [
         "yechenz-wq"
@@ -1623,7 +1717,8 @@
       },
       "fields": {
         "Title": "Showcase klann leg subassembly progress",
-        "Status": "In Progress"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -1646,7 +1741,8 @@
       },
       "fields": {
         "Title": "Requirements list draft (explicit + implied + coolness) ",
-        "Status": "Done"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -1654,9 +1750,9 @@
       "number": 5,
       "title": "Functional architecture (block diagram) draft",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/5",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:07:12Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-11T21:59:59Z",
+      "closedAt": "2026-02-11T21:59:59Z",
       "mergedAt": null,
       "assignees": [
         "dgl7"
@@ -1669,7 +1765,8 @@
       },
       "fields": {
         "Title": "Functional architecture (block diagram) draft",
-        "Status": "In Progress"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -1694,7 +1791,7 @@
         "Title": "Cyberphysical architecture (block diagram) draft",
         "Status": "Done",
         "Start date": "2026-02-09",
-        "Due date": "2026-02-09"
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -1703,10 +1800,12 @@
       "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:37:14Z",
+      "updatedAt": "2026-02-12T11:29:07Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "dgl7"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1715,7 +1814,9 @@
       },
       "fields": {
         "Title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
-        "Status": "Todo"
+        "Status": "Todo",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1724,10 +1825,12 @@
       "title": "Section — Project description (1–2 paragraphs, crisp)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/11",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:37:23Z",
+      "updatedAt": "2026-02-12T11:28:52Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1736,7 +1839,9 @@
       },
       "fields": {
         "Title": "Section — Project description (1–2 paragraphs, crisp)",
-        "Status": "Todo"
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1745,10 +1850,12 @@
       "title": "Section — Design requirements (explicit + implied + coolness)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/12",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:37:35Z",
+      "updatedAt": "2026-02-12T11:28:46Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1757,7 +1864,9 @@
       },
       "fields": {
         "Title": "Section — Design requirements (explicit + implied + coolness)",
-        "Status": "Todo"
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1766,10 +1875,12 @@
       "title": "Section — Functional architecture diagram + text",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/13",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:37:44Z",
+      "updatedAt": "2026-02-12T11:28:05Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "dgl7"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1778,7 +1889,9 @@
       },
       "fields": {
         "Title": "Section — Functional architecture diagram + text",
-        "Status": "Todo"
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1787,10 +1900,12 @@
       "title": "Section — Trade studies (decision matrices)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:39:14Z",
+      "updatedAt": "2026-02-12T11:28:29Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1799,7 +1914,9 @@
       },
       "fields": {
         "Title": "Section — Trade studies (decision matrices)",
-        "Status": "Todo"
+        "Status": "Todo",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1808,10 +1925,12 @@
       "title": "Section — Cyberphysical architecture (HW/SW block diagram)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/15",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:39:24Z",
+      "updatedAt": "2026-02-12T11:28:11Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "dgl7"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1820,7 +1939,9 @@
       },
       "fields": {
         "Title": "Section — Cyberphysical architecture (HW/SW block diagram)",
-        "Status": "Todo"
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1829,10 +1950,14 @@
       "title": "Section — System depiction/description (subsystems)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:41:34Z",
+      "updatedAt": "2026-02-12T11:28:19Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "dgl7",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1841,7 +1966,9 @@
       },
       "fields": {
         "Title": "Section — System depiction/description (subsystems)",
-        "Status": "Todo"
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1850,10 +1977,12 @@
       "title": "Section — Project management (schedule, responsibilities, budget, risk)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
       "state": "OPEN",
-      "updatedAt": "2026-01-29T23:41:48Z",
+      "updatedAt": "2026-02-12T11:28:23Z",
       "closedAt": null,
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "dgl7"
+      ],
       "labels": [],
       "milestone": {
         "title": "Design Proposal",
@@ -1862,7 +1991,9 @@
       },
       "fields": {
         "Title": "Section — Project management (schedule, responsibilities, budget, risk)",
-        "Status": "Todo"
+        "Status": "In Progress",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -1883,7 +2014,9 @@
       },
       "fields": {
         "Title": "References (papers, datasheets, docs)",
-        "Status": "Todo"
+        "Status": "Todo",
+        "Due date": "2026-02-12",
+        "Start date": "2026-02-11"
       }
     },
     {
@@ -2262,9 +2395,9 @@
       "number": 32,
       "title": "Klann Linkage Leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
-      "state": "OPEN",
-      "updatedAt": "2026-02-11T01:14:41Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:24:46Z",
+      "closedAt": "2026-02-12T11:24:46Z",
       "mergedAt": null,
       "assignees": [
         "yechenz-wq"
@@ -2302,7 +2435,7 @@
       },
       "fields": {
         "Title": "Chassis Design",
-        "Status": "Todo",
+        "Status": "In Progress",
         "Start date": "2026-02-11",
         "Due date": "2026-02-14"
       }
@@ -2312,9 +2445,9 @@
       "number": 34,
       "title": "Side leg Design Prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
-      "state": "OPEN",
-      "updatedAt": "2026-02-08T21:48:00Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:24:44Z",
+      "closedAt": "2026-02-12T11:24:44Z",
       "mergedAt": null,
       "assignees": [
         "liu3304697516"
@@ -2327,7 +2460,7 @@
       },
       "fields": {
         "Title": "Side leg Design Prototype",
-        "Status": "In Progress",
+        "Status": "Done",
         "Start date": "2026-02-11",
         "Due date": "2026-02-14"
       }
@@ -2481,10 +2614,10 @@
     {
       "type": "Issue",
       "number": 41,
-      "title": "Calculate torque specifications for both leg assemblies",
+      "title": "Calculate torque specifications for klann leg assemblies",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
       "state": "OPEN",
-      "updatedAt": "2026-02-09T01:55:44Z",
+      "updatedAt": "2026-02-12T11:25:28Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [],
@@ -2495,7 +2628,7 @@
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
       },
       "fields": {
-        "Title": "Calculate torque specifications for both leg assemblies",
+        "Title": "Calculate torque specifications for klann leg assemblies",
         "Status": "Todo"
       }
     },
@@ -2504,9 +2637,9 @@
       "number": 42,
       "title": "Calculate torque specifications for side leg assemblies",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/42",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T01:54:29Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:25:41Z",
+      "closedAt": "2026-02-12T11:25:41Z",
       "mergedAt": null,
       "assignees": [],
       "labels": [],
@@ -2517,7 +2650,7 @@
       },
       "fields": {
         "Title": "Calculate torque specifications for side leg assemblies",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {
@@ -2567,9 +2700,9 @@
       "number": 45,
       "title": "Select appropriate motors for side articulated leg",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T01:58:47Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:25:43Z",
+      "closedAt": "2026-02-12T11:25:43Z",
       "mergedAt": null,
       "assignees": [],
       "labels": [],
@@ -2580,7 +2713,7 @@
       },
       "fields": {
         "Title": "Select appropriate motors for side articulated leg",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {
@@ -2651,9 +2784,9 @@
       "number": 49,
       "title": "Select sensors for side articulated leg control",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/49",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:01:48Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:26:02Z",
+      "closedAt": "2026-02-12T11:26:02Z",
       "mergedAt": null,
       "assignees": [],
       "labels": [],
@@ -2664,7 +2797,7 @@
       },
       "fields": {
         "Title": "Select sensors for side articulated leg control",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {
@@ -2714,11 +2847,13 @@
       "number": 7,
       "title": "Trade study summarized showcase",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/7",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:13:27Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:26:44Z",
+      "closedAt": "2026-02-11T22:00:16Z",
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
       "labels": [],
       "milestone": {
         "title": "Pre-proposal Presentation",
@@ -2727,7 +2862,8 @@
       },
       "fields": {
         "Title": "Trade study summarized showcase",
-        "Status": "Todo"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -2735,11 +2871,13 @@
       "number": 8,
       "title": "Project management slide (schedule + responsibilities)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/8",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:13:42Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:27:05Z",
+      "closedAt": "2026-02-11T22:00:12Z",
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "dgl7"
+      ],
       "labels": [],
       "milestone": {
         "title": "Pre-proposal Presentation",
@@ -2748,7 +2886,8 @@
       },
       "fields": {
         "Title": "Project management slide (schedule + responsibilities)",
-        "Status": "Todo"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -2756,11 +2895,13 @@
       "number": 52,
       "title": "Showcase side leg assembly progress",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/52",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:14:02Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:27:14Z",
+      "closedAt": "2026-02-11T22:00:10Z",
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "liu3304697516"
+      ],
       "labels": [],
       "milestone": {
         "title": "Pre-proposal Presentation",
@@ -2769,7 +2910,8 @@
       },
       "fields": {
         "Title": "Showcase side leg assembly progress",
-        "Status": "Todo"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -2777,11 +2919,13 @@
       "number": 53,
       "title": "Estimated budget slide",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/53",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:14:24Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:27:22Z",
+      "closedAt": "2026-02-11T22:00:06Z",
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
       "labels": [],
       "milestone": {
         "title": "Pre-proposal Presentation",
@@ -2790,7 +2934,8 @@
       },
       "fields": {
         "Title": "Estimated budget slide",
-        "Status": "Todo"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     },
     {
@@ -2798,11 +2943,13 @@
       "number": 54,
       "title": "Risk management plan",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/54",
-      "state": "OPEN",
-      "updatedAt": "2026-02-09T02:14:40Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-12T11:27:27Z",
+      "closedAt": "2026-02-11T22:00:03Z",
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "liu3304697516"
+      ],
       "labels": [],
       "milestone": {
         "title": "Pre-proposal Presentation",
@@ -2811,7 +2958,8 @@
       },
       "fields": {
         "Title": "Risk management plan",
-        "Status": "Todo"
+        "Status": "Done",
+        "Due date": "2026-02-11"
       }
     }
   ],

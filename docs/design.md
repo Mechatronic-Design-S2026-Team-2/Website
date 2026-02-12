@@ -17,4 +17,9 @@ title: "System Design"
   caption="Rotate/zoom to inspect." 
   force_gray="true" %}
 
-
+{% include model-card.html
+  title="v1 Hexapod Design"
+  alt=v1 Hexapod Design"
+  file="/assets/designs/hexapod_v1.glb"
+  caption="Rotate/zoom to inspect." 
+  force_gray="true" %}

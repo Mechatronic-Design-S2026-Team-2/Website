@@ -1,163 +1,264 @@
 // docs/assets/js/svg-diagram.js
-(function () {
-  function clamp(v, lo, hi) {
-    return Math.max(lo, Math.min(hi, v));
+(() => {
+  if (window.__TEAM2_SVGDIAGRAM_INIT__) return;
+  window.__TEAM2_SVGDIAGRAM_INIT__ = true;
+
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+  function parseViewBox(svg) {
+    const vb = (svg.getAttribute("viewBox") || "").trim();
+    const parts = vb.split(/[\s,]+/).map(Number);
+    if (parts.length === 4 && parts.every(Number.isFinite)) {
+      return { x: parts[0], y: parts[1], w: parts[2], h: parts[3] };
+    }
+    return null;
   }
 
-  function setupPanZoom(card) {
-    const viewport = card.querySelector("[data-diagram-viewport]");
-    const resetBtn = card.querySelector("[data-diagram-reset]");
-    const img = viewport ? viewport.querySelector("img.diagram-img") : null;
-    if (!viewport || !img) return;
-
-    const stage = viewport.querySelector(".diagram-stage");
-    const state = { x: 0, y: 0, s: 1 };
-
-    function apply() {
-      stage.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.s})`;
-    }
-
-    function fitToViewport() {
-      const rect = viewport.getBoundingClientRect();
-      const vw = rect.width;
-      const vh = rect.height;
-
-      // Natural size works well for draw.io exports (they include width/height)
-      const iw = img.naturalWidth || 0;
-      const ih = img.naturalHeight || 0;
-
-      if (vw <= 0 || vh <= 0 || iw <= 0 || ih <= 0) {
-        // Fallback: just reset
-        state.s = 1;
-        state.x = 0;
-        state.y = 0;
-        apply();
-        return;
-      }
-
-      const pad = 16;
-      const scale = Math.min((vw - pad) / iw, (vh - pad) / ih);
-      state.s = clamp(scale, 0.2, 6);
-
-      state.x = (vw - iw * state.s) / 2;
-      state.y = (vh - ih * state.s) / 2;
-
-      apply();
-    }
-
-    // Initial fit
-    requestAnimationFrame(() => requestAnimationFrame(fitToViewport));
-
-    // Drag-to-pan
-    let dragging = false;
-    let startX = 0, startY = 0;
-    let baseX = 0, baseY = 0;
-
-    function onDown(e) {
-      dragging = true;
-      viewport.classList.add("is-dragging");
-      startX = e.clientX;
-      startY = e.clientY;
-      baseX = state.x;
-      baseY = state.y;
-      if (viewport.setPointerCapture) viewport.setPointerCapture(e.pointerId);
-    }
-
-    function onMove(e) {
-      if (!dragging) return;
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
-      state.x = baseX + dx;
-      state.y = baseY + dy;
-      apply();
-    }
-
-    function onUp(e) {
-      dragging = false;
-      viewport.classList.remove("is-dragging");
-      if (viewport.releasePointerCapture) viewport.releasePointerCapture(e.pointerId);
-    }
-
-    viewport.addEventListener("pointerdown", onDown);
-    viewport.addEventListener("pointermove", onMove);
-    viewport.addEventListener("pointerup", onUp);
-    viewport.addEventListener("pointercancel", onUp);
-    viewport.addEventListener("pointerleave", onUp);
-
-    // Wheel-to-zoom towards cursor
-    viewport.addEventListener(
-      "wheel",
-      (e) => {
-        e.preventDefault();
-        const rect = viewport.getBoundingClientRect();
-        const cx = e.clientX - rect.left;
-        const cy = e.clientY - rect.top;
-
-        const prev = state.s;
-        const delta = e.deltaY < 0 ? 1.12 : 1 / 1.12;
-        state.s = clamp(state.s * delta, 0.2, 10);
-
-        // Keep cursor point fixed
-        state.x = cx - ((cx - state.x) * state.s) / prev;
-        state.y = cy - ((cy - state.y) * state.s) / prev;
-
-        apply();
-      },
-      { passive: false }
-    );
-
-    if (resetBtn) resetBtn.addEventListener("click", fitToViewport);
-
-    // Refit on resize
-    let t = null;
-    window.addEventListener("resize", () => {
-      clearTimeout(t);
-      t = setTimeout(fitToViewport, 120);
-    });
+  function setViewBox(svg, vb) {
+    svg.setAttribute("viewBox", `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
   }
 
-  async function loadOne(card) {
-    const url = card.getAttribute("data-svg-url");
-    const viewport = card.querySelector("[data-diagram-viewport]");
-    if (!url || !viewport) return;
+  function safeGetBBox(svg) {
+    try {
+      const bb = svg.getBBox();
+      if (bb && bb.width > 0 && bb.height > 0) return bb;
+    } catch (_) {}
+    return null;
+  }
 
-    // Build stage + image (no fetch needed)
-    viewport.innerHTML = `
-      <div class="diagram-loading">Loading diagram…</div>
-      <div class="diagram-stage"></div>
-    `;
-    const stage = viewport.querySelector(".diagram-stage");
+  function ensureBaseViewBox(svg) {
+    // Prefer the SVG's own viewBox (draw.io exports typically have it and it’s correct)
+    const existing = parseViewBox(svg);
+    if (existing && existing.w > 0 && existing.h > 0) return existing;
 
-    const img = document.createElement("img");
-    img.className = "diagram-img";
-    img.alt = card.getAttribute("data-title") || "Diagram";
-    img.loading = "lazy";
+    // Otherwise derive from rendered bbox
+    const bb = safeGetBBox(svg);
+    if (bb) {
+      const padX = bb.width * 0.02;
+      const padY = bb.height * 0.02;
+      const base = { x: bb.x - padX, y: bb.y - padY, w: bb.width + 2 * padX, h: bb.height + 2 * padY };
+      setViewBox(svg, base);
+      return base;
+    }
 
-    img.onload = () => {
-      const loading = viewport.querySelector(".diagram-loading");
-      if (loading) loading.remove();
-      setupPanZoom(card);
+    // Fallback: infer from width/height attributes
+    const w = parseFloat(svg.getAttribute("width")) || 1200;
+    const h = parseFloat(svg.getAttribute("height")) || 700;
+    const base = { x: 0, y: 0, w, h };
+    setViewBox(svg, base);
+    return base;
+  }
+
+  function fit(svg, base, paddingFrac = 0.04) {
+    const padX = base.w * paddingFrac;
+    const padY = base.h * paddingFrac;
+    const vb = { x: base.x - padX, y: base.y - padY, w: base.w + 2 * padX, h: base.h + 2 * padY };
+    setViewBox(svg, vb);
+    return vb;
+  }
+
+  // When preserveAspectRatio is "xMidYMid meet", there can be letterboxing.
+  // This computes the rendered scale and offsets so cursor zoom feels correct.
+  function renderMetrics(viewport, vb) {
+    const cw = viewport.clientWidth;
+    const ch = viewport.clientHeight;
+
+    const scale = Math.min(cw / vb.w, ch / vb.h);
+    const vw = vb.w * scale;
+    const vh = vb.h * scale;
+
+    const offX = (cw - vw) / 2;
+    const offY = (ch - vh) / 2;
+
+    return { cw, ch, scale, vw, vh, offX, offY };
+  }
+
+  function clientToSvgPoint(ev, viewport, vb) {
+    const rect = viewport.getBoundingClientRect();
+    const px = ev.clientX - rect.left;
+    const py = ev.clientY - rect.top;
+
+    const m = renderMetrics(viewport, vb);
+
+    // Normalize within the actually-rendered SVG area (excluding letterbox margins)
+    const rx = (px - m.offX) / m.vw;
+    const ry = (py - m.offY) / m.vh;
+
+    const crx = clamp(rx, 0, 1);
+    const cry = clamp(ry, 0, 1);
+
+    return {
+      rx: crx,
+      ry: cry,
+      x: vb.x + vb.w * crx,
+      y: vb.y + vb.h * cry,
+      scale: m.scale
+    };
+  }
+
+  async function loadSVG(url) {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Failed to fetch SVG (${res.status})`);
+    const text = await res.text();
+
+    const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+    const svg = doc.querySelector("svg");
+    if (!svg) throw new Error("SVG parse failed (no <svg>)");
+    return svg;
+  }
+
+  function initViewport(viewport) {
+    if (viewport.dataset.svgdiInited === "1") return;
+    viewport.dataset.svgdiInited = "1";
+
+    const url = viewport.dataset.svgUrl;
+    if (!url) return;
+
+    const card = viewport.closest(".svgdi-card") || viewport.parentElement;
+    const resetBtn = card ? card.querySelector("[data-svgdi-reset]") : null;
+
+    const state = {
+      svg: null,
+      base: null,
+      dragging: false,
+      dragStart: null,
+      dragVB: null,
+      ro: null
     };
 
-    img.onerror = () => {
-      viewport.innerHTML = `<div class="diagram-error">Failed to load SVG image.</div>`;
+    const fail = (msg) => {
+      viewport.innerHTML = `<div class="svgdi-loading">${msg}</div>`;
     };
 
-    stage.appendChild(img);
+    loadSVG(url)
+      .then((svg) => {
+        // Normalize rendering behavior
+        svg.removeAttribute("width");
+        svg.removeAttribute("height");
+        svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
 
-    // Important: resolve relative correctly even if someone passed /assets/... by accident
-    // (handles GitHub Pages baseurl quirks)
-    const resolved = new URL(url, document.baseURI).toString();
-    img.src = resolved;
+        svg.classList.add("svgdi-svg");
+        // prevent any accidental inline filter inversion on the root svg
+        if (svg.style && svg.style.filter) svg.style.filter = "none";
+
+        viewport.innerHTML = "";
+        viewport.appendChild(svg);
+
+        state.svg = svg;
+
+        // Wait a frame so bbox/viewBox computations are reliable
+        requestAnimationFrame(() => {
+          state.base = ensureBaseViewBox(svg);
+
+          // This is the key fix for your “tiny + offset” default view:
+          // always start in a fitted, centered viewBox.
+          fit(svg, state.base, 0.04);
+        });
+
+        // Resize: refit only if user hasn't interacted since load
+        state.ro = new ResizeObserver(() => {
+          if (!state.svg || !state.base) return;
+          if (viewport.dataset.svgdiUserMoved === "1") return;
+          fit(state.svg, state.base, 0.04);
+        });
+        state.ro.observe(viewport);
+
+        // Zoom (wheel)
+        viewport.addEventListener(
+          "wheel",
+          (ev) => {
+            if (!state.svg || !state.base) return;
+            ev.preventDefault();
+            viewport.dataset.svgdiUserMoved = "1";
+
+            const vb = parseViewBox(state.svg);
+            if (!vb) return;
+
+            const pt = clientToSvgPoint(ev, viewport, vb);
+
+            // smooth zoom: deltaY>0 zoom out, deltaY<0 zoom in
+            const zoom = Math.exp(ev.deltaY * 0.0012);
+
+            let newW = vb.w * zoom;
+            let newH = vb.h * zoom;
+
+            const minW = state.base.w * 0.08;
+            const minH = state.base.h * 0.08;
+            const maxW = state.base.w * 20;
+            const maxH = state.base.h * 20;
+
+            newW = clamp(newW, minW, maxW);
+            newH = clamp(newH, minH, maxH);
+
+            const newX = pt.x - newW * pt.rx;
+            const newY = pt.y - newH * pt.ry;
+
+            setViewBox(state.svg, { x: newX, y: newY, w: newW, h: newH });
+          },
+          { passive: false }
+        );
+
+        // Pan (pointer drag)
+        viewport.addEventListener("pointerdown", (ev) => {
+          if (!state.svg) return;
+          viewport.dataset.svgdiUserMoved = "1";
+
+          state.dragging = true;
+          viewport.classList.add("is-grabbing");
+          viewport.setPointerCapture(ev.pointerId);
+
+          state.dragStart = { x: ev.clientX, y: ev.clientY };
+          state.dragVB = parseViewBox(state.svg);
+        });
+
+        viewport.addEventListener("pointermove", (ev) => {
+          if (!state.dragging || !state.svg || !state.dragStart || !state.dragVB) return;
+
+          const vb = state.dragVB;
+          const m = renderMetrics(viewport, vb);
+
+          // Convert pixels to SVG units using the current rendered scale
+          const dxPx = ev.clientX - state.dragStart.x;
+          const dyPx = ev.clientY - state.dragStart.y;
+
+          const dx = dxPx / m.scale;
+          const dy = dyPx / m.scale;
+
+          setViewBox(state.svg, { x: vb.x - dx, y: vb.y - dy, w: vb.w, h: vb.h });
+        });
+
+        viewport.addEventListener("pointerup", () => {
+          state.dragging = false;
+          viewport.classList.remove("is-grabbing");
+        });
+
+        viewport.addEventListener("pointercancel", () => {
+          state.dragging = false;
+          viewport.classList.remove("is-grabbing");
+        });
+
+        // Reset view button
+        if (resetBtn) {
+          resetBtn.addEventListener("click", () => {
+            if (!state.svg || !state.base) return;
+            viewport.dataset.svgdiUserMoved = "0";
+            fit(state.svg, state.base, 0.04);
+          });
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+        fail("Failed to load diagram.");
+      });
   }
 
-  function init() {
-    document.querySelectorAll("[data-svg-diagram]").forEach(loadOne);
+  function initAll() {
+    document.querySelectorAll("[data-svgdi]").forEach(initViewport);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", initAll);
   } else {
-    init();
+    initAll();
   }
 })();

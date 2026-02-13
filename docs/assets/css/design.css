@@ -51,3 +51,49 @@
   margin-top: -4px;
   line-height: 1.45;
 }
+
+.t2-toc {
+  margin-top: 14px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.02);
+}
+
+.t2-toc-title {
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.t2-toc-list {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.t2-toc-list a {
+  text-decoration: none;
+}
+
+.t2-toc-list a:hover {
+  text-decoration: underline;
+}
+
+/* Collapsible section styling */
+.t2-section summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.t2-section summary::-webkit-details-marker { display: none; }
+
+/* Make the summary header look like a normal h2 */
+.t2-section summary h2 {
+  display: inline-block;
+  margin: 0;
+}
+
+/* Give open sections a little breathing room */
+.t2-section[open] {
+  margin-top: 2px;
+}

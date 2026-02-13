@@ -107,8 +107,8 @@ title: "System Design"
   <p class="t2-note">Interactive, zoomable diagram (scroll to zoom, drag to pan).</p>
   {% include svg-diagram.html
     title="Functional architecture"
-    src="assets/diagrams/functional-architecture.svg"
-    source="assets/diagrams/functional-architecture.drawio"
+    src="/assets/diagrams/functional-architecture.svg"
+    source="/assets/diagrams/functional-architecture.drawio.xml"
     caption="Scroll to zoom • drag to pan • Fit/Reset controls"
   %}
 </div>
@@ -158,8 +158,8 @@ title: "System Design"
   <p class="t2-note">Interactive, zoomable diagram. Hosted in-repo.</p>
   {% include svg-diagram.html
     title="Cyberphysical architecture"
-    src="assets/diagrams/cyberphysical-architecture.svg"
-    source="assets/diagrams/cyberphysical-architecture.drawio"
+    src="/assets/diagrams/cyberphysical-architecture.svg"
+    source="/assets/diagrams/cyberphysical-architecture.drawio.xml"
     caption="Scroll to zoom • drag to pan • Fit/Reset controls"
   %}
 </div>

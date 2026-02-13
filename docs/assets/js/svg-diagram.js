@@ -1,162 +1,192 @@
-(() => {
-  const esc = (s) =>
-    String(s ?? "")
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-
-  function clamp(x, a, b) {
-    return Math.max(a, Math.min(b, x));
+// docs/assets/js/svg-diagram.js
+(function () {
+  function clamp(v, lo, hi) {
+    return Math.max(lo, Math.min(hi, v));
   }
 
-  function initCard(card) {
-    const url = card.dataset.svgUrl;
+  function stripXmlPreamble(svgText) {
+    return svgText
+      .replace(/<\?xml[\s\S]*?\?>/gi, "")
+      .replace(/<!DOCTYPE[\s\S]*?>/gi, "")
+      .trim();
+  }
+
+  function ensureViewBox(svgEl) {
+    const vb = svgEl.getAttribute("viewBox");
+    if (vb && vb.trim()) return;
+
+    // Try width/height attributes first
+    const wAttr = svgEl.getAttribute("width");
+    const hAttr = svgEl.getAttribute("height");
+
+    const w = wAttr ? parseFloat(String(wAttr).replace(/[^\d.]/g, "")) : NaN;
+    const h = hAttr ? parseFloat(String(hAttr).replace(/[^\d.]/g, "")) : NaN;
+
+    if (Number.isFinite(w) && Number.isFinite(h) && w > 0 && h > 0) {
+      svgEl.setAttribute("viewBox", `0 0 ${w} ${h}`);
+      return;
+    }
+
+    // Fallback: once in DOM, we can try getBBox()
+    try {
+      const bbox = svgEl.getBBox();
+      if (bbox && bbox.width > 0 && bbox.height > 0) {
+        svgEl.setAttribute("viewBox", `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+      }
+    } catch (_) {
+      // If still no viewBox, leave it; sizing will rely on CSS + intrinsic.
+    }
+  }
+
+  function getViewBoxSize(svgEl) {
+    const vb = (svgEl.getAttribute("viewBox") || "").trim().split(/\s+/).map(Number);
+    if (vb.length === 4 && vb.every((n) => Number.isFinite(n))) {
+      return { w: vb[2], h: vb[3] };
+    }
+    return null;
+  }
+
+  function setupPanZoom(card) {
     const viewport = card.querySelector("[data-diagram-viewport]");
     const resetBtn = card.querySelector("[data-diagram-reset]");
+    const svg = viewport ? viewport.querySelector("svg") : null;
+    if (!viewport || !svg) return;
 
-    if (!url || !viewport) return;
+    // Wrap SVG so we can transform the wrapper instead of the SVG root (more robust)
+    const stage = document.createElement("div");
+    stage.className = "diagram-stage";
+    svg.parentNode.insertBefore(stage, svg);
+    stage.appendChild(svg);
 
-    let scale = 1;
-    let tx = 0;
-    let ty = 0;
-    let inner = null;
+    // Normalize SVG sizing behavior
+    svg.style.width = "100%";
+    svg.style.height = "100%";
+    svg.style.display = "block";
+    svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+    ensureViewBox(svg);
 
-    const apply = () => {
-      if (!inner) return;
-      inner.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
-    };
+    // State
+    const state = { x: 0, y: 0, s: 1 };
 
-    const reset = () => {
-      if (!inner) return;
-      // Fit to viewport based on SVG viewBox if available
-      const svg = inner.querySelector("svg");
-      const vb = svg?.viewBox?.baseVal;
+    function apply() {
+      stage.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.s})`;
+    }
 
-      const vw = viewport.clientWidth || 1;
-      const vh = viewport.clientHeight || 1;
+    function fitToViewport() {
+      const vbSize = getViewBoxSize(svg);
 
-      if (vb && vb.width && vb.height) {
-        const s = Math.min(vw / vb.width, vh / vb.height);
-        scale = clamp(s * 0.98, 0.25, 6);
-        // center
-        const contentW = vb.width * scale;
-        const contentH = vb.height * scale;
-        tx = (vw - contentW) / 2;
-        ty = (vh - contentH) / 2;
+      // viewport content box
+      const rect = viewport.getBoundingClientRect();
+      const vw = rect.width;
+      const vh = rect.height;
+
+      // Use viewBox if possible; otherwise just start at 1 and centered
+      if (vbSize && vbSize.w > 0 && vbSize.h > 0 && vw > 0 && vh > 0) {
+        // Fit with small padding
+        const pad = 16;
+        const scale = Math.min((vw - pad) / vbSize.w, (vh - pad) / vbSize.h);
+        state.s = clamp(scale, 0.2, 4);
+
+        // Center
+        state.x = (vw - vbSize.w * state.s) / 2;
+        state.y = (vh - vbSize.h * state.s) / 2;
       } else {
-        scale = 1;
-        tx = 0;
-        ty = 0;
+        state.s = 1;
+        state.x = 0;
+        state.y = 0;
       }
       apply();
-    };
+    }
 
-    if (resetBtn) resetBtn.addEventListener("click", reset);
+    // Initial fit after layout settles
+    requestAnimationFrame(() => {
+      requestAnimationFrame(fitToViewport);
+    });
 
-    fetch(url, { cache: "no-store" })
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
-        return r.text();
-      })
-      .then((txt) => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(txt, "image/svg+xml");
-        const svg = doc.documentElement;
+    // Drag-to-pan
+    let dragging = false;
+    let startX = 0, startY = 0;
+    let baseX = 0, baseY = 0;
 
-        // Basic sanity check
-        if (!svg || svg.nodeName.toLowerCase() !== "svg") {
-          throw new Error("Response is not an SVG document.");
-        }
+    function onDown(e) {
+      dragging = true;
+      viewport.classList.add("is-dragging");
+      startX = e.clientX;
+      startY = e.clientY;
+      baseX = state.x;
+      baseY = state.y;
+      viewport.setPointerCapture?.(e.pointerId);
+    }
 
-        // Make it responsive; pan/zoom handled by wrapper transform
-        svg.removeAttribute("width");
-        svg.removeAttribute("height");
-        svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
-        svg.classList.add("diagram-svg");
+    function onMove(e) {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      state.x = baseX + dx;
+      state.y = baseY + dy;
+      apply();
+    }
 
-        viewport.innerHTML = "";
-        inner = document.createElement("div");
-        inner.className = "diagram-inner";
-        inner.appendChild(document.importNode(svg, true));
-        viewport.appendChild(inner);
+    function onUp(e) {
+      dragging = false;
+      viewport.classList.remove("is-dragging");
+      viewport.releasePointerCapture?.(e.pointerId);
+    }
 
-        // Pan
-        let dragging = false;
-        let lastX = 0;
-        let lastY = 0;
+    viewport.addEventListener("pointerdown", onDown);
+    viewport.addEventListener("pointermove", onMove);
+    viewport.addEventListener("pointerup", onUp);
+    viewport.addEventListener("pointercancel", onUp);
+    viewport.addEventListener("pointerleave", onUp);
 
-        viewport.addEventListener("pointerdown", (e) => {
-          dragging = true;
-          viewport.setPointerCapture(e.pointerId);
-          lastX = e.clientX;
-          lastY = e.clientY;
-          viewport.classList.add("is-dragging");
-        });
+    // Wheel-to-zoom (zoom towards cursor)
+    viewport.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+        const rect = viewport.getBoundingClientRect();
+        const cx = e.clientX - rect.left;
+        const cy = e.clientY - rect.top;
 
-        viewport.addEventListener("pointermove", (e) => {
-          if (!dragging) return;
-          tx += e.clientX - lastX;
-          ty += e.clientY - lastY;
-          lastX = e.clientX;
-          lastY = e.clientY;
-          apply();
-        });
+        const prev = state.s;
+        const delta = e.deltaY < 0 ? 1.12 : 1 / 1.12;
+        state.s = clamp(state.s * delta, 0.2, 6);
 
-        const endDrag = (e) => {
-          if (!dragging) return;
-          dragging = false;
-          viewport.classList.remove("is-dragging");
-          try {
-            viewport.releasePointerCapture(e.pointerId);
-          } catch {}
-        };
+        // Zoom around cursor: adjust translation so point under cursor stays fixed
+        state.x = cx - ((cx - state.x) * state.s) / prev;
+        state.y = cy - ((cy - state.y) * state.s) / prev;
 
-        viewport.addEventListener("pointerup", endDrag);
-        viewport.addEventListener("pointercancel", endDrag);
+        apply();
+      },
+      { passive: false }
+    );
 
-        // Zoom (wheel)
-        viewport.addEventListener(
-          "wheel",
-          (e) => {
-            e.preventDefault();
-            const rect = viewport.getBoundingClientRect();
-            const mx = e.clientX - rect.left;
-            const my = e.clientY - rect.top;
+    // Reset
+    if (resetBtn) resetBtn.addEventListener("click", fitToViewport);
 
-            const factor = e.deltaY < 0 ? 1.1 : 0.9;
-            const newScale = clamp(scale * factor, 0.25, 6);
-            const k = newScale / scale;
-
-            // keep mouse point stable
-            tx = mx - (mx - tx) * k;
-            ty = my - (my - ty) * k;
-
-            scale = newScale;
-            apply();
-          },
-          { passive: false }
-        );
-
-        // Double-click reset
-        viewport.addEventListener("dblclick", reset);
-
-        // Initial fit
-        reset();
-      })
-      .catch((err) => {
-        viewport.innerHTML = `
-          <div class="diagram-error">
-            <strong>Failed to load diagram.</strong><br>
-            <a href="${esc(url)}" target="_blank" rel="noreferrer">Open SVG directly</a><br>
-            <small>${esc(err.message)}</small>
-          </div>
-        `;
-      });
+    // Re-fit on resize
+    let t = null;
+    window.addEventListener("resize", () => {
+      clearTimeout(t);
+      t = setTimeout(fitToViewport, 120);
+    });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-svg-diagram]").forEach(initCard);
-  });
-})();
+  async function loadOne(card) {
+    const url = card.getAttribute("data-svg-url");
+    const viewport = card.querySelector("[data-diagram-viewport]");
+    if (!url || !viewport) return;
+
+    viewport.innerHTML = `<div class="diagram-loading">Loading diagram…</div>`;
+
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+      let text = await res.text();
+      text = stripXmlPreamble(text);
+
+      // Insert SVG
+      viewport.innerHTML = text;
+
+      const svg = viewport.querySelector("svg");
+      if (!svg) throw

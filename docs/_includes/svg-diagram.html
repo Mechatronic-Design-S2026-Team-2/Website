@@ -1,0 +1,26 @@
+<figure class="t2-diagram">
+  <div
+    class="t2-diagram-frame"
+    data-svg-panzoom
+    data-src="{{ include.src | relative_url }}"
+    aria-label="{{ include.title | escape }}"
+  >
+    <div class="t2-diagram-loading">Loading diagram…</div>
+  </div>
+
+  {% if include.caption %}
+    <figcaption class="t2-diagram-caption">{{ include.caption }}</figcaption>
+  {% endif %}
+
+  <div class="t2-diagram-actions">
+    <a class="t2-linkbtn" href="{{ include.src | relative_url }}" target="_blank" rel="noreferrer">
+      Open SVG
+    </a>
+
+    {% if include.source %}
+      <a class="t2-linkbtn" href="{{ include.source | relative_url }}" target="_blank" rel="noreferrer">
+        Download diagram source (.drawio)
+      </a>
+    {% endif %}
+  </div>
+</figure>

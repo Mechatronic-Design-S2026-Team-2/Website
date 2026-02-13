@@ -25,9 +25,10 @@
   <div class="svgdi-sub">Scroll to zoom • drag to pan • Reset view to refit</div>
 
   <div class="svgdi-viewport"
-       data-svgdi
-       data-svg-url="{{ include.svg | relative_url }}"
-       style="height: {{ include.height | default: 520 }}px;">
+     data-svgdi
+     data-darkreader-ignore
+     data-svg-url="{{ include.svg | relative_url }}"
+     style="height: {{ include.height | default: 520 }}px;">
     <div class="svgdi-loading">Loading diagram…</div>
   </div>
 </div>

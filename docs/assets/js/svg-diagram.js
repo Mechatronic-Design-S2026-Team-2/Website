@@ -4,68 +4,13 @@
     return Math.max(lo, Math.min(hi, v));
   }
 
-  function stripXmlPreamble(svgText) {
-    return svgText
-      .replace(/<\?xml[\s\S]*?\?>/gi, "")
-      .replace(/<!DOCTYPE[\s\S]*?>/gi, "")
-      .trim();
-  }
-
-  function ensureViewBox(svgEl) {
-    const vb = svgEl.getAttribute("viewBox");
-    if (vb && vb.trim()) return;
-
-    // Try width/height attributes first
-    const wAttr = svgEl.getAttribute("width");
-    const hAttr = svgEl.getAttribute("height");
-
-    const w = wAttr ? parseFloat(String(wAttr).replace(/[^\d.]/g, "")) : NaN;
-    const h = hAttr ? parseFloat(String(hAttr).replace(/[^\d.]/g, "")) : NaN;
-
-    if (Number.isFinite(w) && Number.isFinite(h) && w > 0 && h > 0) {
-      svgEl.setAttribute("viewBox", `0 0 ${w} ${h}`);
-      return;
-    }
-
-    // Fallback: once in DOM, we can try getBBox()
-    try {
-      const bbox = svgEl.getBBox();
-      if (bbox && bbox.width > 0 && bbox.height > 0) {
-        svgEl.setAttribute("viewBox", `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
-      }
-    } catch (_) {
-      // If still no viewBox, leave it; sizing will rely on CSS + intrinsic.
-    }
-  }
-
-  function getViewBoxSize(svgEl) {
-    const vb = (svgEl.getAttribute("viewBox") || "").trim().split(/\s+/).map(Number);
-    if (vb.length === 4 && vb.every((n) => Number.isFinite(n))) {
-      return { w: vb[2], h: vb[3] };
-    }
-    return null;
-  }
-
   function setupPanZoom(card) {
     const viewport = card.querySelector("[data-diagram-viewport]");
     const resetBtn = card.querySelector("[data-diagram-reset]");
-    const svg = viewport ? viewport.querySelector("svg") : null;
-    if (!viewport || !svg) return;
+    const img = viewport ? viewport.querySelector("img.diagram-img") : null;
+    if (!viewport || !img) return;
 
-    // Wrap SVG so we can transform the wrapper instead of the SVG root (more robust)
-    const stage = document.createElement("div");
-    stage.className = "diagram-stage";
-    svg.parentNode.insertBefore(stage, svg);
-    stage.appendChild(svg);
-
-    // Normalize SVG sizing behavior
-    svg.style.width = "100%";
-    svg.style.height = "100%";
-    svg.style.display = "block";
-    svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
-    ensureViewBox(svg);
-
-    // State
+    const stage = viewport.querySelector(".diagram-stage");
     const state = { x: 0, y: 0, s: 1 };
 
     function apply() {
@@ -73,35 +18,35 @@
     }
 
     function fitToViewport() {
-      const vbSize = getViewBoxSize(svg);
-
-      // viewport content box
       const rect = viewport.getBoundingClientRect();
       const vw = rect.width;
       const vh = rect.height;
 
-      // Use viewBox if possible; otherwise just start at 1 and centered
-      if (vbSize && vbSize.w > 0 && vbSize.h > 0 && vw > 0 && vh > 0) {
-        // Fit with small padding
-        const pad = 16;
-        const scale = Math.min((vw - pad) / vbSize.w, (vh - pad) / vbSize.h);
-        state.s = clamp(scale, 0.2, 4);
+      // Natural size works well for draw.io exports (they include width/height)
+      const iw = img.naturalWidth || 0;
+      const ih = img.naturalHeight || 0;
 
-        // Center
-        state.x = (vw - vbSize.w * state.s) / 2;
-        state.y = (vh - vbSize.h * state.s) / 2;
-      } else {
+      if (vw <= 0 || vh <= 0 || iw <= 0 || ih <= 0) {
+        // Fallback: just reset
         state.s = 1;
         state.x = 0;
         state.y = 0;
+        apply();
+        return;
       }
+
+      const pad = 16;
+      const scale = Math.min((vw - pad) / iw, (vh - pad) / ih);
+      state.s = clamp(scale, 0.2, 6);
+
+      state.x = (vw - iw * state.s) / 2;
+      state.y = (vh - ih * state.s) / 2;
+
       apply();
     }
 
-    // Initial fit after layout settles
-    requestAnimationFrame(() => {
-      requestAnimationFrame(fitToViewport);
-    });
+    // Initial fit
+    requestAnimationFrame(() => requestAnimationFrame(fitToViewport));
 
     // Drag-to-pan
     let dragging = false;
@@ -115,7 +60,7 @@
       startY = e.clientY;
       baseX = state.x;
       baseY = state.y;
-      viewport.setPointerCapture?.(e.pointerId);
+      if (viewport.setPointerCapture) viewport.setPointerCapture(e.pointerId);
     }
 
     function onMove(e) {
@@ -130,7 +75,7 @@
     function onUp(e) {
       dragging = false;
       viewport.classList.remove("is-dragging");
-      viewport.releasePointerCapture?.(e.pointerId);
+      if (viewport.releasePointerCapture) viewport.releasePointerCapture(e.pointerId);
     }
 
     viewport.addEventListener("pointerdown", onDown);
@@ -139,7 +84,7 @@
     viewport.addEventListener("pointercancel", onUp);
     viewport.addEventListener("pointerleave", onUp);
 
-    // Wheel-to-zoom (zoom towards cursor)
+    // Wheel-to-zoom towards cursor
     viewport.addEventListener(
       "wheel",
       (e) => {
@@ -150,9 +95,9 @@
 
         const prev = state.s;
         const delta = e.deltaY < 0 ? 1.12 : 1 / 1.12;
-        state.s = clamp(state.s * delta, 0.2, 6);
+        state.s = clamp(state.s * delta, 0.2, 10);
 
-        // Zoom around cursor: adjust translation so point under cursor stays fixed
+        // Keep cursor point fixed
         state.x = cx - ((cx - state.x) * state.s) / prev;
         state.y = cy - ((cy - state.y) * state.s) / prev;
 
@@ -161,10 +106,9 @@
       { passive: false }
     );
 
-    // Reset
     if (resetBtn) resetBtn.addEventListener("click", fitToViewport);
 
-    // Re-fit on resize
+    // Refit on resize
     let t = null;
     window.addEventListener("resize", () => {
       clearTimeout(t);
@@ -177,16 +121,43 @@
     const viewport = card.querySelector("[data-diagram-viewport]");
     if (!url || !viewport) return;
 
-    viewport.innerHTML = `<div class="diagram-loading">Loading diagram…</div>`;
+    // Build stage + image (no fetch needed)
+    viewport.innerHTML = `
+      <div class="diagram-loading">Loading diagram…</div>
+      <div class="diagram-stage"></div>
+    `;
+    const stage = viewport.querySelector(".diagram-stage");
 
-    try {
-      const res = await fetch(url, { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-      let text = await res.text();
-      text = stripXmlPreamble(text);
+    const img = document.createElement("img");
+    img.className = "diagram-img";
+    img.alt = card.getAttribute("data-title") || "Diagram";
+    img.loading = "lazy";
 
-      // Insert SVG
-      viewport.innerHTML = text;
+    img.onload = () => {
+      const loading = viewport.querySelector(".diagram-loading");
+      if (loading) loading.remove();
+      setupPanZoom(card);
+    };
 
-      const svg = viewport.querySelector("svg");
-      if (!svg) throw
+    img.onerror = () => {
+      viewport.innerHTML = `<div class="diagram-error">Failed to load SVG image.</div>`;
+    };
+
+    stage.appendChild(img);
+
+    // Important: resolve relative correctly even if someone passed /assets/... by accident
+    // (handles GitHub Pages baseurl quirks)
+    const resolved = new URL(url, document.baseURI).toString();
+    img.src = resolved;
+  }
+
+  function init() {
+    document.querySelectorAll("[data-svg-diagram]").forEach(loadOne);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

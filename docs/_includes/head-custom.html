@@ -1,3 +1,23 @@
+<!-- docs/_includes/head-custom.html -->
+
+<!-- Strong hint to browsers: this site is LIGHT only (reduces auto-dark inversion) -->
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+
+<!-- Dark Reader: prevent it from modifying this page (works if user has the extension) -->
+<meta name="darkreader-lock">
+
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/team.css' | relative_url }}">
+
 <script defer src="{{ '/assets/js/team.js' | relative_url }}"></script>
+
+<style>
+  /* Reinforce "light" at the CSS level too */
+  :root { color-scheme: light; }
+
+  /* If the OS uses forced colors / high contrast, don't let it recolor diagrams */
+  .svgdi-viewport, .svgdi-svg, .svgdi-card {
+    forced-color-adjust: none;
+  }
+</style>

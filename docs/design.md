@@ -21,7 +21,6 @@ title: "System Design"
       <li><a href="#mechanical">Mechanical design</a></li>
       <li><a href="#electrical">Electrical design</a></li>
       <li><a href="#software">Software & autonomy</a></li>
-      <li><a href="#integration-testing">Integration & testing</a></li>
       <li><a href="#risks">Risks & mitigations</a></li>
     </ul>
   </div>
@@ -224,28 +223,6 @@ title: "System Design"
       <li>Safety supervisor: keep-out zone, stop conditions, watchdogs.</li>
     </ul>
   </details>
-</div>
-
-<!-- ====== Card: Integration & testing ====== -->
-<div class="t2-card" id="integration-testing">
-  <h2>Integration & testing</h2>
-  <div class="t2-grid">
-    <div>
-      <h3>Staged testing</h3>
-      <ul>
-        <li>No-rider commissioning → dead weight → rider.</li>
-        <li>Repeatable test scripts (noise, stop distance, accuracy).</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Acceptance checks</h3>
-      <ul>
-        <li>6&quot; tolerance navigation benchmark.</li>
-        <li>Battery runtime under representative load.</li>
-        <li>Noise measurement at 5 ft and full load.</li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 <!-- ====== Card: Risks ====== -->

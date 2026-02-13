@@ -1,26 +1,54 @@
-<figure class="t2-diagram">
-  <div
-    class="t2-diagram-frame"
-    data-svg-panzoom
-    data-src="{{ include.src | relative_url }}"
-    aria-label="{{ include.title | escape }}"
-  >
-    <div class="t2-diagram-loading">Loading diagram…</div>
+<!-- docs/_includes/svg-diagram.html -->
+<link rel="stylesheet" href="{{ '/assets/css/svg-diagram.css' | relative_url }}">
+
+{% assign _src = include.src | default: '' %}
+{% assign _source = include.source | default: '' %}
+
+{%- comment -%}
+Make paths root-relative, then apply GitHub Pages baseurl via relative_url.
+Works whether caller passes "assets/.." or "/assets/..".
+{%- endcomment -%}
+
+{% unless _src contains '://' %}
+  {% unless _src startswith '/' %}
+    {% assign _src = _src | prepend: '/' %}
+  {% endunless %}
+  {% assign svg_url = _src | replace: '//','/' | relative_url %}
+{% else %}
+  {% assign svg_url = _src %}
+{% endunless %}
+
+{% unless _source == '' %}
+  {% unless _source contains '://' %}
+    {% unless _source startswith '/' %}
+      {% assign _source = _source | prepend: '/' %}
+    {% endunless %}
+    {% assign source_url = _source | replace: '//','/' | relative_url %}
+  {% else %}
+    {% assign source_url = _source %}
+  {% endunless %}
+{% endunless %}
+
+<div class="t2-card diagram-card" data-svg-diagram data-svg-url="{{ svg_url }}">
+  <div class="diagram-head">
+    <h3 class="diagram-title">{{ include.title | default: 'Diagram' }}</h3>
+
+    <div class="diagram-links">
+      <a class="diagram-link" href="{{ svg_url }}" target="_blank" rel="noreferrer">Open SVG</a>
+      {% if source_url %}
+        <a class="diagram-link" href="{{ source_url }}" target="_blank" rel="noreferrer">Source (.drawio.xml)</a>
+      {% endif %}
+      <button class="diagram-link diagram-btn" type="button" data-diagram-reset>Reset view</button>
+    </div>
   </div>
 
   {% if include.caption %}
-    <figcaption class="t2-diagram-caption">{{ include.caption }}</figcaption>
+    <div class="diagram-caption">{{ include.caption }}</div>
   {% endif %}
 
-  <div class="t2-diagram-actions">
-    <a class="t2-linkbtn" href="{{ include.src | relative_url }}" target="_blank" rel="noreferrer">
-      Open SVG
-    </a>
-
-    {% if include.source %}
-      <a class="t2-linkbtn" href="{{ include.source | relative_url }}" target="_blank" rel="noreferrer">
-        Download diagram source (.drawio)
-      </a>
-    {% endif %}
+  <div class="diagram-viewport" data-diagram-viewport>
+    <div class="diagram-loading">Loading diagram…</div>
   </div>
-</figure>
+</div>
+
+<script src="{{ '/assets/js/svg-diagram.js' | relative_url }}" defer></script>

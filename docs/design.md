@@ -79,42 +79,48 @@ title: "System Design"
 <div class="t2-card" id="trade-studies">
   <h2>Design Trade Studies</h2>
 
-  <details class="t2-details" open>
+  <details class="t2-acc" open>
     <summary>Locomotion concept</summary>
-    <p>
-      We compared Klann vs Jansen vs articulated multi-DOF legs. Klann offers a mechanically encoded gait
-      with fewer links/joints than Jansen and far less software/IK dependency than articulated legs, which reduces
-      “software trip” risk and improves reliability under payload. It also provides better step clearance for taped-course
-      reliability and obstacle tolerance.
-    </p>
+    <div class="t2-acc-body">
+      <p>
+        We compared Klann vs Jansen vs articulated multi-DOF legs. Klann offers a mechanically encoded gait
+        with fewer links/joints than Jansen and far less software/IK dependency than articulated legs, which reduces
+        “software trip” risk and improves reliability under payload. It also provides better step clearance for taped-course
+        reliability and obstacle tolerance.
+      </p>
+    </div>
   </details>
 
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>Drive motor selection</summary>
-    <p>
-      We compared (1) high-torque DC gear motors, (2) smart servos (e.g., Dynamixel), and (3) steppers + gearbox.
-      DC gear motors provide strong torque through high reduction at low cost, helping keep noise low at the walking-speed
-      operating point. They also support efficiency targets for battery life, and can meet navigation tolerance when paired
-      with external encoders.
-    </p>
-    <ul>
-      <li><b>Key acceptance criteria:</b> stall torque margin in stance phase, noise at operating RPM, thermal rise over 30 min, and encoder resolution.</li>
-      <li><b>Planned validation:</b> one-leg + crank bench test with current sensing + temperature logging and audible dB measurement at 5 ft.</li>
-    </ul>
+    <div class="t2-acc-body">
+      <p>
+        We compared (1) high-torque DC gear motors, (2) smart servos (e.g., Dynamixel), and (3) steppers + gearbox.
+        DC gear motors provide strong torque through high reduction at low cost, helping keep noise low at the walking-speed
+        operating point. They also support efficiency targets for battery life, and can meet navigation tolerance when paired
+        with external encoders.
+      </p>
+      <ul>
+        <li><b>Key acceptance criteria:</b> stall torque margin in stance phase, noise at operating RPM, thermal rise over 30 min, and encoder resolution.</li>
+        <li><b>Planned validation:</b> one-leg + crank bench test with current sensing + temperature logging and audible dB measurement at 5 ft.</li>
+      </ul>
+    </div>
   </details>
 
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>Compute & sensing</summary>
-    <p>
-      We compared low-cost compute nodes for embedded autonomy and selected Jetson Nano primarily for CUDA acceleration
-      to support depth processing with acceptable latency/power. Sensing is centered on a forward depth camera for obstacle
-      detection/scene representation, with an IMU for short-horizon stabilization and disturbance detection, and an optional rear
-      camera path to improve awareness during backing/turning.
-    </p>
-    <ul>
-      <li><b>Key acceptance criteria:</b> end-to-end perception latency, worst-case power draw, and stability of outputs under stage lighting.</li>
-      <li><b>Planned validation:</b> “walk in place” perception profiling + obstacle stop tests with a safety buffer threshold.</li>
-    </ul>
+    <div class="t2-acc-body">
+      <p>
+        We compared low-cost compute nodes for embedded autonomy and selected Jetson Nano primarily for CUDA acceleration
+        to support depth processing with acceptable latency/power. Sensing is centered on a forward depth camera for obstacle
+        detection/scene representation, with an IMU for short-horizon stabilization and disturbance detection, and an optional rear
+        camera path to improve awareness during backing/turning.
+      </p>
+      <ul>
+        <li><b>Key acceptance criteria:</b> end-to-end perception latency, worst-case power draw, and stability of outputs under stage lighting.</li>
+        <li><b>Planned validation:</b> “walk in place” perception profiling + obstacle stop tests with a safety buffer threshold.</li>
+      </ul>
+    </div>
   </details>
 </div>
 
@@ -127,16 +133,18 @@ title: "System Design"
     source="/assets/diagrams/cyberphysical-architecture.drawio.xml"
     caption="Scroll to zoom • drag to pan • Fit/Reset controls"
   %}
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>Description</summary>
-    <p>
-      The cyberphysical architecture splits “heavy” autonomy workloads (perception, mapping/localization,
-      planning) onto an embedded compute node (Jetson), while timing-critical motor/encoder/contact I/O
-      and deterministic gait control runs on one or more ESP32 microcontrollers. The operator station
-      provides mode and mission inputs; onboard sensing (depth camera, optional rear camera, IMU) feeds
-      state estimation and navigation; body-level velocity commands are sent to the ESP32 side, which
-      closes low-level loops and returns odometry + gait state for fusion and telemetry.
-    </p>
+    <div class="t2-acc-body">
+      <p>
+        The cyberphysical architecture splits “heavy” autonomy workloads (perception, mapping/localization,
+        planning) onto an embedded compute node (Jetson), while timing-critical motor/encoder/contact I/O
+        and deterministic gait control runs on one or more ESP32 microcontrollers. The operator station
+        provides mode and mission inputs; onboard sensing (depth camera, optional rear camera, IMU) feeds
+        state estimation and navigation; body-level velocity commands are sent to the ESP32 side, which
+        closes low-level loops and returns odometry + gait state for fusion and telemetry.
+      </p>
+    </div>
   </details>
 </div>
 
@@ -149,15 +157,17 @@ title: "System Design"
    file="/assets/designs/hexapod-v1.glb"
    caption="Rotate/zoom to inspect." 
    force_gray="true" %}
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>Description</summary>
-    <p>
-      The overall system is organized into four primary subsystems: a main base structure that supports the
-      seated performer, a wheel support assembly to carry the majority of the system weight, a set of side
-      legs for stabilization/lateral motion, and two sets of Klann-linkage-style leg assemblies for forward/
-      backward locomotion. Electronics are packaged in a protected compartment between the base and wheel
-      support to lower the center of gravity, improve mass distribution, and protect wiring/controls.
-    </p>
+    <div class="t2-acc-body">
+      <p>
+        The overall system is organized into four primary subsystems: a main base structure that supports the
+        seated performer, a wheel support assembly to carry the majority of the system weight, a set of side
+        legs for stabilization/lateral motion, and two sets of Klann-linkage-style leg assemblies for forward/
+        backward locomotion. Electronics are packaged in a protected compartment between the base and wheel
+        support to lower the center of gravity, improve mass distribution, and protect wiring/controls.
+      </p>
+    </div>
   </details>
 </div>
 
@@ -167,16 +177,18 @@ title: "System Design"
    file="/assets/designs/klann-leg.glb"
    caption="Rotate/zoom to inspect." 
    force_gray="true" %}
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>Description</summary>
-    <p>
-      The Klann mechanism is selected to reduce actuator count while maintaining a mechanically encoded
-      gait. Rotary DC gear motors drive the Klann crankshafts; each crankshaft is supported by bearings
-      and standardized pivot hardware (shoulder bolts/joint pins, linkage plates, bushings/bearings, foot pads).
-      One motor per side drives the corresponding leg set; forward/backward locomotion comes from the cyclic
-      foot trajectory. Turning is implemented via a differential-drive strategy—independently controlling left/right
-      leg-set speeds enables zero-radius turning about the vertical axis.
-    </p>
+    <div class="t2-acc-body">
+      <p>
+        The Klann mechanism is selected to reduce actuator count while maintaining a mechanically encoded
+        gait. Rotary DC gear motors drive the Klann crankshafts; each crankshaft is supported by bearings
+        and standardized pivot hardware (shoulder bolts/joint pins, linkage plates, bushings/bearings, foot pads).
+        One motor per side drives the corresponding leg set; forward/backward locomotion comes from the cyclic
+        foot trajectory. Turning is implemented via a differential-drive strategy—independently controlling left/right
+        leg-set speeds enables zero-radius turning about the vertical axis.
+      </p>
+    </div>
   </details>
 </div>
 
@@ -186,17 +198,19 @@ title: "System Design"
    file="/assets/designs/articulated-leg.glb"
    caption="Rotate/zoom to inspect." 
    force_gray="true" %}
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>Description</summary>
-    <p>
-      The side legs provide active stabilization, pose control, and controlled lateral (side-to-side) translation.
-      They enlarge the support polygon to reduce tip risk under payload, help maintain the rider height target,
-      enable controlled body roll/pitch for choreographed motion, and support lateral shifting (“side glide”) while
-      staying within the 5’×5’ footprint. Each side leg is an articulated link assembly with an end foot pad, driven
-      through a pinned joint/clevis interface. The baseline approach uses compact linear actuators (motor-internal)
-      for simpler integration and precise position control, with a potential shift toward a motor-driven mechanism
-      for cost/safety/integration reasons.
-    </p>
+    <div class="t2-acc-body">
+      <p>
+        The side legs provide active stabilization, pose control, and controlled lateral (side-to-side) translation.
+        They enlarge the support polygon to reduce tip risk under payload, help maintain the rider height target,
+        enable controlled body roll/pitch for choreographed motion, and support lateral shifting (“side glide”) while
+        staying within the 5’×5’ footprint. Each side leg is an articulated link assembly with an end foot pad, driven
+        through a pinned joint/clevis interface. The baseline approach uses compact linear actuators (motor-internal)
+        for simpler integration and precise position control, with a potential shift toward a motor-driven mechanism
+        for cost/safety/integration reasons.
+      </p>
+    </div>
   </details>
 </div>
 
@@ -204,14 +218,6 @@ title: "System Design"
 <div class="t2-card" id="electrical">
   <details class="t2-section" open>
     <summary><h2>Electrical design</h2></summary>
-    <p class="t2-note">
-      Power distribution, motor drivers, sensing, safety interlocks, and harnessing strategy.
-    </p>
-    <ul>
-      <li>Power budget + distribution topology (fusing, E-stop, safe-state).</li>
-      <li>Motor drive selection per subsystem (main drive vs side legs).</li>
-      <li>Connectorization and harnessing for modular breakdown.</li>
-    </ul>
   </details>
 </div>
 
@@ -219,11 +225,6 @@ title: "System Design"
 <div class="t2-card" id="software">
   <details class="t2-section" open>
     <summary><h2>Software & autonomy</h2></summary>
-    <ul>
-      <li>Mode control: manual / semi-auto / path-following.</li>
-      <li>Estimation: IMU + encoder fusion; camera-derived cues as available.</li>
-      <li>Safety supervisor: keep-out zone, stop conditions, watchdogs.</li>
-    </ul>
   </details>
 </div>
 

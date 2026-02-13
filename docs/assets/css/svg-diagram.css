@@ -1,0 +1,88 @@
+/* docs/assets/css/svg-diagram.css */
+
+.diagram-card .diagram-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.diagram-card .diagram-title {
+  margin: 0;
+}
+
+.diagram-card .diagram-caption {
+  margin: 8px 0 12px;
+  opacity: 0.78;
+}
+
+.diagram-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.diagram-link {
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: rgba(0,0,0,0.02);
+  font-size: 0.92rem;
+}
+
+.diagram-link:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.diagram-btn {
+  cursor: pointer;
+}
+
+.diagram-viewport {
+  width: 100%;
+  height: 520px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.03);
+  overflow: hidden;
+  position: relative;
+  touch-action: none; /* important for pointer pan */
+  user-select: none;
+  cursor: grab;
+}
+
+.diagram-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.diagram-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+}
+
+.diagram-svg {
+  display: block;
+  max-width: none; /* don’t let layout fight the transform */
+}
+
+.diagram-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.diagram-error {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  text-align: center;
+}

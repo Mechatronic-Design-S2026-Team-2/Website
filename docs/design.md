@@ -57,13 +57,22 @@ title: "System Design"
 <!-- ====== Card: Functional architecture (SVG embed directly) ====== -->
 <div class="t2-card" id="functional-architecture">
   <h2>Functional architecture</h2>
-  <p class="t2-note">Interactive, zoomable diagram (scroll to zoom, drag to pan).</p>
   {% include svg-diagram.html
-    title="Functional architecture"
     svg="/assets/diagrams/functional-architecture.svg"
     source="/assets/diagrams/functional-architecture.drawio.xml"
     caption="Scroll to zoom • drag to pan • Fit/Reset controls"
   %}
+  <details class="t2-details">
+    <summary>Description</summary>
+    <p>
+      The functional architecture decomposes the robot into mode/mission selection, status/diagnostics,
+      estimation + scene interpretation, and a locomotion pipeline that synthesizes body motion commands
+      into gait phase scheduling, foot placement/contact management, and leg actuation commands. Safety
+      supervision (including E-stop handling) is treated as a cross-cutting path that can inhibit or clamp
+      motion commands when hazards are detected, and power/energy management supports the 30-minute
+      battery-life requirement.
+    </p>
+  </details>
 </div>
 
 <div class="t2-card" id="trade-studies">
@@ -113,11 +122,21 @@ title: "System Design"
   <h2>Cyberphysical architecture</h2>
   <p class="t2-note">Interactive, zoomable diagram. Hosted in-repo.</p>
   {% include svg-diagram.html
-    title="Cyberphysical architecture"
     svg="/assets/diagrams/cyberphysical-architecture.svg"
     source="/assets/diagrams/cyberphysical-architecture.drawio.xml"
     caption="Scroll to zoom • drag to pan • Fit/Reset controls"
   %}
+  <details class="t2-details">
+    <summary>Description</summary>
+    <p>
+      The cyberphysical architecture splits “heavy” autonomy workloads (perception, mapping/localization,
+      planning) onto an embedded compute node (Jetson), while timing-critical motor/encoder/contact I/O
+      and deterministic gait control runs on one or more ESP32 microcontrollers. The operator station
+      provides mode and mission inputs; onboard sensing (depth camera, optional rear camera, IMU) feeds
+      state estimation and navigation; body-level velocity commands are sent to the ESP32 side, which
+      closes low-level loops and returns odometry + gait state for fusion and telemetry.
+    </p>
+  </details>
 </div>
 
 <!-- ====== Card: Mechanical design (GLB CAD embeds) ====== -->
@@ -144,8 +163,6 @@ title: "System Design"
 <div class="t2-card" id="cad-klann">
   <h2>CAD: Klann Linkage Assembly</h2>
   {% include model-card.html
-   title="Klann Leg Subassembly"
-   alt="Klann Leg Design"
    file="/assets/designs/klann-leg.glb"
    caption="Rotate/zoom to inspect." 
    force_gray="true" %}
@@ -165,8 +182,6 @@ title: "System Design"
 <div class="t2-card" id="cad-sidelegs">
   <h2>CAD: Side Legs Assembly</h2>
   {% include model-card.html
-   title="2-DOF Side Leg Subassembly"
-   alt="2-DOF Side Leg Design"
    file="/assets/designs/articulated-leg.glb"
    caption="Rotate/zoom to inspect." 
    force_gray="true" %}

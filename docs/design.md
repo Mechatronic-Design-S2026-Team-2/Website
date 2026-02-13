@@ -61,16 +61,18 @@ title: "System Design"
     source="/assets/diagrams/functional-architecture.drawio.xml"
     caption="Scroll to zoom • drag to pan • Fit/Reset controls"
   %}
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>Description</summary>
-    <p>
-      The functional architecture decomposes the robot into mode/mission selection, status/diagnostics,
-      estimation + scene interpretation, and a locomotion pipeline that synthesizes body motion commands
-      into gait phase scheduling, foot placement/contact management, and leg actuation commands. Safety
-      supervision (including E-stop handling) is treated as a cross-cutting path that can inhibit or clamp
-      motion commands when hazards are detected, and power/energy management supports the 30-minute
-      battery-life requirement.
-    </p>
+    <div class="t2-acc-body">
+      <p>
+        The functional architecture decomposes the robot into mode/mission selection, status/diagnostics,
+        estimation + scene interpretation, and a locomotion pipeline that synthesizes body motion commands
+        into gait phase scheduling, foot placement/contact management, and leg actuation commands. Safety
+        supervision (including E-stop handling) is treated as a cross-cutting path that can inhibit or clamp
+        motion commands when hazards are detected, and power/energy management supports the 30-minute
+        battery-life requirement.
+      </p>
+    </div>
   </details>
 </div>
 

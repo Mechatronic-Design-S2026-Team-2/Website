@@ -232,56 +232,66 @@ title: "System Design"
 <div class="t2-card" id="risks">
   <h2>Risks & Mitigations</h2>
 
-  <details class="t2-details" open>
+  <details class="t2-acc" open>
     <summary>R1 — Side leg size / geometry not finalized</summary>
-    <p>
-      Incorrect side-leg placement or length can cause mechanical interference, reduce stability under payload,
-      or violate footprint/foldability constraints.
-    </p>
-    <ul>
-      <li><b>Mitigation:</b> freeze a kinematic/packaging envelope early; run CAD interference checks across worst-case poses; lock geometry before releasing parts.</li>
-      <li><b>Test:</b> check clearance and support polygon margin in CAD for extended/retracted/turning/folded configurations.</li>
-    </ul>
+    <div class="t2-acc-body">
+      <p>
+        Incorrect side-leg placement or length can cause mechanical interference, reduce stability under payload,
+        or violate footprint/foldability constraints.
+      </p>
+      <ul>
+        <li><b>Mitigation:</b> freeze a kinematic/packaging envelope early; run CAD interference checks across worst-case poses; lock geometry before releasing parts.</li>
+        <li><b>Test:</b> check clearance and support polygon margin in CAD for extended/retracted/turning/folded configurations.</li>
+      </ul>
+    </div>
   </details>
 
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>R2 — Side-leg actuation selection uncertainty</summary>
-    <p>
-      The side-leg actuation approach drives force capacity, controllability, noise, safety, and integration.
-      Hydraulics are likely too complex/costly; pneumatics can struggle with stable position holding; current direction
-      trends toward a motor-driven solution.
-    </p>
-    <ul>
-      <li><b>Mitigation:</b> define minimum force/stroke/speed/noise targets; bench-test candidates; keep mounts modular to allow actuator swaps.</li>
-      <li><b>Test:</b> load test to target force with position error spec + dB measurement; confirm safe failure mode (power-off behavior).</li>
-    </ul>
+    <div class="t2-acc-body">
+      <p>
+        The side-leg actuation approach drives force capacity, controllability, noise, safety, and integration.
+        Hydraulics are likely too complex/costly; pneumatics can struggle with stable position holding; current direction
+        trends toward a motor-driven solution.
+      </p>
+      <ul>
+        <li><b>Mitigation:</b> define minimum force/stroke/speed/noise targets; bench-test candidates; keep mounts modular to allow actuator swaps.</li>
+        <li><b>Test:</b> load test to target force with position error spec + dB measurement; confirm safe failure mode (power-off behavior).</li>
+      </ul>
+    </div>
   </details>
 
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>R3 — Materials and joint hardware not selected</summary>
-    <p>
-      Poor material or joint choices can cause buckling, backlash, and wear—reducing stability and safety.
-    </p>
-    <ul>
-      <li><b>Mitigation:</b> standardize pivots with shoulder bolts/joint pins + bearings/bushings; do quick worst-load sanity checks prior to fabrication.</li>
-      <li><b>Test:</b> single-link compression/bending sanity checks + pivot backlash measurement after assembly.</li>
-    </ul>
+    <div class="t2-acc-body">
+      <p>
+        Poor material or joint choices can cause buckling, backlash, and wear—reducing stability and safety.
+      </p>
+      <ul>
+        <li><b>Mitigation:</b> standardize pivots with shoulder bolts/joint pins + bearings/bushings; do quick worst-load sanity checks prior to fabrication.</li>
+        <li><b>Test:</b> single-link compression/bending sanity checks + pivot backlash measurement after assembly.</li>
+      </ul>
+    </div>
   </details>
 
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>R4 — Late design decisions delay ordering and integration</summary>
-    <ul>
-      <li><b>Mitigation:</b> enforce a design-freeze milestone; order long-lead parts early; integrate in stages so locomotion and controls progress in parallel.</li>
-      <li><b>Test:</b> weekly integration checklist with “minimum runnable system” gates (power → motor spin → gait timing → payload stand).</li>
-    </ul>
+    <div class="t2-acc-body">
+      <ul>
+        <li><b>Mitigation:</b> enforce a design-freeze milestone; order long-lead parts early; integrate in stages so locomotion and controls progress in parallel.</li>
+        <li><b>Test:</b> weekly integration checklist with “minimum runnable system” gates (power → motor spin → gait timing → payload stand).</li>
+      </ul>
+    </div>
   </details>
 
-  <details class="t2-details">
+  <details class="t2-acc">
     <summary>R5 — Budget creep from actuator/frame changes and rework</summary>
-    <ul>
-      <li><b>Mitigation:</b> maintain a live budget with contingency; favor off-the-shelf components; prototype uncertain subsystems cheaply before final hardware.</li>
-      <li><b>Test:</b> bill-of-materials audit at each design freeze; track “cost to complete” vs remaining contingency.</li>
-    </ul>
+    <div class="t2-acc-body">
+      <ul>
+        <li><b>Mitigation:</b> maintain a live budget with contingency; favor off-the-shelf components; prototype uncertain subsystems cheaply before final hardware.</li>
+        <li><b>Test:</b> bill-of-materials audit at each design freeze; track “cost to complete” vs remaining contingency.</li>
+      </ul>
+    </div> 
   </details>
 
   <div class="t2-muted" style="margin-top: 10px;">

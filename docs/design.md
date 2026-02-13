@@ -29,7 +29,7 @@ title: "System Design"
     <a class="t2-linkbtn" href="{{ '/assets/pdfs/design-proposal.pdf' | relative_url }}" target="_blank" rel="noreferrer">
       Design proposal (PDF)
     </a>
-    <a class="t2-linkbtn" href="{{ '/assets/pdfs.design-proposal-presentation.pdf' | relative_url }}" target="_blank" rel="noreferrer">
+    <a class="t2-linkbtn" href="{{ '/assets/pdfs/design-proposal-presentation.pdf' | relative_url }}" target="_blank" rel="noreferrer">
       Proposal presentation (PDF)
     </a>
   </div>

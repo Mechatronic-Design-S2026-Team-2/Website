@@ -1,38 +1,36 @@
 <!-- docs/_includes/svg-diagram.html -->
 <link rel="stylesheet" href="{{ '/assets/css/svg-diagram.css' | relative_url }}">
 
-<div class="t2-card diagram-card"
-     data-svg-diagram
-     data-svg-url="{{ include.svg | relative_url }}"
-     {% if include.title %}data-title="{{ include.title | escape }}"{% endif %}>
+<div class="t2-card svgdi-card">
+  <div class="svgdi-head">
+    <h3 class="svgdi-title">{{ include.title | default: "Diagram" }}</h3>
 
-  <div class="diagram-head">
-    <h3 class="diagram-title">{{ include.title | default: "Diagram" }}</h3>
-
-    <div class="diagram-links">
-      <a class="diagram-link" href="{{ include.svg | relative_url }}" target="_blank" rel="noreferrer">
-        Open SVG
-      </a>
-
-      {% if include.source %}
-        <a class="diagram-link" href="{{ include.source | relative_url }}" target="_blank" rel="noreferrer">
-          Open source
-        </a>
+    <div class="svgdi-actions">
+      {% if include.svg %}
+        <a class="svgdi-btn"
+           href="{{ include.svg | relative_url }}"
+           target="_blank" rel="noreferrer">Open SVG</a>
       {% endif %}
 
-      <button class="diagram-link diagram-btn" type="button" data-diagram-reset>
-        Reset view
-      </button>
+      {% if include.source %}
+        <a class="svgdi-btn"
+           href="{{ include.source | relative_url }}"
+           target="_blank" rel="noreferrer">Open source</a>
+      {% endif %}
+
+      <button class="svgdi-btn" type="button" data-svgdi-reset>Reset view</button>
     </div>
   </div>
 
-  {% if include.caption %}
-    <p class="diagram-caption">{{ include.caption }}</p>
-  {% endif %}
+  <div class="svgdi-sub">Scroll to zoom • drag to pan • Reset view to refit</div>
 
-  <div class="diagram-viewport" data-diagram-viewport>
-    <div class="diagram-loading">Loading diagram…</div>
+  <div class="svgdi-viewport"
+       data-svgdi
+       data-svg-url="{{ include.svg | relative_url }}"
+       style="height: {{ include.height | default: 520 }}px;">
+    <div class="svgdi-loading">Loading diagram…</div>
   </div>
 </div>
 
 <script src="{{ '/assets/js/svg-diagram.js' | relative_url }}" defer></script>
+

@@ -1,52 +1,33 @@
 <!-- docs/_includes/svg-diagram.html -->
 <link rel="stylesheet" href="{{ '/assets/css/svg-diagram.css' | relative_url }}">
 
-{% assign _src = include.src | default: '' %}
-{% assign _source = include.source | default: '' %}
+<div class="t2-card diagram-card"
+     data-svg-diagram
+     data-svg-url="{{ include.svg | relative_url }}"
+     {% if include.title %}data-title="{{ include.title | escape }}"{% endif %}>
 
-{%- comment -%}
-Make local paths root-relative, then apply GitHub Pages baseurl via relative_url.
-Liquid on GitHub Pages does NOT support startswith/endswith operators.
-{%- endcomment -%}
-
-{%- if _src contains '://' -%}
-  {% assign svg_url = _src %}
-{%- else -%}
-  {% assign first_char = _src | slice: 0, 1 %}
-  {% if first_char != '/' %}
-    {% assign _src = '/' | append: _src %}
-  {% endif %}
-  {% assign svg_url = _src | replace: '//', '/' | relative_url %}
-{%- endif -%}
-
-{%- assign source_url = '' -%}
-{%- if _source != '' -%}
-  {%- if _source contains '://' -%}
-    {% assign source_url = _source %}
-  {%- else -%}
-    {% assign first_char2 = _source | slice: 0, 1 %}
-    {% if first_char2 != '/' %}
-      {% assign _source = '/' | append: _source %}
-    {% endif %}
-    {% assign source_url = _source | replace: '//', '/' | relative_url %}
-  {%- endif -%}
-{%- endif -%}
-
-<div class="t2-card diagram-card" data-svg-diagram data-svg-url="{{ svg_url }}">
   <div class="diagram-head">
-    <h3 class="diagram-title">{{ include.title | default: 'Diagram' }}</h3>
+    <h3 class="diagram-title">{{ include.title | default: "Diagram" }}</h3>
 
     <div class="diagram-links">
-      <a class="diagram-link" href="{{ svg_url }}" target="_blank" rel="noreferrer">Open SVG</a>
-      {% if source_url != '' %}
-        <a class="diagram-link" href="{{ source_url }}" target="_blank" rel="noreferrer">Source (.drawio.xml)</a>
+      <a class="diagram-link" href="{{ include.svg | relative_url }}" target="_blank" rel="noreferrer">
+        Open SVG
+      </a>
+
+      {% if include.source %}
+        <a class="diagram-link" href="{{ include.source | relative_url }}" target="_blank" rel="noreferrer">
+          Open source
+        </a>
       {% endif %}
-      <button class="diagram-link diagram-btn" type="button" data-diagram-reset>Reset view</button>
+
+      <button class="diagram-link diagram-btn" type="button" data-diagram-reset>
+        Reset view
+      </button>
     </div>
   </div>
 
   {% if include.caption %}
-    <div class="diagram-caption">{{ include.caption }}</div>
+    <p class="diagram-caption">{{ include.caption }}</p>
   {% endif %}
 
   <div class="diagram-viewport" data-diagram-viewport>

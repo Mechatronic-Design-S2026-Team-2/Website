@@ -1,28 +1,26 @@
 /* docs/assets/css/svg-diagram.css */
 
-.diagram-card {
-  margin: 22px 0;
-}
+.svgdi-card { position: relative; }
 
-.diagram-head {
+.svgdi-head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 8px;
+  gap: 12px;
+  margin-bottom: 6px;
 }
 
-.diagram-title {
+.svgdi-title {
   margin: 0;
 }
 
-.diagram-links {
+.svgdi-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.diagram-link {
+.svgdi-btn {
   display: inline-block;
   text-decoration: none;
   padding: 7px 10px;
@@ -30,71 +28,60 @@
   border: 1px solid rgba(0,0,0,0.14);
   background: rgba(0,0,0,0.02);
   font-size: 0.92rem;
-  line-height: 1;
+  line-height: 1.1;
   color: inherit;
-}
-
-.diagram-link:hover {
-  background: rgba(0,0,0,0.06);
-}
-
-.diagram-btn {
   cursor: pointer;
 }
 
-.diagram-caption {
+.svgdi-btn:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.svgdi-sub {
   opacity: 0.78;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 
-.diagram-viewport {
+/* Viewport */
+.svgdi-viewport {
   position: relative;
-  width: 100%;
-  min-height: 420px;              /* ensures a visible canvas */
-  border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.10);
-  background: rgba(0,0,0,0.03);
+  border-radius: 16px;
+  background: #fff;              /* ensures intended light look */
   overflow: hidden;
+  width: 100%;
 
-  cursor: grab;
-  touch-action: none;             /* important for pointer panning */
+  /* helps pointer dragging */
+  touch-action: none;
+  user-select: none;
+
+  /* IMPORTANT: kill any “invert” / filter rules */
+  filter: none !important;
 }
 
-.diagram-viewport.is-dragging {
+.svgdi-viewport.is-grabbing {
   cursor: grabbing;
 }
 
-/* Transformed stage */
-.diagram-stage {
-  position: absolute;
-  inset: 0;
-  transform-origin: 0 0;
-  will-change: transform;
+.svgdi-viewport:not(.is-grabbing) {
+  cursor: grab;
 }
 
-/* The rendered SVG-as-image */
-.diagram-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;            /* key: never crop */
-  pointer-events: none;           /* dragging happens on viewport */
-}
-
-/* Loading/error overlay */
-.diagram-loading,
-.diagram-error {
+.svgdi-loading {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  padding: 16px;
-  text-align: center;
+  opacity: 0.7;
   font-style: italic;
-  opacity: 0.85;
 }
 
-.diagram-error {
-  font-style: normal;
-  opacity: 0.95;
+/* Embedded SVG */
+.svgdi-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  /* IMPORTANT: ensure no inversion */
+  filter: none !important;
 }

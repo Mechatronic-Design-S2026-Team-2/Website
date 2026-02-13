@@ -180,6 +180,13 @@ title: "System Design"
    file="/assets/designs/articulated-leg.glb"
    caption="Rotate/zoom to inspect." 
    force_gray="true" %}
+
+  {% include model-card.html
+   title="Klann Leg Subassembly"
+   alt="Klann Leg Design"
+   file="/assets/designs/klann-leg.glb"
+   caption="Rotate/zoom to inspect." 
+   force_gray="true" %}
 </div>
 
 <!-- ====== Card: Electrical design ====== -->

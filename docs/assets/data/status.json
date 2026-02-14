@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-13T15:41:25.428Z",
+  "generatedAt": "2026-02-14T15:24:37.644Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -226,40 +226,6 @@
       "due": "2026-02-13",
       "assignees": [
         "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 32,
-      "title": "Klann Linkage Leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
-      "updatedAt": "2026-02-12T11:24:46Z",
-      "status": "Done",
-      "due": "2026-02-14",
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 34,
-      "title": "Side leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
-      "updatedAt": "2026-02-12T11:24:44Z",
-      "status": "Done",
-      "due": "2026-02-14",
-      "assignees": [
-        "liu3304697516"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -551,6 +517,39 @@
       "status": "Done",
       "due": "2026-02-23T00:00:00Z",
       "assignees": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 42,
+      "title": "Calculate torque specifications for side leg assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/42",
+      "updatedAt": "2026-02-12T11:25:41Z",
+      "status": "Done",
+      "due": "2026-02-23T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 41,
+      "title": "Calculate torque specifications for klann leg assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
+      "updatedAt": "2026-02-12T23:13:21Z",
+      "status": "Todo",
+      "due": "2026-02-24",
+      "assignees": [
+        "dgl7",
+        "yechenz-wq"
+      ],
       "milestone": {
         "title": "System Demo 2",
         "dueOn": "2026-02-23T00:00:00Z",

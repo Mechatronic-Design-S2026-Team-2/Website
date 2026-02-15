@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-14T15:24:37.644Z",
+  "generatedAt": "2026-02-15T15:25:09.624Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -117,7 +117,7 @@
       "title": "Assemble System for testing on Gazebo",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
       "state": "OPEN",
-      "updatedAt": "2026-02-11T01:15:05Z",
+      "updatedAt": "2026-02-15T05:20:00Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
@@ -235,6 +235,23 @@
     },
     {
       "type": "Issue",
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-15T05:20:00Z",
+      "status": "In Progress",
+      "due": "2026-02-15",
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
+    {
+      "type": "Issue",
       "number": 58,
       "title": "Set up D415 and preprocessing",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/58",
@@ -265,23 +282,6 @@
         "title": "System Demo 2",
         "dueOn": "2026-02-23T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-11T01:15:05Z",
-      "status": "In Progress",
-      "due": "2026-02-15",
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
     },
     {
@@ -840,10 +840,25 @@
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest issue updated: #73 SD7 Demo Plan + Artifacts",
-    "createdAt": "2026-02-13T15:17:27Z"
+    "body": "Latest issue updated: #39 Assemble System for testing on Gazebo",
+    "createdAt": "2026-02-15T05:20:00Z"
   },
   "issues": [
+    {
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-15T05:20:00Z",
+      "labels": [],
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
     {
       "number": 73,
       "title": "SD7 Demo Plan + Artifacts",
@@ -1264,21 +1279,6 @@
       "labels": [],
       "assignees": [
         "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-11T01:15:05Z",
-      "labels": [],
-      "assignees": [
-        "yechenz-wq"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -2550,7 +2550,7 @@
       "title": "Assemble System for testing on Gazebo",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
       "state": "OPEN",
-      "updatedAt": "2026-02-11T01:15:05Z",
+      "updatedAt": "2026-02-15T05:20:00Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-16T15:39:55.458Z",
+  "generatedAt": "2026-02-17T10:35:56.086Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -14,16 +14,16 @@
     "title": "System Demo 1",
     "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
     "dueOn": "2026-02-16T00:00:00Z",
-    "openIssues": 6,
-    "closedIssues": 3
+    "openIssues": 5,
+    "closedIssues": 4
   },
   "schedule": [
     {
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 6,
-      "closedIssues": 3
+      "openIssues": 5,
+      "closedIssues": 4
     },
     {
       "title": "System Demo 2",
@@ -166,31 +166,6 @@
     },
     {
       "type": "Issue",
-      "number": 38,
-      "title": "Acquire and setup rtos for esp32 controllers",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
-      "state": "OPEN",
-      "updatedAt": "2026-02-08T21:44:45Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      },
-      "fields": {
-        "Title": "Acquire and setup rtos for esp32 controllers",
-        "Status": "In Progress",
-        "Start date": "2026-02-08",
-        "Due date": "2026-02-13"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 33,
       "title": "Chassis Design",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/33",
@@ -216,23 +191,6 @@
     }
   ],
   "scheduleItems": [
-    {
-      "type": "Issue",
-      "number": 38,
-      "title": "Acquire and setup rtos for esp32 controllers",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
-      "updatedAt": "2026-02-08T21:44:45Z",
-      "status": "In Progress",
-      "due": "2026-02-13",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
     {
       "type": "Issue",
       "number": 39,
@@ -495,13 +453,15 @@
     },
     {
       "type": "Issue",
-      "number": 49,
-      "title": "Select sensors for side articulated leg control",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/49",
-      "updatedAt": "2026-02-12T11:26:02Z",
+      "number": 45,
+      "title": "Select appropriate motors for side articulated leg",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
+      "updatedAt": "2026-02-16T17:08:12Z",
       "status": "Done",
       "due": "2026-02-23T00:00:00Z",
-      "assignees": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
       "milestone": {
         "title": "System Demo 2",
         "dueOn": "2026-02-23T00:00:00Z",
@@ -510,10 +470,10 @@
     },
     {
       "type": "Issue",
-      "number": 45,
-      "title": "Select appropriate motors for side articulated leg",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
-      "updatedAt": "2026-02-12T11:25:43Z",
+      "number": 49,
+      "title": "Select sensors for side articulated leg control",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/49",
+      "updatedAt": "2026-02-12T11:26:02Z",
       "status": "Done",
       "due": "2026-02-23T00:00:00Z",
       "assignees": [],
@@ -548,7 +508,25 @@
       "due": "2026-02-24",
       "assignees": [
         "dgl7",
+        "hongfeil-beep",
         "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 50,
+      "title": "Estimate raw material needs for assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/50",
+      "updatedAt": "2026-02-12T23:13:41Z",
+      "status": "Todo",
+      "due": "2026-02-25",
+      "assignees": [
+        "liu3304697516"
       ],
       "milestone": {
         "title": "System Demo 2",
@@ -558,6 +536,34 @@
     }
   ],
   "doneItemsRecent": [
+    {
+      "number": 38,
+      "title": "Acquire and setup rtos for esp32 controllers",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
+      "updatedAt": "2026-02-16T22:28:31Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
+    {
+      "number": 45,
+      "title": "Select appropriate motors for side articulated leg",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
+      "updatedAt": "2026-02-16T17:08:12Z",
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
     {
       "number": 18,
       "title": "References (papers, datasheets, docs)",
@@ -786,18 +792,6 @@
       }
     },
     {
-      "number": 45,
-      "title": "Select appropriate motors for side articulated leg",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
-      "updatedAt": "2026-02-12T11:25:43Z",
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
       "number": 42,
       "title": "Calculate torque specifications for side leg assemblies",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/42",
@@ -816,20 +810,6 @@
       "updatedAt": "2026-02-12T11:24:46Z",
       "assignees": [
         "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 34,
-      "title": "Side leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/34",
-      "updatedAt": "2026-02-12T11:24:44Z",
-      "assignees": [
-        "liu3304697516"
       ],
       "milestone": {
         "title": "System Demo 1",
@@ -1042,6 +1022,7 @@
       "labels": [],
       "assignees": [
         "dgl7",
+        "hongfeil-beep",
         "yechenz-wq"
       ],
       "milestone": {
@@ -1305,21 +1286,6 @@
       }
     },
     {
-      "number": 38,
-      "title": "Acquire and setup rtos for esp32 controllers",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
-      "updatedAt": "2026-02-08T21:44:45Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
       "number": 36,
       "title": "System schematics for motors and sensors",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
@@ -1521,7 +1487,7 @@
       "milestone": null
     }
   ],
-  "openIssues": 46,
+  "openIssues": 45,
   "projectItems": [
     {
       "type": "Issue",
@@ -2524,9 +2490,9 @@
       "number": 38,
       "title": "Acquire and setup rtos for esp32 controllers",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
-      "state": "OPEN",
-      "updatedAt": "2026-02-08T21:44:45Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-16T22:28:31Z",
+      "closedAt": "2026-02-16T22:28:31Z",
       "mergedAt": null,
       "assignees": [
         "dgl7"
@@ -2539,7 +2505,7 @@
       },
       "fields": {
         "Title": "Acquire and setup rtos for esp32 controllers",
-        "Status": "In Progress",
+        "Status": "Done",
         "Start date": "2026-02-08",
         "Due date": "2026-02-13"
       }
@@ -2608,6 +2574,7 @@
       "mergedAt": null,
       "assignees": [
         "dgl7",
+        "hongfeil-beep",
         "yechenz-wq"
       ],
       "labels": [],
@@ -2703,10 +2670,12 @@
       "title": "Select appropriate motors for side articulated leg",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
       "state": "CLOSED",
-      "updatedAt": "2026-02-12T11:25:43Z",
+      "updatedAt": "2026-02-16T17:08:12Z",
       "closedAt": "2026-02-12T11:25:43Z",
       "mergedAt": null,
-      "assignees": [],
+      "assignees": [
+        "hongfeil-beep"
+      ],
       "labels": [],
       "milestone": {
         "title": "System Demo 2",

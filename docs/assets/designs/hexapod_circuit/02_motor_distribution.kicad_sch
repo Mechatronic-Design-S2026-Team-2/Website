@@ -286,7 +286,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 24.13) (xy 45.72 24.13)
+			(xy 34.29 24.13) (xy 48.26 24.13)
 		)
 		(stroke
 			(width 0)
@@ -296,7 +296,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 16.51) (xy 24.13 16.51)
+			(xy 25.4 16.51) (xy 26.67 16.51)
 		)
 		(stroke
 			(width 0)
@@ -306,7 +306,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 16.51) (xy 45.72 16.51)
+			(xy 34.29 16.51) (xy 48.26 16.51)
 		)
 		(stroke
 			(width 0)
@@ -316,7 +316,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 24.13) (xy 24.13 24.13)
+			(xy 25.4 24.13) (xy 26.67 24.13)
 		)
 		(stroke
 			(width 0)
@@ -326,7 +326,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 19.05) (xy 45.72 19.05)
+			(xy 25.4 19.05) (xy 48.26 19.05)
 		)
 		(stroke
 			(width 0)
@@ -336,7 +336,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 26.67) (xy 45.72 26.67)
+			(xy 25.4 26.67) (xy 48.26 26.67)
 		)
 		(stroke
 			(width 0)
@@ -345,7 +345,7 @@
 		(uuid "ecf20d3e-0e39-4da5-ab05-17841cf132f5")
 	)
 	(label "V_BAT_MTR_1"
-		(at 33.02 16.51 0)
+		(at 35.56 16.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -354,18 +354,8 @@
 		)
 		(uuid "2ca7afd6-c4fb-4531-9ec2-6494d7367ab5")
 	)
-	(label "GND_PWR"
-		(at 35.56 19.05 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "344a21a7-fe49-442b-ad7b-ab040eb95c85")
-	)
 	(label "V_BAT_MTR_2"
-		(at 33.02 24.13 0)
+		(at 35.56 24.13 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -374,39 +364,97 @@
 		)
 		(uuid "896edc11-9636-4d9f-994c-1d1e9961be0a")
 	)
-	(label "V_BAT_SW"
-		(at 22.86 24.13 180)
+	(global_label "V_BAT_SW"
+		(shape input)
+		(at 25.4 24.13 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify right)
 		)
-		(uuid "8c72b032-2883-4d97-9189-df5254153612")
+		(uuid "37d3ba6d-1f0c-4e3d-a89a-c5265da97907")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 13.4039 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
-	(label "V_BAT_SW"
-		(at 22.86 16.51 180)
+	(global_label "V_BAT_SW"
+		(shape input)
+		(at 25.4 16.51 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify right)
 		)
-		(uuid "b4982863-3445-4f40-a966-fe4b5f57c9a5")
+		(uuid "57c13321-4c8d-4688-b800-068d0760994f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 13.4039 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
-	(label "GND_PWR"
-		(at 35.56 26.67 0)
+	(global_label "GND_PWR"
+		(shape input)
+		(at 25.4 26.67 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
-		(uuid "bb743e9c-27bc-4686-a7c1-83c63df15b3c")
+		(uuid "8799557e-a82b-4940-84f6-cd78d39a5d39")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 13.5853 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND_PWR"
+		(shape input)
+		(at 25.4 19.05 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ea1b0b68-ab9e-4b17-99f8-58c38718b5e0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 13.5853 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 50.8 24.13 0)
+		(at 53.34 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -415,7 +463,7 @@
 		(fields_autoplaced yes)
 		(uuid "66492b8f-76ac-4335-8e48-ee79a1088c66")
 		(property "Reference" "J3"
-			(at 53.34 24.1299 0)
+			(at 55.88 24.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -424,7 +472,7 @@
 			)
 		)
 		(property "Value" "XT30 to actuator"
-			(at 53.34 26.6699 0)
+			(at 55.88 26.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -433,7 +481,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 24.13 0)
+			(at 53.34 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -442,7 +490,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 24.13 0)
+			(at 53.34 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -451,7 +499,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 50.8 24.13 0)
+			(at 53.34 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -476,7 +524,7 @@
 	)
 	(symbol
 		(lib_id "Device:Fuse")
-		(at 27.94 24.13 90)
+		(at 30.48 24.13 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -484,7 +532,7 @@
 		(dnp no)
 		(uuid "93c7131a-a6b7-4a88-8919-8cd5e7ac87ac")
 		(property "Reference" "F3"
-			(at 28.194 22.098 90)
+			(at 27.686 22.098 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -492,7 +540,7 @@
 			)
 		)
 		(property "Value" "30 A"
-			(at 27.94 26.416 90)
+			(at 32.512 22.098 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -500,7 +548,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 25.908 90)
+			(at 30.48 25.908 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -509,7 +557,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 27.94 24.13 0)
+			(at 30.48 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -518,7 +566,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 27.94 24.13 0)
+			(at 30.48 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -543,7 +591,7 @@
 	)
 	(symbol
 		(lib_id "Device:Fuse")
-		(at 27.94 16.51 90)
+		(at 30.48 16.51 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -551,7 +599,7 @@
 		(dnp no)
 		(uuid "9a921cd6-594a-44fa-9704-f26b03ae4102")
 		(property "Reference" "F2"
-			(at 27.94 14.478 90)
+			(at 27.686 14.478 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -559,7 +607,7 @@
 			)
 		)
 		(property "Value" "30 A"
-			(at 27.94 18.796 90)
+			(at 32.512 14.478 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -567,7 +615,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 18.288 90)
+			(at 30.48 18.288 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -576,7 +624,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 27.94 16.51 0)
+			(at 30.48 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -585,7 +633,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 27.94 16.51 0)
+			(at 30.48 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -610,7 +658,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 50.8 16.51 0)
+		(at 53.34 16.51 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -619,7 +667,7 @@
 		(fields_autoplaced yes)
 		(uuid "bef5387f-b2da-4c6a-b053-439a8a791fce")
 		(property "Reference" "J2"
-			(at 53.34 16.5099 0)
+			(at 55.88 16.5099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -628,7 +676,7 @@
 			)
 		)
 		(property "Value" "XT30 to actuator"
-			(at 53.34 19.0499 0)
+			(at 55.88 19.0499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -637,7 +685,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 16.51 0)
+			(at 53.34 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -646,7 +694,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 16.51 0)
+			(at 53.34 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -655,7 +703,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 50.8 16.51 0)
+			(at 53.34 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)

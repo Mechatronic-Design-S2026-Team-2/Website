@@ -470,16 +470,6 @@
 		)
 		(uuid "20788225-ade5-4a62-9300-5a643c44d921")
 	)
-	(label "GND_PWR"
-		(at 38.1 19.05 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3bc3076f-ad01-4bf1-be5f-5795e51fe1e4")
-	)
 	(label "V_BAT"
 		(at 58.42 16.51 0)
 		(effects
@@ -490,15 +480,49 @@
 		)
 		(uuid "64b91327-9a8c-45ee-b614-23c54b2810d5")
 	)
-	(label "V_BAT_SW"
+	(global_label "V_BAT_SW"
+		(shape input)
 		(at 76.2 16.51 0)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify left)
 		)
-		(uuid "f4ce154e-76c2-41e6-8dbc-34473ccf0a2f")
+		(uuid "03d46dd6-bac7-42d0-90df-a4146406bcc5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.1961 16.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND_PWR"
+		(shape input)
+		(at 38.1 19.05 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e58313f8-fc42-425b-a021-3fdefa5c49d3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 49.9147 19.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")

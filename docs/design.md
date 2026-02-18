@@ -218,7 +218,7 @@ title: "System Design"
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/hexapod_circuit.kicad_sch" %}
     </div>
   </details>
-  <details class="t2-acc" open>
+  <details class="t2-acc">
     <summary><h3>Battery Protection</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/01_battery_protection.kicad_sch" %}

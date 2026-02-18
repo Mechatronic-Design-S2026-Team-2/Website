@@ -1,0 +1,224 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "70bcc270-2cb0-459e-9f52-45e02a660bef")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 29.21 87.63)
+		(size 81.28 54.61)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "23b3dfbb-8e09-43be-83e5-45f7b558339c")
+		(property "Sheetname" "Compute USB"
+			(at 29.21 86.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "04_compute_usb.kicad_sch"
+			(at 29.21 142.8246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "hexapod_circuit"
+				(path "/70bcc270-2cb0-459e-9f52-45e02a660bef"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 21.59 27.94)
+		(size 53.34 31.75)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "3a6358e1-dc9d-4ae1-800d-b59d019a0ce2")
+		(property "Sheetname" "ESP32 Sensors"
+			(at 21.59 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "05_ESP32_Sensors.kicad_sch"
+			(at 21.59 60.2746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "hexapod_circuit"
+				(path "/70bcc270-2cb0-459e-9f52-45e02a660bef"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 181.61 27.94)
+		(size 92.71 53.34)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7df8a293-c782-4038-947d-fb3fc39b3078")
+		(property "Sheetname" "Motor Distribution"
+			(at 181.61 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "02_motor_distribution.kicad_sch"
+			(at 181.61 81.8646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "hexapod_circuit"
+				(path "/70bcc270-2cb0-459e-9f52-45e02a660bef"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 133.35 88.9)
+		(size 99.06 54.61)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8d0260a1-eb47-4287-a02c-c10ae950e3f9")
+		(property "Sheetname" "Battery Protection"
+			(at 133.35 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "01_battery_protection.kicad_sch"
+			(at 133.35 144.0946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "hexapod_circuit"
+				(path "/70bcc270-2cb0-459e-9f52-45e02a660bef"
+					(page "1")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 91.44 30.48)
+		(size 77.47 43.18)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a17f528b-bb85-4808-b1cf-810a85382a08")
+		(property "Sheetname" "DCDC 5V 3.3V"
+			(at 91.44 29.7684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "03_DCDC_5V_3.3V.kicad_sch"
+			(at 91.44 74.2446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "hexapod_circuit"
+				(path "/70bcc270-2cb0-459e-9f52-45e02a660bef"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "0")
+		)
+	)
+	(embedded_fonts no)
+)

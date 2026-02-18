@@ -152,17 +152,17 @@ title: "System Design"
 </div>
 
 <!-- ====== Card: Mechanical design (GLB CAD embeds) ====== -->
-<div class="t2-card" id="cad-overall">
-  <h2>CAD: Overall Assembly</h2>
-  {% include model-card.html
-   title="Overall System Design (V1)"
-   alt="v1 Hexapod Design"
-   file="/assets/designs/hexapod-v1.glb"
-   caption="Rotate/zoom to inspect." 
-   force_gray="true" %}
-  <details class="t2-acc">
-    <summary>Description</summary>
-    <div class="t2-acc-body">
+<div class="t2-card" id="mechanical">
+  <h2>Mechanical Design</h2>
+  <details class="t2-acc" open>
+    <summary><h3>Overall Assembly</h3></summary>
+    <div class="t2-acc-body" id="cad-overall">
+      {% include model-card.html
+       title="Overall System Design (V1)"
+       alt="v1 Hexapod Design"
+       file="/assets/designs/hexapod-v1.glb"
+       caption="Rotate/zoom to inspect." 
+       force_gray="true" %}
       <p>
         The overall system is organized into four primary subsystems: a main base structure that supports the
         seated performer, a wheel support assembly to carry the majority of the system weight, a set of side
@@ -172,17 +172,13 @@ title: "System Design"
       </p>
     </div>
   </details>
-</div>
-
-<div class="t2-card" id="cad-klann">
-  <h2>CAD: Klann Linkage Assembly</h2>
-  {% include model-card.html
-   file="/assets/designs/klann-leg.glb"
-   caption="Rotate/zoom to inspect." 
-   force_gray="true" %}
   <details class="t2-acc">
-    <summary>Description</summary>
-    <div class="t2-acc-body">
+    <summary><h2>Klann Linkage Assembly</h2></summary>
+    <div class="t2-acc-body" id="cad-klann">
+      {% include model-card.html
+       file="/assets/designs/klann-leg.glb"
+       caption="Rotate/zoom to inspect." 
+       force_gray="true" %}
       <p>
         The Klann mechanism is selected to reduce actuator count while maintaining a mechanically encoded
         gait. Rotary DC gear motors drive the Klann crankshafts; each crankshaft is supported by bearings
@@ -193,17 +189,13 @@ title: "System Design"
       </p>
     </div>
   </details>
-</div>
-
-<div class="t2-card" id="cad-sidelegs">
-  <h2>CAD: Side Legs Assembly</h2>
-  {% include model-card.html
-   file="/assets/designs/articulated-leg.glb"
-   caption="Rotate/zoom to inspect." 
-   force_gray="true" %}
   <details class="t2-acc">
-    <summary>Description</summary>
-    <div class="t2-acc-body">
+    <summary><h2>Side Legs Assembly</h2></summary>
+    <div class="t2-acc-body" id="cad-sidelegs">
+      {% include model-card.html
+       file="/assets/designs/articulated-leg.glb"
+       caption="Rotate/zoom to inspect." 
+       force_gray="true" %}
       <p>
         The side legs provide active stabilization, pose control, and controlled lateral (side-to-side) translation.
         They enlarge the support polygon to reduce tip risk under payload, help maintain the rider height target,
@@ -219,8 +211,42 @@ title: "System Design"
 
 <!-- ====== Card: Electrical design ====== -->
 <div class="t2-card" id="electrical">
+  <h2>Electrical Design</h2>
   <details class="t2-section" open>
-    <summary><h2>Electrical design</h2></summary>
+    <summary><h3>Overall Design</h3></summary>
+    <div class="t2-acc-body">
+      {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/hexapod_circuit.kicad_sch" %}
+    </div>
+  </details>
+  <details class="t2-section" open>
+    <summary><h3>Battery Protection</h3></summary>
+    <div class="t2-acc-body">
+      {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/01_battery_protection.kicad_sch" %}
+    </div>
+  </details>
+  <details class="t2-section">
+    <summary><h3>Motor Distribution</h3></summary>
+    <div class="t2-acc-body">
+      {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/02_motor_distribution.kicad_sch" %}
+    </div>
+  </details>
+  <details class="t2-section">
+    <summary><h3>DC/DC 5 and 3.3V Rails</h3></summary>
+    <div class="t2-acc-body">
+      {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/03_DCDC_5V_3.3V.kicad_sch" %}
+    </div>
+  </details>
+  <details class="t2-section">
+    <summary><h3>Compute / USB wiring</h3></summary>
+    <div class="t2-acc-body">
+      {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/04_compute_usb.kicad_sch" %}
+    </div>
+  </details>
+  <details class="t2-section">
+    <summary><h3>ESP32 and Sensors</h3></summary>
+    <div class="t2-acc-body">
+      {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/05_ESP32_Sensors.kicad_sch" %}
+    </div>
   </details>
 </div>
 

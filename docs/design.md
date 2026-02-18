@@ -130,7 +130,6 @@ title: "System Design"
 <!-- ====== Card: Cyberphysical architecture (SVG embed) ====== -->
 <div class="t2-card" id="cyberphysical-architecture">
   <h2>Cyberphysical architecture</h2>
-  <p class="t2-note">Interactive, zoomable diagram. Hosted in-repo.</p>
   {% include svg-diagram.html
     svg="/assets/diagrams/cyberphysical-architecture.svg"
     source="/assets/diagrams/cyberphysical-architecture.drawio.xml"
@@ -158,7 +157,7 @@ title: "System Design"
     <summary><h3>Overall Assembly</h3></summary>
     <div class="t2-acc-body" id="cad-overall">
       {% include model-card.html
-       file="/assets/designs/hexapod-v1.glb"
+       file="/assets/designs/hexapod-v2.glb"
        caption="Rotate/zoom to inspect." 
        force_gray="true" %}
       <p>
@@ -171,7 +170,7 @@ title: "System Design"
     </div>
   </details>
   <details class="t2-acc">
-    <summary><h2>Klann Linkage Assembly</h2></summary>
+    <summary><h3>Klann Linkage Assembly</h3></summary>
     <div class="t2-acc-body" id="cad-klann">
       {% include model-card.html
        file="/assets/designs/klann-leg.glb"
@@ -188,7 +187,7 @@ title: "System Design"
     </div>
   </details>
   <details class="t2-acc">
-    <summary><h2>Side Legs Assembly</h2></summary>
+    <summary><h3>Side Legs Assembly</h3></summary>
     <div class="t2-acc-body" id="cad-sidelegs">
       {% include model-card.html
        file="/assets/designs/articulated-leg.glb"

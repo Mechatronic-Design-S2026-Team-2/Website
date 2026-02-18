@@ -22,18 +22,20 @@ Usage #2 (same repo):
 
 {% assign gh = github_url | url_encode %}
 
-<div class="kicad-embed">
-  <iframe
-    class="kicad-frame"
-    loading="lazy"
-    src="https://kicanvas.org/?github={{ gh }}"
-    title="KiCad viewer"
-    referrerpolicy="no-referrer"
-    allowfullscreen>
-  </iframe>
-
-  <div class="kicad-fallback">
-    <a href="{{ github_url }}" target="_blank" rel="noreferrer">Open the KiCad file on GitHub</a>
+<div class="t2-card">
+  <div class="kicad-embed">
+    <iframe
+      class="kicad-frame"
+      loading="lazy"
+      src="https://kicanvas.org/?github={{ gh }}"
+      title="KiCad viewer"
+      referrerpolicy="no-referrer"
+      allowfullscreen>
+    </iframe>
+  
+    <div class="kicad-fallback">
+      <a href="{{ github_url }}" target="_blank" rel="noreferrer">Open the KiCad file on GitHub</a>
+    </div>
   </div>
 </div>
 

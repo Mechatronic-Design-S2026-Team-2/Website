@@ -212,37 +212,37 @@ title: "System Design"
 <!-- ====== Card: Electrical design ====== -->
 <div class="t2-card" id="electrical">
   <h2>Electrical Design</h2>
-  <details class="t2-section" open>
+  <details class="t2-acc" open>
     <summary><h3>Overall Design</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/hexapod_circuit.kicad_sch" %}
     </div>
   </details>
-  <details class="t2-section" open>
+  <details class="t2-acc" open>
     <summary><h3>Battery Protection</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/01_battery_protection.kicad_sch" %}
     </div>
   </details>
-  <details class="t2-section">
+  <details class="t2-acc">
     <summary><h3>Motor Distribution</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/02_motor_distribution.kicad_sch" %}
     </div>
   </details>
-  <details class="t2-section">
+  <details class="t2-acc">
     <summary><h3>DC/DC 5 and 3.3V Rails</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/03_DCDC_5V_3.3V.kicad_sch" %}
     </div>
   </details>
-  <details class="t2-section">
+  <details class="t2-acc">
     <summary><h3>Compute / USB wiring</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/04_compute_usb.kicad_sch" %}
     </div>
   </details>
-  <details class="t2-section">
+  <details class="t2-acc">
     <summary><h3>ESP32 and Sensors</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/05_ESP32_Sensors.kicad_sch" %}

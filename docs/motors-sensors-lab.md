@@ -16,12 +16,14 @@ title: "Motors/Sensors Lab"
 
 <div class="t2-card">
   <h2>KiCad schematic</h2>
+  
+  {% include kicad-embed.html repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/01_battery_protection.kicad_sch" %}
 
   {% include kicad-embed.html
      repo="Mechatronic-Design-S2026-Team-2/Website"
      ref="main"
      path="docs/assets/designs/sensor_motor_lab/18578sensor.kicad_sch"
-  %}
+  %} 
 </div>
 
 <div class="t2-card">

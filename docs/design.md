@@ -158,8 +158,6 @@ title: "System Design"
     <summary><h3>Overall Assembly</h3></summary>
     <div class="t2-acc-body" id="cad-overall">
       {% include model-card.html
-       title="Overall System Design (V1)"
-       alt="v1 Hexapod Design"
        file="/assets/designs/hexapod-v1.glb"
        caption="Rotate/zoom to inspect." 
        force_gray="true" %}

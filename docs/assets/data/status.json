@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-17T15:52:41.063Z",
+  "generatedAt": "2026-02-18T15:51:53.301Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -14,16 +14,16 @@
     "title": "System Demo 1",
     "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
     "dueOn": "2026-02-16T00:00:00Z",
-    "openIssues": 5,
-    "closedIssues": 4
+    "openIssues": 4,
+    "closedIssues": 5
   },
   "schedule": [
     {
       "title": "System Demo 1",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
       "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 5,
-      "closedIssues": 4
+      "openIssues": 4,
+      "closedIssues": 5
     },
     {
       "title": "System Demo 2",
@@ -113,15 +113,15 @@
   "now": [
     {
       "type": "Issue",
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "number": 35,
+      "title": "Robot Design Appears in Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
       "state": "OPEN",
-      "updatedAt": "2026-02-15T05:20:00Z",
+      "updatedAt": "2026-02-12T22:18:08Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
-        "yechenz-wq"
+        "dgl7"
       ],
       "labels": [],
       "milestone": {
@@ -130,10 +130,10 @@
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       },
       "fields": {
-        "Title": "Assemble System for testing on Gazebo",
+        "Title": "Robot Design Appears in Gazebo",
         "Status": "In Progress",
-        "Due date": "2026-02-15",
-        "Start date": "2026-02-12"
+        "Start date": "2026-02-16",
+        "Due date": "2026-02-18"
       }
     },
     {
@@ -166,6 +166,31 @@
     },
     {
       "type": "Issue",
+      "number": 36,
+      "title": "System schematics for motors and sensors",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
+      "state": "OPEN",
+      "updatedAt": "2026-02-08T21:42:44Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      },
+      "fields": {
+        "Title": "System schematics for motors and sensors",
+        "Status": "In Progress",
+        "Start date": "2026-02-11",
+        "Due date": "2026-02-15"
+      }
+    },
+    {
+      "type": "Issue",
       "number": 33,
       "title": "Chassis Design",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/33",
@@ -191,23 +216,6 @@
     }
   ],
   "scheduleItems": [
-    {
-      "type": "Issue",
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-15T05:20:00Z",
-      "status": "In Progress",
-      "due": "2026-02-15",
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
     {
       "type": "Issue",
       "number": 58,
@@ -248,7 +256,7 @@
       "title": "System schematics for motors and sensors",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
       "updatedAt": "2026-02-08T21:42:44Z",
-      "status": "Todo",
+      "status": "In Progress",
       "due": "2026-02-15",
       "assignees": [
         "dgl7"
@@ -316,7 +324,7 @@
       "title": "Robot Design Appears in Gazebo",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
       "updatedAt": "2026-02-12T22:18:08Z",
-      "status": "Todo",
+      "status": "In Progress",
       "due": "2026-02-18",
       "assignees": [
         "dgl7"
@@ -533,9 +541,43 @@
         "dueOn": "2026-02-23T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
       }
+    },
+    {
+      "type": "Issue",
+      "number": 44,
+      "title": "Select appropriate motor for klann linked leg",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/44",
+      "updatedAt": "2026-02-12T23:13:29Z",
+      "status": "Todo",
+      "due": "2026-02-25",
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
     }
   ],
   "doneItemsRecent": [
+    {
+      "number": 39,
+      "title": "Assemble System for testing on Gazebo",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
+      "updatedAt": "2026-02-17T17:23:20Z",
+      "assignees": [
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 1",
+        "dueOn": "2026-02-16T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
+      }
+    },
     {
       "number": 38,
       "title": "Acquire and setup rtos for esp32 controllers",
@@ -802,43 +844,14 @@
         "dueOn": "2026-02-23T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
       }
-    },
-    {
-      "number": 32,
-      "title": "Klann Linkage Leg Design Prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/32",
-      "updatedAt": "2026-02-12T11:24:46Z",
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
     }
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest issue updated: #39 Assemble System for testing on Gazebo",
-    "createdAt": "2026-02-15T05:20:00Z"
+    "body": "Latest issue updated: #73 SD7 Demo Plan + Artifacts",
+    "createdAt": "2026-02-13T15:17:27Z"
   },
   "issues": [
-    {
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-15T05:20:00Z",
-      "labels": [],
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
     {
       "number": 73,
       "title": "SD7 Demo Plan + Artifacts",
@@ -1487,7 +1500,7 @@
       "milestone": null
     }
   ],
-  "openIssues": 45,
+  "openIssues": 44,
   "projectItems": [
     {
       "type": "Issue",
@@ -2430,7 +2443,7 @@
       },
       "fields": {
         "Title": "Robot Design Appears in Gazebo",
-        "Status": "Todo",
+        "Status": "In Progress",
         "Start date": "2026-02-16",
         "Due date": "2026-02-18"
       }
@@ -2455,7 +2468,7 @@
       },
       "fields": {
         "Title": "System schematics for motors and sensors",
-        "Status": "Todo",
+        "Status": "In Progress",
         "Start date": "2026-02-11",
         "Due date": "2026-02-15"
       }
@@ -2515,9 +2528,9 @@
       "number": 39,
       "title": "Assemble System for testing on Gazebo",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "state": "OPEN",
-      "updatedAt": "2026-02-15T05:20:00Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-17T17:23:20Z",
+      "closedAt": "2026-02-17T17:23:20Z",
       "mergedAt": null,
       "assignees": [
         "yechenz-wq"
@@ -2530,7 +2543,7 @@
       },
       "fields": {
         "Title": "Assemble System for testing on Gazebo",
-        "Status": "In Progress",
+        "Status": "Done",
         "Due date": "2026-02-15",
         "Start date": "2026-02-12"
       }

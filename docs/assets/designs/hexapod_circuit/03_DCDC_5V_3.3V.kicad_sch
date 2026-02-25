@@ -1226,7 +1226,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1000 µF"
+		(property "Value" "1 mF"
 			(at 74.93 23.1139 0)
 			(effects
 				(font

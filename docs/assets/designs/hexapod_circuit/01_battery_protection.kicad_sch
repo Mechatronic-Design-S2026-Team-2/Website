@@ -420,6 +420,26 @@
 			(embedded_fonts no)
 		)
 	)
+	(text_box "X12-320 Has max cont. current of 18.75 A per unit\n\nJetson Nano and connected D415 max of 4 A\n\nESP32 max 500 mA\n\nFSR circuit max 500 uA assuming contact force on FSR does not exceed resistance of 1 kiloohm\n\nThis is about 42 A, assuming a power spike from motor factor of 3, such is a current of 117A\n\nThus we select a 120A ANL fuse as it is the closest to such a value. \n\nThis pairs well with a SB120 connector with max current of 120A"
+		(exclude_from_sim no)
+		(at 12.7 25.4 0)
+		(size 99.06 27.94)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "43497cb8-cb52-4b90-b359-ee8d987f3e4e")
+	)
 	(wire
 		(pts
 			(xy 36.83 19.05) (xy 38.1 19.05)
@@ -608,7 +628,7 @@
 				)
 			)
 		)
-		(property "Value" "80A ANL"
+		(property "Value" "120a ANL"
 			(at 54.356 18.796 90)
 			(effects
 				(font
@@ -677,7 +697,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "XT90S to battery"
+		(property "Value" "SB120 to battery"
 			(at 29.21 19.0499 0)
 			(effects
 				(font

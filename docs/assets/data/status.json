@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-26T15:53:06.074Z",
+  "generatedAt": "2026-02-27T15:37:14.252Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -394,23 +394,6 @@
     },
     {
       "type": "Issue",
-      "number": 55,
-      "title": "Begin parts ordering process",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/55",
-      "updatedAt": "2026-02-25T14:52:13Z",
-      "status": "Done",
-      "due": "2026-02-27",
-      "assignees": [
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 51,
       "title": "Update budget document for selected components",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/51",
@@ -547,6 +530,21 @@
       "title": "Create schedule slide (weekly granularity; dates not “Week 7”)",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/21",
       "updatedAt": "2026-01-29T23:47:02Z",
+      "status": "Todo",
+      "due": "2026-03-11T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "Midsemester Presentation",
+        "dueOn": "2026-03-11T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/6"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 20,
+      "title": "Midsemester deck (10 min) + Q&A prep",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/20",
+      "updatedAt": "2026-01-29T23:46:31Z",
       "status": "Todo",
       "due": "2026-03-11T00:00:00Z",
       "assignees": [],

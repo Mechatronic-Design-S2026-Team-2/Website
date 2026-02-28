@@ -243,8 +243,21 @@ title: "System Design"
 
 <!-- ====== Card: Software & autonomy ====== -->
 <div class="t2-card" id="software">
-  <details class="t2-section" open>
-    <summary><h2>Software & autonomy</h2></summary>
+  <h2>Software & Autonomy</h2>
+  <details class="t2-acc" open>
+    <summary><h3>Behavior tree</h3></summary>
+    <div class="t2-acc-body">
+    {% include svg-diagram.html
+    svg="/assets/diagrams/Behavior_tree.drawio.svg"
+    source="/assets/diagrams/Behavior_tree.drawio.xml"
+    caption="Scroll to zoom • drag to pan • Fit/Reset controls"
+    %}
+    </div>
+  </details>
+  <details class="t2-acc">
+    <summary><h3>ESP32 architecture</h3></summary>
+    <div class="t2-acc-body">
+    </div>
   </details>
 </div>
 

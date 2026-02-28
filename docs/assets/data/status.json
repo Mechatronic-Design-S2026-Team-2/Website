@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-27T15:37:14.252Z",
+  "generatedAt": "2026-02-28T13:10:45.361Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -11,32 +11,18 @@
     "url": "https://github.com/orgs/Mechatronic-Design-S2026-Team-2/projects/4"
   },
   "currentMilestone": {
-    "title": "System Demo 1",
-    "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
-    "dueOn": "2026-02-16T00:00:00Z",
-    "openIssues": 0,
-    "closedIssues": 9
+    "title": "System Demo 3",
+    "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5",
+    "dueOn": "2026-03-09T00:00:00Z",
+    "openIssues": 13,
+    "closedIssues": 0
   },
   "schedule": [
-    {
-      "title": "System Demo 1",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16",
-      "dueOn": "2026-02-16T00:00:00Z",
-      "openIssues": 0,
-      "closedIssues": 9
-    },
-    {
-      "title": "System Demo 2",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4",
-      "dueOn": "2026-02-23T00:00:00Z",
-      "openIssues": 12,
-      "closedIssues": 10
-    },
     {
       "title": "System Demo 3",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5",
       "dueOn": "2026-03-09T00:00:00Z",
-      "openIssues": 4,
+      "openIssues": 13,
       "closedIssues": 0
     },
     {
@@ -50,7 +36,7 @@
       "title": "System Demo 4",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7",
       "dueOn": "2026-03-23T00:00:00Z",
-      "openIssues": 1,
+      "openIssues": 4,
       "closedIssues": 0
     },
     {
@@ -113,62 +99,11 @@
   "now": [
     {
       "type": "Issue",
-      "number": 51,
-      "title": "Update budget document for selected components",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/51",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:13:45Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "liu3304697516"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Update budget document for selected components",
-        "Status": "In Progress",
-        "Start date": "2026-02-26",
-        "Due date": "2026-02-27"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 63,
-      "title": "Build in-sim gait controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/63",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:12:06Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7",
-        "yechenz-wq"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Build in-sim gait controller",
-        "Status": "In Progress",
-        "Start date": "2026-02-20",
-        "Due date": "2026-02-22"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 60,
       "title": "Set up joint control in simulation",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/60",
       "state": "OPEN",
-      "updatedAt": "2026-02-12T23:11:51Z",
+      "updatedAt": "2026-02-28T00:28:09Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
@@ -177,9 +112,9 @@
       ],
       "labels": [],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       },
       "fields": {
         "Title": "Set up joint control in simulation",
@@ -190,11 +125,11 @@
     },
     {
       "type": "Issue",
-      "number": 46,
-      "title": "Add proper motors and drivers to schematic",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/46",
+      "number": 47,
+      "title": "Select battery and power components",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
       "state": "OPEN",
-      "updatedAt": "2026-02-12T23:11:16Z",
+      "updatedAt": "2026-02-28T00:27:32Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
@@ -202,15 +137,41 @@
       ],
       "labels": [],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       },
       "fields": {
-        "Title": "Add proper motors and drivers to schematic",
+        "Title": "Select battery and power components",
         "Status": "In Progress",
-        "Start date": "2026-02-26",
-        "Due date": "2026-02-27"
+        "Start date": "2026-02-25",
+        "Due date": "2026-02-25"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 63,
+      "title": "Build in-sim gait controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/63",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:27:16Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7",
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Build in-sim gait controller",
+        "Status": "In Progress",
+        "Start date": "2026-02-20",
+        "Due date": "2026-02-22"
       }
     }
   ],
@@ -220,7 +181,7 @@
       "number": 60,
       "title": "Set up joint control in simulation",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/60",
-      "updatedAt": "2026-02-12T23:11:51Z",
+      "updatedAt": "2026-02-28T00:28:09Z",
       "status": "In Progress",
       "due": "2026-02-19",
       "assignees": [
@@ -228,9 +189,9 @@
         "yechenz-wq"
       ],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       }
     },
     {
@@ -238,16 +199,16 @@
       "number": 59,
       "title": "Simulate cameras in robot",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
-      "updatedAt": "2026-02-12T23:11:47Z",
+      "updatedAt": "2026-02-28T00:28:05Z",
       "status": "Todo",
       "due": "2026-02-19",
       "assignees": [
         "dgl7"
       ],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
       }
     },
     {
@@ -255,16 +216,16 @@
       "number": 67,
       "title": "Define demo-alligned cost terms for optimization of locomotion controller",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/67",
-      "updatedAt": "2026-02-12T23:13:03Z",
+      "updatedAt": "2026-02-28T00:28:31Z",
       "status": "Todo",
       "due": "2026-02-22",
       "assignees": [
         "hongfeil-beep"
       ],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       }
     },
     {
@@ -272,16 +233,16 @@
       "number": 66,
       "title": "Define control \"u\" for locomotion controller",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/66",
-      "updatedAt": "2026-02-12T23:12:44Z",
+      "updatedAt": "2026-02-28T00:28:26Z",
       "status": "Todo",
       "due": "2026-02-22",
       "assignees": [
         "hongfeil-beep"
       ],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       }
     },
     {
@@ -289,16 +250,16 @@
       "number": 65,
       "title": "Define state \"x\" for locomotion controller",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/65",
-      "updatedAt": "2026-02-12T23:12:38Z",
+      "updatedAt": "2026-02-28T00:28:17Z",
       "status": "Todo",
       "due": "2026-02-22",
       "assignees": [
         "hongfeil-beep"
       ],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       }
     },
     {
@@ -306,7 +267,7 @@
       "number": 63,
       "title": "Build in-sim gait controller",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/63",
-      "updatedAt": "2026-02-12T23:12:06Z",
+      "updatedAt": "2026-02-28T00:27:16Z",
       "status": "In Progress",
       "due": "2026-02-22",
       "assignees": [
@@ -314,9 +275,9 @@
         "yechenz-wq"
       ],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       }
     },
     {
@@ -324,7 +285,7 @@
       "number": 41,
       "title": "Calculate torque specifications for klann leg assemblies",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
-      "updatedAt": "2026-02-12T23:13:21Z",
+      "updatedAt": "2026-02-28T00:27:40Z",
       "status": "Todo",
       "due": "2026-02-24",
       "assignees": [
@@ -333,26 +294,9 @@
         "yechenz-wq"
       ],
       "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 50,
-      "title": "Estimate raw material needs for assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/50",
-      "updatedAt": "2026-02-12T23:13:41Z",
-      "status": "Todo",
-      "due": "2026-02-25",
-      "assignees": [
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
       }
     },
     {
@@ -360,80 +304,9 @@
       "number": 47,
       "title": "Select battery and power components",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
-      "updatedAt": "2026-02-12T23:11:26Z",
-      "status": "Todo",
-      "due": "2026-02-25",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 40,
-      "title": "SD2 Demo Plan + Artifacts",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/40",
-      "updatedAt": "2026-02-12T23:11:00Z",
-      "status": "Todo",
-      "due": "2026-02-25",
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq",
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 51,
-      "title": "Update budget document for selected components",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/51",
-      "updatedAt": "2026-02-12T23:13:45Z",
+      "updatedAt": "2026-02-28T00:27:32Z",
       "status": "In Progress",
-      "due": "2026-02-27",
-      "assignees": [
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 46,
-      "title": "Add proper motors and drivers to schematic",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/46",
-      "updatedAt": "2026-02-12T23:11:16Z",
-      "status": "In Progress",
-      "due": "2026-02-27",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 64,
-      "title": "Test cuda-enabled SLAM deployable on jetson in simulation",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/64",
-      "updatedAt": "2026-02-12T23:14:07Z",
-      "status": "Todo",
-      "due": "2026-03-09",
+      "due": "2026-02-25",
       "assignees": [
         "dgl7"
       ],
@@ -441,6 +314,83 @@
         "title": "System Demo 3",
         "dueOn": "2026-03-09T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 77,
+      "title": "ADC touch sensor functionality prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/77",
+      "updatedAt": "2026-02-28T00:38:06Z",
+      "status": "Todo",
+      "due": "2026-03-09T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 76,
+      "title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/76",
+      "updatedAt": "2026-02-28T00:37:29Z",
+      "status": "Todo",
+      "due": "2026-03-09T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 75,
+      "title": "Incorporate sensing, compute, and other selected components into CAD",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/75",
+      "updatedAt": "2026-02-28T00:36:49Z",
+      "status": "Todo",
+      "due": "2026-03-09T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 74,
+      "title": "Begin chassis assembly",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/74",
+      "updatedAt": "2026-02-28T00:36:01Z",
+      "status": "Todo",
+      "due": "2026-03-09T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 64,
+      "title": "Test cuda-enabled SLAM deployable on jetson in simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/64",
+      "updatedAt": "2026-02-28T00:33:25Z",
+      "status": "Todo",
+      "due": "2026-03-09",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
       }
     },
     {
@@ -556,6 +506,77 @@
     }
   ],
   "doneItemsRecent": [
+    {
+      "number": 78,
+      "title": "Build mockup klann linkage prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/78",
+      "updatedAt": "2026-02-28T00:38:42Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "number": 40,
+      "title": "SD2 Demo Plan + Artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/40",
+      "updatedAt": "2026-02-28T00:28:58Z",
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "number": 50,
+      "title": "Estimate raw material needs for chassis assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/50",
+      "updatedAt": "2026-02-28T00:28:50Z",
+      "assignees": [
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "number": 51,
+      "title": "Update budget document for selected components",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/51",
+      "updatedAt": "2026-02-28T00:26:56Z",
+      "assignees": [
+        "liu3304697516"
+      ],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
+    {
+      "number": 46,
+      "title": "Add proper motors and drivers to schematic",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/46",
+      "updatedAt": "2026-02-28T00:26:32Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      }
+    },
     {
       "number": 58,
       "title": "Set up D415 and preprocessing",
@@ -771,89 +792,211 @@
         "dueOn": "2026-02-12T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
       }
-    },
-    {
-      "number": 16,
-      "title": "Section — System depiction/description (subsystems)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/16",
-      "updatedAt": "2026-02-13T15:10:31Z",
-      "assignees": [
-        "dgl7",
-        "yechenz-wq",
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-12T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 14,
-      "title": "Section — Trade studies (decision matrices)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/14",
-      "updatedAt": "2026-02-13T15:10:25Z",
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-12T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 17,
-      "title": "Section — Project management (schedule, responsibilities, budget, risk)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/17",
-      "updatedAt": "2026-02-13T15:10:24Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-12T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 10,
-      "title": "Proposal skeleton + formatting (title page, TOC, page numbers)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/10",
-      "updatedAt": "2026-02-13T15:10:20Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-12T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
-    },
-    {
-      "number": 9,
-      "title": "Design Proposal PDF (complete + compliant)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/9",
-      "updatedAt": "2026-02-13T15:10:18Z",
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq",
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-12T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
     }
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest issue updated: #73 SD7 Demo Plan + Artifacts",
-    "createdAt": "2026-02-13T15:17:27Z"
+    "body": "Latest issue updated: #77 ADC touch sensor functionality prototype",
+    "createdAt": "2026-02-28T00:38:06Z"
   },
   "issues": [
+    {
+      "number": 77,
+      "title": "ADC touch sensor functionality prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/77",
+      "updatedAt": "2026-02-28T00:38:06Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 76,
+      "title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/76",
+      "updatedAt": "2026-02-28T00:37:29Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 75,
+      "title": "Incorporate sensing, compute, and other selected components into CAD",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/75",
+      "updatedAt": "2026-02-28T00:36:49Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 74,
+      "title": "Begin chassis assembly",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/74",
+      "updatedAt": "2026-02-28T00:36:01Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 64,
+      "title": "Test cuda-enabled SLAM deployable on jetson in simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/64",
+      "updatedAt": "2026-02-28T00:33:25Z",
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      }
+    },
+    {
+      "number": 67,
+      "title": "Define demo-alligned cost terms for optimization of locomotion controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/67",
+      "updatedAt": "2026-02-28T00:28:31Z",
+      "labels": [
+        "OCRL"
+      ],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 66,
+      "title": "Define control \"u\" for locomotion controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/66",
+      "updatedAt": "2026-02-28T00:28:26Z",
+      "labels": [
+        "OCRL"
+      ],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 65,
+      "title": "Define state \"x\" for locomotion controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/65",
+      "updatedAt": "2026-02-28T00:28:17Z",
+      "labels": [
+        "OCRL"
+      ],
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 60,
+      "title": "Set up joint control in simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/60",
+      "updatedAt": "2026-02-28T00:28:09Z",
+      "labels": [],
+      "assignees": [
+        "dgl7",
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 59,
+      "title": "Simulate cameras in robot",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
+      "updatedAt": "2026-02-28T00:28:05Z",
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      }
+    },
+    {
+      "number": 41,
+      "title": "Calculate torque specifications for klann leg assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
+      "updatedAt": "2026-02-28T00:27:40Z",
+      "labels": [],
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      }
+    },
+    {
+      "number": 47,
+      "title": "Select battery and power components",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
+      "updatedAt": "2026-02-28T00:27:32Z",
+      "labels": [],
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 63,
+      "title": "Build in-sim gait controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/63",
+      "updatedAt": "2026-02-28T00:27:16Z",
+      "labels": [],
+      "assignees": [
+        "dgl7",
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
     {
       "number": 73,
       "title": "SD7 Demo Plan + Artifacts",
@@ -907,21 +1050,6 @@
       }
     },
     {
-      "number": 64,
-      "title": "Test cuda-enabled SLAM deployable on jetson in simulation",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/64",
-      "updatedAt": "2026-02-12T23:14:07Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
       "number": 69,
       "title": "Draft user operator ros2 interface",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/69",
@@ -964,199 +1092,6 @@
         "title": "System Demo 3",
         "dueOn": "2026-03-09T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
-      "number": 51,
-      "title": "Update budget document for selected components",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/51",
-      "updatedAt": "2026-02-12T23:13:45Z",
-      "labels": [],
-      "assignees": [
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 50,
-      "title": "Estimate raw material needs for assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/50",
-      "updatedAt": "2026-02-12T23:13:41Z",
-      "labels": [],
-      "assignees": [
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 41,
-      "title": "Calculate torque specifications for klann leg assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
-      "updatedAt": "2026-02-12T23:13:21Z",
-      "labels": [],
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 67,
-      "title": "Define demo-alligned cost terms for optimization of locomotion controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/67",
-      "updatedAt": "2026-02-12T23:13:03Z",
-      "labels": [
-        "OCRL"
-      ],
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 66,
-      "title": "Define control \"u\" for locomotion controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/66",
-      "updatedAt": "2026-02-12T23:12:44Z",
-      "labels": [
-        "OCRL"
-      ],
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 65,
-      "title": "Define state \"x\" for locomotion controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/65",
-      "updatedAt": "2026-02-12T23:12:38Z",
-      "labels": [
-        "OCRL"
-      ],
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 63,
-      "title": "Build in-sim gait controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/63",
-      "updatedAt": "2026-02-12T23:12:06Z",
-      "labels": [],
-      "assignees": [
-        "dgl7",
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 60,
-      "title": "Set up joint control in simulation",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/60",
-      "updatedAt": "2026-02-12T23:11:51Z",
-      "labels": [],
-      "assignees": [
-        "dgl7",
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 59,
-      "title": "Simulate cameras in robot",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
-      "updatedAt": "2026-02-12T23:11:47Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 47,
-      "title": "Select battery and power components",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
-      "updatedAt": "2026-02-12T23:11:26Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 46,
-      "title": "Add proper motors and drivers to schematic",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/46",
-      "updatedAt": "2026-02-12T23:11:16Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
-    },
-    {
-      "number": 40,
-      "title": "SD2 Demo Plan + Artifacts",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/40",
-      "updatedAt": "2026-02-12T23:11:00Z",
-      "labels": [],
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq",
-        "liu3304697516"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
       }
     },
     {
@@ -1333,6 +1268,108 @@
   ],
   "openIssues": 33,
   "projectItems": [
+    {
+      "type": "Issue",
+      "number": 61,
+      "title": "SD3 Demo Plan + Artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/61",
+      "state": "OPEN",
+      "updatedAt": "2026-02-12T23:14:01Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "SD3 Demo Plan + Artifacts",
+        "Status": "Todo",
+        "Start date": "2026-02-26",
+        "Due date": "2026-03-09"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 41,
+      "title": "Calculate torque specifications for klann leg assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:27:40Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      },
+      "fields": {
+        "Title": "Calculate torque specifications for klann leg assemblies",
+        "Status": "Todo",
+        "Start date": "2026-02-23",
+        "Due date": "2026-02-24"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 59,
+      "title": "Simulate cameras in robot",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:28:05Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      },
+      "fields": {
+        "Title": "Simulate cameras in robot",
+        "Status": "Todo",
+        "Start date": "2026-02-19",
+        "Due date": "2026-02-19"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 64,
+      "title": "Test cuda-enabled SLAM deployable on jetson in simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/64",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:33:25Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      },
+      "fields": {
+        "Title": "Test cuda-enabled SLAM deployable on jetson in simulation",
+        "Status": "Todo",
+        "Start date": "2026-02-28",
+        "Due date": "2026-03-09"
+      }
+    },
     {
       "type": "Issue",
       "number": 1,
@@ -2384,9 +2421,9 @@
       "number": 40,
       "title": "SD2 Demo Plan + Artifacts",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/40",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:11:00Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-28T00:28:58Z",
+      "closedAt": "2026-02-28T00:28:58Z",
       "mergedAt": null,
       "assignees": [
         "dgl7",
@@ -2402,36 +2439,9 @@
       },
       "fields": {
         "Title": "SD2 Demo Plan + Artifacts",
-        "Status": "Todo",
+        "Status": "Done",
         "Start date": "2026-02-14",
         "Due date": "2026-02-25"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 41,
-      "title": "Calculate torque specifications for klann leg assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:13:21Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Calculate torque specifications for klann leg assemblies",
-        "Status": "Todo",
-        "Start date": "2026-02-23",
-        "Due date": "2026-02-24"
       }
     },
     {
@@ -2536,9 +2546,9 @@
       "number": 46,
       "title": "Add proper motors and drivers to schematic",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/46",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:11:16Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-28T00:26:32Z",
+      "closedAt": "2026-02-28T00:26:32Z",
       "mergedAt": null,
       "assignees": [
         "dgl7"
@@ -2551,34 +2561,9 @@
       },
       "fields": {
         "Title": "Add proper motors and drivers to schematic",
-        "Status": "In Progress",
         "Start date": "2026-02-26",
-        "Due date": "2026-02-27"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 47,
-      "title": "Select battery and power components",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:11:26Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Select battery and power components",
-        "Status": "Todo",
-        "Start date": "2026-02-25",
-        "Due date": "2026-02-25"
+        "Due date": "2026-02-27",
+        "Status": "Done"
       }
     },
     {
@@ -2630,11 +2615,11 @@
     {
       "type": "Issue",
       "number": 50,
-      "title": "Estimate raw material needs for assemblies",
+      "title": "Estimate raw material needs for chassis assemblies",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/50",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:13:41Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-28T00:28:50Z",
+      "closedAt": "2026-02-28T00:28:50Z",
       "mergedAt": null,
       "assignees": [
         "liu3304697516"
@@ -2646,8 +2631,8 @@
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
       },
       "fields": {
-        "Title": "Estimate raw material needs for assemblies",
-        "Status": "Todo",
+        "Title": "Estimate raw material needs for chassis assemblies",
+        "Status": "Done",
         "Start date": "2026-02-20",
         "Due date": "2026-02-25"
       }
@@ -2657,9 +2642,9 @@
       "number": 51,
       "title": "Update budget document for selected components",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/51",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:13:45Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-02-28T00:26:56Z",
+      "closedAt": "2026-02-28T00:26:56Z",
       "mergedAt": null,
       "assignees": [
         "liu3304697516"
@@ -2672,7 +2657,7 @@
       },
       "fields": {
         "Title": "Update budget document for selected components",
-        "Status": "In Progress",
+        "Status": "Done",
         "Start date": "2026-02-26",
         "Due date": "2026-02-27"
       }
@@ -2729,11 +2714,11 @@
     },
     {
       "type": "Issue",
-      "number": 61,
-      "title": "SD3 Demo Plan + Artifacts",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/61",
+      "number": 47,
+      "title": "Select battery and power components",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
       "state": "OPEN",
-      "updatedAt": "2026-02-12T23:14:01Z",
+      "updatedAt": "2026-02-28T00:27:32Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
@@ -2746,23 +2731,24 @@
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       },
       "fields": {
-        "Title": "SD3 Demo Plan + Artifacts",
-        "Status": "Todo",
-        "Start date": "2026-02-26",
-        "Due date": "2026-03-09"
+        "Title": "Select battery and power components",
+        "Status": "In Progress",
+        "Start date": "2026-02-25",
+        "Due date": "2026-02-25"
       }
     },
     {
       "type": "Issue",
-      "number": 64,
-      "title": "Test cuda-enabled SLAM deployable on jetson in simulation",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/64",
+      "number": 63,
+      "title": "Build in-sim gait controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/63",
       "state": "OPEN",
-      "updatedAt": "2026-02-12T23:14:07Z",
+      "updatedAt": "2026-02-28T00:27:16Z",
       "closedAt": null,
       "mergedAt": null,
       "assignees": [
-        "dgl7"
+        "dgl7",
+        "yechenz-wq"
       ],
       "labels": [],
       "milestone": {
@@ -2771,10 +2757,36 @@
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
       },
       "fields": {
-        "Title": "Test cuda-enabled SLAM deployable on jetson in simulation",
-        "Status": "Todo",
-        "Start date": "2026-02-28",
-        "Due date": "2026-03-09"
+        "Title": "Build in-sim gait controller",
+        "Status": "In Progress",
+        "Start date": "2026-02-20",
+        "Due date": "2026-02-22"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 60,
+      "title": "Set up joint control in simulation",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/60",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:28:09Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7",
+        "yechenz-wq"
+      ],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Set up joint control in simulation",
+        "Status": "In Progress",
+        "Start date": "2026-02-19",
+        "Due date": "2026-02-19"
       }
     },
     {
@@ -2800,6 +2812,87 @@
         "Status": "Todo",
         "Start date": "2026-02-28",
         "Due date": "2026-03-09"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 65,
+      "title": "Define state \"x\" for locomotion controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/65",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:28:17Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "labels": [
+        "OCRL"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Define state \"x\" for locomotion controller",
+        "Status": "Todo",
+        "Start date": "2026-02-14",
+        "Due date": "2026-02-22"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 66,
+      "title": "Define control \"u\" for locomotion controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/66",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:28:26Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "labels": [
+        "OCRL"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Define control \"u\" for locomotion controller",
+        "Status": "Todo",
+        "Start date": "2026-02-14",
+        "Due date": "2026-02-22"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 67,
+      "title": "Define demo-alligned cost terms for optimization of locomotion controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/67",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:28:31Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "hongfeil-beep"
+      ],
+      "labels": [
+        "OCRL"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Define demo-alligned cost terms for optimization of locomotion controller",
+        "Status": "Todo",
+        "Start date": "2026-02-14",
+        "Due date": "2026-02-22"
       }
     },
     {
@@ -2854,57 +2947,6 @@
     },
     {
       "type": "Issue",
-      "number": 59,
-      "title": "Simulate cameras in robot",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:11:47Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Simulate cameras in robot",
-        "Status": "Todo",
-        "Start date": "2026-02-19",
-        "Due date": "2026-02-19"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 60,
-      "title": "Set up joint control in simulation",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/60",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:11:51Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7",
-        "yechenz-wq"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Set up joint control in simulation",
-        "Status": "In Progress",
-        "Start date": "2026-02-19",
-        "Due date": "2026-02-19"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 62,
       "title": "Define ROS2 package subscriptions, publications, bringup layout",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/62",
@@ -2926,113 +2968,6 @@
         "Status": "Done",
         "Start date": "2026-02-16",
         "Due date": "2026-02-16"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 63,
-      "title": "Build in-sim gait controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/63",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:12:06Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "dgl7",
-        "yechenz-wq"
-      ],
-      "labels": [],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Build in-sim gait controller",
-        "Status": "In Progress",
-        "Start date": "2026-02-20",
-        "Due date": "2026-02-22"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 65,
-      "title": "Define state \"x\" for locomotion controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/65",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:12:38Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "labels": [
-        "OCRL"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Define state \"x\" for locomotion controller",
-        "Status": "Todo",
-        "Start date": "2026-02-14",
-        "Due date": "2026-02-22"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 66,
-      "title": "Define control \"u\" for locomotion controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/66",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:12:44Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "labels": [
-        "OCRL"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Define control \"u\" for locomotion controller",
-        "Status": "Todo",
-        "Start date": "2026-02-14",
-        "Due date": "2026-02-22"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 67,
-      "title": "Define demo-alligned cost terms for optimization of locomotion controller",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/67",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:13:03Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "labels": [
-        "OCRL"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      },
-      "fields": {
-        "Title": "Define demo-alligned cost terms for optimization of locomotion controller",
-        "Status": "Todo",
-        "Start date": "2026-02-14",
-        "Due date": "2026-02-22"
       }
     },
     {
@@ -3237,6 +3172,111 @@
       "fields": {
         "Title": "SD7 Demo Plan + Artifacts",
         "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 74,
+      "title": "Begin chassis assembly",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/74",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:36:01Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Begin chassis assembly",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 75,
+      "title": "Incorporate sensing, compute, and other selected components into CAD",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/75",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:36:49Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Incorporate sensing, compute, and other selected components into CAD",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 76,
+      "title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/76",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:37:29Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 77,
+      "title": "ADC touch sensor functionality prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/77",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:38:06Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "ADC touch sensor functionality prototype",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 78,
+      "title": "Build mockup klann linkage prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/78",
+      "state": "CLOSED",
+      "updatedAt": "2026-02-28T00:38:42Z",
+      "closedAt": "2026-02-28T00:38:42Z",
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 2",
+        "dueOn": "2026-02-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
+      },
+      "fields": {
+        "Title": "Build mockup klann linkage prototype",
+        "Status": "Done"
       }
     }
   ],

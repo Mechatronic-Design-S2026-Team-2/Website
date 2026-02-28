@@ -15,13 +15,13 @@ title: "System Design"
     <div class="t2-toc-title">On this page</div>
     <ul class="t2-toc-list">
       <li><a href="#overview">Overview</a></li>
-      <li><a href="#functional-architecture">Functional architecture</a></li>
-      <li><a href="#trade-studies">Trade studies</a></li>
-      <li><a href="#cyberphysical-architecture">Cyberphysical architecture</a></li>
-      <li><a href="#mechanical">Mechanical design</a></li>
-      <li><a href="#electrical">Electrical design</a></li>
-      <li><a href="#software">Software & autonomy</a></li>
-      <li><a href="#risks">Risks & mitigations</a></li>
+      <li><a href="#functional-architecture">Functional Architecture</a></li>
+      <li><a href="#trade-studies">Trade Studies</a></li>
+      <li><a href="#cyberphysical-architecture">Cyberphysical Architecture</a></li>
+      <li><a href="#mechanical">Mechanical Design</a></li>
+      <li><a href="#electrical">Electrical Design</a></li>
+      <li><a href="#software">Software & Autonomy</a></li>
+      <li><a href="#risks">Risks & Mitigations</a></li>
     </ul>
   </div>
 
@@ -58,7 +58,7 @@ title: "System Design"
 
 <!-- ====== Card: Functional architecture (SVG embed directly) ====== -->
 <div class="t2-card" id="functional-architecture">
-  <h2>Functional architecture</h2>
+  <h2>Functional Architecture</h2>
   {% include svg-diagram.html
     svg="/assets/diagrams/functional-architecture.svg"
     source="/assets/diagrams/functional-architecture.drawio.xml"
@@ -129,7 +129,7 @@ title: "System Design"
 
 <!-- ====== Card: Cyberphysical architecture (SVG embed) ====== -->
 <div class="t2-card" id="cyberphysical-architecture">
-  <h2>Cyberphysical architecture</h2>
+  <h2>Cyberphysical Architecture</h2>
   {% include svg-diagram.html
     svg="/assets/diagrams/cyberphysical-architecture.svg"
     source="/assets/diagrams/cyberphysical-architecture.drawio.xml"
@@ -245,7 +245,7 @@ title: "System Design"
 <div class="t2-card" id="software">
   <h2>Software & Autonomy</h2>
   <details class="t2-acc" open>
-    <summary><h3>Behavior tree</h3></summary>
+    <summary><h3>Behavior Tree</h3></summary>
     <div class="t2-acc-body">
     {% include svg-diagram.html
     svg="/assets/diagrams/Behavior_tree.drawio.svg"
@@ -255,7 +255,7 @@ title: "System Design"
     </div>
   </details>
   <details class="t2-acc">
-    <summary><h3>ESP32 architecture</h3></summary>
+    <summary><h3>ESP32 Architecture</h3></summary>
     <div class="t2-acc-body">
     </div>
   </details>

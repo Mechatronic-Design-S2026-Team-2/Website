@@ -4,24 +4,54 @@ title: "System Implementation"
 
 {% include nav.html %}
 
-## Subsystem build logs
-### Mechanical
-- Current design
-- Build notes
-- Iterations & changes
+<div class="t2-card" id="chassisassembly">
+  <h2>Chassis Assembly</h2>
+</div>
 
-### Electrical
-- Wiring diagram / schematic
-- Power distribution
-- Sensor integration
+<div class="t2-card" id="legfabrication">
+  <h2>Leg Fabrication</h2>
+</div>
 
-### Software / Control
-- Code architecture
-- Key algorithms
-- Calibration and tuning notes
+<div class="t2-card" id="computesensing">
+  <h2>Compute & Sensing</h2>
+</div>
 
-## Integration notes
-- What’s integrated so far?
-- Known issues
-- Next steps
+<div class="t2-card" id="powersystem">
+  <h2>Power System</h2>
+</div>
+
+<div class="t2-card" id="ros">
+  <h2>Software Interface</h2>
+  <details class="t2-acc">
+    <summary><h3>Nodes, Components</h3></summary>
+    <div class="t2-acc-body">
+    </div>
+  </details>
+  <details class="t2-acc">
+    <summary><h3>Interface / Topic Contract</h3></summary>
+    <div class="t2-acc-body">
+    </div>
+  </details>
+  <details class="t2-acc">
+    <summary><h3>Frame Contract</h3></summary>
+    <div class="t2-acc-body">
+    </div>
+  </details>
+</div>
+
+<div class="t2-card" id="localcontroller">
+  <h2>Local Controller</h2>
+</div>
+
+<div class="t2-card" id="SLAM">
+  <h2>SLAM</h2>
+</div>
+
+<div class="t2-card" id="ESP32">
+  <h2>ESP32</h2>
+</div>
+
+<div class="t2-card" id="simulation">
+  <h2>Simulation</h2>
+</div>
 

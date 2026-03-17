@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T16:04:12.588Z",
+  "generatedAt": "2026-03-17T16:05:57.623Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -14,7 +14,7 @@
     "title": "System Demo 3",
     "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5",
     "dueOn": "2026-03-09T00:00:00Z",
-    "openIssues": 13,
+    "openIssues": 14,
     "closedIssues": 0
   },
   "schedule": [
@@ -22,7 +22,7 @@
       "title": "System Demo 3",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5",
       "dueOn": "2026-03-09T00:00:00Z",
-      "openIssues": 13,
+      "openIssues": 14,
       "closedIssues": 0
     },
     {
@@ -36,8 +36,8 @@
       "title": "System Demo 4",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7",
       "dueOn": "2026-03-23T00:00:00Z",
-      "openIssues": 4,
-      "closedIssues": 0
+      "openIssues": 3,
+      "closedIssues": 1
     },
     {
       "title": "System Demo 5",
@@ -282,25 +282,6 @@
     },
     {
       "type": "Issue",
-      "number": 41,
-      "title": "Calculate torque specifications for klann leg assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
-      "updatedAt": "2026-02-28T00:27:40Z",
-      "status": "Todo",
-      "due": "2026-02-24",
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 4",
-        "dueOn": "2026-03-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 47,
       "title": "Select battery and power components",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
@@ -310,6 +291,21 @@
       "assignees": [
         "dgl7"
       ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 79,
+      "title": "Order motors and gearbox",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/79",
+      "updatedAt": "2026-03-17T15:41:25Z",
+      "status": "Todo",
+      "due": "2026-03-09T00:00:00Z",
+      "assignees": [],
       "milestone": {
         "title": "System Demo 3",
         "dueOn": "2026-03-09T00:00:00Z",
@@ -506,6 +502,22 @@
     }
   ],
   "doneItemsRecent": [
+    {
+      "number": 41,
+      "title": "Calculate torque specifications for klann leg assemblies",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
+      "updatedAt": "2026-03-17T15:41:07Z",
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq"
+      ],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      }
+    },
     {
       "number": 78,
       "title": "Build mockup klann linkage prototype",
@@ -778,28 +790,27 @@
         "dueOn": "2026-02-23T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
       }
-    },
-    {
-      "number": 18,
-      "title": "References (papers, datasheets, docs)",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/18",
-      "updatedAt": "2026-02-13T15:10:40Z",
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "milestone": {
-        "title": "Design Proposal",
-        "dueOn": "2026-02-12T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/3"
-      }
     }
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest issue updated: #77 ADC touch sensor functionality prototype",
-    "createdAt": "2026-02-28T00:38:06Z"
+    "body": "Latest issue updated: #79 Order motors and gearbox",
+    "createdAt": "2026-03-17T15:41:25Z"
   },
   "issues": [
+    {
+      "number": 79,
+      "title": "Order motors and gearbox",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/79",
+      "updatedAt": "2026-03-17T15:41:25Z",
+      "labels": [],
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
     {
       "number": 77,
       "title": "ADC touch sensor functionality prototype",
@@ -942,23 +953,6 @@
       "labels": [],
       "assignees": [
         "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 4",
-        "dueOn": "2026-03-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
-      }
-    },
-    {
-      "number": 41,
-      "title": "Calculate torque specifications for klann leg assemblies",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
-      "updatedAt": "2026-02-28T00:27:40Z",
-      "labels": [],
-      "assignees": [
-        "dgl7",
-        "hongfeil-beep",
-        "yechenz-wq"
       ],
       "milestone": {
         "title": "System Demo 4",
@@ -1298,9 +1292,9 @@
       "number": 41,
       "title": "Calculate torque specifications for klann leg assemblies",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/41",
-      "state": "OPEN",
-      "updatedAt": "2026-02-28T00:27:40Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-03-17T15:41:07Z",
+      "closedAt": "2026-03-17T15:41:07Z",
       "mergedAt": null,
       "assignees": [
         "dgl7",
@@ -1315,7 +1309,7 @@
       },
       "fields": {
         "Title": "Calculate torque specifications for klann leg assemblies",
-        "Status": "Todo",
+        "Status": "Done",
         "Start date": "2026-02-23",
         "Due date": "2026-02-24"
       }
@@ -3277,6 +3271,27 @@
       "fields": {
         "Title": "Build mockup klann linkage prototype",
         "Status": "Done"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 79,
+      "title": "Order motors and gearbox",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/79",
+      "state": "OPEN",
+      "updatedAt": "2026-03-17T15:41:25Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Order motors and gearbox",
+        "Status": "Todo"
       }
     }
   ],

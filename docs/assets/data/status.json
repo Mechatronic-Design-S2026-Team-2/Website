@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-17T16:05:57.623Z",
+  "generatedAt": "2026-03-18T15:18:46.069Z",
   "org": "Mechatronic-Design-S2026-Team-2",
   "repos": {
     "robot": "Design",
@@ -14,16 +14,16 @@
     "title": "System Demo 3",
     "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5",
     "dueOn": "2026-03-09T00:00:00Z",
-    "openIssues": 14,
-    "closedIssues": 0
+    "openIssues": 10,
+    "closedIssues": 4
   },
   "schedule": [
     {
       "title": "System Demo 3",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5",
       "dueOn": "2026-03-09T00:00:00Z",
-      "openIssues": 14,
-      "closedIssues": 0
+      "openIssues": 10,
+      "closedIssues": 4
     },
     {
       "title": "Midsemester Presentation",
@@ -36,8 +36,8 @@
       "title": "System Demo 4",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7",
       "dueOn": "2026-03-23T00:00:00Z",
-      "openIssues": 3,
-      "closedIssues": 1
+      "openIssues": 2,
+      "closedIssues": 2
     },
     {
       "title": "System Demo 5",
@@ -97,6 +97,48 @@
     }
   ],
   "now": [
+    {
+      "type": "Issue",
+      "number": 76,
+      "title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/76",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:37:29Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
+        "Status": "In Progress"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 75,
+      "title": "Incorporate sensing, compute, and other selected components into CAD",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/75",
+      "state": "OPEN",
+      "updatedAt": "2026-02-28T00:36:49Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      },
+      "fields": {
+        "Title": "Incorporate sensing, compute, and other selected components into CAD",
+        "Status": "In Progress"
+      }
+    },
     {
       "type": "Issue",
       "number": 60,
@@ -196,23 +238,6 @@
     },
     {
       "type": "Issue",
-      "number": 59,
-      "title": "Simulate cameras in robot",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
-      "updatedAt": "2026-02-28T00:28:05Z",
-      "status": "Todo",
-      "due": "2026-02-19",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 4",
-        "dueOn": "2026-03-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 67,
       "title": "Define demo-alligned cost terms for optimization of locomotion controller",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/67",
@@ -299,41 +324,11 @@
     },
     {
       "type": "Issue",
-      "number": 79,
-      "title": "Order motors and gearbox",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/79",
-      "updatedAt": "2026-03-17T15:41:25Z",
-      "status": "Todo",
-      "due": "2026-03-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 77,
-      "title": "ADC touch sensor functionality prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/77",
-      "updatedAt": "2026-02-28T00:38:06Z",
-      "status": "Todo",
-      "due": "2026-03-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
-      "type": "Issue",
       "number": 76,
       "title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/76",
       "updatedAt": "2026-02-28T00:37:29Z",
-      "status": "Todo",
+      "status": "In Progress",
       "due": "2026-03-09T00:00:00Z",
       "assignees": [],
       "milestone": {
@@ -348,22 +343,7 @@
       "title": "Incorporate sensing, compute, and other selected components into CAD",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/75",
       "updatedAt": "2026-02-28T00:36:49Z",
-      "status": "Todo",
-      "due": "2026-03-09T00:00:00Z",
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 74,
-      "title": "Begin chassis assembly",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/74",
-      "updatedAt": "2026-02-28T00:36:01Z",
-      "status": "Todo",
+      "status": "In Progress",
       "due": "2026-03-09T00:00:00Z",
       "assignees": [],
       "milestone": {
@@ -395,23 +375,6 @@
       "title": "Draft user operator ros2 interface",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/69",
       "updatedAt": "2026-02-12T23:14:05Z",
-      "status": "Todo",
-      "due": "2026-03-09",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
-      "type": "Issue",
-      "number": 61,
-      "title": "SD3 Demo Plan + Artifacts",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/61",
-      "updatedAt": "2026-02-12T23:14:01Z",
       "status": "Todo",
       "due": "2026-03-09",
       "assignees": [
@@ -499,9 +462,148 @@
         "dueOn": "2026-03-11T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/6"
       }
+    },
+    {
+      "type": "Issue",
+      "number": 70,
+      "title": "SD4 Demo Plan + Artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/70",
+      "updatedAt": "2026-02-13T15:16:45Z",
+      "status": "Todo",
+      "due": "2026-03-23T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 71,
+      "title": "SD5 Demo Plan + Artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/71",
+      "updatedAt": "2026-02-13T15:17:09Z",
+      "status": "Todo",
+      "due": "2026-03-30T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 5",
+        "dueOn": "2026-03-30T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/8"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 72,
+      "title": "SD6 Demo Plan + Artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/72",
+      "updatedAt": "2026-02-13T15:17:18Z",
+      "status": "Todo",
+      "due": "2026-04-06T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 6",
+        "dueOn": "2026-04-06T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/9"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 73,
+      "title": "SD7 Demo Plan + Artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/73",
+      "updatedAt": "2026-02-13T15:17:27Z",
+      "status": "Todo",
+      "due": "2026-04-13T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 7",
+        "dueOn": "2026-04-13T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/10"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 31,
+      "title": "“No manual intervention” drill + recovery plan",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/31",
+      "updatedAt": "2026-01-29T23:50:14Z",
+      "status": "Todo",
+      "due": "2026-04-15T00:00:00Z",
+      "assignees": [],
+      "milestone": {
+        "title": "Final System Demo",
+        "dueOn": "2026-04-15T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/11"
+      }
     }
   ],
   "doneItemsRecent": [
+    {
+      "number": 59,
+      "title": "Simulate cameras in robot",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
+      "updatedAt": "2026-03-18T15:16:17Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 4",
+        "dueOn": "2026-03-23T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
+      }
+    },
+    {
+      "number": 61,
+      "title": "SD3 Demo Plan + Artifacts",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/61",
+      "updatedAt": "2026-03-18T15:16:11Z",
+      "assignees": [
+        "dgl7"
+      ],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 79,
+      "title": "Order motors and gearbox",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/79",
+      "updatedAt": "2026-03-18T15:16:06Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 77,
+      "title": "ADC touch sensor functionality prototype",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/77",
+      "updatedAt": "2026-03-18T15:16:04Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
+    {
+      "number": 74,
+      "title": "Begin chassis assembly",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/74",
+      "updatedAt": "2026-03-18T15:15:44Z",
+      "assignees": [],
+      "milestone": {
+        "title": "System Demo 3",
+        "dueOn": "2026-03-09T00:00:00Z",
+        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
+      }
+    },
     {
       "number": 41,
       "title": "Calculate torque specifications for klann leg assemblies",
@@ -720,109 +822,36 @@
         "dueOn": "2026-02-16T00:00:00Z",
         "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
       }
-    },
-    {
-      "number": 36,
-      "title": "System schematics for motors and sensors",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/36",
-      "updatedAt": "2026-02-22T22:44:26Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 35,
-      "title": "Robot Design Appears in Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/35",
-      "updatedAt": "2026-02-22T22:44:22Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 39,
-      "title": "Assemble System for testing on Gazebo",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/39",
-      "updatedAt": "2026-02-17T17:23:20Z",
-      "assignees": [
-        "yechenz-wq"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 38,
-      "title": "Acquire and setup rtos for esp32 controllers",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/38",
-      "updatedAt": "2026-02-16T22:28:31Z",
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 1",
-        "dueOn": "2026-02-16T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/16"
-      }
-    },
-    {
-      "number": 45,
-      "title": "Select appropriate motors for side articulated leg",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/45",
-      "updatedAt": "2026-02-16T17:08:12Z",
-      "assignees": [
-        "hongfeil-beep"
-      ],
-      "milestone": {
-        "title": "System Demo 2",
-        "dueOn": "2026-02-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/4"
-      }
     }
   ],
   "latestUpdate": {
     "source": "latest_issue",
-    "body": "Latest issue updated: #79 Order motors and gearbox",
-    "createdAt": "2026-03-17T15:41:25Z"
+    "body": "Latest issue updated: #81 Port over optimized parameters to CPG in-ros controller",
+    "createdAt": "2026-03-18T15:18:01Z"
   },
   "issues": [
     {
-      "number": 79,
-      "title": "Order motors and gearbox",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/79",
-      "updatedAt": "2026-03-17T15:41:25Z",
+      "number": 81,
+      "title": "Port over optimized parameters to CPG in-ros controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/81",
+      "updatedAt": "2026-03-18T15:18:01Z",
       "labels": [],
       "assignees": [],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
+      "milestone": null
     },
     {
-      "number": 77,
-      "title": "ADC touch sensor functionality prototype",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/77",
-      "updatedAt": "2026-02-28T00:38:06Z",
+      "number": 80,
+      "title": "Finish chassis cage and mount sensing / compute without power system",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/80",
+      "updatedAt": "2026-03-18T15:17:33Z",
       "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "milestone": null
     },
     {
       "number": 76,
@@ -842,19 +871,6 @@
       "title": "Incorporate sensing, compute, and other selected components into CAD",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/75",
       "updatedAt": "2026-02-28T00:36:49Z",
-      "labels": [],
-      "assignees": [],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
-      "number": 74,
-      "title": "Begin chassis assembly",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/74",
-      "updatedAt": "2026-02-28T00:36:01Z",
       "labels": [],
       "assignees": [],
       "milestone": {
@@ -946,21 +962,6 @@
       }
     },
     {
-      "number": 59,
-      "title": "Simulate cameras in robot",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
-      "updatedAt": "2026-02-28T00:28:05Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 4",
-        "dueOn": "2026-03-23T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/7"
-      }
-    },
-    {
       "number": 47,
       "title": "Select battery and power components",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/47",
@@ -1048,21 +1049,6 @@
       "title": "Draft user operator ros2 interface",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/69",
       "updatedAt": "2026-02-12T23:14:05Z",
-      "labels": [],
-      "assignees": [
-        "dgl7"
-      ],
-      "milestone": {
-        "title": "System Demo 3",
-        "dueOn": "2026-03-09T00:00:00Z",
-        "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/milestone/5"
-      }
-    },
-    {
-      "number": 61,
-      "title": "SD3 Demo Plan + Artifacts",
-      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/61",
-      "updatedAt": "2026-02-12T23:14:01Z",
       "labels": [],
       "assignees": [
         "dgl7"
@@ -1260,16 +1246,16 @@
       "milestone": null
     }
   ],
-  "openIssues": 33,
+  "openIssues": 30,
   "projectItems": [
     {
       "type": "Issue",
       "number": 61,
       "title": "SD3 Demo Plan + Artifacts",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/61",
-      "state": "OPEN",
-      "updatedAt": "2026-02-12T23:14:01Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-03-18T15:16:11Z",
+      "closedAt": "2026-03-18T15:16:11Z",
       "mergedAt": null,
       "assignees": [
         "dgl7"
@@ -1282,7 +1268,7 @@
       },
       "fields": {
         "Title": "SD3 Demo Plan + Artifacts",
-        "Status": "Todo",
+        "Status": "Done",
         "Start date": "2026-02-26",
         "Due date": "2026-03-09"
       }
@@ -1319,9 +1305,9 @@
       "number": 59,
       "title": "Simulate cameras in robot",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/59",
-      "state": "OPEN",
-      "updatedAt": "2026-02-28T00:28:05Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-03-18T15:16:17Z",
+      "closedAt": "2026-03-18T15:16:17Z",
       "mergedAt": null,
       "assignees": [
         "dgl7"
@@ -1334,7 +1320,7 @@
       },
       "fields": {
         "Title": "Simulate cameras in robot",
-        "Status": "Todo",
+        "Status": "Done",
         "Start date": "2026-02-19",
         "Due date": "2026-02-19"
       }
@@ -3173,9 +3159,9 @@
       "number": 74,
       "title": "Begin chassis assembly",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/74",
-      "state": "OPEN",
-      "updatedAt": "2026-02-28T00:36:01Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-03-18T15:15:44Z",
+      "closedAt": "2026-03-18T15:15:44Z",
       "mergedAt": null,
       "assignees": [],
       "labels": [],
@@ -3186,7 +3172,7 @@
       },
       "fields": {
         "Title": "Begin chassis assembly",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {
@@ -3207,7 +3193,7 @@
       },
       "fields": {
         "Title": "Incorporate sensing, compute, and other selected components into CAD",
-        "Status": "Todo"
+        "Status": "In Progress"
       }
     },
     {
@@ -3228,7 +3214,7 @@
       },
       "fields": {
         "Title": "ros2 key teleop to CAN oscilloscope output matching actuator specification",
-        "Status": "Todo"
+        "Status": "In Progress"
       }
     },
     {
@@ -3236,9 +3222,9 @@
       "number": 77,
       "title": "ADC touch sensor functionality prototype",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/77",
-      "state": "OPEN",
-      "updatedAt": "2026-02-28T00:38:06Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-03-18T15:16:04Z",
+      "closedAt": "2026-03-18T15:16:04Z",
       "mergedAt": null,
       "assignees": [],
       "labels": [],
@@ -3249,7 +3235,7 @@
       },
       "fields": {
         "Title": "ADC touch sensor functionality prototype",
-        "Status": "Todo"
+        "Status": "Done"
       }
     },
     {
@@ -3278,9 +3264,9 @@
       "number": 79,
       "title": "Order motors and gearbox",
       "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/79",
-      "state": "OPEN",
-      "updatedAt": "2026-03-17T15:41:25Z",
-      "closedAt": null,
+      "state": "CLOSED",
+      "updatedAt": "2026-03-18T15:16:06Z",
+      "closedAt": "2026-03-18T15:16:06Z",
       "mergedAt": null,
       "assignees": [],
       "labels": [],
@@ -3291,6 +3277,62 @@
       },
       "fields": {
         "Title": "Order motors and gearbox",
+        "Status": "Done"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 80,
+      "title": "Finish chassis cage and mount sensing / compute without power system",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/80",
+      "state": "OPEN",
+      "updatedAt": "2026-03-18T15:17:33Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [
+        "dgl7",
+        "hongfeil-beep",
+        "yechenz-wq",
+        "liu3304697516"
+      ],
+      "labels": [],
+      "milestone": null,
+      "fields": {
+        "Title": "Finish chassis cage and mount sensing / compute without power system",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 81,
+      "title": "Port over optimized parameters to CPG in-ros controller",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Design/issues/81",
+      "state": "OPEN",
+      "updatedAt": "2026-03-18T15:18:01Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": null,
+      "fields": {
+        "Title": "Port over optimized parameters to CPG in-ros controller",
+        "Status": "Todo"
+      }
+    },
+    {
+      "type": "Issue",
+      "number": 13,
+      "title": "Finalize power circuit and place part orders",
+      "url": "https://github.com/Mechatronic-Design-S2026-Team-2/Website/issues/13",
+      "state": "OPEN",
+      "updatedAt": "2026-03-18T15:18:24Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "assignees": [],
+      "labels": [],
+      "milestone": null,
+      "fields": {
+        "Title": "Finalize power circuit and place part orders",
         "Status": "Todo"
       }
     }

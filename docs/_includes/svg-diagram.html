@@ -1,9 +1,10 @@
-<!-- docs/_includes/svg-diagram.html -->
-<link rel="stylesheet" href="{{ '/assets/css/svg-diagram.css' | relative_url }}">
-
+{%- assign wrap = include.wrap | default: 'true' -%}
+{%- if wrap != 'false' -%}
 <div class="t2-card svgdi-card">
+{%- endif -%}
   <div class="svgdi-head">
-    <h3 class="svgdi-title">{{ include.title | default: "Diagram" }}</h3>
+    {% assign diagram_title = include.title | default: "Diagram" %}
+    {% if diagram_title != "" %}<h3 class="svgdi-title">{{ diagram_title }}</h3>{% endif %}
 
     <div class="svgdi-actions">
       {% if include.svg %}
@@ -22,7 +23,7 @@
     </div>
   </div>
 
-  <div class="svgdi-sub">Scroll to zoom • drag to pan • Reset view to refit</div>
+  <div class="svgdi-sub">{{ include.caption | default: 'Scroll to zoom • drag to pan • Reset view to refit' }}</div>
 
   <div class="svgdi-viewport"
      data-svgdi
@@ -31,7 +32,6 @@
      style="height: {{ include.height | default: 520 }}px;">
     <div class="svgdi-loading">Loading diagram…</div>
   </div>
+{%- if wrap != 'false' -%}
 </div>
-
-<script src="{{ '/assets/js/svg-diagram.js' | relative_url }}" defer></script>
-
+{%- endif -%}

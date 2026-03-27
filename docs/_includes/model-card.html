@@ -1,67 +1,32 @@
-<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
-
-<!-- <model-viewer> web component -->
-<script type="module"
-  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
+{%- assign wrap = include.wrap | default: 'true' -%}
+{%- if wrap != 'false' -%}
 <div class="t2-card">
+{%- endif -%}
   {% if include.title %}
-    <h2 style="margin:0 0 10px;">{{ include.title }}</h2>
+    <h2>{{ include.title }}</h2>
   {% endif %}
 
-  <model-viewer
-    id="t2ModelViewer-{{ include.id | default: include.file | slugify }}"
-    src="{{ include.file | relative_url }}"
-    {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
-    alt="{{ include.alt | default: include.title | default: '3D model' }}"
-    camera-controls
-    touch-action="pan-y"
-    autoplay
-    shadow-intensity="1.1"
-    exposure="0.9"
-    environment-image="neutral"
-    style="width:100%; height:520px; background: transparent; border-radius:16px; overflow:hidden;"
-  >
-  </model-viewer>
+  <div class="t2-model-stage">
+    <model-viewer
+      id="t2ModelViewer-{{ include.id | default: include.file | slugify }}"
+      class="t2-model-viewer"
+      src="{{ include.file | relative_url }}"
+      {% if include.poster %}poster="{{ include.poster | relative_url }}"{% endif %}
+      alt="{{ include.alt | default: include.title | default: '3D model' }}"
+      camera-controls
+      touch-action="pan-y"
+      shadow-intensity="1.1"
+      exposure="0.9"
+      environment-image="neutral"
+      interaction-prompt="none"
+      loading="lazy"
+      reveal="auto">
+    </model-viewer>
+  </div>
 
   {% if include.caption %}
-    <div class="t2-sub" style="margin-top:10px;">{{ include.caption }}</div>
+    <div class="t2-sub t2-model-caption">{{ include.caption }}</div>
   {% endif %}
+{%- if wrap != 'false' -%}
 </div>
-
-<script>
-(function () {
-  const id = "t2ModelViewer-{{ include.id | default: include.file | slugify }}";
-  const mv = document.getElementById(id);
-  if (!mv) return;
-
-  // Dark gray target color (RGB 0..1)
-  const DARK_GRAY = [0.20, 0.20, 0.22, 1.0]; // slightly cool dark gray
-
-  mv.addEventListener('load', () => {
-    try {
-      const mats = mv.model?.materials || [];
-      for (const m of mats) {
-        // PBR base color factor
-        if (m.pbrMetallicRoughness && m.pbrMetallicRoughness.baseColorFactor) {
-          m.pbrMetallicRoughness.setBaseColorFactor(DARK_GRAY);
-        }
-
-        // Keep it mostly matte so it reads well
-        if (m.pbrMetallicRoughness) {
-          m.pbrMetallicRoughness.setMetallicFactor(0.05);
-          m.pbrMetallicRoughness.setRoughnessFactor(0.85);
-        }
-
-        // If emissive is set, kill it so it doesn't blow out
-        if (m.emissiveFactor) {
-          m.setEmissiveFactor([0, 0, 0]);
-        }
-      }
-    } catch (e) {
-      // If anything goes wrong, fail silently—viewer still shows the model.
-      console.warn("Material override failed:", e);
-    }
-  });
-})();
-</script>
+{%- endif -%}

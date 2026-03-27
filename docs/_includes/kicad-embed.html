@@ -13,6 +13,7 @@ Usage #2 (same repo):
 {% assign repo = include.repo | default: site.github.repository_nwo %}
 {% assign ref  = include.ref  | default: "main" %}
 {% assign p    = include.path %}
+{% assign wrap = include.wrap | default: 'true' %}
 
 {% if include.github_file %}
   {% assign github_url = include.github_file %}
@@ -22,7 +23,7 @@ Usage #2 (same repo):
 
 {% assign gh = github_url | url_encode %}
 
-<div class="t2-card">
+{% if wrap != 'false' %}<div class="t2-card">{% endif %}
   <div class="t2-kicad">
     <div class="kicad-embed">
       <iframe
@@ -33,10 +34,10 @@ Usage #2 (same repo):
         referrerpolicy="no-referrer"
         allowfullscreen>
       </iframe>
-    
+
       <div class="kicad-fallback">
         <a href="{{ github_url }}" target="_blank" rel="noreferrer">Open the KiCad file on GitHub</a>
       </div>
     </div>
   </div>
-</div>
+{% if wrap != 'false' %}</div>{% endif %}

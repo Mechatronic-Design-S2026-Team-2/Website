@@ -1,0 +1,54 @@
+<div class="t2-card" id="trade-studies">
+  <h2>Design Trade Studies</h2>
+
+  <details class="t2-acc" open>
+    <summary>Locomotion concept</summary>
+    <div class="t2-acc-body">
+      <p>
+        We compared Klann vs Jansen vs articulated multi-DOF legs. Klann offers a mechanically encoded gait
+        with fewer links/joints than Jansen and far less software/IK dependency than articulated legs, which reduces
+        “software trip” risk and improves reliability under payload. It also provides better step clearance for taped-course
+        reliability and obstacle tolerance.
+      </p>
+      <ul>
+        <li><b>Why it won:</b> fewer actuators and control surfaces than articulated legs, lower software risk, and a clearer path to reproducible gait timing under load.</li>
+        <li><b>Main trade-off:</b> gait shape is constrained by linkage geometry, so refinement happens in mechanism tuning rather than arbitrary foot trajectory generation.</li>
+        <li><b>Planned validation:</b> straight-line and curvilinear tracking tests with representative payload, plus obstacle-clearance checks on the taped course.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="t2-acc">
+    <summary>Drive motor selection</summary>
+    <div class="t2-acc-body">
+      <p>
+        We compared (1) high-torque DC gear motors, (2) smart servos (e.g., Dynamixel), and (3) steppers + gearbox.
+        DC gear motors provide strong torque through high reduction at low cost, helping keep noise low at the walking-speed
+        operating point. They also support efficiency targets for battery life, and can meet navigation tolerance when paired
+        with external encoders.
+      </p>
+      <ul>
+        <li><b>Key acceptance criteria:</b> stall torque margin in stance phase, noise at operating RPM, thermal rise over 30 min, and encoder resolution.</li>
+        <li><b>Why alternatives were weaker:</b> smart servos simplify integration but become expensive at the required torque scale; steppers are easy to command but sacrifice efficiency and can run hotter/noisier in continuous duty.</li>
+        <li><b>Planned validation:</b> one-leg + crank bench test with current sensing, temperature logging, and audible dB measurement at 5 ft.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="t2-acc">
+    <summary>Compute &amp; sensing</summary>
+    <div class="t2-acc-body">
+      <p>
+        We compared low-cost compute nodes for embedded autonomy and selected Jetson Nano primarily for CUDA acceleration
+        to support depth processing with acceptable latency/power. Sensing is centered on a forward depth camera for obstacle
+        detection/scene representation, with an IMU for short-horizon stabilization and disturbance detection, and an optional rear
+        camera path to improve awareness during backing/turning.
+      </p>
+      <ul>
+        <li><b>Key acceptance criteria:</b> end-to-end perception latency, worst-case power draw, and stability of outputs under stage lighting.</li>
+        <li><b>Main system trade-off:</b> pushing more autonomy onboard improves standalone operation but tightens thermal and power margins, so low-level control remains on the MCU side.</li>
+        <li><b>Planned validation:</b> “walk in place” perception profiling, lighting robustness checks, and obstacle-stop tests with a conservative safety buffer threshold.</li>
+      </ul>
+    </div>
+  </details>
+</div>

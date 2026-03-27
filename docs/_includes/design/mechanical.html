@@ -1,0 +1,51 @@
+<div class="t2-card" id="mechanical">
+  <h2>Mechanical Design</h2>
+  <details class="t2-acc" open>
+    <summary><h3>Overall Assembly</h3></summary>
+    <div class="t2-acc-body" id="cad-overall">
+      {% include carousel.html key="overall_assembly_evolution" %}
+      <p>
+        The overall system is organized into four primary subsystems: a main base structure that supports the
+        seated performer, a wheel support assembly to carry the majority of the system weight, a set of side
+        legs for stabilization/lateral motion, and two sets of Klann-linkage-style leg assemblies for forward/
+        backward locomotion. Electronics are packaged in a protected compartment between the base and wheel
+        support to lower the center of gravity, improve mass distribution, and protect wiring/controls.
+      </p>
+    </div>
+  </details>
+  <details class="t2-acc">
+    <summary><h3>Klann Linkage Assembly</h3></summary>
+    <div class="t2-acc-body" id="cad-klann">
+      {% include model-card.html
+       wrap="false"
+       file="/assets/designs/klann-leg.glb"
+       caption="Rotate/zoom to inspect." %}
+      <p>
+        The Klann mechanism is selected to reduce actuator count while maintaining a mechanically encoded
+        gait. Rotary DC gear motors drive the Klann crankshafts; each crankshaft is supported by bearings
+        and standardized pivot hardware (shoulder bolts/joint pins, linkage plates, bushings/bearings, foot pads).
+        One motor per side drives the corresponding leg set; forward/backward locomotion comes from the cyclic
+        foot trajectory. Turning is implemented via a differential-drive strategy—independently controlling left/right
+        leg-set speeds enables zero-radius turning about the vertical axis.
+      </p>
+    </div>
+  </details>
+  <details class="t2-acc">
+    <summary><h3>Side Legs Assembly</h3></summary>
+    <div class="t2-acc-body" id="cad-sidelegs">
+      {% include model-card.html
+       wrap="false"
+       file="/assets/designs/articulated-leg.glb"
+       caption="Rotate/zoom to inspect." %}
+      <p>
+        The side legs provide active stabilization, pose control, and controlled lateral (side-to-side) translation.
+        They enlarge the support polygon to reduce tip risk under payload, help maintain the rider height target,
+        enable controlled body roll/pitch for choreographed motion, and support lateral shifting (“side glide”) while
+        staying within the 5’×5’ footprint. Each side leg is an articulated link assembly with an end foot pad, driven
+        through a pinned joint/clevis interface. The baseline approach uses compact linear actuators (motor-internal)
+        for simpler integration and precise position control, with a potential shift toward a motor-driven mechanism
+        for cost/safety/integration reasons.
+      </p>
+    </div>
+  </details>
+</div>

@@ -1,0 +1,23 @@
+<div class="t2-card" id="cyberphysical-architecture">
+  <h2>Cyberphysical Architecture</h2>
+  {% include svg-diagram.html
+    wrap="false"
+    title=""
+    svg="/assets/diagrams/cyberphysical-architecture.svg"
+    source="/assets/diagrams/cyberphysical-architecture.drawio.xml"
+    caption="Scroll to zoom • drag to pan • Reset view to refit"
+  %}
+  <details class="t2-acc">
+    <summary>Description</summary>
+    <div class="t2-acc-body">
+      <p>
+        The cyberphysical architecture splits “heavy” autonomy workloads (perception, mapping/localization,
+        planning) onto an embedded compute node (Jetson), while timing-critical motor/encoder/contact I/O
+        and deterministic gait control runs on one or more ESP32 microcontrollers. The operator station
+        provides mode and mission inputs; onboard sensing (depth camera, optional rear camera, IMU) feeds
+        state estimation and navigation; body-level velocity commands are sent to the ESP32 side, which
+        closes low-level loops and returns odometry + gait state for fusion and telemetry.
+      </p>
+    </div>
+  </details>
+</div>

@@ -1,0 +1,53 @@
+{%- comment -%}
+Shared per-page asset loader.
+Pass truthy flags like:
+  {% include page-assets.html cards=true carousel=true model_viewer=true %}
+{%- endcomment -%}
+
+{% if include.cards %}
+  <link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
+{% endif %}
+{% if include.design %}
+  <link rel="stylesheet" href="{{ '/assets/css/design.css' | relative_url }}">
+{% endif %}
+{% if include.carousel %}
+  <link rel="stylesheet" href="{{ '/assets/css/carousel.css' | relative_url }}">
+{% endif %}
+{% if include.lab %}
+  <link rel="stylesheet" href="{{ '/assets/css/lab.css' | relative_url }}">
+{% endif %}
+{% if include.codebox %}
+  <link rel="stylesheet" href="{{ '/assets/css/codebox.css' | relative_url }}">
+{% endif %}
+{% if include.model_viewer %}
+  <link rel="stylesheet" href="{{ '/assets/css/model.css' | relative_url }}">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+{% endif %}
+{% if include.svg_diagram %}
+  <link rel="stylesheet" href="{{ '/assets/css/svg-diagram.css' | relative_url }}">
+{% endif %}
+{% if include.team %}
+  <link rel="stylesheet" href="{{ '/assets/css/team.css' | relative_url }}">
+{% endif %}
+{% if include.status %}
+  <link rel="stylesheet" href="{{ '/assets/css/status.css' | relative_url }}">
+{% endif %}
+{% if include.pm_widget %}
+  <link rel="stylesheet" href="{{ '/assets/css/pm-widget.css' | relative_url }}">
+{% endif %}
+
+{% if include.carousel %}
+  <script src="{{ '/assets/js/carousel.js' | relative_url }}" defer></script>
+{% endif %}
+{% if include.svg_diagram %}
+  <script src="{{ '/assets/js/svg-diagram.js' | relative_url }}" defer></script>
+{% endif %}
+{% if include.team %}
+  <script src="{{ '/assets/js/team.js' | relative_url }}" defer></script>
+{% endif %}
+{% if include.status %}
+  <script src="{{ '/assets/js/render-status.js' | relative_url }}" defer></script>
+{% endif %}
+{% if include.pm_widget %}
+  <script defer src="{{ '/assets/js/render-management.js' | relative_url }}"></script>
+{% endif %}

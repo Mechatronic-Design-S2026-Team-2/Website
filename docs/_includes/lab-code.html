@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="{{ '/assets/css/codebox.css' | relative_url }}">
-
+{%- assign wrap = include.wrap | default: 'true' -%}
+{%- if wrap != 'false' -%}
 <div class="t2-card">
-
+{%- endif -%}
   <details class="t2-accordion">
     <summary class="t2-acc-summary">Open Arduino code (main.ino)</summary>
     <div class="t2-acc-body">
@@ -10,4 +10,6 @@
       {% endhighlight %}
     </div>
   </details>
+{%- if wrap != 'false' -%}
 </div>
+{%- endif -%}

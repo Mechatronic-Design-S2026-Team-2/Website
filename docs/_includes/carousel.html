@@ -1,0 +1,65 @@
+{%- assign carousel = site.data.carousels[include.key] -%}
+
+{%- if carousel -%}
+<section class="hero-carousel{% if carousel.slides and carousel.slides[0].type == 'model' %} hero-carousel--model{% endif %}"
+         aria-label="{{ carousel.aria_label | default: 'Carousel' }}">
+  <div class="carousel" data-carousel data-autoplay-ms="{{ carousel.autoplay_ms | default: 5000 }}">
+    <div class="carousel-track" data-track>
+      {%- for slide in carousel.slides -%}
+      <figure class="carousel-slide{% if forloop.first %} is-active{% endif %}" data-slide>
+        <div class="carousel-media{% if slide.type == 'model' %} carousel-media--model{% endif %}">
+          {%- if slide.type == 'model' -%}
+          <model-viewer
+            class="carousel-model-viewer"
+            src="{{ slide.src | relative_url }}"
+            alt="{{ slide.alt | default: slide.caption | default: '3D model' }}"
+            camera-controls
+            touch-action="pan-y"
+            shadow-intensity="1.1"
+            exposure="0.9"
+            environment-image="neutral"
+            interaction-prompt="none"
+            loading="lazy"
+            reveal="auto">
+          </model-viewer>
+          {%- elsif slide.type == 'video' -%}
+          <video class="carousel-video"
+                 src="{{ slide.src | relative_url }}"
+                 aria-label="{{ slide.alt | default: slide.caption | default: 'Carousel video' }}"
+                 muted
+                 loop
+                 playsinline
+                 preload="metadata"
+                 {% if slide.loading %}data-loading="{{ slide.loading }}"{% endif %}>
+          </video>
+          {%- else -%}
+          <img class="carousel-bg"
+               src="{{ slide.src | relative_url }}"
+               alt=""
+               aria-hidden="true"
+               loading="{{ slide.loading | default: 'lazy' }}">
+          <img class="carousel-fg"
+               src="{{ slide.src | relative_url }}"
+               alt="{{ slide.alt | default: slide.caption | default: 'Carousel slide' }}"
+               loading="{{ slide.loading | default: 'lazy' }}">
+          {%- endif -%}
+        </div>
+        {%- if slide.caption -%}
+        <figcaption>{{ slide.caption }}</figcaption>
+        {%- endif -%}
+      </figure>
+      {%- endfor -%}
+    </div>
+
+    <button class="carousel-btn prev" type="button" aria-label="Previous slide" data-prev>‹</button>
+    <button class="carousel-btn next" type="button" aria-label="Next slide" data-next>›</button>
+
+    <div class="carousel-dots" role="tablist" aria-label="Carousel pagination" data-dots></div>
+  </div>
+</section>
+{%- else -%}
+<div class="t2-card">
+  <h2>Missing carousel</h2>
+  <div class="t2-sub">No carousel data found for <code>{{ include.key }}</code>.</div>
+</div>
+{%- endif -%}

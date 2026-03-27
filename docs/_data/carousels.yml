@@ -1,0 +1,64 @@
+home_hero:
+  aria_label: Robot highlights
+  autoplay_ms: 5000
+  slides:
+    - type: image
+      src: /assets/img/linkage_MK1.gif
+      alt: First iteration linkage
+      caption: First Iteration Linkage
+      loading: eager
+    - type: video
+      src: /assets/img/untuned_cpg.webm
+      alt: Untuned CPG gait demonstration
+      caption: Untuned CPG
+      loading: lazy
+    - type: video
+      src: /assets/img/cpg_humanoid.webm
+      alt: CPG gait with humanoid rider demonstration
+      caption: CPG with Humanoid Rider
+      loading: lazy
+
+lab_highlights:
+  aria_label: Motors/Sensors lab highlights
+  autoplay_ms: 5000
+  slides:
+    - type: image
+      src: /assets/img/lab-1.jpg
+      alt: Lab highlight photo 1
+      caption: Sensors lab setup
+      loading: eager
+    - type: image
+      src: /assets/img/lab-2.jpg
+      alt: Lab highlight photo 2
+      caption: Motors lab setup
+      loading: lazy
+    - type: image
+      src: /assets/img/lab-3.gif
+      alt: Lab highlight GIF
+      caption: Bring-up motion test
+      loading: lazy
+
+overall_assembly_evolution:
+  aria_label: Overall assembly model evolution
+  autoplay_ms: 0
+  slides:
+    - type: model
+      src: /assets/designs/hexapod-v1.glb
+      alt: Overall assembly iteration 1
+      caption: Overall assembly — Iteration 1
+    - type: model
+      src: /assets/designs/hexapod-v2.glb
+      alt: Overall assembly iteration 2
+      caption: Overall assembly — Iteration 2
+    - type: model
+      src: /assets/designs/hexapod-v3.glb
+      alt: Overall assembly iteration 3
+      caption: Overall assembly — Iteration 3
+    - type: model
+      src: /assets/designs/hexapod-v4.glb
+      alt: Overall assembly iteration 4
+      caption: Overall assembly — Iteration 4
+    - type: model
+      src: /assets/designs/hexapod-v5.glb
+      alt: Overall assembly iteration 5
+      caption: Overall assembly — Iteration 5

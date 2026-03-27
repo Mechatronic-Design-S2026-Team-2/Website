@@ -157,7 +157,7 @@ title: "System Design"
     <summary><h3>Overall Assembly</h3></summary>
     <div class="t2-acc-body" id="cad-overall">
       {% include model-card.html
-       file="/assets/designs/hexapod-v2.glb"
+       file="/assets/designs/hexapod-v3.glb"
        caption="Rotate/zoom to inspect." 
        force_gray="true" %}
       <p>
@@ -173,7 +173,7 @@ title: "System Design"
     <summary><h3>Klann Linkage Assembly</h3></summary>
     <div class="t2-acc-body" id="cad-klann">
       {% include model-card.html
-       file="/assets/designs/klann-leg.glb"
+       file="/assets/designs/leg-v3.glb"
        caption="Rotate/zoom to inspect." 
        force_gray="true" %}
       <p>

@@ -3,10 +3,7 @@ title: "Motors/Sensors Lab"
 ---
 
 {% include nav.html %}
-
-<link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/carousel.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/lab.css' | relative_url }}">
+{% include page-assets.html cards=true carousel=true lab=true codebox=true %}
 
 <div class="t2-card">
   <h2>Lab highlights</h2>
@@ -17,10 +14,11 @@ title: "Motors/Sensors Lab"
 <div class="t2-card">
   <h2>KiCad schematic</h2>
   {% include kicad-embed.html
+     wrap="false"
      repo="Mechatronic-Design-S2026-Team-2/Website"
      ref="main"
      path="docs/assets/designs/sensor_motor_lab/18578sensor.kicad_sch"
-  %} 
+  %}
 </div>
 
 <div class="t2-card">
@@ -30,8 +28,7 @@ title: "Motors/Sensors Lab"
    label="Sensors/Motors Lab repo"
    href="https://github.com/Mechatronic-Design-S2026-Team-2/Sensors-Motors-Lab" %}
 
-  {% include lab-code.html %}
-
+  {% include lab-code.html wrap="false" %}
 </div>
 
 <div class="t2-card" id="ilrs">
@@ -40,5 +37,3 @@ title: "Motors/Sensors Lab"
 
   {% include ilr-dropdowns.html %}
 </div>
-
-<script src="{{ '/assets/js/carousel.js' | relative_url }}" defer></script>

@@ -3,6 +3,7 @@ title: "System Implementation"
 ---
 
 {% include nav.html %}
+{% include page-assets.html cards=true %}
 
 <div class="t2-card" id="chassisassembly">
   <h2>Chassis Assembly</h2>

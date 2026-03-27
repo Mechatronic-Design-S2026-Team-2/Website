@@ -18,10 +18,13 @@
     if (index < 0) index = 0;
     let timer = null;
 
-    function syncVideos() {
+    function syncMedia() {
       slides.forEach((slide, k) => {
+        const isActive = k === index;
+        slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+
         slide.querySelectorAll("video").forEach((video) => {
-          if (k === index) {
+          if (isActive) {
             const playPromise = video.play();
             if (playPromise && typeof playPromise.catch === "function") {
               playPromise.catch(() => {});
@@ -33,6 +36,18 @@
             } catch (_) {}
           }
         });
+
+        slide.querySelectorAll("model-viewer").forEach((viewer) => {
+          if (isActive) {
+            viewer.setAttribute("camera-controls", "");
+            viewer.style.pointerEvents = "auto";
+            viewer.tabIndex = 0;
+          } else {
+            viewer.removeAttribute("camera-controls");
+            viewer.style.pointerEvents = "none";
+            viewer.tabIndex = -1;
+          }
+        });
       });
     }
 
@@ -42,9 +57,10 @@
       if (dotsEl) {
         Array.from(dotsEl.querySelectorAll(".carousel-dot")).forEach((d, k) => {
           d.classList.toggle("is-active", k === index);
+          d.setAttribute("aria-selected", k === index ? "true" : "false");
         });
       }
-      syncVideos();
+      syncMedia();
     }
 
     if (dotsEl) {
@@ -54,6 +70,7 @@
         b.type = "button";
         b.className = "carousel-dot" + (i === index ? " is-active" : "");
         b.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        b.setAttribute("aria-selected", i === index ? "true" : "false");
         b.addEventListener("click", () => setActive(i));
         dotsEl.appendChild(b);
       });

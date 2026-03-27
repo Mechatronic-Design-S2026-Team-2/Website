@@ -1,4 +1,4 @@
-.hero-carousel {
+ .hero-carousel {
   margin: 18px 0 26px;
 }
 
@@ -11,21 +11,28 @@
 }
 
 .carousel-track {
+  position: relative;
   display: grid;
+  isolation: isolate;
 }
 
 .carousel-slide {
   grid-area: 1 / 1;
   opacity: 0;
-  transition: opacity 240ms ease;
+  visibility: hidden;
+  transition: opacity 240ms ease, visibility 0s linear 240ms;
   margin: 0;
   position: relative;
   pointer-events: none;
+  z-index: 0;
 }
 
 .carousel-slide.is-active {
   opacity: 1;
+  visibility: visible;
+  transition: opacity 240ms ease;
   pointer-events: auto;
+  z-index: 1;
 }
 
 .carousel-media {
@@ -71,6 +78,7 @@
 }
 
 .carousel-model-viewer {
+  display: block;
   width: 100%;
   height: 100%;
   background: transparent;
@@ -86,6 +94,7 @@
   border: 1px solid rgba(0,0,0,0.10);
   font-weight: 600;
   font-size: 0.95rem;
+  z-index: 2;
 }
 
 .carousel-btn {
@@ -100,6 +109,7 @@
   cursor: pointer;
   font-size: 28px;
   line-height: 1;
+  z-index: 3;
 }
 
 .carousel-btn:hover {
@@ -118,6 +128,7 @@
   justify-content: center;
   gap: 8px;
   pointer-events: none;
+  z-index: 3;
 }
 
 .carousel-dot {
@@ -134,8 +145,75 @@
   background: rgba(0,0,0,0.45);
 }
 
+.hero-carousel--model .carousel-media {
+  aspect-ratio: 16 / 10;
+  max-height: 640px;
+}
+
+.hero-carousel--model .carousel-slide figcaption {
+  position: static;
+  margin: 0;
+  padding: 12px 14px 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.carousel-footer--model {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px 14px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.hero-carousel--model .carousel-dots {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  justify-content: flex-start;
+  pointer-events: auto;
+  flex-wrap: wrap;
+}
+
+.carousel-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.hero-carousel--model .carousel-btn {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .carousel-footer--model {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .carousel-actions {
+    margin-left: 0;
+    justify-content: flex-end;
+  }
+}
+
 @media (max-width: 520px) {
   .carousel-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-carousel--model .carousel-media {
     aspect-ratio: 4 / 3;
   }
 }

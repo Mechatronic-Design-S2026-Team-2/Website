@@ -1,6 +1,19 @@
+.kicad-embed {
+  margin-top: 12px;
+}
+
 .kicad-frame {
-  height: 50vh; /* 50% of the viewport height */
-  width: 100%;  
+  width: 100%;
+  height: min(72vh, 720px);
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.kicad-fallback {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  opacity: 0.85;
 }
 
 .t2-card {
@@ -43,7 +56,6 @@
   background: rgba(0,0,0,0.05);
 }
 
-/* Responsive video embed inside a card */
 .t2-video {
   position: relative;
   width: 100%;
@@ -63,7 +75,6 @@
   height: 100%;
 }
 
-/* Accordion inside cards */
 .t2-acc {
   margin-top: 12px;
   border: 1px solid rgba(0,0,0,0.10);
@@ -80,7 +91,9 @@
   user-select: none;
 }
 
-.t2-acc summary::-webkit-details-marker { display: none; }
+.t2-acc summary::-webkit-details-marker {
+  display: none;
+}
 
 .t2-acc summary::after {
   content: "▾";
@@ -89,12 +102,19 @@
   transform: translateY(1px);
 }
 
-.t2-acc[open] summary::after { content: "▴"; }
+.t2-acc[open] summary::after {
+  content: "▴";
+}
 
 .t2-acc .t2-acc-body {
   padding: 12px 14px 14px;
   border-top: 1px solid rgba(0,0,0,0.08);
 }
 
-.t2-acc .t2-acc-body > :first-child { margin-top: 0; }
-.t2-acc .t2-acc-body > :last-child { margin-bottom: 0; }
+.t2-acc .t2-acc-body > :first-child {
+  margin-top: 0;
+}
+
+.t2-acc .t2-acc-body > :last-child {
+  margin-bottom: 0;
+}

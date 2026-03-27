@@ -22,28 +22,9 @@
   padding: 10px 12px;
 }
 
-.t2-kv strong { display: inline-block; margin-right: 6px; }
-
-.t2-accordion details {
-  border: 1px solid rgba(0,0,0,0.10);
-  background: rgba(0,0,0,0.02);
-  border-radius: 14px;
-  padding: 10px 12px;
-  margin: 10px 0;
-}
-
-.t2-accordion summary {
-  cursor: pointer;
-  font-weight: 800;
-  list-style: none;
-}
-
-.t2-accordion summary::-webkit-details-marker { display: none; }
-
-.t2-accordion .t2-acc-body {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(0,0,0,0.10);
+.t2-kv strong {
+  display: inline-block;
+  margin-right: 6px;
 }
 
 .t2-note {
@@ -54,7 +35,7 @@
 
 .t2-toc {
   margin-top: 14px;
-  padding: 12px 12px;
+  padding: 12px;
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.10);
   background: rgba(0,0,0,0.02);
@@ -78,64 +59,3 @@
 .t2-toc-list a:hover {
   text-decoration: underline;
 }
-
-/* Collapsible section styling */
-.t2-section summary {
-  cursor: pointer;
-  list-style: none;
-}
-
-.t2-section summary::-webkit-details-marker { display: none; }
-
-/* Make the summary header look like a normal h2 */
-.t2-section summary h2 {
-  display: inline-block;
-  margin: 0;
-}
-
-/* Give open sections a little breathing room */
-.t2-section[open] {
-  margin-top: 2px;
-}
-
-.t2-card {
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 16px;
-  padding: 16px;
-  margin: 16px 0;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.t2-card h2 { margin: 0 0 10px 0; font-weight: 900; }
-.t2-muted { opacity: 0.75; font-size: 0.95em; }
-.t2-hr { height: 1px; background: rgba(0,0,0,0.1); margin: 12px 0; border: 0; }
-
-.t2-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-@media (min-width: 980px) {
-  .t2-grid-2 { grid-template-columns: 1fr 1fr; }
-}
-
-.t2-details summary {
-  cursor: pointer;
-  font-weight: 700;
-  margin-top: 10px;
-}
-.t2-details > div, .t2-details > p, .t2-details > ul { margin-top: 8px; }
-
-/* Buttons */
-.t2-btn-sm {
-  border: 1px solid rgba(0,0,0,0.18);
-  background: #fff;
-  border-radius: 10px;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-weight: 700;
-  line-height: 1;
-}
-.t2-btn-sm:hover { filter: brightness(0.98); }
-.t2-btn-link { text-decoration: none; display: inline-flex; align-items: center; }

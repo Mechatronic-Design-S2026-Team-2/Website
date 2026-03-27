@@ -1,31 +1,9 @@
-/* Motors/Sensors Lab page helpers */
-
 .lab-note {
   margin-top: 12px;
   opacity: 0.85;
   line-height: 1.5;
 }
 
-/* KiCad embed */
-.kicad-embed {
-  margin-top: 12px;
-}
-
-.kicad-frame {
-  width: 100%;
-  height: min(72vh, 720px);
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 16px;
-  background: #fff;
-}
-
-.kicad-fallback {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  opacity: 0.85;
-}
-
-/* Console block */
 .console {
   margin-top: 12px;
   padding: 14px 16px;
@@ -44,7 +22,6 @@
   padding: 0;
 }
 
-/* ILR dropdowns */
 .ilr-accordion {
   margin-top: 12px;
   display: grid;
@@ -93,5 +70,5 @@
 
 .ilr-link {
   margin-top: 10px;
-  opacity: 0.85;
+  font-size: 0.95rem;
 }

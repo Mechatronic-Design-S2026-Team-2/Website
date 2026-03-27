@@ -1,6 +1,24 @@
+{% assign budget_rows = site.data.budget %}
+{% assign total_cost = 0 %}
+{% assign standard_allowance = 0 %}
+{% assign motor_stipend = 0 %}
+
+{% for row in budget_rows %}
+  {% assign price_num = row.Price | replace: '$', '' | replace: ',', '' | plus: 0 %}
+  {% assign total_cost = total_cost | plus: price_num %}
+  {% if row["Budget category"] == "standard 1000 allowance" %}
+    {% assign standard_allowance = standard_allowance | plus: price_num %}
+  {% elsif row["Budget category"] == "2500 motor stipend" %}
+    {% assign motor_stipend = motor_stipend | plus: price_num %}
+  {% endif %}
+{% endfor %}
+
 <div class="pm-card">
   <div class="pm-head">
     <h3>Parts list / budget</h3>
+    <p class="pm-sub">
+      Embedded bill of materials table with search and category filtering. The CSV remains available as the source file.
+    </p>
   </div>
 
   {% include pm-card-links.html
@@ -8,9 +26,92 @@
      repo_url="https://github.com/Mechatronic-Design-S2026-Team-2/Website"
   %}
 
-  <ul class="pm-list">
-    <li>
-      <a href="{{ '/project_management/parts_list.csv' | relative_url }}">Parts &amp; Budget (CSV)</a>
-    </li>
-  </ul>
+  {% if budget_rows and budget_rows.size > 0 %}
+    <div class="pm-summary-grid" aria-label="Budget summary">
+      <div class="pm-kpi">
+        <div class="pm-kpi-label">Line items</div>
+        <div class="pm-kpi-value">{{ budget_rows.size }}</div>
+      </div>
+      <div class="pm-kpi">
+        <div class="pm-kpi-label">Total listed cost</div>
+        <div class="pm-kpi-value">${{ total_cost | round: 2 }}</div>
+      </div>
+      <div class="pm-kpi">
+        <div class="pm-kpi-label">Standard allowance</div>
+        <div class="pm-kpi-value">${{ standard_allowance | round: 2 }}</div>
+      </div>
+      <div class="pm-kpi">
+        <div class="pm-kpi-label">Motor stipend</div>
+        <div class="pm-kpi-value">${{ motor_stipend | round: 2 }}</div>
+      </div>
+    </div>
+
+    <div class="pm-budget-tools">
+      <label class="pm-budget-field">
+        <span class="pm-budget-label">Search</span>
+        <input type="search"
+               class="pm-budget-input"
+               placeholder="Filter by item, vendor, quantity, or price"
+               aria-label="Search budget rows"
+               data-budget-search>
+      </label>
+
+      <label class="pm-budget-field pm-budget-field--compact">
+        <span class="pm-budget-label">Category</span>
+        <select class="pm-budget-select" aria-label="Filter budget by category" data-budget-filter>
+          <option value="all">All categories</option>
+          <option value="standard 1000 allowance">Standard allowance</option>
+          <option value="2500 motor stipend">Motor stipend</option>
+        </select>
+      </label>
+
+      <div class="pm-budget-results" data-budget-count>
+        Showing {{ budget_rows.size }} of {{ budget_rows.size }} items
+      </div>
+    </div>
+
+    <div class="pm-table-wrap pm-table-wrap--budget" data-budget-table>
+      <table class="pm-table pm-budget-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Vendor</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in budget_rows %}
+            {% assign item_name = row["Item Name"] | strip %}
+            {% assign item_name_search = item_name | newline_to_br | strip_html | strip_newlines | replace: '  ', ' ' | downcase %}
+            {% assign vendor_name = row.Vendor | strip %}
+            {% assign qty_text = row.Qty | strip %}
+            {% assign price_text = row.Price | strip %}
+            {% assign category_text = row["Budget category"] | strip %}
+            <tr
+              data-budget-row
+              data-category="{{ category_text | escape }}"
+              data-search="{{ item_name_search | escape }} {{ vendor_name | downcase | escape }} {{ qty_text | downcase | escape }} {{ price_text | downcase | escape }} {{ category_text | downcase | escape }}">
+              <td class="pm-budget-item">
+                {% if row.Link contains 'http' %}
+                  <a href="{{ row.Link }}" target="_blank" rel="noreferrer">{{ item_name | newline_to_br }}</a>
+                {% else %}
+                  <span>{{ item_name | newline_to_br }}</span>
+                {% endif %}
+              </td>
+              <td>{{ vendor_name }}</td>
+              <td>{{ qty_text }}</td>
+              <td class="pm-budget-price">{{ price_text }}</td>
+              <td>
+                <span class="pm-tag">{{ category_text }}</span>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="pm-loading">No budget sheet data found.</p>
+  {% endif %}
 </div>

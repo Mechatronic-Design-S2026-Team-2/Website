@@ -1,19 +1,27 @@
 {%- assign carousel = site.data.carousels[include.key] -%}
+{%- assign first_type = carousel.slides[0].type | default: 'image' -%}
+{%- assign is_model = false -%}
+{%- if first_type == 'model' -%}{%- assign is_model = true -%}{%- endif -%}
 
 {%- if carousel -%}
-<section class="hero-carousel{% if carousel.slides and carousel.slides[0].type == 'model' %} hero-carousel--model{% endif %}"
+<section class="hero-carousel{% if is_model %} hero-carousel--model{% endif %}"
          aria-label="{{ carousel.aria_label | default: 'Carousel' }}">
-  <div class="carousel" data-carousel data-autoplay-ms="{{ carousel.autoplay_ms | default: 5000 }}">
+  <div class="carousel"
+       data-carousel
+       data-carousel-kind="{{ first_type }}"
+       data-autoplay-ms="{{ carousel.autoplay_ms | default: 5000 }}">
     <div class="carousel-track" data-track>
       {%- for slide in carousel.slides -%}
-      <figure class="carousel-slide{% if forloop.first %} is-active{% endif %}" data-slide>
+      <figure class="carousel-slide{% if forloop.first %} is-active{% endif %}{% if slide.type == 'model' %} carousel-slide--model{% endif %}"
+              data-slide
+              aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
         <div class="carousel-media{% if slide.type == 'model' %} carousel-media--model{% endif %}">
           {%- if slide.type == 'model' -%}
           <model-viewer
             class="carousel-model-viewer"
             src="{{ slide.src | relative_url }}"
             alt="{{ slide.alt | default: slide.caption | default: '3D model' }}"
-            camera-controls
+            {% if forloop.first %}camera-controls{% endif %}
             touch-action="pan-y"
             shadow-intensity="1.1"
             exposure="0.9"
@@ -51,10 +59,20 @@
       {%- endfor -%}
     </div>
 
+    {% if is_model %}
+    <div class="carousel-footer carousel-footer--model">
+      <div class="carousel-dots" role="tablist" aria-label="Carousel pagination" data-dots></div>
+      <div class="carousel-actions">
+        <button class="carousel-btn prev" type="button" aria-label="Previous slide" data-prev>‹</button>
+        <button class="carousel-btn next" type="button" aria-label="Next slide" data-next>›</button>
+      </div>
+    </div>
+    {% else %}
     <button class="carousel-btn prev" type="button" aria-label="Previous slide" data-prev>‹</button>
     <button class="carousel-btn next" type="button" aria-label="Next slide" data-next>›</button>
 
     <div class="carousel-dots" role="tablist" aria-label="Carousel pagination" data-dots></div>
+    {% endif %}
   </div>
 </section>
 {%- else -%}

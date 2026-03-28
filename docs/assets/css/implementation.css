@@ -1,0 +1,60 @@
+.impl-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.impl-media-card {
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+.impl-media-frame {
+  background: #101114;
+  aspect-ratio: 16 / 9;
+}
+
+.impl-media-element {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.impl-media-video,
+.impl-media-image {
+  object-fit: contain;
+  background: #101114;
+}
+
+.impl-media-copy {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px 14px;
+}
+
+.impl-media-copy strong {
+  font-size: 0.98rem;
+}
+
+.impl-media-copy span {
+  opacity: 0.82;
+  line-height: 1.45;
+  font-size: 0.94rem;
+}
+
+.impl-note {
+  margin-top: 10px;
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 860px) {
+  .impl-media-grid {
+    grid-template-columns: 1fr;
+  }
+}

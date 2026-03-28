@@ -36,6 +36,10 @@ Pass truthy flags like:
   <link rel="stylesheet" href="{{ '/assets/css/pm-widget.css' | relative_url }}">
 {% endif %}
 
+{% if include.implementation %}
+  <link rel="stylesheet" href="{{ '/assets/css/implementation.css' | relative_url }}">
+{% endif %}
+
 {% if include.carousel %}
   <script src="{{ '/assets/js/carousel.js' | relative_url }}" defer></script>
 {% endif %}

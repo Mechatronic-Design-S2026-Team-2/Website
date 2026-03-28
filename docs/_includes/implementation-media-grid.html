@@ -1,0 +1,24 @@
+{%- assign items = site.data.implementation_media -%}
+<div class="impl-media-grid">
+  {%- for item in items -%}
+  <figure class="impl-media-card impl-media-card--{{ item.type }}">
+    <div class="impl-media-frame">
+      {%- if item.type == 'video' -%}
+      <video class="impl-media-element impl-media-video" controls muted playsinline preload="metadata">
+        <source src="{{ item.src | relative_url }}" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+      {%- else -%}
+      <img class="impl-media-element impl-media-image"
+           src="{{ item.src | relative_url }}"
+           alt="{{ item.alt | escape }}"
+           loading="lazy">
+      {%- endif -%}
+    </div>
+    <figcaption class="impl-media-copy">
+      <strong>{{ item.title }}</strong>
+      <span>{{ item.caption }}</span>
+    </figcaption>
+  </figure>
+  {%- endfor -%}
+</div>

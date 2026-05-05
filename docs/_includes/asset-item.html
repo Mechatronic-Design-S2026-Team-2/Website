@@ -6,6 +6,8 @@ Usage: {% include asset-item.html key="build_photos" index=0 layout="wide" %}
 {%- assign desired_index = include.index | default: 0 | plus: 0 -%}
 {%- assign layout = include.layout | default: 'standard' -%}
 {%- assign heading = include.heading | default: '' -%}
+{%- assign title_override = include.title | default: '' -%}
+{%- assign caption_override = include.caption | default: '' -%}
 {%- if gallery -%}
   {%- for item in gallery.items -%}
     {%- if forloop.index0 == desired_index -%}
@@ -31,15 +33,16 @@ Usage: {% include asset-item.html key="build_photos" index=0 layout="wide" %}
           {%- elsif item.type == 'iframe' -%}
             <iframe class="asset-iframe" src="{{ item.url }}" title="{{ item.title | escape }}" loading="lazy" allowfullscreen></iframe>
           {%- elsif item.type == 'file' -%}
-            <div class="asset-placeholder">
-              <span class="asset-type">FILE</span>
-              <code>{{ item.path }}</code>
-            </div>
+            <a class="asset-file-card" href="{{ item.path | relative_url }}" target="_blank" rel="noreferrer">
+              <span class="asset-type">CAD file</span>
+              <strong>{{ item.title }}</strong>
+              <span>Open or download drawing</span>
+            </a>
           {%- endif -%}
         </div>
         <figcaption class="asset-copy">
-          <strong>{{ item.title }}</strong>
-          <span>{{ item.caption }}</span>
+          <strong>{% if title_override != '' %}{{ title_override }}{% else %}{{ item.title }}{% endif %}</strong>
+          <span>{% if caption_override != '' %}{{ caption_override }}{% else %}{{ item.caption }}{% endif %}</span>
           {%- if item.fallback_url -%}
             <a class="t2-linkbtn" href="{{ item.fallback_url }}" target="_blank" rel="noreferrer">Open externally</a>
           {%- elsif item.path and pending != true -%}

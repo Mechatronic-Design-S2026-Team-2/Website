@@ -7,7 +7,7 @@ title: "System Implementation"
 
 <div class="t2-card" id="implementation-status">
   <h2>Implementation</h2>
-  <p class="t2-sub">Implementation page scope: what was actually built, how it is wired/deployed, and how the final class stack is operated. Design rationale is on the Design page; measured results are on the Performance page.</p>
+  <p class="t2-sub">As-built hardware, firmware, Jetson deployment, ROS 2 package integration, and operator workflow for the class-final robot.</p>
   <p>
     The final robot is a distributed system with one ESP32 responsible for power sequencing and motor-bus I/O, a Jetson Nano host responsible for the RealSense/ORB-SLAM2 CUDA process, and a ROS 2 Jazzy container responsible for state estimation, visualization, mapping, navigation, operator controls, and micro-ROS integration.
   </p>
@@ -24,30 +24,10 @@ title: "System Implementation"
 <div class="t2-card" id="hardware-build">
   <h2>Hardware Build</h2>
   <p>
-    The final physical implementation combines the Klann linkage chassis, six motor/gearbox leg modules, the high-current power path, the compute/control electronics, and a cover/lid system. The media in this section is intentionally build-focused rather than design-focused: it should show assembly, wiring, and field/debugging states.
+    The final physical implementation combines the Klann linkage chassis, six motor/gearbox leg modules, the high-current power path, the compute/control electronics, and a cover/lid system. The robot was assembled as a serviceable prototype: the internal layout remains accessible for debugging, while the final cover gives the machine a cleaner stage-facing exterior.
   </p>
-  <div class="media-row">
-    <div class="media-row-copy">
-      <h3>Assembly state before cover</h3>
-      <p>
-        Use <code>full_assembly_no_lid.jpg</code> here to show the implementation layout after the major subsystems have been installed but before the final cover hides the wiring and internal structure. This is the best reference image for reviewers trying to understand how the final machine was physically integrated.
-      </p>
-    </div>
-    <div class="media-row-asset">
-      {% include asset-item.html key="build_photos" index=0 layout="wide" %}
-    </div>
-  </div>
-  <div class="media-row media-row--reverse">
-    <div class="media-row-copy">
-      <h3>Electrical bring-up and mounting</h3>
-      <p>
-        The mainboard-in-progress and PCB-mount prototype images should sit with the electrical implementation text because they document the actual packaging and iteration process behind the final wiring, not just the schematic-level architecture.
-      </p>
-    </div>
-    <div class="media-row-asset">
-      {% include asset-item.html key="circuit_photos" index=1 layout="wide" %}
-    </div>
-  </div>
+  {% include asset-item.html key="build_photos" index=0 layout="wide" caption="With the cover removed, the installed motors, gearboxes, battery path, Jetson, ESP32, and wiring are visible as a single integrated assembly. This view documents how the final machine was physically packaged before enclosure." %}
+  {% include asset-item.html key="circuit_photos" index=1 layout="wide" caption="Electrical integration moved from bench wiring to a mounted mainboard and PCB support structure. The intermediate build state captures the cable routing, soldering, and packaging work needed to make the high-current power path and low-voltage control electronics serviceable inside the chassis." %}
 </div>
 
 <div class="t2-card" id="firmware-runtime">
@@ -76,17 +56,7 @@ title: "System Implementation"
   <p>
     The Jetson Nano deployment is split because the project needs both host-native GPU/RealSense access and a modern ROS 2 stack. ORB-SLAM2 CUDA, RealSense, CUDA/OpenCV, and Pangolin run directly on the Jetson host. ROS 2 Jazzy runs in a Docker container with host networking and the project workspace mounted for development.
   </p>
-  <div class="media-row">
-    <div class="media-row-copy">
-      <h3>ORB-SLAM bridge output</h3>
-      <p>
-        The ORB-SLAM odometry animation belongs here because it documents the deployed host/container boundary: host-native ORB-SLAM2 CUDA emits UDP pose, sparse map points, and virtual scan data that are consumed by the ROS 2 bridge inside the container.
-      </p>
-    </div>
-    <div class="media-row-asset">
-      {% include asset-item.html key="videos" index=6 layout="wide" %}
-    </div>
-  </div>
+  {% include asset-item.html key="videos" index=6 layout="wide" caption="Deployed host/container boundary in operation: host-native ORB-SLAM2 CUDA emits UDP pose, sparse map points, and virtual scan data that are consumed by the ROS 2 bridge inside the container." %}
   <details class="t2-acc" open>
     <summary><h3>Host-native process</h3></summary>
     <div class="t2-acc-body">
@@ -130,17 +100,7 @@ title: "System Implementation"
   <p>
     The final bring-up sequence starts with safe power sequencing and motor readiness, then validates encoder telemetry, then starts the Jetson SLAM process, then launches the ROS 2 mapping/control stack, and only then enables teleop or waypoint commands. This ordering prevents TF/map debugging from being confused with lower-level motor or power faults.
   </p>
-  <div class="media-row media-row--reverse">
-    <div class="media-row-copy">
-      <h3>Debugging and field integration</h3>
-      <p>
-        Use <code>debugging.jpg</code> or <code>working_on_bot.jpg</code> here to show the practical integration loop: hardware access, laptop/Jetson inspection, RS485/micro-ROS validation, and mapping tests performed on the assembled platform.
-      </p>
-    </div>
-    <div class="media-row-asset">
-      {% include asset-item.html key="build_photos" index=4 layout="wide" %}
-    </div>
-  </div>
+  {% include asset-item.html key="build_photos" index=4 layout="wide" caption="Final bring-up required repeated hardware access, laptop/Jetson inspection, RS485/micro-ROS validation, and mapping tests on the assembled platform. The debugging media documents that integration loop rather than an isolated subsystem test." %}
   <ol>
     <li>Bring up low-voltage control, precharge the motor bus, close the contactor, and release the shared servo-enable path.</li>
     <li>Verify ESP32 micro-ROS connection and six-drive raw encoder telemetry.</li>

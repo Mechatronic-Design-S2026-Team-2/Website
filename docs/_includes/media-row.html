@@ -1,15 +1,9 @@
 {%- comment -%}
-Two-column narrative + media callout.
-Parameters: title, body, key, index, reverse, note.
+Caption-only media callout. Parameters: title, body, key, index, note.
+Side-by-side copy was intentionally removed so explanatory text lives inside the media card caption.
 {%- endcomment -%}
-{%- assign reverse = include.reverse | default: false -%}
-<div class="media-row{% if reverse %} media-row--reverse{% endif %}">
-  <div class="media-row-copy">
-    {%- if include.title -%}<h3>{{ include.title }}</h3>{%- endif -%}
-    {{ include.body }}
-    {%- if include.note -%}<p class="t2-sub">{{ include.note }}</p>{%- endif -%}
-  </div>
-  <div class="media-row-asset">
-    {% include asset-item.html key=include.key index=include.index layout="wide" %}
-  </div>
-</div>
+{%- capture merged_caption -%}
+  {%- if include.body -%}{{ include.body | strip_html | strip }}{%- endif -%}
+  {%- if include.note -%} {{ include.note | strip_html | strip }}{%- endif -%}
+{%- endcapture -%}
+{% include asset-item.html key=include.key index=include.index layout="wide" title=include.title caption=merged_caption %}

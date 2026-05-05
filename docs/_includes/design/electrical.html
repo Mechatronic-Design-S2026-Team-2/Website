@@ -4,17 +4,7 @@
     The final electrical design is organized around a 52 V traction bus, main fuse, precharge path, contactor, 5 V compute/control rail, 24 V contactor/auxiliary rail, ESP32 sequencing, and six RS485 servo drives. The design page focuses on topology and protection; the implementation page covers runtime firmware behavior.
   </p>
 
-  <div class="media-row">
-    <div class="media-row-copy">
-      <h3>Mainboard and packaging intent</h3>
-      <p>
-        The mainboard photo should be used here to show the final electrical architecture as a physical artifact: power distribution, low-voltage control, and cable management. Intermediate wiring photos stay on the Implementation page because they document build process rather than final topology.
-      </p>
-    </div>
-    <div class="media-row-asset">
-      {% include asset-item.html key="circuit_photos" index=0 layout="wide" %}
-    </div>
-  </div>
+  {% include asset-item.html key="circuit_photos" index=0 layout="wide" caption="The final mainboard photo shows the electrical architecture as a physical artifact: power distribution, low-voltage control, and cable management inside the robot." %}
 
   <details class="t2-acc" open>
     <summary><h3>Battery protection and high-current path</h3></summary>

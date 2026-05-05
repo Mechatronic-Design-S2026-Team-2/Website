@@ -26,10 +26,11 @@
           {%- elsif item.type == 'iframe' -%}
             <iframe class="asset-iframe" src="{{ item.url }}" title="{{ item.title | escape }}" loading="lazy" allowfullscreen></iframe>
           {%- elsif item.type == 'file' -%}
-            <div class="asset-placeholder">
-              <span class="asset-type">FILE</span>
-              <code>{{ item.path }}</code>
-            </div>
+            <a class="asset-file-card" href="{{ item.path | relative_url }}" target="_blank" rel="noreferrer">
+              <span class="asset-type">CAD file</span>
+              <strong>{{ item.title }}</strong>
+              <span>Open or download drawing</span>
+            </a>
           {%- endif -%}
         </div>
         <figcaption class="asset-copy">

@@ -1,8 +1,6 @@
 <div class="t2-card" id="overview">
   <h2>Overview</h2>
-  <p class="t2-note">
-    Design page scope: final system architecture, trade choices, and subsystem relationships. Implementation details and test results are separated onto the Implementation and Performance pages to avoid repeating the same final-stack summary.
-  </p>
+  
   <div class="t2-grid">
     <div class="t2-kv">
       <div><strong>Mechanical concept:</strong> six Klann linkage leg modules, one independently phased servo/gearbox per leg.</div>
@@ -16,15 +14,5 @@
     </div>
   </div>
 
-  <div class="media-row">
-    <div class="media-row-copy">
-      <h3>Final form factor</h3>
-      <p>
-        The full-assembly media is placed here because it supports the design narrative: it shows how the load-bearing frame, protected electronics, lid/cover strategy, and six leg modules come together as a single stage-facing robot. The implementation page uses related photos for wiring and bring-up; this page uses them to explain the design arrangement.
-      </p>
-    </div>
-    <div class="media-row-asset">
-      {% include asset-item.html key="build_photos" index=2 layout="wide" %}
-    </div>
-  </div>
+  {% include asset-item.html key="build_photos" index=2 layout="wide" caption="The final form factor combines a load-bearing frame, protected electronics, lid/cover strategy, and six externally visible Klann leg modules into a single stage-facing robot." %}
 </div>

@@ -4,11 +4,9 @@ team_picture:
     - type: image
       path: /assets/img/team_picture.jpg
       title: Team 2 with final hexapod
-      caption: Group photo of the team with the completed class-final robot. This appears on the home page as the main team/build image.
+      caption: Group photo of Team 2 with the completed class-final robot.
       pending: false
 
-# Final media plan for the website update.
-# Assets are expected to be committed at the paths below.
 # WebM files are represented as silent looping animations.
 
 build_photos:
@@ -22,7 +20,7 @@ build_photos:
     - type: image
       path: /assets/hardware/front_final_cover.JPG
       title: Final front cover
-      caption: Final front cover and stage-facing robot appearance. Duplicate filename requests should map to this same file.
+      caption: Final front cover and stage-facing robot appearance.
       pending: false
     - type: image
       path: /assets/hardware/angled_final_cover.JPG
@@ -46,7 +44,7 @@ fabrication:
     - type: image
       path: /assets/fabrication/building_chassis.jpg
       title: Building chassis
-      caption: Chassis fabrication photo. The filename was listed three times; the site keeps one canonical placeholder.
+      caption: Chassis fabrication photo showing the raw structural build before final enclosure and integration.
       pending: false
     - type: image
       path: /assets/fabrication/raw_aluminum.jpg
@@ -110,17 +108,17 @@ software_visuals:
     - type: model
       path: /assets/designs/klann_final.glb
       title: Final Klann leg model
-      caption: Planned final GLB export for the Klann linkage/leg module.
+      caption: Final GLB export for the Klann linkage and leg-module geometry.
       pending: false
     - type: model
       path: /assets/designs/v5_final_assembly.glb
       title: Final assembly GLB
-      caption: Planned final GLB export for the v5 full robot assembly.
-      pending: true
+      caption: Final GLB export for the v5 full robot assembly.
+      pending: false
     - type: file
       path: /assets/designs/linkage_schematic.dwg
       title: Linkage schematic DWG
-      caption: DWG cannot be reliably embedded by static GitHub Pages alone. Store it under assets/designs and expose it as a download; add an exported PDF/SVG/PNG beside it for browser preview.
+      caption: Source drawing for the Klann linkage schematic, provided as a downloadable CAD file.
       pending: false
 
 videos:

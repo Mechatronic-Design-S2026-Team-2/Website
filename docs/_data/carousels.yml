@@ -68,6 +68,10 @@ overall_assembly_evolution:
   autoplay_ms: 0
   slides:
     - type: model
+      src: /assets/designs/v5_final_assembly.glb
+      alt: Final v5 full hexapod assembly
+      caption: Final v5 assembly
+    - type: model
       src: /assets/designs/hexapod-v1.glb
       alt: Overall assembly iteration 1
       caption: Overall assembly — Iteration 1

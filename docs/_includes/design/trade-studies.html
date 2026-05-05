@@ -5,32 +5,24 @@
     <summary>Locomotion concept</summary>
     <div class="t2-acc-body">
       <p>
-        We compared Klann vs Jansen vs articulated multi-DOF legs. Klann offers a mechanically encoded gait
-        with fewer links/joints than Jansen and far less software/IK dependency than articulated legs, which reduces
-        “software trip” risk and improves reliability under payload. It also provides better step clearance for taped-course
-        reliability and obstacle tolerance.
+        The final report compares Klann linkage, Jansen linkage, and articulated 3-DOF legs. Klann won because it provided a mechanically encoded walking path with fewer joints than Jansen and far lower actuator/software complexity than 18-DOF articulated legs. That reduced software trip risk and made payload support more credible within the class schedule.
       </p>
       <ul>
-        <li><b>Why it won:</b> fewer actuators and control surfaces than articulated legs, lower software risk, and a clearer path to reproducible gait timing under load.</li>
-        <li><b>Main trade-off:</b> gait shape is constrained by linkage geometry, so refinement happens in mechanism tuning rather than arbitrary foot trajectory generation.</li>
-        <li><b>Planned validation:</b> straight-line and curvilinear tracking tests with representative payload, plus obstacle-clearance checks on the taped course.</li>
+        <li><b>Why it won:</b> one motor per leg, robust load path, repeatable stance stroke, and reduced inverse-kinematics burden.</li>
+        <li><b>Main trade-off:</b> the foot path is constrained by link geometry, so future smoothness improvements require mechanical redesign or higher-order linkage geometry.</li>
       </ul>
     </div>
   </details>
 
-  <details class="t2-acc">
-    <summary>Drive motor selection</summary>
+  <details class="t2-acc" open>
+    <summary>Actuation concept</summary>
     <div class="t2-acc-body">
       <p>
-        We compared (1) high-torque DC gear motors, (2) smart servos (e.g., Dynamixel), and (3) steppers + gearbox.
-        DC gear motors provide strong torque through high reduction at low cost, helping keep noise low at the walking-speed
-        operating point. They also support efficiency targets for battery life, and can meet navigation tolerance when paired
-        with external encoders.
+        The final actuation choice is a closed-loop servo plus planetary gearbox, not open-loop stepper or brushed DC drive. The final design uses six 400 W DSY RS485 servo motors with M17S 17-bit incremental encoders and six TG 60 mm 50:1 gearboxes.
       </p>
       <ul>
-        <li><b>Key acceptance criteria:</b> stall torque margin in stance phase, noise at operating RPM, thermal rise over 30 min, and encoder resolution.</li>
-        <li><b>Why alternatives were weaker:</b> smart servos simplify integration but become expensive at the required torque scale; steppers are easy to command but sacrifice efficiency and can run hotter/noisier in continuous duty.</li>
-        <li><b>Planned validation:</b> one-leg + crank bench test with current sensing, temperature logging, and audible dB measurement at 5 ft.</li>
+        <li><b>Why it won:</b> best combined score for torque capability, closed-loop control, low-speed precision, and reliability under rider-scale load.</li>
+        <li><b>Main trade-off:</b> RS485 transaction scheduling and single-turn encoder semantics became major integration constraints.</li>
       </ul>
     </div>
   </details>
@@ -39,15 +31,11 @@
     <summary>Compute &amp; sensing</summary>
     <div class="t2-acc-body">
       <p>
-        We compared low-cost compute nodes for embedded autonomy and selected Jetson Nano primarily for CUDA acceleration
-        to support depth processing with acceptable latency/power. Sensing is centered on a forward depth camera for obstacle
-        detection/scene representation, with an IMU for short-horizon stabilization and disturbance detection, and an optional rear
-        camera path to improve awareness during backing/turning.
+        The Jetson Nano remained the onboard computer because the system needed CUDA-capable RGB-D SLAM while still using modern ROS 2 packages through a containerized Jazzy environment. The RealSense D415 provides RGB-D data, the WT901 provides inertial feedback, and motor encoders provide proprioceptive phase information.
       </p>
       <ul>
-        <li><b>Key acceptance criteria:</b> end-to-end perception latency, worst-case power draw, and stability of outputs under stage lighting.</li>
-        <li><b>Main system trade-off:</b> pushing more autonomy onboard improves standalone operation but tightens thermal and power margins, so low-level control remains on the MCU side.</li>
-        <li><b>Planned validation:</b> “walk in place” perception profiling, lighting robustness checks, and obstacle-stop tests with a conservative safety buffer threshold.</li>
+        <li><b>Why it won:</b> sufficient GPU support for the patched ORB-SLAM2 CUDA path and low enough power for onboard deployment.</li>
+        <li><b>Main trade-off:</b> older Jetson software constraints required a split deployment: SLAM outside Docker and ROS 2 Jazzy inside Docker.</li>
       </ul>
     </div>
   </details>

@@ -118,3 +118,71 @@
 .t2-acc .t2-acc-body > :last-child {
   margin-bottom: 0;
 }
+
+.t2-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.t2-metric {
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(0,0,0,0.025);
+}
+
+.t2-metric b {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.t2-metric span {
+  display: block;
+  opacity: 0.82;
+  line-height: 1.35;
+  font-size: 0.94rem;
+}
+
+.t2-table-wrap {
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.t2-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.t2-table th,
+.t2-table td {
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  padding: 9px 8px;
+}
+
+.t2-table th {
+  background: rgba(0,0,0,0.04);
+}
+
+.t2-note {
+  border-left: 4px solid rgba(0,0,0,0.22);
+  padding: 10px 12px;
+  background: rgba(0,0,0,0.025);
+  border-radius: 10px;
+}
+
+@media (max-width: 920px) {
+  .t2-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .t2-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}

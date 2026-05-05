@@ -58,7 +58,3 @@ overall_assembly_evolution:
       src: /assets/designs/hexapod-v4.glb
       alt: Overall assembly iteration 4
       caption: Overall assembly — Iteration 4
-    - type: model
-      src: /assets/designs/hexapod-v5.glb
-      alt: Overall assembly iteration 5
-      caption: Overall assembly — Iteration 5

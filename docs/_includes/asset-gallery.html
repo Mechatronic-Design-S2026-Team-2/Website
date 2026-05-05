@@ -1,0 +1,50 @@
+{%- assign gallery = site.data.media_assets[include.key] -%}
+{%- assign title = include.title | default: gallery.title -%}
+{%- if gallery -%}
+<div class="asset-gallery" id="{{ include.key | slugify }}">
+  {%- if title -%}<h3>{{ title }}</h3>{%- endif -%}
+  <div class="asset-grid">
+    {%- for item in gallery.items -%}
+      {%- assign pending = item.pending | default: false -%}
+      <figure class="asset-card asset-card--{{ item.type }}{% if pending %} is-pending{% endif %}">
+        <div class="asset-frame">
+          {%- if pending -%}
+            <div class="asset-placeholder">
+              <span class="asset-type">{{ item.type | upcase }}</span>
+              <code>{{ item.path }}</code>
+              <span>Pending asset</span>
+            </div>
+          {%- elsif item.type == 'video' -%}
+            <video class="asset-media" controls muted playsinline preload="metadata">
+              <source src="{{ item.path | relative_url }}" type="video/webm">
+              Your browser does not support this video.
+            </video>
+          {%- elsif item.type == 'image' -%}
+            <img class="asset-media" src="{{ item.path | relative_url }}" alt="{{ item.title | escape }}" loading="lazy">
+          {%- elsif item.type == 'model' -%}
+            {% include model-card.html wrap="false" file=item.path caption="" alt=item.title %}
+          {%- elsif item.type == 'iframe' -%}
+            <iframe class="asset-iframe" src="{{ item.url }}" title="{{ item.title | escape }}" loading="lazy" allowfullscreen></iframe>
+          {%- elsif item.type == 'file' -%}
+            <div class="asset-placeholder">
+              <span class="asset-type">FILE</span>
+              <code>{{ item.path }}</code>
+            </div>
+          {%- endif -%}
+        </div>
+        <figcaption class="asset-copy">
+          <strong>{{ item.title }}</strong>
+          <span>{{ item.caption }}</span>
+          {%- if item.fallback_url -%}
+            <a class="t2-linkbtn" href="{{ item.fallback_url }}" target="_blank" rel="noreferrer">Open externally</a>
+          {%- elsif item.path and pending != true -%}
+            <a class="t2-linkbtn" href="{{ item.path | relative_url }}" target="_blank" rel="noreferrer">Open file</a>
+          {%- endif -%}
+        </figcaption>
+      </figure>
+    {%- endfor -%}
+  </div>
+</div>
+{%- else -%}
+<div class="asset-gallery"><p>No media gallery configured for <code>{{ include.key }}</code>.</p></div>
+{%- endif -%}

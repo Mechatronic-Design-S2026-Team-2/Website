@@ -2,74 +2,65 @@
   <h2>Risks &amp; Mitigations</h2>
 
   <details class="t2-acc" open>
-    <summary>R1 — Side leg size / geometry not finalized</summary>
+    <summary>R1 — RS485 bus latency and encoder wrap ambiguity</summary>
     <div class="t2-acc-body">
       <p>
-        Incorrect side-leg placement or length can cause mechanical interference, reduce stability under payload,
-        or violate footprint/foldability constraints.
+        The servo encoders are 17-bit single-turn motor encoders. Because the 50:1 gearbox makes one output crank revolution span 50 motor revolutions, raw encoder values wrap many times per output revolution. If polling is too slow relative to motor RPM, the host cannot reliably infer the wrap count.
       </p>
       <ul>
-        <li><b>Mitigation:</b> freeze a kinematic/packaging envelope early; run CAD interference checks across worst-case poses; lock geometry before releasing parts.</li>
-        <li><b>Verification:</b> clearance and support-polygon margin review in CAD for extended, retracted, folded, and turning configurations.</li>
+        <li><b>Mitigation:</b> keep runtime RS485 at bounded RPM, use strict six-drive encoder sweeps, changed-only RPM writes, stop-command preemption, ESP timing fields, and host-side continuous unwrap using command history.</li>
+        <li><b>Future improvement:</b> move to higher-throughput motor networking such as CAN and/or multi-turn absolute encoders.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="t2-acc" open>
+    <summary>R2 — Foot slip and contact uncertainty</summary>
+    <div class="t2-acc-body">
+      <p>
+        The kinematic odometry assumes stance feet impose no-slip constraints. False stance classification, foot slip, uneven ground, or compliant surfaces can bias body velocity and yaw estimates.
+      </p>
+      <ul>
+        <li><b>Mitigation:</b> phase-derived stance confidence, conservative speed limits, calibration from tape-measured motion, and ORB-SLAM fusion when camera tracking is valid.</li>
+        <li><b>Future improvement:</b> add conditioned, calibrated foot-contact sensing with hysteresis and per-foot confidence before using FSR data as an odometry gate.</li>
       </ul>
     </div>
   </details>
 
   <details class="t2-acc">
-    <summary>R2 — Side-leg actuation selection uncertainty</summary>
+    <summary>R3 — Camera occlusion and stage lighting</summary>
     <div class="t2-acc-body">
       <p>
-        The side-leg actuation approach drives force capacity, controllability, noise, safety, and integration.
-        Hydraulics are likely too complex/costly; pneumatics can struggle with stable position holding; current direction
-        trends toward a motor-driven solution.
+        Riders, performers, and lighting changes can corrupt a forward D415 view. Sparse ORB map points are also not the same as a navigation-grade occupancy grid.
       </p>
       <ul>
-        <li><b>Mitigation:</b> define minimum force, stroke, speed, and noise targets; bench-test candidates; keep mounts modular to allow actuator swaps.</li>
-        <li><b>Verification:</b> load test to target force with a position-error threshold, plus dB measurement and power-off fail-safe observation.</li>
+        <li><b>Mitigation:</b> treat ORB-SLAM as localization/mapping input, produce a separate virtual scan for slam_toolbox, keep kinematic odometry as a fallback, and expose map save/load in the operator interface for pre-performance map preparation.</li>
       </ul>
     </div>
   </details>
 
   <details class="t2-acc">
-    <summary>R3 — Materials and joint hardware not selected</summary>
+    <summary>R4 — Mechanical fabrication and tolerance accumulation</summary>
     <div class="t2-acc-body">
       <p>
-        Poor material or joint choices can cause buckling, backlash, and wear—reducing stability and safety.
+        The final report identifies linkage fabrication as a major schedule and risk driver. Hole alignment, custom-angle components, CNC access, and tolerance accumulation affected assembly more than early CAD models suggested.
       </p>
       <ul>
-        <li><b>Mitigation:</b> standardize pivots with shoulder bolts/joint pins + bearings/bushings; do quick worst-load sanity checks prior to fabrication.</li>
-        <li><b>Verification:</b> single-link compression/bending checks and post-assembly pivot backlash measurement.</li>
+        <li><b>Mitigation:</b> single-leg prototyping, wooden validation prototypes, measured linkage YAML, RViz/Desmos geometry comparison, and final direct testing under payload.</li>
+        <li><b>Future improvement:</b> revise leg orientation and consider eight-bar or higher-order walking linkages with flatter stance trajectories and lower vertical body excitation.</li>
       </ul>
     </div>
   </details>
 
   <details class="t2-acc">
-    <summary>R4 — Late design decisions delay ordering and integration</summary>
+    <summary>R5 — Performance-readiness beyond the class final</summary>
     <div class="t2-acc-body">
       <p>
-        Delayed design freeze pushes long-lead ordering, compresses integration time, and increases the probability of last-minute subsystem incompatibilities.
+        The final class version demonstrated the critical feasibility of locomotion and navigation, but future stage deployment would require longer reliability trials, richer safety validation, and environment-specific calibration.
       </p>
       <ul>
-        <li><b>Mitigation:</b> enforce a design-freeze milestone; order long-lead parts early; integrate in stages so locomotion and controls progress in parallel.</li>
-        <li><b>Verification:</b> weekly integration checklist with “minimum runnable system” gates: power → motor spin → gait timing → payload stand.</li>
+        <li><b>Mitigation:</b> retain conservative operating modes, keep manual override available, validate with real stage surfaces/lighting, log odometry and command timing, and separate class-final success from production-readiness claims.</li>
       </ul>
     </div>
   </details>
-
-  <details class="t2-acc">
-    <summary>R5 — Budget creep from actuator/frame changes and rework</summary>
-    <div class="t2-acc-body">
-      <p>
-        Repeated mechanical revisions or actuator swaps can consume contingency quickly and force compromises in later integration and testing.
-      </p>
-      <ul>
-        <li><b>Mitigation:</b> maintain a live budget with contingency; favor off-the-shelf components; prototype uncertain subsystems cheaply before final hardware.</li>
-        <li><b>Verification:</b> bill-of-materials audit at each design freeze and track “cost to complete” against remaining contingency.</li>
-      </ul>
-    </div>
-  </details>
-
-  <div class="t2-muted" style="margin-top: 10px;">
-    <a href="#top">Back to top</a>
-  </div>
 </div>

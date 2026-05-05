@@ -1,33 +1,44 @@
 <div class="t2-card" id="electrical">
   <h2>Electrical Design</h2>
+  <p>
+    The final electrical system is built around a 52 V battery bus, main fuse, precharge path, contactor, 5 V compute/control rail, 24 V contactor/auxiliary rail, ESP32 sequencing, and six RS485 servo drives. The ESP32 first brings up low-voltage control, closes the precharge relay, monitors motor-side bus voltage through an ADC divider, then closes the main contactor when the bus reaches the configured threshold. A physical stop switch removes ESP32/control power, opening the contactor and depowering the motor drivers.
+  </p>
+
   <details class="t2-acc" open>
-    <summary><h3>Battery Protection</h3></summary>
+    <summary><h3>Battery protection and high-current path</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html wrap="false" repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/01_battery_protection.kicad_sch" %}
+      <p>The final writeup budget includes the 52 V 25 Ah high-current Li-ion pack, 60 A fuse, fuse holder, contactor, precharge/brake resistors, XT90 connectors, power distribution blocks, and 5 V/24 V DC/DC converters.</p>
     </div>
   </details>
   <details class="t2-acc">
-    <summary><h3>Motor Distribution</h3></summary>
+    <summary><h3>Motor distribution</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html wrap="false" repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/02_motor_distribution.kicad_sch" %}
+      <p>Six StepperOnline DSY RS485 400 W DC servo drives share the motor supply and the RS485 daisy-chain. Runtime firmware prioritizes changed-only RPM writes and six-drive raw encoder sweeps to avoid saturating the 115200 baud motor bus.</p>
     </div>
   </details>
   <details class="t2-acc">
-    <summary><h3>DC/DC 5 and 3.3V Rails</h3></summary>
+    <summary><h3>DC/DC 5 V and 24 V rails</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html wrap="false" repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/03_DCDC_5V_3.3V.kicad_sch" %}
+      <p>The 5 V rail powers the Jetson/ESP32 control stack. The 24 V rail supports the contactor coil/auxiliary path. Stable sequencing is important because compute instability during contactor transitions can interrupt mapping and motor telemetry.</p>
     </div>
   </details>
   <details class="t2-acc">
     <summary><h3>Compute / USB wiring</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html wrap="false" repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/04_compute_usb.kicad_sch" %}
+      <p>The Jetson Nano communicates with the ESP32 over USB-UART/micro-ROS and uses host networking for the ROS 2 container. The RealSense D415 and ORB-SLAM2 CUDA process run on the Jetson host.</p>
     </div>
   </details>
   <details class="t2-acc">
-    <summary><h3>ESP32 and Sensors</h3></summary>
+    <summary><h3>ESP32 and sensors</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html wrap="false" repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/05_ESP32_Sensors.kicad_sch" %}
+      <p>The ESP32 controls precharge, contactor drive, shared servo enable, and RS485 motor communication. FSR/contact sensing remains a future robustness improvement because the final mapping report found the ESP32 ADC/contact path too noisy to use as a trusted odometry gate without additional conditioning and calibration.</p>
     </div>
   </details>
+
+  {% include asset-gallery.html key="circuit_photos" title="Planned circuit photos" %}
 </div>

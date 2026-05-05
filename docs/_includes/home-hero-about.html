@@ -3,16 +3,21 @@
 
   <h2>About this project</h2>
   <p>
-    We’re building a legged, human-carrying mobility robot for Kinematic/Kinesthetic, a live performance by the pioneering
-    “physically integrated” AXIS Dance Company. The machine transports a wheelchair user without wheels as the primary
-    locomotor, using articulated legs to move forward/backward and rotate in place (zero-radius turning), while remaining
-    compact, robust, and safe for performance use (including an emergency stop and low-noise operation).
+    Team 2 built a human-carrying Klann-linkage hexapod for AXIS Dance Company's <em>Kinematic/Kinesthetic</em> project. The final class robot is not only a CAD concept: it achieved body-displacing legged locomotion, supported more than the required rider payload, and integrated onboard sensing, mapping, and ROS 2 control for waypoint-capable operation.
   </p>
   <p>
-    This project matters because it treats assistive technology as an expressive medium, not just a medical device.
-    Instead of “fixing” disability by imitating non-disabled movement, the goal is to explore unfamiliar and potentially
-    “superhuman” motion—expanding how we think about ability, embodiment, and performance through engineered movement.
+    The final design uses six independently commanded RS485 DC servo motors, each driving a 50:1 planetary gearbox and one Klann leg module. An ESP32 manages power sequencing, contactor/precharge control, servo enable, RS485 command writes, raw encoder sweeps, and compact micro-ROS telemetry. A Jetson Nano runs the ROS 2 Jazzy stack in Docker while ORB-SLAM2 CUDA and the RealSense D415 process run natively on the Jetson host for GPU/driver stability.
   </p>
+  <p>
+    The project frames assistive mobility as a performance medium. Rather than imitating a conventional wheelchair, the robot demonstrates species-atypical motion: mechanically legged forward/backward travel, zero-radius turning, and navigation behavior that can be choreographed or operated from an off-stage interface.
+  </p>
+
+  <div class="t2-metric-grid">
+    <div class="t2-metric"><b>Payload</b><span>&gt;200 lb demonstrated without structural failure</span></div>
+    <div class="t2-metric"><b>Speed</b><span>~0.7 m/s unloaded; ~0.44 m/s with rider</span></div>
+    <div class="t2-metric"><b>Accuracy target</b><span>6 in stage-navigation tolerance</span></div>
+    <div class="t2-metric"><b>Compute</b><span>Jetson Nano + ESP32 distributed stack</span></div>
+  </div>
 
   {% include home-card-links.html
      project_url="https://github.com/orgs/Mechatronic-Design-S2026-Team-2/projects/4"

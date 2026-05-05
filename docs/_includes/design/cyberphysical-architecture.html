@@ -7,16 +7,17 @@
     source="/assets/diagrams/cyberphysical-architecture.drawio.xml"
     caption="Scroll to zoom • drag to pan • Reset view to refit"
   %}
-  <details class="t2-acc">
+  <details class="t2-acc" open>
     <summary>Description</summary>
     <div class="t2-acc-body">
       <p>
-        The cyberphysical architecture splits “heavy” autonomy workloads (perception, mapping/localization,
-        planning) onto an embedded compute node (Jetson), while timing-critical motor/encoder/contact I/O
-        and deterministic gait control runs on one or more ESP32 microcontrollers. The operator station
-        provides mode and mission inputs; onboard sensing (depth camera, optional rear camera, IMU) feeds
-        state estimation and navigation; body-level velocity commands are sent to the ESP32 side, which
-        closes low-level loops and returns odometry + gait state for fusion and telemetry.
+        The final system is split into a Jetson Nano high-level autonomy computer and an ESP32 low-level motor/power controller. ORB-SLAM2 CUDA and the RealSense D415 process run directly on the Jetson host. ROS 2 Jazzy runs inside the container and owns state estimation, Klann kinematic odometry, odometry fusion, the ORB-SLAM UDP bridge, virtual scan generation, slam_toolbox, Nav2 bring-up, visualization, and the browser operator interface.
+      </p>
+      <p>
+        The ESP32 owns deterministic power and actuator I/O: precharge, contactor closure, shared servo-enable control, motor-driver configuration, torque/current limits, changed-only RPM writes, strict six-drive raw-encoder sweeps, and micro-ROS publication of compact encoder/timing telemetry.
+      </p>
+      <p>
+        Command flow is browser teleop or Nav2 → <code>/hexapod/cmd_vel_selected</code> → tripod/MPPI gait generation → <code>/hexapod/phase_cmd</code> → phase-to-RPM routing → <code>/motor_rpm_cmd</code> → ESP32 RS485 writes. Feedback flow is ESP32 <code>/motor_output_odom</code> → Jetson motor-state aggregation → continuous crank phase → Klann body-state estimation → fused <code>/odom</code> and <code>odom → base_link</code> TF.
       </p>
     </div>
   </details>

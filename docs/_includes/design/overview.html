@@ -1,19 +1,18 @@
 <div class="t2-card" id="overview">
   <h2>Overview</h2>
   <p class="t2-note">
-    High-level system concept: leg-initiated locomotion with robust load handling, safe operation around performers,
-    and clean integration for a stage demo.
+    Final architecture: leg-initiated locomotion from six independently phased Klann linkage legs, Jetson-hosted mapping/navigation, ESP32 motor/power management, and operator-supervised autonomy.
   </p>
   <div class="t2-grid">
     <div class="t2-kv">
-      <div><strong>Locomotion:</strong> mechanically encoded gait (Klann-style) with differential-speed turning</div>
-      <div><strong>Stability:</strong> side-leg subsystem for stabilization and expressive motion</div>
-      <div><strong>Compute split:</strong> Jetson (perception/nav) + microcontroller (real-time motor/IO)</div>
+      <div><strong>Locomotion:</strong> six Klann linkage leg modules, one RS485 servo + 50:1 gearbox per leg</div>
+      <div><strong>Gait:</strong> alternating tripod phase relationships with startup contact-pose sequencing</div>
+      <div><strong>Motor feedback:</strong> raw 17-bit single-turn motor encoder counts reconstructed on the Jetson through the gearbox ratio</div>
     </div>
     <div class="t2-kv">
-      <div><strong>Safety:</strong> E-stop, conservative dynamics, predictable behavior on stage</div>
-      <div><strong>Portability:</strong> modular packing + fast assembly goals</div>
-      <div><strong>Reliability:</strong> staged testing under representative load</div>
+      <div><strong>Mapping:</strong> RealSense D415 + ORB-SLAM2 CUDA + ROS 2 UDP bridge + slam_toolbox occupancy grid</div>
+      <div><strong>Navigation:</strong> Nav2/MPPI-oriented and teleop command paths using a common body-velocity interface</div>
+      <div><strong>Safety:</strong> precharge/contactor sequencing, shared servo enable, stop-prioritized RS485 scheduling, and operator e-stop mode</div>
     </div>
   </div>
 </div>

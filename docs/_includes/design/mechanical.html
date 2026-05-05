@@ -5,47 +5,37 @@
     <div class="t2-acc-body" id="cad-overall">
       {% include carousel.html key="overall_assembly_evolution" %}
       <p>
-        The overall system is organized into four primary subsystems: a main base structure that supports the
-        seated performer, a wheel support assembly to carry the majority of the system weight, a set of side
-        legs for stabilization/lateral motion, and two sets of Klann-linkage-style leg assemblies for forward/
-        backward locomotion. Electronics are packaged in a protected compartment between the base and wheel
-        support to lower the center of gravity, improve mass distribution, and protect wiring/controls.
+        The final class robot is a compact human-carrying hexapod built around a load-bearing chassis, a rider support surface, protected electronics, auxiliary support elements, and six Klann-linkage leg modules. The final report identifies the current design as successful for primary locomotion and load-bearing goals, while noting that auxiliary support elements still carry part of the practical stability burden.
+      </p>
+      <p>
+        Planned final CAD uploads should be placed at <code>assets/designs/v5_final_assembly.glb</code> for the full assembly and <code>assets/designs/klann_final.glb</code> for the final leg/linkage export. The gallery placeholders on the Media page will become interactive model viewers once those GLB files are committed.
       </p>
     </div>
   </details>
-  <details class="t2-acc">
+
+  <details class="t2-acc" open>
     <summary><h3>Klann Linkage Assembly</h3></summary>
     <div class="t2-acc-body" id="cad-klann">
       {% include model-card.html
        wrap="false"
        file="/assets/designs/klann-leg.glb"
-       caption="Rotate/zoom to inspect." %}
+       caption="Earlier Klann-linkage GLB. Replace with /assets/designs/klann_final.glb when the final export is available." %}
       <p>
-        The Klann mechanism is selected to reduce actuator count while maintaining a mechanically encoded
-        gait. Rotary DC gear motors drive the Klann crankshafts; each crankshaft is supported by bearings
-        and standardized pivot hardware (shoulder bolts/joint pins, linkage plates, bushings/bearings, foot pads).
-        One motor per side drives the corresponding leg set; forward/backward locomotion comes from the cyclic
-        foot trajectory. Turning is implemented via a differential-drive strategy—independently controlling left/right
-        leg-set speeds enables zero-radius turning about the vertical axis.
+        The implemented robot uses one independently commanded RS485 servo motor per leg, not one mechanically coupled shaft per side. Each motor drives a TG-series 60 mm 50:1 planetary gearbox, which drives one Klann crank. This preserves the mechanically encoded stance/swing trajectory while giving software direct control over each leg phase.
+      </p>
+      <p>
+        The final software represents the leg as measured linkage geometry rather than a wheel radius approximation. For each output crank phase, the model returns foot position, foot velocity, and stance confidence. Runtime code can use precomputed lookup tables so that Jetson compute is spent on perception and navigation instead of repeated nonlinear linkage solves.
       </p>
     </div>
   </details>
+
   <details class="t2-acc">
-    <summary><h3>Side Legs Assembly</h3></summary>
-    <div class="t2-acc-body" id="cad-sidelegs">
-      {% include model-card.html
-       wrap="false"
-       file="/assets/designs/articulated-leg.glb"
-       caption="Rotate/zoom to inspect." %}
+    <summary><h3>Modeling and browser assets</h3></summary>
+    <div class="t2-acc-body">
       <p>
-        The side legs provide active stabilization, pose control, and controlled lateral (side-to-side) translation.
-        They enlarge the support polygon to reduce tip risk under payload, help maintain the rider height target,
-        enable controlled body roll/pitch for choreographed motion, and support lateral shifting (“side glide”) while
-        staying within the 5’×5’ footprint. Each side leg is an articulated link assembly with an end foot pad, driven
-        through a pinned joint/clevis interface. The baseline approach uses compact linear actuators (motor-internal)
-        for simpler integration and precise position control, with a potential shift toward a motor-driven mechanism
-        for cost/safety/integration reasons.
+        The DWG file should be stored directly under <code>assets/designs/linkage_schematic.dwg</code>. Browsers do not natively render DWG in a static GitHub Pages site, so the site exposes it as a downloadable file and expects an exported <code>.pdf</code>, <code>.svg</code>, or <code>.png</code> companion for inline preview.
       </p>
+      {% include asset-gallery.html key="software_visuals" title="Modeling and final CAD placeholders" %}
     </div>
   </details>
 </div>

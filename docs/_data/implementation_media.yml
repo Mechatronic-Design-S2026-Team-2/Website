@@ -6,18 +6,6 @@
 
 - type: video
   src: /assets/implementation/esp_gui.webm
-  title: ESP32 bring-up GUI
+  title: ESP32 / operator GUI bring-up
   alt: Operator or bring-up interface video for the ESP32 and robot control stack
   caption: Current operator-side and bring-up interface behavior for the embedded and ROS layers.
-
-- type: image
-  src: /assets/implementation/circuit_photo_1.jpg
-  title: Circuit photo 1
-  alt: First circuit photo for the current embedded and communications wiring
-  caption: Current embedded/control wiring snapshot used for bench bring-up and interface verification.
-
-- type: image
-  src: /assets/implementation/circuit_photo_2.jpg
-  title: Circuit photo 2
-  alt: Second circuit photo for the current embedded and communications wiring
-  caption: Additional view of the present circuit assembly and wiring organization.

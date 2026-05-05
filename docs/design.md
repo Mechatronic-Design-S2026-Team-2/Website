@@ -3,7 +3,7 @@ title: "System Design"
 ---
 
 {% include nav.html %}
-{% include page-assets.html cards=true design=true carousel=true model_viewer=true svg_diagram=true %}
+{% include page-assets.html cards=true design=true carousel=true model_viewer=true svg_diagram=true media_gallery=true %}
 
 {% include design/page-intro.html %}
 {% include design/overview.html %}

@@ -8,11 +8,15 @@ title: "Media"
 <div class="t2-card">
   <h2>Media</h2>
   <p>
-    This page is structured around the final build, fabrication, electrical integration, software visualization, and robot-motion media. The requested filenames are represented as placeholders in their intended asset folders so the page can be merged before the binary assets are available.
+    This page is structured around the final build, fabrication, electrical integration, software visualization, and robot-motion media. The requested filenames are expected at the asset paths shown in each card; WebM files are treated as silent looping animations rather than conventional videos.
   </p>
   <p class="t2-note">
-    To activate a placeholder, commit the file at the path shown in the card, then set <code>pending: false</code> for that item in <code>docs/_data/media_assets.yml</code>. Duplicate requested filenames such as <code>building_chassis.jpg</code> and <code>front_final_cover.JPG</code> are represented once.
+    All requested assets are now marked ready in <code>docs/_data/media_assets.yml</code> and <code>docs/_data/carousels.yml</code>. Duplicate requested filenames such as <code>building_chassis.jpg</code> and <code>front_final_cover.JPG</code> are represented once.
   </p>
+</div>
+
+<div class="t2-card">
+  {% include asset-gallery.html key="team_picture" %}
 </div>
 
 <div class="t2-card">

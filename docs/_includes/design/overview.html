@@ -1,18 +1,30 @@
 <div class="t2-card" id="overview">
   <h2>Overview</h2>
   <p class="t2-note">
-    Final architecture: leg-initiated locomotion from six independently phased Klann linkage legs, Jetson-hosted mapping/navigation, ESP32 motor/power management, and operator-supervised autonomy.
+    Design page scope: final system architecture, trade choices, and subsystem relationships. Implementation details and test results are separated onto the Implementation and Performance pages to avoid repeating the same final-stack summary.
   </p>
   <div class="t2-grid">
     <div class="t2-kv">
-      <div><strong>Locomotion:</strong> six Klann linkage leg modules, one RS485 servo + 50:1 gearbox per leg</div>
-      <div><strong>Gait:</strong> alternating tripod phase relationships with startup contact-pose sequencing</div>
-      <div><strong>Motor feedback:</strong> raw 17-bit single-turn motor encoder counts reconstructed on the Jetson through the gearbox ratio</div>
+      <div><strong>Mechanical concept:</strong> six Klann linkage leg modules, one independently phased servo/gearbox per leg.</div>
+      <div><strong>Control concept:</strong> alternating tripod phase relationships, startup contact-pose sequencing, and body-velocity commands mapped to crank phase/RPM.</div>
+      <div><strong>Design intent:</strong> expressive legged motion for performance while retaining enough determinism for navigation and rider-scale payloads.</div>
     </div>
     <div class="t2-kv">
-      <div><strong>Mapping:</strong> RealSense D415 + ORB-SLAM2 CUDA + ROS 2 UDP bridge + slam_toolbox occupancy grid</div>
-      <div><strong>Navigation:</strong> Nav2/MPPI-oriented and teleop command paths using a common body-velocity interface</div>
-      <div><strong>Safety:</strong> precharge/contactor sequencing, shared servo enable, stop-prioritized RS485 scheduling, and operator e-stop mode</div>
+      <div><strong>Autonomy concept:</strong> RGB-D SLAM plus linkage-based odometry, fused through a planar ROS 2 frame tree.</div>
+      <div><strong>Safety concept:</strong> precharge/contactor sequencing, shared servo enable, conservative speed limits, and operator override.</div>
+      <div><strong>Stage concept:</strong> browser-based off-stage supervision with maps, waypoint goals, teleop, and software e-stop mode.</div>
+    </div>
+  </div>
+
+  <div class="media-row">
+    <div class="media-row-copy">
+      <h3>Final form factor</h3>
+      <p>
+        The full-assembly media is placed here because it supports the design narrative: it shows how the load-bearing frame, protected electronics, lid/cover strategy, and six leg modules come together as a single stage-facing robot. The implementation page uses related photos for wiring and bring-up; this page uses them to explain the design arrangement.
+      </p>
+    </div>
+    <div class="media-row-asset">
+      {% include asset-item.html key="build_photos" index=2 layout="wide" %}
     </div>
   </div>
 </div>

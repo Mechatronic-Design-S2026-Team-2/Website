@@ -3,14 +3,20 @@
 
   <h2>About this project</h2>
   <p>
-    Team 2 built a human-carrying Klann-linkage hexapod for AXIS Dance Company's <em>Kinematic/Kinesthetic</em> project. The final class robot is not only a CAD concept: it achieved body-displacing legged locomotion, supported more than the required rider payload, and integrated onboard sensing, mapping, and ROS 2 control for waypoint-capable operation.
+    Team 2 built a human-carrying Klann-linkage hexapod for AXIS Dance Company's <em>Kinematic/Kinesthetic</em> project. The class-final robot moved under its own legged locomotion, carried rider-scale loads, and integrated onboard mapping and ROS 2 control so that the robot could be operated as a stage mobility platform rather than just a mechanical prototype.
   </p>
   <p>
-    The final design uses six independently commanded RS485 DC servo motors, each driving a 50:1 planetary gearbox and one Klann leg module. An ESP32 manages power sequencing, contactor/precharge control, servo enable, RS485 command writes, raw encoder sweeps, and compact micro-ROS telemetry. A Jetson Nano runs the ROS 2 Jazzy stack in Docker while ORB-SLAM2 CUDA and the RealSense D415 process run natively on the Jetson host for GPU/driver stability.
+    The final machine uses six independently commanded RS485 DC servo motors, each driving a 50:1 planetary gearbox and one Klann linkage. An ESP32 performs power sequencing, contactor/precharge control, servo enable, RS485 command writes, raw encoder sweeps, and micro-ROS telemetry. A Jetson Nano runs the ROS 2 Jazzy stack in Docker while ORB-SLAM2 CUDA and the RealSense D415 run natively on the Jetson host for GPU and camera-driver stability.
   </p>
   <p>
-    The project frames assistive mobility as a performance medium. Rather than imitating a conventional wheelchair, the robot demonstrates species-atypical motion: mechanically legged forward/backward travel, zero-radius turning, and navigation behavior that can be choreographed or operated from an off-stage interface.
+    The project treats assistive mobility as performance media. The robot is designed to create visible, species-atypical motion: mechanically legged forward/backward travel, zero-radius turning, and operator-supervised navigation behavior that can be choreographed or controlled from off stage.
   </p>
+
+  <div class="home-team-picture">
+    <h3>Team and final build</h3>
+    <p class="t2-sub">Place the group build photo at <code>docs/assets/img/team_picture.jpg</code> and mark the <code>team_picture</code> item ready in <code>_data/media_assets.yml</code>.</p>
+    {% include asset-item.html key="team_picture" index=0 layout="wide" %}
+  </div>
 
   <div class="t2-metric-grid">
     <div class="t2-metric"><b>Payload</b><span>&gt;200 lb demonstrated without structural failure</span></div>

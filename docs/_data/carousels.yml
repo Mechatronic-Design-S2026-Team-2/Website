@@ -3,19 +3,44 @@ home_hero:
   autoplay_ms: 5000
   slides:
     - type: image
+      src: /assets/hardware/angled_final_cover.JPG
+      alt: Final covered hexapod, angled front view
+      caption: Final Covered Hexapod
+      loading: eager
+      pending: false
+    - type: animation
+      src: /assets/videos/walking_outside.webm
+      alt: Final robot walking outdoors
+      caption: Final Walking Demonstration
+      loading: lazy
+      pending: false
+    - type: image
+      src: /assets/hardware/full_assembly_no_lid.jpg
+      alt: Full robot assembly with top cover removed
+      caption: Final Assembly Without Lid
+      loading: lazy
+      pending: false
+    - type: animation
+      src: /assets/videos/unloaded_all_legs_motion.webm
+      alt: Six legs moving unloaded during final bring-up
+      caption: Unloaded Six-Leg Motion
+      loading: lazy
+      pending: false
+    - type: image
+      src: /assets/software/rviz_hexapod_model.png
+      alt: RViz showing hexapod model, map, and robot visualization
+      caption: ROS 2 Mapping and Robot Model
+      loading: lazy
+      pending: false
+    - type: image
       src: /assets/img/linkage_MK1.gif
       alt: First iteration linkage
-      caption: First Iteration Linkage
-      loading: eager
-    - type: video
-      src: /assets/img/untuned_cpg.webm
-      alt: Untuned CPG gait demonstration
-      caption: Untuned CPG
+      caption: Early Linkage Prototype
       loading: lazy
-    - type: video
+    - type: animation
       src: /assets/img/cpg_humanoid.webm
       alt: CPG gait with humanoid rider demonstration
-      caption: CPG with Humanoid Rider
+      caption: Early CPG with Humanoid Rider
       loading: lazy
 
 lab_highlights:

@@ -1,7 +1,8 @@
 # Fabrication assets
 
-Place chassis, linkage, crank, elbow, and machining media here:
+Place chassis, raw stock, linkage, crank, elbow, and machining media here:
 
+- raw_aluminum.jpg
 - building_chassis.jpg
 - first_assembled_linkage.jpg
 - finished_elbows.jpg

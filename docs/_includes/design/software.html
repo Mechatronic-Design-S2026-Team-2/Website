@@ -1,37 +1,32 @@
 <div class="t2-card" id="software">
-  <h2>Software &amp; Autonomy</h2>
+  <h2>Software and Autonomy Design</h2>
   <p>
-    The final stack has three main software regions: Jetson host-native ORB-SLAM2 CUDA, a Dockerized ROS 2 Jazzy workspace, and ESP-IDF firmware with micro-ROS. The ROS side owns TF, odometry fusion, Klann geometry evaluation, controller/gait nodes, slam_toolbox, Nav2, RViz visualization, and the browser operator interface.
+    The software design separates perception/localization, proprioceptive odometry, planning/control, and low-level actuation so that any one subsystem can be tested independently. This section describes why the stack is partitioned this way; the Implementation page lists the concrete ROS 2 packages and firmware behavior.
   </p>
 
+  <div class="media-row">
+    <div class="media-row-copy">
+      <h3>Common map/model frame</h3>
+      <p>
+        The RViz media should appear beside the software architecture text because it is the clearest visual check that the occupancy grid, ORB-SLAM points, scan frame, and Klann skeleton are using a common scale and transform tree. The mapping report emphasizes this distinction: sparse ORB points aid localization/diagnostics, while the virtual scan and slam_toolbox output provide the occupancy grid for Nav2.
+      </p>
+    </div>
+    <div class="media-row-asset">
+      {% include asset-item.html key="software_visuals" index=0 layout="wide" %}
+    </div>
+  </div>
+
   <details class="t2-acc" open>
-    <summary><h3>ROS 2 packages</h3></summary>
-    <div class="t2-acc-body">
-      <ul>
-        <li><code>dsy_motor_msgs</code>: compact bridge messages for six-motor RPM commands and raw encoder/timing odometry.</li>
-        <li><code>hexapod_control_interfaces</code>: leg phase, motor state, actuation state, and body-state messages.</li>
-        <li><code>hexapod_hardware_cpp</code>: motor-state aggregation, raw encoder unwrap, Klann geometry/LUT tools, body-state estimation, weighted odometry fusion, startup pose, WT901 parsing, LCD/status nodes, and visualization markers.</li>
-        <li><code>hexapod_nav_cpp</code>: MPPI/local-planner-oriented phase prediction and command generation, including final phase wrapping and forward-direction mirror/sign corrections.</li>
-        <li><code>hexapod_orbslam_udp_bridge</code>: UDP receiver for ORB-SLAM2 pose, map points, and depth-derived virtual scans, plus slam_toolbox launch/configuration.</li>
-        <li><code>hexapod_operator_interface</code>: browser GUI for map viewing, teleop velocities, waypoint goals, map save/load, e-stop state, and diagnostic status.</li>
-      </ul>
-    </div>
-  </details>
-
-  <details class="t2-acc">
-    <summary><h3>Frame and mapping ownership</h3></summary>
+    <summary><h3>Frame and estimator ownership</h3></summary>
     <div class="t2-acc-body">
       <p>
-        TF ownership is explicit to prevent conflicting transforms. <code>slam_toolbox</code> owns <code>map → odom</code>. The weighted fusion node owns <code>odom → base_link</code>. The ORB-SLAM UDP bridge publishes <code>/hexapod/orbslam_odom</code>, <code>/orbslam/map_points</code>, and <code>/scan</code>, but does not publish a competing <code>odom → base_link</code> transform in the fused launch path. The camera/scan frame is mounted 11 in, or 0.2794 m, forward of <code>base_link</code>.
-      </p>
-      <p>
-        The final ORB/scan launch defaults use scale calibration, receive-time stamping by default, scan decimation for Jetson load, and no second ROS-axis conversion when the host ORB-SLAM process already emits ROS axes.
+        The design keeps planar mapping deterministic: <code>slam_toolbox</code> owns <code>map → odom</code>, the weighted fusion node owns <code>odom → base_link</code>, and the ORB-SLAM bridge publishes odometry, map points, and scan data without also publishing a competing body transform. Roll and pitch are intentionally kept out of the 2D mapping transform.
       </p>
     </div>
   </details>
 
   <details class="t2-acc">
-    <summary><h3>Behavior tree / navigation concept</h3></summary>
+    <summary><h3>Navigation concept</h3></summary>
     <div class="t2-acc-body">
       {% include svg-diagram.html
         wrap="false"
@@ -41,7 +36,16 @@
         caption="Scroll to zoom • drag to pan • Reset view to refit"
       %}
       <p>
-        The autonomy path is intentionally conservative: mapping and localization run continuously, the operator can command velocities or place Nav2 goals, and the GUI exposes map save/load so occupancy maps can be prepared before a performance rather than recomputed under show-time constraints.
+        The autonomy path is intentionally operator-supervised. The robot can run mapping/localization continuously, accept teleop velocities or Nav2 goals from the browser interface, and save/load maps so that a stage environment can be prepared before a performance rather than reconstructed live under time pressure.
+      </p>
+    </div>
+  </details>
+
+  <details class="t2-acc">
+    <summary><h3>Kinematic modeling role</h3></summary>
+    <div class="t2-acc-body">
+      <p>
+        The Klann linkage model is not only for visualization. It translates measured crank phase into foot position/velocity and stance confidence, which makes encoder-based odometry possible when visual tracking is weak. The mapping report treats this model as a fallback and fusion component, not a replacement for RGB-D SLAM.
       </p>
     </div>
   </details>

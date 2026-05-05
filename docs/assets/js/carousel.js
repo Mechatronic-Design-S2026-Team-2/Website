@@ -19,6 +19,7 @@
     let timer = null;
 
     function syncMedia() {
+      // WebM animations are rendered with <video>; keep only the active carousel clip playing.
       slides.forEach((slide, k) => {
         const isActive = k === index;
         slide.setAttribute("aria-hidden", isActive ? "false" : "true");

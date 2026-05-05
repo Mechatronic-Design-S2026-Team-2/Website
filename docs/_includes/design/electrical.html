@@ -1,8 +1,20 @@
 <div class="t2-card" id="electrical">
   <h2>Electrical Design</h2>
   <p>
-    The final electrical system is built around a 52 V battery bus, main fuse, precharge path, contactor, 5 V compute/control rail, 24 V contactor/auxiliary rail, ESP32 sequencing, and six RS485 servo drives. The ESP32 first brings up low-voltage control, closes the precharge relay, monitors motor-side bus voltage through an ADC divider, then closes the main contactor when the bus reaches the configured threshold. A physical stop switch removes ESP32/control power, opening the contactor and depowering the motor drivers.
+    The final electrical design is organized around a 52 V traction bus, main fuse, precharge path, contactor, 5 V compute/control rail, 24 V contactor/auxiliary rail, ESP32 sequencing, and six RS485 servo drives. The design page focuses on topology and protection; the implementation page covers runtime firmware behavior.
   </p>
+
+  <div class="media-row">
+    <div class="media-row-copy">
+      <h3>Mainboard and packaging intent</h3>
+      <p>
+        The mainboard photo should be used here to show the final electrical architecture as a physical artifact: power distribution, low-voltage control, and cable management. Intermediate wiring photos stay on the Implementation page because they document build process rather than final topology.
+      </p>
+    </div>
+    <div class="media-row-asset">
+      {% include asset-item.html key="circuit_photos" index=0 layout="wide" %}
+    </div>
+  </div>
 
   <details class="t2-acc" open>
     <summary><h3>Battery protection and high-current path</h3></summary>
@@ -15,7 +27,7 @@
     <summary><h3>Motor distribution</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html wrap="false" repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/02_motor_distribution.kicad_sch" %}
-      <p>Six StepperOnline DSY RS485 400 W DC servo drives share the motor supply and the RS485 daisy-chain. Runtime firmware prioritizes changed-only RPM writes and six-drive raw encoder sweeps to avoid saturating the 115200 baud motor bus.</p>
+      <p>Six StepperOnline DSY RS485 400 W DC servo drives share the motor supply and the RS485 daisy-chain. The bus topology was selected for wiring simplicity but created a software-timing constraint that is handled in the ESP32 runtime.</p>
     </div>
   </details>
   <details class="t2-acc">
@@ -36,9 +48,7 @@
     <summary><h3>ESP32 and sensors</h3></summary>
     <div class="t2-acc-body">
       {% include kicad-embed.html wrap="false" repo="Mechatronic-Design-S2026-Team-2/Website" ref="main" path="docs/assets/designs/hexapod_circuit/05_ESP32_Sensors.kicad_sch" %}
-      <p>The ESP32 controls precharge, contactor drive, shared servo enable, and RS485 motor communication. FSR/contact sensing remains a future robustness improvement because the final mapping report found the ESP32 ADC/contact path too noisy to use as a trusted odometry gate without additional conditioning and calibration.</p>
+      <p>The ESP32 controls precharge, contactor drive, shared servo enable, and RS485 motor communication. Foot-contact sensing remains a future robustness improvement because the final mapping work found the ESP32 ADC/contact path too noisy to use as a trusted odometry gate without additional conditioning.</p>
     </div>
   </details>
-
-  {% include asset-gallery.html key="circuit_photos" title="Planned circuit photos" %}
 </div>

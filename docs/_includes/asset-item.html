@@ -1,12 +1,17 @@
+{%- comment -%}
+Render one media asset from docs/_data/media_assets.yml by gallery key and zero-based index.
+Usage: {% include asset-item.html key="build_photos" index=0 layout="wide" %}
+{%- endcomment -%}
 {%- assign gallery = site.data.media_assets[include.key] -%}
-{%- assign title = include.title | default: gallery.title -%}
+{%- assign desired_index = include.index | default: 0 | plus: 0 -%}
+{%- assign layout = include.layout | default: 'standard' -%}
+{%- assign heading = include.heading | default: '' -%}
 {%- if gallery -%}
-<div class="asset-gallery" id="{{ include.key | slugify }}">
-  {%- if title -%}<h3>{{ title }}</h3>{%- endif -%}
-  <div class="asset-grid">
-    {%- for item in gallery.items -%}
+  {%- for item in gallery.items -%}
+    {%- if forloop.index0 == desired_index -%}
       {%- assign pending = item.pending | default: false -%}
-      <figure class="asset-card asset-card--{{ item.type }}{% if pending %} is-pending{% endif %}">
+      <figure class="asset-card asset-card--single asset-card--{{ item.type }} asset-card--{{ layout }}{% if pending %} is-pending{% endif %}">
+        {%- if heading != '' -%}<h3 class="asset-inline-heading">{{ heading }}</h3>{%- endif -%}
         <div class="asset-frame">
           {%- if pending -%}
             <div class="asset-placeholder">
@@ -42,9 +47,8 @@
           {%- endif -%}
         </figcaption>
       </figure>
-    {%- endfor -%}
-  </div>
-</div>
+    {%- endif -%}
+  {%- endfor -%}
 {%- else -%}
-<div class="asset-gallery"><p>No media gallery configured for <code>{{ include.key }}</code>.</p></div>
+  <div class="asset-gallery"><p>No media item configured for <code>{{ include.key }}</code>.</p></div>
 {%- endif -%}

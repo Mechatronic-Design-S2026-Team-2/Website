@@ -16,7 +16,14 @@
               data-slide
               aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
         <div class="carousel-media{% if slide.type == 'model' %} carousel-media--model{% endif %}">
-          {%- if slide.type == 'model' -%}
+          {%- assign slide_pending = slide.pending | default: false -%}
+          {%- if slide_pending -%}
+          <div class="carousel-placeholder">
+            <span class="asset-type">{% if slide.type == 'animation' %}ANIMATION{% else %}{{ slide.type | default: 'image' | upcase }}{% endif %}</span>
+            <code>{{ slide.src }}</code>
+            <span>Pending carousel media</span>
+          </div>
+          {%- elsif slide.type == 'model' -%}
           <model-viewer
             class="carousel-model-viewer"
             src="{{ slide.src | relative_url }}"
@@ -30,14 +37,15 @@
             loading="lazy"
             reveal="auto">
           </model-viewer>
-          {%- elsif slide.type == 'video' -%}
-          <video class="carousel-video"
+          {%- elsif slide.type == 'video' or slide.type == 'animation' -%}
+          <video class="carousel-video carousel-animation"
                  src="{{ slide.src | relative_url }}"
-                 aria-label="{{ slide.alt | default: slide.caption | default: 'Carousel video' }}"
+                 aria-label="{{ slide.alt | default: slide.caption | default: 'Carousel animation' }}"
+                 autoplay
                  muted
                  loop
                  playsinline
-                 preload="metadata"
+                 preload="auto"
                  {% if slide.loading %}data-loading="{{ slide.loading }}"{% endif %}>
           </video>
           {%- else -%}

@@ -1,6 +1,6 @@
-# Motion videos
+# Motion silent WebM animations
 
-Place final robot motion videos here:
+Place final robot motion silent WebM animations here. These are rendered as GIF-like loops with no audio controls:
 
 - unloaded_all_legs_motion.webm
 - walking_outside.webm

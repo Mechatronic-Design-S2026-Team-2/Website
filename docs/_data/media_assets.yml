@@ -1,6 +1,15 @@
-# Pending media plan for final website update.
-# Keep pending: true until the real file is committed at the path below.
-# The gallery renders pending items as placeholders so GitHub Pages does not show broken image/video embeds.
+team_picture:
+  title: Team picture
+  items:
+    - type: image
+      path: /assets/img/team_picture.jpg
+      title: Team 2 with final hexapod
+      caption: Group photo of the team with the completed class-final robot. This appears on the home page as the main team/build image.
+      pending: false
+
+# Final media plan for the website update.
+# Assets are expected to be committed at the paths below.
+# WebM files are represented as silent looping animations.
 
 build_photos:
   title: Final hardware and build photos
@@ -14,6 +23,11 @@ build_photos:
       path: /assets/hardware/front_final_cover.JPG
       title: Final front cover
       caption: Final front cover and stage-facing robot appearance. Duplicate filename requests should map to this same file.
+      pending: false
+    - type: image
+      path: /assets/hardware/angled_final_cover.JPG
+      title: Angled final cover
+      caption: Angled view of the final cover and exterior shell, useful for showing the final stage-facing form factor.
       pending: false
     - type: image
       path: /assets/hardware/working_on_bot.jpg
@@ -33,6 +47,11 @@ fabrication:
       path: /assets/fabrication/building_chassis.jpg
       title: Building chassis
       caption: Chassis fabrication photo. The filename was listed three times; the site keeps one canonical placeholder.
+      pending: false
+    - type: image
+      path: /assets/fabrication/raw_aluminum.jpg
+      title: Raw aluminum stock
+      caption: Raw aluminum material before chassis and linkage fabrication.
       pending: false
     - type: image
       path: /assets/fabrication/first_assembled_linkage.jpg
@@ -68,6 +87,11 @@ circuit_photos:
       title: Mainboard in progress
       caption: Intermediate mainboard wiring and soldering state.
       pending: false
+    - type: image
+      path: /assets/hardware/pcb_mount_prototype.jpg
+      title: PCB mount prototype
+      caption: Prototype PCB mounting hardware used during electrical integration and packaging.
+      pending: false
 
 software_visuals:
   title: Mapping, model, and simulation visuals
@@ -100,54 +124,54 @@ software_visuals:
       pending: false
 
 videos:
-  title: Final motion, SLAM, and simulation videos
+  title: Final motion, SLAM, and simulation animations
   items:
-    - type: video
+    - type: animation
       path: /assets/videos/unloaded_all_legs_motion.webm
       title: Unloaded all-legs motion
       caption: Final unloaded six-leg motion test.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/videos/walking_outside.webm
       title: Walking outside
       caption: Outdoor walking demonstration.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/videos/walking_outside2.webm
       title: Walking outside 2
       caption: Additional outdoor walking demonstration.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/videos/first_motor_test_single.webm
       title: First single-motor test
       caption: Initial single motor/leg actuation validation.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/videos/first_motor_test_multi.webm
       title: First multi-motor test
       caption: Initial multi-motor RS485 drive test.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/fabrication/cnc_elbow.webm
       title: CNC elbow fabrication
       caption: CNC machining clip for linkage elbow components.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/software/orbslam_odom_test.webm
       title: ORB-SLAM odometry test
       caption: ORB-SLAM2 CUDA odometry and ROS 2 bridge test.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/software/mjx_rollout_example.webm
       title: MJX rollout example
       caption: MJX/JAX rollout or controller-tuning visualization.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/software/mujoco_arc.webm
       title: MuJoCo arc trajectory
       caption: MuJoCo arc/curvilinear trajectory test.
       pending: false
-    - type: video
+    - type: animation
       path: /assets/software/mujoco_straight.webm
       title: MuJoCo straight trajectory
       caption: MuJoCo straight-line trajectory test.

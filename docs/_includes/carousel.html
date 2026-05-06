@@ -54,10 +54,14 @@
             reveal="auto">
           </model-viewer>
           {%- elsif slide.type == 'iframe' -%}
-          <iframe class="carousel-iframe"
+          <iframe class="carousel-iframe fusion-embed"
                   src="{{ slide.url }}"
                   title="{{ slide.alt | default: slide.caption | default: 'Interactive CAD embed' | escape }}"
-                  loading="lazy"
+                  width="{{ slide.iframe_width | default: 1024 }}"
+                  height="{{ slide.iframe_height | default: 768 }}"
+                  loading="eager"
+                  style="width:100%;height:100%;display:block;border:0;"
+                  allow="fullscreen; autoplay; xr-spatial-tracking"
                   allowfullscreen
                   webkitallowfullscreen
                   mozallowfullscreen></iframe>

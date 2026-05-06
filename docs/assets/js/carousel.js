@@ -18,11 +18,25 @@
     if (index < 0) index = 0;
     let timer = null;
 
+    function sizeInteractiveFrames(slide) {
+      slide.querySelectorAll("iframe.fusion-embed").forEach((frame) => {
+        const box = frame.parentElement?.getBoundingClientRect();
+        if (!box || box.width < 1 || box.height < 1) return;
+        const width = Math.max(1, Math.round(box.width));
+        const height = Math.max(1, Math.round(box.height));
+        frame.setAttribute("width", String(width));
+        frame.setAttribute("height", String(height));
+        frame.style.width = "100%";
+        frame.style.height = "100%";
+      });
+    }
+
     function syncMedia() {
-      // WebM animations are rendered with <video>; keep only the active carousel clip playing.
+      // WebM/MP4 animations are rendered with <video>; keep only the active carousel clip playing.
       slides.forEach((slide, k) => {
         const isActive = k === index;
         slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+        if (isActive) sizeInteractiveFrames(slide);
 
         slide.querySelectorAll("video").forEach((video) => {
           if (isActive) {
@@ -95,6 +109,7 @@
     root.addEventListener("mouseleave", start);
     root.addEventListener("focusin", stop);
     root.addEventListener("focusout", start);
+    window.addEventListener("resize", () => syncMedia(), { passive: true });
 
     root.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft") setActive(index - 1);

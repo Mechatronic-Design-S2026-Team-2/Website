@@ -35,7 +35,7 @@
           {%- elsif item.type == 'model' -%}
             {% include model-card.html wrap="false" file=item.path caption="" alt=item.title %}
           {%- elsif item.type == 'iframe' -%}
-            <iframe class="asset-iframe" src="{{ item.url }}" title="{{ item.title | escape }}" loading="lazy" allowfullscreen></iframe>
+            <iframe class="asset-iframe fusion-embed" src="{{ item.url }}" title="{{ item.title | escape }}" width="{{ item.iframe_width | default: 1024 }}" height="{{ item.iframe_height | default: 768 }}" loading="eager" style="width:100%;height:100%;display:block;border:0;" allow="fullscreen; autoplay; xr-spatial-tracking" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
           {%- elsif item.type == 'file' -%}
             <a class="asset-file-card" href="{{ item.path | relative_url }}" target="_blank" rel="noreferrer">
               <span class="asset-type">{% if item.path contains '.pdf' %}PDF file{% else %}CAD file{% endif %}</span>

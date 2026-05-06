@@ -243,13 +243,27 @@
   pointer-events: none;
 }
 
+.hero-carousel--interactive .carousel-media {
+  aspect-ratio: auto;
+  height: clamp(560px, 62vw, 768px);
+  max-height: none;
+  min-height: 560px;
+}
+
 .carousel-iframe {
+  position: absolute;
+  inset: 0;
   display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 520px;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100%;
+  min-height: 100%;
   border: 0;
   background: #101114;
+}
+
+.fusion-embed {
+  color-scheme: light;
 }
 
 .carousel-slide--interactive figcaption {
@@ -287,8 +301,9 @@
 }
 
 @media (max-width: 700px) {
-  .carousel-iframe {
-    min-height: 380px;
+  .hero-carousel--interactive .carousel-media {
+    height: clamp(420px, 75vw, 620px);
+    min-height: 420px;
   }
 
   .carousel-caption-actions {

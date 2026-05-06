@@ -1,0 +1,60 @@
+<div class="t2-card" id="simulation-validation">
+  <h2>Simulation-Based Design Verification</h2>
+  <p>
+    Before committing the final robot architecture to hardware, the team used MuJoCo and MJX to verify that the six-actuator Klann concept could produce coherent body motion, support the expected load class, and keep actuator demand within a plausible motor/gearbox envelope. This simulation work did not replace physical testing; it reduced design risk before fabrication and gave the control stack a reference model for gait behavior.
+  </p>
+
+  {% include carousel.html key="simulation_validation" %}
+
+  <div class="t2-grid">
+    <div class="t2-kv">
+      <div><strong>Modeled mechanism:</strong> exported six-leg Klann assembly with the final crank joints represented as six velocity-controlled actuators.</div>
+      <div><strong>Closed-chain handling:</strong> MuJoCo equality constraints close the Klann linkage loops so the model exercises the coupled bar geometry rather than treating each link as independent.</div>
+      <div><strong>Payload check:</strong> a rider-equivalent model is attachable to the base scene, using a 77.1 kg mass to represent the target human-payload class.</div>
+    </div>
+    <div class="t2-kv">
+      <div><strong>Controller checked:</strong> phase-based CPG control over the same six crank variables used by the physical robot.</div>
+      <div><strong>Tasks checked:</strong> forward/reverse straight motion and forward/reverse curvilinear motion over a 10 ft reference distance.</div>
+      <div><strong>Metrics recorded:</strong> success/fall state, goal error, crosstrack error, torque estimate, power estimate, stability penalty, and energy proxy.</div>
+    </div>
+  </div>
+
+  <details class="t2-acc" open>
+    <summary><h3>What the MuJoCo model verified</h3></summary>
+    <div class="t2-acc-body">
+      <p>
+        The MuJoCo model gave a fast check that the CAD-derived linkage hierarchy, crank sign convention, contact geometry, and support strategy produced the intended gait mechanics. The XML model includes a floating <code>base_link</code>, six named crank joints, six velocity actuators, collision geometry, an IMU/camera site, actuator-force sensors, and loop-closure equality constraints for the multi-bar Klann mechanisms. The simulated crank actuators were bounded by a ±2π rad/s command range and an explicit actuator-force limit, so torque and power plots could be used as sizing checks rather than just animations.
+      </p>
+      <p>
+        This was used to catch problems that would have been expensive to discover only after machining: wrong-side crank signs, unstable support placement, unrealistic actuator demand, and gait phases that moved individual mechanisms correctly but failed when all six legs ran together.
+      </p>
+    </div>
+  </details>
+
+  <details class="t2-acc" open>
+    <summary><h3>Gait-tuning structure</h3></summary>
+    <div class="t2-acc-body">
+      <p>
+        The MJX/JAX trainer kept the same practical interface as the physical system: six crank phases commanded by a structured gait controller. It tuned gains around a CPG/phase model rather than optimizing arbitrary per-joint trajectories. Parameters included linear and yaw frequency gains, minimum moving/turning frequency, phase proportional gain, velocity damping, inter-leg synchronization, and roll/pitch stability feedback.
+      </p>
+      <p>
+        A later exact-reference harness evaluated formal tasks independently of planner artifacts. It checked forward-straight, backward-straight, forward-curvilinear, and backward-curvilinear references, with a 10 ft nominal path and a 6 in goal tolerance. The resulting tests helped distinguish linkage/gait feasibility from higher-level navigation errors.
+      </p>
+    </div>
+  </details>
+
+  <details class="t2-acc">
+    <summary><h3>Design conclusions carried into hardware</h3></summary>
+    <div class="t2-acc-body">
+      <ul>
+        <li>Use one independently driven actuator per leg so software can correct phase relationships instead of relying on a mechanically coupled side shaft.</li>
+        <li>Preserve alternating tripod relationships for baseline locomotion because they keep three or more feet in contact during nominal walking.</li>
+        <li>Retain auxiliary support/stability elements in the final physical architecture because the simulated and physical platform both prioritize safe rider-scale support over purely leg-only demonstration.</li>
+        <li>Use torque and power estimates as sizing checks, then validate the final values physically because linkage friction, fabrication tolerances, and ground contact losses are not fully captured by the model.</li>
+      </ul>
+    </div>
+  </details>
+
+  {% include asset-item.html key="simulation_media" index=3 layout="wide" caption="Simulation torque estimates were used as a design check against the selected servo/gearbox limits before full-system hardware testing." %}
+  {% include asset-item.html key="simulation_media" index=4 layout="wide" caption="Power-draw estimates supported battery and electrical sizing decisions, then physical testing was used to validate real current draw and runtime behavior." %}
+</div>

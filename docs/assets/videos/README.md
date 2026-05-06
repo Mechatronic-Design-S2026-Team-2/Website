@@ -7,3 +7,4 @@ Place final robot motion silent WebM animations here. These are rendered as GIF-
 - walking_outside2.webm
 - first_motor_test_single.webm
 - first_motor_test_multi.webm
+- standing_on_robot.webm

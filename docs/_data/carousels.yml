@@ -3,15 +3,21 @@ home_hero:
   autoplay_ms: 5000
   slides:
   - type: image
-    src: /assets/hardware/angled_final_cover.JPG
-    alt: Final covered hexapod, angled front view
-    caption: Final Covered Hexapod
+    src: /assets/img/angled_final_cover.JPG
+    alt: Final covered hexapod, angled view
+    caption: Angled Final Cover
     loading: eager
     pending: false
   - type: animation
-    src: /assets/videos/walking_outside.webm
-    alt: Final robot walking outdoors
-    caption: Final Walking Demonstration
+    src: /assets/videos/walking_outside2.webm
+    alt: Second final robot walking run outdoors
+    caption: Alternate Final Walking Run
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/videos/standing_on_robot.webm
+    alt: Loaded physical test with a person standing on the robot
+    caption: Standing Load Test
     loading: lazy
     pending: false
   - type: image
@@ -79,6 +85,24 @@ overall_assembly_evolution:
     fallback_label: Open local v5 GLB fallback
     alt: Final v5 full hexapod assembly in Fusion 360
     caption: Final v5 full assembly — Fusion 360 primary view with local GLB fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811ebbdf478379c001c?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/klann_final.glb
+    fallback_type: model
+    fallback_label: Open local final Klann GLB fallback
+    alt: Final Klann linkage in Fusion 360
+    caption: Final Klann linkage — Fusion 360 primary view with local GLB fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e9dfa33a78d59a97?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/linkage_schematic.pdf
+    fallback_type: file
+    fallback_label: Open local linkage schematic PDF fallback
+    alt: Leg linkage schematic in Fusion 360
+    caption: Leg linkage schematic — Fusion 360 primary view with local PDF fallback
     pending: false
   - type: model
     src: /assets/designs/hexapod-v1.glb
@@ -192,5 +216,39 @@ implementation_sequence:
     src: /assets/software/orbslam_and_ogm_and_robot_visual.jpg
     alt: ORB-SLAM, occupancy grid, and robot visualization
     caption: ORB-SLAM, OGM, and robot visualization
+    loading: lazy
+    pending: false
+simulation_validation:
+  aria_label: Simulation validation media
+  autoplay_ms: 5500
+  slides:
+  - type: animation
+    src: /assets/software/mujoco_first_linkage_test.webm
+    alt: First MuJoCo linkage test animation
+    caption: First MuJoCo linkage test
+    loading: eager
+    pending: false
+  - type: animation
+    src: /assets/software/mujoco_all_linkages_running.webm
+    alt: All six linkages running in MuJoCo
+    caption: All linkages running in MuJoCo
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/software/mujoco_support_wheel_test.webm
+    alt: MuJoCo support wheel test animation
+    caption: Support wheel stability test
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/software/mujoco_torque_estimation_graph.jpg
+    alt: MuJoCo torque estimation graph
+    caption: Torque-estimation graph
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/software/mujoco_powerdraw_estimation_graph.jpg
+    alt: MuJoCo power-draw estimation graph
+    caption: Power-draw estimation graph
     loading: lazy
     pending: false

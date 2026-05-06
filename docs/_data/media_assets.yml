@@ -27,9 +27,10 @@ build_photos:
     caption: Final front cover and stage-facing robot appearance.
     pending: false
   - type: image
-    path: /assets/hardware/angled_final_cover.JPG
+    path: /assets/img/angled_final_cover.JPG
     title: Angled final cover
-    caption: Angled view of the final cover and exterior shell, useful for showing the final stage-facing form factor.
+    caption: Angled view of the final cover and exterior shell, alternating with the front-cover view where a different exterior
+      perspective is useful.
     pending: false
   - type: image
     path: /assets/hardware/working_on_bot.jpg
@@ -126,6 +127,39 @@ software_visuals:
     caption: Large interactive Desmos 3D linkage model used to communicate the measured Klann geometry and verify the kinematic
       assumptions behind the lookup-table/odometry model.
     pending: false
+simulation_media:
+  title: Simulation and gait verification
+  items:
+  - type: animation
+    path: /assets/software/mujoco_first_linkage_test.webm
+    title: First MuJoCo linkage test
+    caption: Single-linkage simulation used to check joint hierarchy, contact behavior, and basic crank-driven Klann motion
+      before scaling the model to the full hexapod.
+    pending: false
+  - type: animation
+    path: /assets/software/mujoco_all_linkages_running.webm
+    title: All linkages running in MuJoCo
+    caption: Full six-linkage simulation exercising the phase relationships and commanded crank motion used to validate the
+      base walking mechanism before hardware integration.
+    pending: false
+  - type: animation
+    path: /assets/software/mujoco_support_wheel_test.webm
+    title: Support wheel stability test
+    caption: Simulation pass used to evaluate auxiliary support strategy and body stability while the six Klann mechanisms
+      produce forward motion.
+    pending: false
+  - type: image
+    path: /assets/software/mujoco_torque_estimation_graph.jpg
+    title: MuJoCo torque estimation
+    caption: Torque-estimation plot from simulation used to compare expected actuator demand against the selected motor/gearbox
+      envelope.
+    pending: false
+  - type: image
+    path: /assets/software/mujoco_powerdraw_estimation_graph.jpg
+    title: MuJoCo power-draw estimation
+    caption: Power-draw estimation plot used to reason about electrical loading, battery sizing, and conservative runtime
+      limits before full physical testing.
+    pending: false
 videos:
   title: Final motion, SLAM, and simulation animations
   items:
@@ -179,6 +213,12 @@ videos:
     title: MuJoCo straight trajectory
     caption: MuJoCo straight-line trajectory test.
     pending: false
+  - type: animation
+    path: /assets/videos/standing_on_robot.webm
+    title: Standing on the robot
+    caption: Loaded test showing the robot supporting a human-scale payload; this is physical performance evidence rather
+      than simulation media.
+    pending: false
 fusion_cad:
   title: Fusion 360 embeds with local PDF/GLB fallbacks
   items:
@@ -215,7 +255,8 @@ fusion_cad:
   - type: model
     path: /assets/designs/hexapod-v1.glb
     title: Version 1 assembly — local GLB viewer
-    caption: First overall assembly iteration retained as a local GLB viewer. No Fusion 360 embed is configured for this earliest version.
+    caption: First overall assembly iteration retained as a local GLB viewer. No Fusion 360 embed is configured for this earliest
+      version.
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028115eddcfc090724d85?mode=embed

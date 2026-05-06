@@ -25,7 +25,9 @@ title: "System Performance"
     The final-run animations provide visual evidence for the main performance claims: all-leg actuation, outdoor locomotion, and body-displacing gait behavior.
   </p>
   {% include asset-item.html key="videos" index=1 layout="wide" caption="Outdoor walking demonstration showing real body displacement through the Klann legs rather than only bench or suspended motion." %}
+  {% include asset-item.html key="videos" index=2 layout="wide" caption="Second outdoor walking run, used as visual variety and additional evidence that the final gait produced repeatable body displacement." %}
   {% include asset-item.html key="videos" index=0 layout="wide" caption="Unloaded all-leg motion isolates drive synchronization, linkage motion, and phase behavior before rider/load effects are added." %}
+  {% include asset-item.html key="videos" index=10 layout="wide" caption="Standing-load media shows the physical robot supporting a human-scale payload. It is included as payload evidence, separate from the MuJoCo simulation media." %}
 </div>
 
 <div class="t2-card" id="requirements">

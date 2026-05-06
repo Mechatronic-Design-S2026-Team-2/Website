@@ -11,6 +11,7 @@ title: "System Design"
 {% include design/trade-studies.html %}
 {% include design/cyberphysical-architecture.html %}
 {% include design/mechanical.html %}
+{% include design/simulation-validation.html %}
 {% include design/electrical.html %}
 {% include design/software.html %}
 {% include design/risks.html %}

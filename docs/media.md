@@ -8,7 +8,7 @@ title: "Media"
 <div class="t2-card">
   <h2>Media</h2>
   <p>
-    This page collects final build, fabrication, electrical integration, software visualization, CAD/modeling, and robot-motion media. WebM clips are presented as silent looping animations; the single-linkage MP4 is also rendered as an inline looping mechanism animation.
+    This page collects final build, fabrication, electrical integration, software visualization, simulation verification, CAD/modeling, and robot-motion media. WebM clips are presented as silent looping animations; the single-linkage MP4 is also rendered as an inline looping mechanism animation.
   </p>
   
 </div>
@@ -31,6 +31,10 @@ title: "Media"
 
 <div class="t2-card">
   {% include asset-gallery.html key="software_visuals" %}
+</div>
+
+<div class="t2-card">
+  {% include asset-gallery.html key="simulation_media" %}
 </div>
 
 <div class="t2-card">

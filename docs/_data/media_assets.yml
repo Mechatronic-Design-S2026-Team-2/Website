@@ -3,8 +3,8 @@ team_picture:
   items:
   - type: image
     path: /assets/img/team_picture.jpg
-    title: Team 2 with final hexapod
-    caption: Group photo of Team 2 with the completed class-final robot.
+    title: Group photo with final hexapod
+    caption: Group photo with the completed class-final robot.
     pending: false
 build_photos:
   title: Final hardware and build photos
@@ -12,25 +12,22 @@ build_photos:
   - type: image
     path: /assets/hardware/full_assembly_no_lid.jpg
     title: Full assembly without lid
-    caption: Top-side build photo showing the final chassis, drive layout, and exposed electronics before the lid/cover
-      is installed.
+    caption: Top-side build photo showing the final chassis, drive layout, and exposed electronics before the lid is installed.
     pending: false
   - type: image
     path: /assets/hardware/chassis_and_early_board.jpg
     title: Chassis and early board
-    caption: Early chassis integration with the board/electronics package visible before final mounting, routing,
-      and cover installation.
+    caption: Early chassis integration with the board/electronics package visible before final mounting and routing.
     pending: false
   - type: image
     path: /assets/hardware/front_final_cover.JPG
-    title: Final front cover
-    caption: Final front cover and stage-facing robot appearance.
+    title: Front final view
+    caption: Front view of the completed robot configured for the final class demonstration.
     pending: false
   - type: image
     path: /assets/img/angled_final_cover.JPG
-    title: Angled final cover
-    caption: Angled view of the final cover and exterior shell, alternating with the front-cover view where a different
-      exterior perspective is useful.
+    title: Angled final view
+    caption: Angled view of the completed robot, showing the exterior form and leg layout.
     pending: false
   - type: image
     path: /assets/hardware/working_on_bot.jpg

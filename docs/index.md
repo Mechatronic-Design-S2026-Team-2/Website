@@ -1,5 +1,5 @@
 ---
-title: "Team 2 — Dance Robot"
+title: "Klann-Linkage Hexapod Dance Robot"
 ---
 
 {% include nav.html %}

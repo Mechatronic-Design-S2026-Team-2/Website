@@ -4,19 +4,19 @@ home_hero:
   slides:
   - type: image
     src: /assets/img/angled_final_cover.JPG
-    alt: Final covered hexapod, angled view
-    caption: Angled Final Cover
+    alt: Final hexapod, angled view
+    caption: Final Robot, Angled View
     loading: eager
     pending: false
   - type: animation
     src: /assets/videos/walking_outside2.webm
     alt: Second final robot walking run outdoors
-    caption: Alternate Final Walking Run
+    caption: Final Walking Demonstration II
     loading: lazy
     pending: false
   - type: image
     src: /assets/hardware/full_assembly_no_lid.jpg
-    alt: Full robot assembly with top cover removed
+    alt: Full robot assembly with lid removed
     caption: Final Assembly Without Lid
     loading: lazy
     pending: false

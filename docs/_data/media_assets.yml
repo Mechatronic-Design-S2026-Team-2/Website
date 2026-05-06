@@ -55,15 +55,13 @@ fabrication:
   - type: image
     path: /assets/fabrication/linkage_bar_assembly.jpg
     title: Linkage bar assembly
-    caption: Linkage bars assembled into a Klann leg module, showing the physical mechanism that converts motor
-      crank rotation into the foot trajectory.
+    caption: Linkage bars assembled into a Klann leg module, showing the physical mechanism that converts motor crank rotation into the foot trajectory.
     pending: false
   - type: animation
     path: /assets/fabrication/single_linkage_running.mp4
     mime: video/mp4
     title: Single linkage running
-    caption: Single Klann linkage motion test used to verify bar clearances, crank behavior, and foot-path motion
-      before full six-leg integration.
+    caption: Single Klann linkage motion test used to verify bar clearances, crank behavior, and foot-path motion before full six-leg integration.
     pending: false
   - type: image
     path: /assets/fabrication/first_assembled_linkage.jpg
@@ -109,8 +107,7 @@ software_visuals:
   - type: image
     path: /assets/software/orbslam_and_ogm_and_robot_visual.jpg
     title: ORB-SLAM, occupancy grid, and robot visual
-    caption: Integrated visualization showing ORB-SLAM output, occupancy-grid mapping, and the robot model together
-      in the ROS visualization workflow.
+    caption: Integrated visualization showing ORB-SLAM output, occupancy-grid mapping, and the robot model together in the ROS visualization workflow.
     pending: false
   - type: image
     path: /assets/software/rviz_hexapod_model.png
@@ -121,8 +118,7 @@ software_visuals:
     url: https://www.desmos.com/3d/18nie5ecgp?embed
     fallback_url: https://www.desmos.com/3d/18nie5ecgp
     title: Desmos 3D Klann linkage model
-    caption: Large interactive Desmos 3D linkage model corresponding to the measured Klann geometry used by the Jetson
-      lookup-table odometry model for foot position, foot velocity, and stance confidence.
+    caption: Large interactive Desmos 3D linkage model corresponding to the measured Klann geometry used by the Jetson lookup-table odometry model for foot position, foot velocity, and stance confidence.
     pending: false
     open_label: Open Desmos
 simulation_media:
@@ -131,38 +127,32 @@ simulation_media:
   - type: animation
     path: /assets/software/mujoco_first_linkage_test.webm
     title: First MuJoCo linkage test
-    caption: Single-linkage simulation used to check joint hierarchy, contact behavior, and basic crank-driven Klann
-      motion before scaling the model to the full hexapod.
+    caption: Single-linkage simulation used to check joint hierarchy, contact behavior, and basic crank-driven Klann motion before scaling the model to the full hexapod.
     pending: false
   - type: animation
     path: /assets/software/mujoco_all_linkages_running.webm
     title: All linkages running in MuJoCo
-    caption: Full six-linkage simulation exercising the phase relationships and commanded crank motion used to validate
-      the base walking mechanism before hardware integration.
+    caption: Full six-linkage simulation exercising the phase relationships and commanded crank motion used to validate the base walking mechanism before hardware integration.
     pending: false
   - type: animation
     path: /assets/software/mujoco_support_wheel_test.webm
     title: Support wheel stability test
-    caption: Simulation pass used to evaluate auxiliary support strategy and body stability while the six Klann
-      mechanisms produce forward motion.
+    caption: Simulation pass used to evaluate auxiliary support strategy and body stability while the six Klann mechanisms produce forward motion.
     pending: false
   - type: image
     path: /assets/software/mujoco_torque_estimation_graph.jpg
     title: MuJoCo torque estimation
-    caption: Torque-estimation plot from simulation used to compare expected actuator demand against the selected
-      motor/gearbox envelope.
+    caption: Torque-estimation plot from simulation used to compare expected actuator demand against the selected motor/gearbox envelope.
     pending: false
   - type: image
     path: /assets/software/mujoco_powerdraw_estimation_graph.jpg
     title: MuJoCo power-draw estimation
-    caption: Power-draw estimation plot used to reason about electrical loading, battery sizing, and conservative
-      runtime limits before full physical testing.
+    caption: Power-draw estimation plot used to reason about electrical loading, battery sizing, and conservative runtime limits before full physical testing.
     pending: false
   - type: animation
     path: /assets/img/cpg_humanoid.webm
     title: Untuned CPG gait experiment
-    caption: Early untuned CPG/phase experiment used to reason about gait structure before the hardware gait was
-      constrained and tuned.
+    caption: Early untuned CPG/phase experiment used to reason about gait structure before the hardware gait was constrained and tuned.
     pending: false
   - type: animation
     path: /assets/software/mjx_rollout_example.webm
@@ -170,16 +160,9 @@ simulation_media:
     caption: MJX/JAX rollout visualization from the structured gait-tuning workflow.
     pending: false
   - type: animation
-    path: /assets/software/mujoco_straight.webm
-    title: MuJoCo straight-line trajectory
-    caption: Straight-line reference task used to check whether the simulated linkage model and gait controller
-      could produce coherent base motion.
-    pending: false
-  - type: animation
     path: /assets/software/mujoco_arc.webm
     title: MuJoCo curvilinear trajectory
-    caption: Curvilinear reference task used to evaluate turning behavior and phase relationships before physical
-      tests.
+    caption: Curvilinear reference task used to evaluate turning behavior and phase relationships before physical tests.
     pending: false
 videos:
   title: Final motion, SLAM, and simulation animations
@@ -229,20 +212,14 @@ videos:
     title: MuJoCo arc trajectory
     caption: MuJoCo arc/curvilinear trajectory test.
     pending: false
-  - type: animation
-    path: /assets/software/mujoco_straight.webm
-    title: MuJoCo straight trajectory
-    caption: MuJoCo straight-line trajectory test.
-    pending: false
 fusion_cad:
   title: Fusion 360 embeds with local PDF/GLB fallbacks
   items:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e9dfa33a78d59a97?mode=embed
     use_fallback: false
-    title: Linkage schematic — Fusion 360 embed
-    caption: Primary browser embed for the linkage schematic drawing. The local PDF remains available as the static
-      fallback if Autodesk/Fusion sharing is unavailable.
+    title: "Linkage schematic \u2014 Fusion 360 embed"
+    caption: Primary browser embed for the linkage schematic drawing. The local PDF remains available as the static fallback if Autodesk/Fusion sharing is unavailable.
     fallback_path: /assets/designs/linkage_schematic.pdf
     fallback_type: file
     fallback_label: Open local PDF fallback
@@ -251,9 +228,8 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811d4ad9f04a672e4a9?mode=embed
     use_fallback: false
-    title: Final design v5 — Fusion 360 embed
-    caption: Primary browser embed for the final v5 full assembly. The local GLB export remains available as the
-      static fallback model.
+    title: "Final design v5 \u2014 Fusion 360 embed"
+    caption: Primary browser embed for the final v5 full assembly. The local GLB export remains available as the static fallback model.
     fallback_path: /assets/designs/v5_final_assembly.glb
     fallback_type: model
     fallback_label: Open local GLB fallback
@@ -262,9 +238,8 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811ebbdf478379c001c?mode=embed
     use_fallback: false
-    title: Final Klann linkage — Fusion 360 embed
-    caption: Primary browser embed for the final Klann linkage. The local GLB export remains available as the static
-      fallback model.
+    title: "Final Klann linkage \u2014 Fusion 360 embed"
+    caption: Primary browser embed for the final Klann linkage. The local GLB export remains available as the static fallback model.
     fallback_path: /assets/designs/klann_final.glb
     fallback_type: model
     fallback_label: Open local GLB fallback
@@ -272,16 +247,14 @@ fusion_cad:
     open_label: Open Fusion 360
   - type: model
     path: /assets/designs/hexapod-v1.glb
-    title: Version 1 assembly — local GLB viewer
-    caption: First overall assembly iteration retained as a local GLB viewer. No Fusion 360 embed is configured
-      for this earliest version.
+    title: "Version 1 assembly \u2014 local GLB viewer"
+    caption: First overall assembly iteration retained as a local GLB viewer. No Fusion 360 embed is configured for this earliest version.
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028115eddcfc090724d85?mode=embed
     use_fallback: false
-    title: Version 2 assembly — Fusion 360 embed
-    caption: Earlier overall assembly iteration retained for design-evolution comparison. The local v2 GLB remains
-      available as the static fallback model.
+    title: "Version 2 assembly \u2014 Fusion 360 embed"
+    caption: Earlier overall assembly iteration retained for design-evolution comparison. The local v2 GLB remains available as the static fallback model.
     fallback_path: /assets/designs/hexapod-v2.glb
     fallback_type: model
     fallback_label: Open local GLB fallback
@@ -290,9 +263,8 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028113353606288e33908?mode=embed
     use_fallback: false
-    title: Version 3 assembly — Fusion 360 embed
-    caption: Intermediate overall assembly iteration retained for design-evolution comparison. The local v3 GLB
-      remains available as the static fallback model.
+    title: "Version 3 assembly \u2014 Fusion 360 embed"
+    caption: Intermediate overall assembly iteration retained for design-evolution comparison. The local v3 GLB remains available as the static fallback model.
     fallback_path: /assets/designs/hexapod-v3.glb
     fallback_type: model
     fallback_label: Open local GLB fallback
@@ -301,9 +273,8 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e0782a2169d822e3?mode=embed
     use_fallback: false
-    title: Version 4 assembly — Fusion 360 embed
-    caption: Late pre-final overall assembly iteration retained for design-evolution comparison. The local v4 GLB
-      remains available as the static fallback model.
+    title: "Version 4 assembly \u2014 Fusion 360 embed"
+    caption: Late pre-final overall assembly iteration retained for design-evolution comparison. The local v4 GLB remains available as the static fallback model.
     fallback_path: /assets/designs/hexapod-v4.glb
     fallback_type: model
     fallback_label: Open local GLB fallback

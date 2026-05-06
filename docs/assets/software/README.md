@@ -7,7 +7,6 @@ Place ROS/RViz, ORB-SLAM, MJX, and MuJoCo screenshots/silent animations here:
 - orbslam_odom_test.webm
 - mjx_rollout_example.webm
 - mujoco_arc.webm
-- mujoco_straight.webm
 - mujoco_torque_estimation_graph.jpg
 - mujoco_powerdraw_estimation_graph.jpg
 - mujoco_all_linkages_running.webm

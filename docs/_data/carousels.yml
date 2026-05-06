@@ -78,12 +78,12 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v5 GLB fallback
     alt: Final v5 full hexapod assembly in Fusion 360
-    caption: Final v5 full assembly — Fusion 360 primary view with local GLB fallback
+    caption: "Final v5 full assembly \u2014 Fusion 360 primary view with local GLB fallback"
     pending: false
   - type: model
     src: /assets/designs/hexapod-v1.glb
     alt: Version 1 overall assembly local GLB
-    caption: Version 1 assembly — local GLB viewer
+    caption: "Version 1 assembly \u2014 local GLB viewer"
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028115eddcfc090724d85?mode=embed
@@ -92,7 +92,7 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v2 GLB fallback
     alt: Version 2 overall assembly in Fusion 360
-    caption: Version 2 assembly — Fusion 360 primary view with local GLB fallback
+    caption: "Version 2 assembly \u2014 Fusion 360 primary view with local GLB fallback"
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028113353606288e33908?mode=embed
@@ -101,7 +101,7 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v3 GLB fallback
     alt: Version 3 overall assembly in Fusion 360
-    caption: Version 3 assembly — Fusion 360 primary view with local GLB fallback
+    caption: "Version 3 assembly \u2014 Fusion 360 primary view with local GLB fallback"
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e0782a2169d822e3?mode=embed
@@ -110,7 +110,7 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v4 GLB fallback
     alt: Version 4 overall assembly in Fusion 360
-    caption: Version 4 assembly — Fusion 360 primary view with local GLB fallback
+    caption: "Version 4 assembly \u2014 Fusion 360 primary view with local GLB fallback"
     pending: false
 simulation_validation:
   aria_label: Simulation validation media
@@ -147,12 +147,6 @@ simulation_validation:
     loading: lazy
     pending: false
   - type: animation
-    src: /assets/software/mujoco_straight.webm
-    alt: MuJoCo straight trajectory test animation
-    caption: MuJoCo straight-line task
-    loading: lazy
-    pending: false
-  - type: animation
     src: /assets/software/mujoco_arc.webm
     alt: MuJoCo arc trajectory test animation
     caption: MuJoCo curvilinear task
@@ -181,7 +175,7 @@ klann_linkage_design:
     fallback_type: model
     fallback_label: Open local final Klann GLB fallback
     alt: Final Klann linkage in Fusion 360
-    caption: Final Klann linkage — Fusion 360 primary view with local GLB fallback
+    caption: "Final Klann linkage \u2014 Fusion 360 primary view with local GLB fallback"
     pending: false
     iframe_width: 1024
     iframe_height: 768
@@ -192,7 +186,7 @@ klann_linkage_design:
     fallback_type: file
     fallback_label: Open local linkage schematic PDF fallback
     alt: Leg linkage schematic in Fusion 360
-    caption: Leg linkage schematic — Fusion 360 primary view with local PDF fallback
+    caption: "Leg linkage schematic \u2014 Fusion 360 primary view with local PDF fallback"
     pending: false
     iframe_width: 1024
     iframe_height: 768

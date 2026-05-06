@@ -1,10 +1,9 @@
 {%- assign carousel = site.data.carousels[include.key] -%}
-{%- assign first_type = carousel.slides[0].type | default: 'image' -%}
-{%- assign is_model = false -%}
-{%- if first_type == 'model' -%}{%- assign is_model = true -%}{%- endif -%}
-
 {%- if carousel -%}
-<section class="hero-carousel{% if is_model %} hero-carousel--model{% endif %}"
+{%- assign first_type = carousel.slides[0].type | default: 'image' -%}
+{%- assign is_interactive = false -%}
+{%- if first_type == 'model' or first_type == 'iframe' -%}{%- assign is_interactive = true -%}{%- endif -%}
+<section class="hero-carousel{% if is_interactive %} hero-carousel--model hero-carousel--interactive{% endif %}"
          aria-label="{{ carousel.aria_label | default: 'Carousel' }}">
   <div class="carousel"
        data-carousel
@@ -12,17 +11,34 @@
        data-autoplay-ms="{{ carousel.autoplay_ms | default: 5000 }}">
     <div class="carousel-track" data-track>
       {%- for slide in carousel.slides -%}
-      <figure class="carousel-slide{% if forloop.first %} is-active{% endif %}{% if slide.type == 'model' %} carousel-slide--model{% endif %}"
+      {%- assign slide_pending = slide.pending | default: false -%}
+      {%- assign use_fallback = slide.use_fallback | default: false -%}
+      {%- assign slide_interactive = false -%}
+      {%- if slide.type == 'model' or slide.type == 'iframe' -%}{%- assign slide_interactive = true -%}{%- endif -%}
+      <figure class="carousel-slide{% if forloop.first %} is-active{% endif %}{% if slide_interactive %} carousel-slide--model carousel-slide--interactive{% endif %}{% if use_fallback %} is-fallback{% endif %}"
               data-slide
               aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}">
-        <div class="carousel-media{% if slide.type == 'model' %} carousel-media--model{% endif %}">
-          {%- assign slide_pending = slide.pending | default: false -%}
+        <div class="carousel-media{% if slide_interactive %} carousel-media--model carousel-media--interactive{% endif %}">
           {%- if slide_pending -%}
           <div class="carousel-placeholder">
             <span class="asset-type">{% if slide.type == 'animation' %}ANIMATION{% else %}{{ slide.type | default: 'image' | upcase }}{% endif %}</span>
-            <code>{{ slide.src }}</code>
+            <code>{{ slide.src | default: slide.url }}</code>
             <span>Pending carousel media</span>
           </div>
+          {%- elsif use_fallback and slide.fallback_type == 'model' and slide.fallback_src -%}
+          <model-viewer
+            class="carousel-model-viewer"
+            src="{{ slide.fallback_src | relative_url }}"
+            alt="{{ slide.alt | default: slide.caption | default: '3D model fallback' }}"
+            {% if forloop.first %}camera-controls{% endif %}
+            touch-action="pan-y"
+            shadow-intensity="1.1"
+            exposure="0.9"
+            environment-image="neutral"
+            interaction-prompt="none"
+            loading="lazy"
+            reveal="auto">
+          </model-viewer>
           {%- elsif slide.type == 'model' -%}
           <model-viewer
             class="carousel-model-viewer"
@@ -37,6 +53,14 @@
             loading="lazy"
             reveal="auto">
           </model-viewer>
+          {%- elsif slide.type == 'iframe' -%}
+          <iframe class="carousel-iframe"
+                  src="{{ slide.url }}"
+                  title="{{ slide.alt | default: slide.caption | default: 'Interactive CAD embed' | escape }}"
+                  loading="lazy"
+                  allowfullscreen
+                  webkitallowfullscreen
+                  mozallowfullscreen></iframe>
           {%- elsif slide.type == 'video' or slide.type == 'animation' -%}
           <video class="carousel-video carousel-animation"
                  src="{{ slide.src | relative_url }}"
@@ -60,14 +84,30 @@
                loading="{{ slide.loading | default: 'lazy' }}">
           {%- endif -%}
         </div>
-        {%- if slide.caption -%}
-        <figcaption>{{ slide.caption }}</figcaption>
+        {%- if slide.caption or slide.url or slide.fallback_src -%}
+        <figcaption>
+          {%- if slide.caption -%}<span class="carousel-caption-text">{{ slide.caption }}</span>{%- endif -%}
+          {%- if slide.url or slide.fallback_src -%}
+          <span class="carousel-caption-actions">
+            {%- if slide.url -%}
+            <a class="t2-linkbtn" href="{{ slide.url }}" target="_blank" rel="noreferrer">Open Fusion 360</a>
+            {%- endif -%}
+            {%- if slide.fallback_src -%}
+            <a class="t2-linkbtn" href="{{ slide.fallback_src | relative_url }}" target="_blank" rel="noreferrer">{{ slide.fallback_label | default: 'Open local fallback' }}</a>
+            <a class="t2-linkbtn" href="{{ slide.fallback_src | relative_url }}" download>Download fallback</a>
+            {%- elsif slide.src and slide.type == 'model' -%}
+            <a class="t2-linkbtn" href="{{ slide.src | relative_url }}" target="_blank" rel="noreferrer">Open GLB</a>
+            <a class="t2-linkbtn" href="{{ slide.src | relative_url }}" download>Download GLB</a>
+            {%- endif -%}
+          </span>
+          {%- endif -%}
+        </figcaption>
         {%- endif -%}
       </figure>
       {%- endfor -%}
     </div>
 
-    {% if is_model %}
+    {% if is_interactive %}
     <div class="carousel-footer carousel-footer--model">
       <div class="carousel-dots" role="tablist" aria-label="Carousel pagination" data-dots></div>
       <div class="carousel-actions">

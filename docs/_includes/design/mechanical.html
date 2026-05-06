@@ -1,41 +1,40 @@
 <div class="t2-card" id="mechanical">
   <h2>Mechanical Design</h2>
 
-  <details class="t2-acc" open>
-    <summary><h3>Overall assembly</h3></summary>
-    <div class="t2-acc-body" id="mechanical-overall">
-      <p>
-        The final class robot is a compact human-carrying hexapod built around a load-bearing chassis, rider support surface, protected electronics, auxiliary support elements, and six Klann-linkage leg modules. The final report treats the class version as a successful feasibility platform rather than a production stage device: locomotion and navigation worked, but the physical design still needs reliability testing and stage-specific validation.
-      </p>
-      <p>
-        Mechanically, the project moved from a linkage concept to a serviceable integrated robot: fabricated aluminum structure, individually driven leg modules, packaged electronics, and final cover panels. The final assembly emphasizes maintainable access to the power and compute hardware while preserving a cleaner exterior for performance use.
-      </p>
-      {% include asset-item.html key="build_photos" index=0 layout="wide" caption="No-lid assembly view showing the physical packing of motors, gearing, battery/power hardware, Jetson, ESP32, and wiring before the cover is installed." %}
-    </div>
-  </details>
+  <div class="t2-section" id="mechanical-overall">
+    <h3>Overall assembly</h3>
+    <p>
+      The final class robot is a compact human-carrying hexapod built around a load-bearing chassis, rider support surface, protected electronics, auxiliary support elements, and six independently driven Klann-linkage leg modules. The final report treats the class version as a successful feasibility platform rather than a production stage device: locomotion and navigation worked, but the physical design still needs reliability testing and stage-specific validation.
+    </p>
+    <p>
+      Mechanically, the project moved from a linkage concept to a serviceable integrated robot: fabricated aluminum structure, individually driven leg modules, packaged electronics, and final cover panels. The final assembly emphasizes maintainable access to the power and compute hardware while preserving a cleaner exterior for performance use.
+    </p>
+    {% include asset-item.html key="build_photos" index=0 layout="wide" caption="No-lid assembly view showing the physical packing of motors, gearing, battery/power hardware, Jetson, ESP32, and wiring before the cover is installed." %}
+  </div>
 
-  <details class="t2-acc" open>
-    <summary><h3>Klann linkage assembly</h3></summary>
-    <div class="t2-acc-body" id="mechanical-klann">
-      <p>
-        The implemented robot uses one independently commanded RS485 servo motor per leg, not one mechanically coupled shaft per side. Each motor drives a TG-series 60 mm 50:1 planetary gearbox and one Klann crank. This preserves a mechanically encoded stance/swing trajectory while giving software direct control over each leg phase.
-      </p>
-      <p>
-        The linkage model is measured and reused by the visualizer, body estimator, and control stack. For each crank phase, it returns foot position, foot velocity, and stance confidence, enabling lookup-table evaluation during runtime.
-      </p>
-      {% include asset-item.html key="fabrication" index=2 layout="wide" caption="The linkage bar assembly shows the physical Klann mechanism as a manufacturable set of bars and pivots, bridging the measured geometry and the final leg modules." %}
-      {% include asset-item.html key="fabrication" index=3 layout="wide" caption="The single-linkage running clip verifies crank rotation, bar clearance, and approximate foot-path motion before committing the mechanism to six synchronized legs." %}
-      {% include asset-item.html key="fabrication" index=4 layout="wide" caption="The first assembled metal linkage documents the CAD-to-fabrication transition. The final report identifies fabrication tolerance, hole alignment, and custom component geometry as major schedule drivers." %}
-    </div>
-  </details>
+  <div class="t2-section" id="design-evolution">
+    <h3>CAD design evolution</h3>
+    <p>
+      The CAD progression shows how the robot moved from early full-assembly concepts to the final v5 integrated layout. Fusion 360 embeds are used as the primary interactive views where available, while the local GLB exports remain available as manual fallbacks and downloads if the Autodesk shares are unavailable.
+    </p>
+    {% include carousel.html key="overall_assembly_evolution" %}
+  </div>
 
-  <details class="t2-acc" open>
-    <summary><h3>Kinematic modeling visual</h3></summary>
-    <div class="t2-acc-body" id="kinematic-modeling-visual">
-      <p>
-        The large Desmos model shows the measured Klann geometry used in the kinematic modeling work. It provides an interactive view of the crank, coupler, rocker, and foot-path assumptions that are later converted into lookup tables, stance confidence, and odometry constraints.
-      </p>
-      {% include asset-item.html key="software_visuals" index=2 layout="wide" caption="Interactive 3D linkage geometry used to communicate the measured assumptions that later become lookup tables, stance confidence, and odometry constraints." %}
-    </div>
-  </details>
+  <div class="t2-section" id="mechanical-klann">
+    <h3>Klann linkage design</h3>
+    <p>
+      The implemented robot uses one independently commanded RS485 servo motor per leg, not one mechanically coupled shaft per side. Each motor drives a TG-series 60 mm 50:1 planetary gearbox and one Klann crank. This preserves a mechanically encoded stance/swing trajectory while giving software direct control over each leg phase.
+    </p>
+    <p>
+      The linkage model is measured and reused by the visualizer, body estimator, and control stack. For each crank phase, it returns foot position, foot velocity, and stance confidence, enabling lookup-table evaluation during runtime. Fabrication and single-linkage test media are kept on the Implementation page, where they describe manufacturing and test sequence rather than design intent.
+    </p>
+  </div>
+
+  <div class="t2-section" id="kinematic-modeling-visual">
+    <h3>Kinematic modeling visual</h3>
+    <p>
+      The large Desmos model shows the measured Klann geometry used in the kinematic modeling work. It provides an interactive view of the crank, coupler, rocker, and foot-path assumptions that are later converted into lookup tables, stance confidence, and odometry constraints.
+    </p>
+    {% include asset-item.html key="software_visuals" index=2 layout="wide" caption="Interactive 3D linkage geometry used to communicate the measured assumptions that later become lookup tables, stance confidence, and odometry constraints." %}
+  </div>
 </div>

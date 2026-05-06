@@ -68,29 +68,50 @@ lab_highlights:
     caption: Bring-up motion test
     loading: lazy
 overall_assembly_evolution:
-  aria_label: Overall assembly model evolution
+  aria_label: Overall assembly CAD evolution
   autoplay_ms: 0
   slides:
-  - type: model
-    src: /assets/designs/v5_final_assembly.glb
-    alt: Final v5 full hexapod assembly
-    caption: Final v5 assembly
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811d4ad9f04a672e4a9?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/v5_final_assembly.glb
+    fallback_type: model
+    fallback_label: Open local v5 GLB fallback
+    alt: Final v5 full hexapod assembly in Fusion 360
+    caption: Final v5 full assembly — Fusion 360 primary view with local GLB fallback
+    pending: false
   - type: model
     src: /assets/designs/hexapod-v1.glb
-    alt: Overall assembly iteration 1
-    caption: Overall assembly — Iteration 1
-  - type: model
-    src: /assets/designs/hexapod-v2.glb
-    alt: Overall assembly iteration 2
-    caption: Overall assembly — Iteration 2
-  - type: model
-    src: /assets/designs/hexapod-v3.glb
-    alt: Overall assembly iteration 3
-    caption: Overall assembly — Iteration 3
-  - type: model
-    src: /assets/designs/hexapod-v4.glb
-    alt: Overall assembly iteration 4
-    caption: Overall assembly — Iteration 4
+    alt: Version 1 overall assembly local GLB
+    caption: Version 1 assembly — local GLB viewer
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028115eddcfc090724d85?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/hexapod-v2.glb
+    fallback_type: model
+    fallback_label: Open local v2 GLB fallback
+    alt: Version 2 overall assembly in Fusion 360
+    caption: Version 2 assembly — Fusion 360 primary view with local GLB fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028113353606288e33908?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/hexapod-v3.glb
+    fallback_type: model
+    fallback_label: Open local v3 GLB fallback
+    alt: Version 3 overall assembly in Fusion 360
+    caption: Version 3 assembly — Fusion 360 primary view with local GLB fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e0782a2169d822e3?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/hexapod-v4.glb
+    fallback_type: model
+    fallback_label: Open local v4 GLB fallback
+    alt: Version 4 overall assembly in Fusion 360
+    caption: Version 4 assembly — Fusion 360 primary view with local GLB fallback
+    pending: false
 implementation_sequence:
   aria_label: Implementation build and test sequence
   autoplay_ms: 5500

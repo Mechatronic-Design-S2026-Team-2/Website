@@ -186,3 +186,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+.t2-section {
+  margin-top: 24px;
+}
+
+.t2-section:first-child,
+.t2-card > .t2-section:first-of-type {
+  margin-top: 0;
+}
+
+.t2-section h3 {
+  margin-bottom: 8px;
+}

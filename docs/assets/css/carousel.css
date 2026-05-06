@@ -242,3 +242,57 @@
 .carousel-animation {
   pointer-events: none;
 }
+
+.carousel-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  border: 0;
+  background: #101114;
+}
+
+.carousel-slide--interactive figcaption {
+  display: grid;
+  gap: 10px;
+}
+
+.carousel-caption-text {
+  display: block;
+}
+
+.carousel-caption-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.carousel-caption-actions .t2-linkbtn {
+  margin: 0;
+}
+
+.carousel-slide.is-fallback .carousel-media::before {
+  content: "Local fallback view";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.88);
+  color: rgba(0,0,0,0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .carousel-iframe {
+    min-height: 380px;
+  }
+
+  .carousel-caption-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

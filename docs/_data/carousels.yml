@@ -78,12 +78,12 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v5 GLB fallback
     alt: Final v5 full hexapod assembly in Fusion 360
-    caption: "Final v5 full assembly \u2014 Fusion 360 primary view with local GLB fallback"
+    caption: Final v5 full assembly — Fusion 360 primary view with local GLB fallback
     pending: false
   - type: model
     src: /assets/designs/hexapod-v1.glb
     alt: Version 1 overall assembly local GLB
-    caption: "Version 1 assembly \u2014 local GLB viewer"
+    caption: Version 1 assembly — local GLB viewer
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028115eddcfc090724d85?mode=embed
@@ -92,7 +92,7 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v2 GLB fallback
     alt: Version 2 overall assembly in Fusion 360
-    caption: "Version 2 assembly \u2014 Fusion 360 primary view with local GLB fallback"
+    caption: Version 2 assembly — Fusion 360 primary view with local GLB fallback
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028113353606288e33908?mode=embed
@@ -101,7 +101,7 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v3 GLB fallback
     alt: Version 3 overall assembly in Fusion 360
-    caption: "Version 3 assembly \u2014 Fusion 360 primary view with local GLB fallback"
+    caption: Version 3 assembly — Fusion 360 primary view with local GLB fallback
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e0782a2169d822e3?mode=embed
@@ -110,89 +110,7 @@ overall_assembly_evolution:
     fallback_type: model
     fallback_label: Open local v4 GLB fallback
     alt: Version 4 overall assembly in Fusion 360
-    caption: "Version 4 assembly \u2014 Fusion 360 primary view with local GLB fallback"
-    pending: false
-implementation_sequence:
-  aria_label: Implementation build and test sequence
-  autoplay_ms: 5500
-  slides:
-  - type: image
-    src: /assets/fabrication/raw_aluminum.jpg
-    alt: Raw aluminum stock before fabrication
-    caption: Raw aluminum stock
-    loading: eager
-    pending: false
-  - type: image
-    src: /assets/fabrication/building_chassis.jpg
-    alt: Chassis fabrication in progress
-    caption: Chassis fabrication
-    loading: lazy
-    pending: false
-  - type: image
-    src: /assets/fabrication/linkage_bar_assembly.jpg
-    alt: Klann linkage bar assembly
-    caption: Linkage bar assembly
-    loading: lazy
-    pending: false
-  - type: animation
-    src: /assets/fabrication/single_linkage_running.mp4
-    alt: Single Klann linkage running as a mechanism test
-    caption: Single-linkage motion test
-    loading: lazy
-    pending: false
-  - type: image
-    src: /assets/fabrication/first_assembled_linkage.jpg
-    alt: First assembled metal linkage
-    caption: First assembled linkage
-    loading: lazy
-    pending: false
-  - type: image
-    src: /assets/hardware/chassis_and_early_board.jpg
-    alt: Chassis and early electronics board integration
-    caption: Chassis and early board
-    loading: lazy
-    pending: false
-  - type: image
-    src: /assets/hardware/mainboard_in_progress.jpg
-    alt: Mainboard wiring in progress
-    caption: Mainboard integration
-    loading: lazy
-    pending: false
-  - type: image
-    src: /assets/hardware/full_assembly_no_lid.jpg
-    alt: Full robot assembly without lid
-    caption: Full assembly without lid
-    loading: lazy
-    pending: false
-  - type: animation
-    src: /assets/videos/first_motor_test_single.webm
-    alt: First single motor actuation test
-    caption: First single-motor test
-    loading: lazy
-    pending: false
-  - type: animation
-    src: /assets/videos/first_motor_test_multi.webm
-    alt: First multi motor actuation test
-    caption: First multi-motor test
-    loading: lazy
-    pending: false
-  - type: animation
-    src: /assets/videos/unloaded_all_legs_motion.webm
-    alt: Unloaded six-leg motion test
-    caption: Unloaded all-legs motion
-    loading: lazy
-    pending: false
-  - type: animation
-    src: /assets/videos/walking_outside.webm
-    alt: Final robot walking outside
-    caption: Final walking demonstration
-    loading: lazy
-    pending: false
-  - type: image
-    src: /assets/software/orbslam_and_ogm_and_robot_visual.jpg
-    alt: ORB-SLAM, occupancy grid, and robot visualization
-    caption: ORB-SLAM, OGM, and robot visualization
-    loading: lazy
+    caption: Version 4 assembly — Fusion 360 primary view with local GLB fallback
     pending: false
 simulation_validation:
   aria_label: Simulation validation media
@@ -205,6 +123,12 @@ simulation_validation:
     loading: eager
     pending: false
   - type: animation
+    src: /assets/img/cpg_humanoid.webm
+    alt: Untuned CPG gait simulation animation
+    caption: Untuned CPG phase/gait experiment
+    loading: lazy
+    pending: false
+  - type: animation
     src: /assets/software/mujoco_all_linkages_running.webm
     alt: All six linkages running in MuJoCo
     caption: All linkages running in MuJoCo
@@ -212,8 +136,26 @@ simulation_validation:
     pending: false
   - type: animation
     src: /assets/software/mujoco_support_wheel_test.webm
-    alt: MuJoCo support wheel test animation
+    alt: MuJoCo support wheel stability test animation
     caption: Support wheel stability test
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/software/mjx_rollout_example.webm
+    alt: MJX rollout example animation
+    caption: MJX rollout example
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/software/mujoco_straight.webm
+    alt: MuJoCo straight trajectory test animation
+    caption: MuJoCo straight-line task
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/software/mujoco_arc.webm
+    alt: MuJoCo arc trajectory test animation
+    caption: MuJoCo curvilinear task
     loading: lazy
     pending: false
   - type: image
@@ -239,7 +181,7 @@ klann_linkage_design:
     fallback_type: model
     fallback_label: Open local final Klann GLB fallback
     alt: Final Klann linkage in Fusion 360
-    caption: "Final Klann linkage \u2014 Fusion 360 primary view with local GLB fallback"
+    caption: Final Klann linkage — Fusion 360 primary view with local GLB fallback
     pending: false
     iframe_width: 1024
     iframe_height: 768
@@ -250,7 +192,143 @@ klann_linkage_design:
     fallback_type: file
     fallback_label: Open local linkage schematic PDF fallback
     alt: Leg linkage schematic in Fusion 360
-    caption: "Leg linkage schematic \u2014 Fusion 360 primary view with local PDF fallback"
+    caption: Leg linkage schematic — Fusion 360 primary view with local PDF fallback
     pending: false
     iframe_width: 1024
     iframe_height: 768
+hardware_build_sequence:
+  aria_label: Hardware build sequence
+  autoplay_ms: 5500
+  slides:
+  - type: image
+    src: /assets/fabrication/raw_aluminum.jpg
+    alt: Raw aluminum stock before fabrication
+    caption: Raw aluminum stock
+    loading: eager
+    pending: false
+  - type: image
+    src: /assets/fabrication/building_chassis.jpg
+    alt: Chassis fabrication in progress
+    caption: Chassis fabrication
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/chassis_and_early_board.jpg
+    alt: Chassis and early electronics board integration
+    caption: Chassis and early board
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/mainboard_in_progress.jpg
+    alt: Mainboard wiring in progress
+    caption: Mainboard integration
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/fabrication/cnc_elbow.webm
+    alt: CNC elbow fabrication animation
+    caption: CNC elbow fabrication
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/fabrication/elbow_drillpress.jpg
+    alt: Elbow drill press operation
+    caption: Elbow drill press operation
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/fabrication/finished_elbows.jpg
+    alt: Finished elbow parts
+    caption: Finished elbow
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/fabrication/crank_finished.jpg
+    alt: Finished crank part
+    caption: Finished crank
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/fabrication/linkage_bar_assembly.jpg
+    alt: Klann linkage bar assembly
+    caption: Linkage bar assembly
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/fabrication/first_assembled_linkage.jpg
+    alt: First assembled metal linkage
+    caption: First assembled linkage
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/full_assembly_no_lid.jpg
+    alt: Full robot assembly without lid
+    caption: Full assembly without lid
+    loading: lazy
+    pending: false
+esp_runtime_sequence:
+  aria_label: ESP32 and motor bring-up sequence
+  autoplay_ms: 5500
+  slides:
+  - type: image
+    src: /assets/hardware/pcb_mount_prototype.jpg
+    alt: Prototype PCB mounting hardware
+    caption: PCB mount prototype
+    loading: eager
+    pending: false
+  - type: animation
+    src: /assets/videos/first_motor_test_single.webm
+    alt: First single motor actuation test
+    caption: First single motor test
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/videos/first_motor_test_multi.webm
+    alt: First multi motor actuation test
+    caption: First multi motor test
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/fabrication/single_linkage_running.mp4
+    alt: Single Klann linkage running as a mechanism test
+    caption: Single linkage running
+    loading: lazy
+    pending: false
+jetson_deployment_sequence:
+  aria_label: Jetson deployment and visualization sequence
+  autoplay_ms: 5500
+  slides:
+  - type: image
+    src: /assets/software/rviz_hexapod_model.png
+    alt: RViz hexapod model and common frame visualization
+    caption: RViz hexapod model
+    loading: eager
+    pending: false
+  - type: image
+    src: /assets/software/orbslam_and_ogm_and_robot_visual.jpg
+    alt: ORB-SLAM, occupancy-grid map, and robot visualization
+    caption: ORB-SLAM, OGM, and robot visual
+    loading: lazy
+    pending: false
+integration_flow_sequence:
+  aria_label: Integrated bring-up and debug sequence
+  autoplay_ms: 5500
+  slides:
+  - type: image
+    src: /assets/hardware/debugging.jpg
+    alt: Debugging session on the assembled robot
+    caption: Debugging session
+    loading: eager
+    pending: false
+  - type: animation
+    src: /assets/videos/unloaded_all_legs_motion.webm
+    alt: Unloaded six-leg movement test
+    caption: Unloaded movement
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/working_on_bot.jpg
+    alt: Team working on the assembled robot
+    caption: Working on the robot
+    loading: lazy
+    pending: false

@@ -53,16 +53,3 @@ title: "Documents (Workbook)"
    pdf="/assets/pdfs/midsemester_presentation.pdf"
    subtitle="Midsemester status and design evolution."
    height="72vh" %}
-
-<div class="t2-card">
-  <h2>Workbook folders</h2>
-  <ul>
-    <li><a href="documents/change_log.md">Change Log</a></li>
-    <li><a href="documents/design_brainstorming/README.md">Design brainstorming</a></li>
-    <li><a href="documents/drawings_schematics_datasheets/README.md">Drawings, schematics, datasheets</a></li>
-    <li><a href="documents/tests/README.md">Component testing &amp; experiments</a></li>
-    <li><a href="documents/software/README.md">Software</a></li>
-    <li><a href="documents/presentations/README.md">Presentations</a></li>
-    <li><a href="documents/ilrs/README.md">ILRs</a></li>
-  </ul>
-</div>

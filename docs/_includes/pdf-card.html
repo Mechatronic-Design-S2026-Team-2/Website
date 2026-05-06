@@ -4,10 +4,8 @@ Usage:
    title="Design Proposal"
    pdf="/assets/pdfs/design-proposal.pdf"
    subtitle="16:9 slides • updated automatically"
-   height="70vh" %}
-
-- pdf: can be absolute (/assets/...) or relative path.
-- height: optional; defaults to 70vh.
+   height="70vh"
+   open=false %}
 {%- endcomment -%}
 
 <link rel="stylesheet" href="{{ '/assets/css/cards.css' | relative_url }}">
@@ -17,6 +15,7 @@ Usage:
 {%- assign subtitle = include.subtitle | default: "" -%}
 {%- assign pdf = include.pdf | default: "" -%}
 {%- assign height = include.height | default: "70vh" -%}
+{%- assign open_card = include.open | default: false -%}
 
 {%- if pdf == "" -%}
   <div class="t2-card">
@@ -30,38 +29,40 @@ Usage:
     {%- assign pdf_url = pdf | relative_url -%}
   {%- endif -%}
 
-  <div class="t2-card pdf-card">
-    <div class="pdf-card-head">
+  <details class="t2-card pdf-card pdf-card--details"{% if open_card %} open{% endif %}>
+    <summary class="pdf-card-summary">
       <div>
         <h2 class="pdf-card-title">{{ title }}</h2>
         {%- if subtitle != "" -%}
           <div class="t2-sub">{{ subtitle }}</div>
         {%- endif -%}
       </div>
+      <span class="pdf-card-toggle" aria-hidden="true">Open</span>
+    </summary>
 
+    <div class="pdf-card-body">
       <div class="pdf-card-actions">
         <a class="t2-linkbtn" href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open PDF</a>
         <a class="t2-linkbtn" href="{{ pdf_url }}#page=1" target="_blank" rel="noreferrer">Start</a>
       </div>
-    </div>
 
-    <!-- 16:9 responsive embed area (fills width, preserves aspect) -->
-    <div class="pdf-embed" style="--pdf-height: {{ height }};">
-      <iframe
-        class="pdf-iframe"
-        src="{{ pdf_url }}#view=FitH"
-        title="{{ title }}"
-        loading="lazy"
-        referrerpolicy="no-referrer"
-      ></iframe>
-    </div>
+      <div class="pdf-embed" style="--pdf-height: {{ height }};">
+        <iframe
+          class="pdf-iframe"
+          src="{{ pdf_url }}#view=FitH"
+          title="{{ title }}"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
 
-    <noscript>
-      <p><a href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open {{ title }} (PDF)</a></p>
-    </noscript>
+      <noscript>
+        <p><a href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open {{ title }} (PDF)</a></p>
+      </noscript>
 
-    <div class="pdf-fallback">
-      If the PDF doesn’t render in your browser, use <a href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open PDF</a>.
+      <div class="pdf-fallback">
+        If the PDF doesn’t render in your browser, use <a href="{{ pdf_url }}" target="_blank" rel="noreferrer">Open PDF</a>.
+      </div>
     </div>
-  </div>
+  </details>
 {%- endif -%}

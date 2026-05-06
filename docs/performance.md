@@ -22,11 +22,20 @@ title: "System Performance"
 <div class="t2-card" id="motion-evidence">
   <h2>Motion Evidence</h2>
   <p>
-    The final-run animations provide visual evidence for the main performance claims: all-leg actuation, outdoor locomotion, and body-displacing gait behavior.
+    The final run video is the main motion-evidence artifact: it shows the completed robot producing real body displacement rather than only bench, suspended, or simulation motion.
   </p>
-  {% include asset-item.html key="videos" index=1 layout="wide" caption="Outdoor walking demonstration showing real body displacement through the Klann legs rather than only bench or suspended motion." %}
-  {% include asset-item.html key="videos" index=2 layout="wide" caption="Second outdoor walking run, used as visual variety and additional evidence that the final gait produced repeatable body displacement." %}
-  {% include asset-item.html key="videos" index=0 layout="wide" caption="Unloaded all-leg motion isolates drive synchronization, linkage motion, and phase behavior before rider/load effects are added." %}
+  <div class="t2-video">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/3NwqyyyJGHU?rel=0"
+      title="Final hexapod walking demonstration"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="t2-links">
+    <a class="t2-linkbtn" href="https://www.youtube.com/watch?v=3NwqyyyJGHU" target="_blank" rel="noreferrer">Watch on YouTube</a>
+  </div>
 </div>
 
 <div class="t2-card" id="requirements">
@@ -55,7 +64,7 @@ title: "System Performance"
   <p>
     The strongest software result is that encoder-plus-linkage odometry became useful enough to meet the class navigation tolerance after calibration. The host observer unwraps raw 17-bit single-turn motor encoder counts, converts them through the 50:1 gearbox to output crank phase, evaluates measured Klann geometry, and solves a stance-foot no-slip least-squares body twist.
   </p>
-  {% include asset-item.html key="software_visuals" index=0 layout="wide" caption="Integrated mapping stack: ORB-SLAM output, occupancy-grid output, and the robot visualization aligned in the ROS workflow." %}
+  {% include asset-item.html key="videos" index=6 layout="wide" caption="ORB-SLAM odometry test animation showing the host-native SLAM process feeding the ROS 2 bridge and visualization path." %}
   <p>
     In the final mapping report, a 73 in physical straight-line trial initially produced about 0.851 m of uncalibrated kinematic forward motion. The final configuration applies a kinematic mirror and a body-twist scale of 2.1786 in x/y. A separate ORB/scan scale calibration is applied consistently to ORB pose, sparse points, and virtual scan ranges.
   </p>

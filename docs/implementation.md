@@ -21,22 +21,12 @@ title: "System Implementation"
   </div>
 </div>
 
-<div class="t2-card" id="implementation-sequence">
-  <h2>Build and Test Sequence</h2>
-  <p>
-    The implementation sequence moved from raw material and linkage fabrication through electronics packaging, motor bring-up, unloaded motion, final walking, and integrated mapping visualization. The carousel below is ordered to show that progression rather than grouping media by file type.
-  </p>
-  {% include carousel.html key="implementation_sequence" %}
-</div>
-
 <div class="t2-card" id="hardware-build">
   <h2>Hardware Build</h2>
   <p>
-    The final physical implementation combines the Klann linkage chassis, six motor/gearbox leg modules, the high-current power path, the compute/control electronics, and a cover/lid system. The robot was assembled as a serviceable prototype: the internal layout remains accessible for debugging, while the final cover gives the machine a cleaner stage-facing exterior.
+    The build sequence progressed from raw aluminum stock through chassis fabrication, linkage fabrication, electronics mounting, and final assembly. The ordered carousel shows the manufacturing path rather than isolated hero photos, making the final hardware easier to relate to the design evolution and budget.
   </p>
-  {% include asset-item.html key="build_photos" index=0 layout="wide" caption="With the cover removed, the installed motors, gearboxes, battery path, Jetson, ESP32, and wiring are visible as a single integrated assembly. This view documents how the final machine was physically packaged before enclosure." %}
-  {% include asset-item.html key="build_photos" index=1 layout="wide" caption="The chassis-and-early-board photo captures the intermediate integration phase between bare mechanical fabrication and the final serviceable electronics package." %}
-  {% include asset-item.html key="circuit_photos" index=1 layout="wide" caption="Electrical integration moved from bench wiring to a mounted mainboard and PCB support structure. The intermediate build state captures the cable routing, soldering, and packaging work needed to make the high-current power path and low-voltage control electronics serviceable inside the chassis." %}
+  {% include carousel.html key="hardware_build_sequence" %}
 </div>
 
 <div class="t2-card" id="firmware-runtime">
@@ -44,6 +34,7 @@ title: "System Implementation"
   <p>
     The ESP-IDF firmware keeps startup and runtime deliberately separate. Startup uses the slower, proven configuration path for precharge, contactor closure, servo enable, motor mode setup, torque/current limiting, speed limits, acceleration/deceleration settings, and initial zero-speed commands. Runtime then switches to short RS485 helpers for changed RPM writes and encoder reads.
   </p>
+  {% include carousel.html key="esp_runtime_sequence" %}
   <div class="t2-table-wrap">
     <table class="t2-table">
       <thead><tr><th>Runtime feature</th><th>Final behavior</th><th>Reason</th></tr></thead>
@@ -65,7 +56,7 @@ title: "System Implementation"
   <p>
     The Jetson Nano deployment is split because the project needs both host-native GPU/RealSense access and a modern ROS 2 stack. ORB-SLAM2 CUDA, RealSense, CUDA/OpenCV, and Pangolin run directly on the Jetson host. ROS 2 Jazzy runs in a Docker container with host networking and the project workspace mounted for development.
   </p>
-  {% include asset-item.html key="videos" index=6 layout="wide" caption="Deployed host/container boundary in operation: host-native ORB-SLAM2 CUDA emits UDP pose, sparse map points, and virtual scan data that are consumed by the ROS 2 bridge inside the container." %}
+  {% include carousel.html key="jetson_deployment_sequence" %}
   <details class="t2-acc" open>
     <summary><h3>Host-native process</h3></summary>
     <div class="t2-acc-body">
@@ -107,21 +98,23 @@ title: "System Implementation"
 <div class="t2-card" id="integration-flow">
   <h2>Integration Flow</h2>
   <p>
-    The final bring-up sequence starts with safe power sequencing and motor readiness, then validates encoder telemetry, then starts the Jetson SLAM process, then launches the ROS 2 mapping/control stack, and only then enables teleop or waypoint commands. This ordering prevents TF/map debugging from being confused with lower-level motor or power faults.
+    Final bring-up combines power sequencing, encoder telemetry, host SLAM, ROS 2 mapping/control, and operator commands in a repeatable order.
   </p>
-  {% include asset-item.html key="build_photos" index=5 layout="wide" caption="Final bring-up required repeated hardware access, laptop/Jetson inspection, RS485/micro-ROS validation, and mapping tests on the assembled platform. The debugging media documents that integration loop rather than an isolated subsystem test." %}
+  {% include carousel.html key="integration_flow_sequence" %}
   <ol>
-    <li>Bring up low-voltage control, precharge the motor bus, close the contactor, and release the shared servo-enable path.</li>
-    <li>Verify ESP32 micro-ROS connection and six-drive raw encoder telemetry.</li>
-    <li>Start host-native RealSense/ORB-SLAM2 CUDA and confirm UDP pose/scan/map-point packets.</li>
-    <li>Launch ROS 2 Jazzy mapping/control stack, checking <code>map</code>, <code>odom</code>, <code>base_link</code>, and <code>orbslam_scan_frame</code>.</li>
-    <li>Use browser teleop or waypoint goals once odometry, scan, and map products are visible.</li>
+    <li>Precharge the 52 V bus, close the contactor, and enable the servo drivers only after voltage and timing checks pass.</li>
+    <li>Validate RS485 command writes and six-drive raw encoder telemetry before commanding gait motion.</li>
+    <li>Start the host-native ORB-SLAM2 CUDA/RealSense process and confirm UDP pose, points, and virtual scan output.</li>
+    <li>Launch the ROS 2 container stack, verify TF/scale alignment in RViz, then enable teleop or waypoint control.</li>
   </ol>
 </div>
 
 <div class="t2-card" id="operatorui">
   <h2>Operator Interface</h2>
   <p>
-    The browser operator interface is intended for off-stage operation and debugging. It displays map state, robot pose/skeleton context, battery/status values, mode state, and diagnostics. It can command teleop velocities, set linear/angular limits for waypoint operation, cancel goals, hold a software emergency-stop mode, save/load occupancy maps on the Jetson, and place Nav2 goals from the map view.
+    The operator interface is a browser page served from the ROS 2 side of the Jetson. It exposes teleop, velocity limits, map visualization, waypoint placement, map save/load, status display, and a software stop mode so testing can be performed without manually invoking every ROS command.
+  </p>
+  <p>
+    The final workflow keeps the laptop as a remote terminal and visualization/control client while the robot carries the Jetson, ESP32, battery, motor drivers, and sensors onboard.
   </p>
 </div>

@@ -3,7 +3,7 @@ title: "Project Management"
 ---
 
 {% include nav.html %}
-{% include page-assets.html pm_widget=true %}
+{% include page-assets.html cards=true pm_widget=true lab=true %}
 
 <div class="pm-widget" id="pmWidget" data-status-json="{{ '/assets/data/status.json' | relative_url }}">
 
@@ -13,8 +13,6 @@ title: "Project Management"
 
   {% include pm-issues-log.html %}
 
-  {% include pm-presenters.html %}
-
-  {% include pm-meetings.html %}
+  {% include pm-ilrs.html %}
 
 </div>

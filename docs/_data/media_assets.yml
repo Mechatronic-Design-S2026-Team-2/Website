@@ -213,19 +213,13 @@ videos:
     title: MuJoCo straight trajectory
     caption: MuJoCo straight-line trajectory test.
     pending: false
-  - type: animation
-    path: /assets/videos/standing_on_robot.webm
-    title: Standing on the robot
-    caption: Loaded test showing the robot supporting a human-scale payload; this is physical performance evidence rather
-      than simulation media.
-    pending: false
 fusion_cad:
   title: Fusion 360 embeds with local PDF/GLB fallbacks
   items:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e9dfa33a78d59a97?mode=embed
     use_fallback: false
-    title: Linkage schematic — Fusion 360 embed
+    title: "Linkage schematic \u2014 Fusion 360 embed"
     caption: Primary browser embed for the linkage schematic drawing. The local PDF remains available as the static fallback
       if Autodesk/Fusion sharing is unavailable.
     fallback_path: /assets/designs/linkage_schematic.pdf
@@ -235,7 +229,7 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811d4ad9f04a672e4a9?mode=embed
     use_fallback: false
-    title: Final design v5 — Fusion 360 embed
+    title: "Final design v5 \u2014 Fusion 360 embed"
     caption: Primary browser embed for the final v5 full assembly. The local GLB export remains available as the static fallback
       model.
     fallback_path: /assets/designs/v5_final_assembly.glb
@@ -245,7 +239,7 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811ebbdf478379c001c?mode=embed
     use_fallback: false
-    title: Final Klann linkage — Fusion 360 embed
+    title: "Final Klann linkage \u2014 Fusion 360 embed"
     caption: Primary browser embed for the final Klann linkage. The local GLB export remains available as the static fallback
       model.
     fallback_path: /assets/designs/klann_final.glb
@@ -254,14 +248,14 @@ fusion_cad:
     pending: false
   - type: model
     path: /assets/designs/hexapod-v1.glb
-    title: Version 1 assembly — local GLB viewer
+    title: "Version 1 assembly \u2014 local GLB viewer"
     caption: First overall assembly iteration retained as a local GLB viewer. No Fusion 360 embed is configured for this earliest
       version.
     pending: false
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028115eddcfc090724d85?mode=embed
     use_fallback: false
-    title: Version 2 assembly — Fusion 360 embed
+    title: "Version 2 assembly \u2014 Fusion 360 embed"
     caption: Earlier overall assembly iteration retained for design-evolution comparison. The local v2 GLB remains available
       as the static fallback model.
     fallback_path: /assets/designs/hexapod-v2.glb
@@ -271,7 +265,7 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028113353606288e33908?mode=embed
     use_fallback: false
-    title: Version 3 assembly — Fusion 360 embed
+    title: "Version 3 assembly \u2014 Fusion 360 embed"
     caption: Intermediate overall assembly iteration retained for design-evolution comparison. The local v3 GLB remains available
       as the static fallback model.
     fallback_path: /assets/designs/hexapod-v3.glb
@@ -281,7 +275,7 @@ fusion_cad:
   - type: iframe
     url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e0782a2169d822e3?mode=embed
     use_fallback: false
-    title: Version 4 assembly — Fusion 360 embed
+    title: "Version 4 assembly \u2014 Fusion 360 embed"
     caption: Late pre-final overall assembly iteration retained for design-evolution comparison. The local v4 GLB remains
       available as the static fallback model.
     fallback_path: /assets/designs/hexapod-v4.glb

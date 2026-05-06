@@ -110,3 +110,20 @@
   padding: 0 !important;
   margin: 0 !important;
 }
+
+
+.team-group-picture {
+  margin: 16px 0 20px;
+}
+
+.team-group-picture .asset-card {
+  margin: 0;
+}
+
+.team-group-picture .asset-frame {
+  aspect-ratio: 16 / 8;
+}
+
+.team-group-picture .asset-media {
+  object-fit: cover;
+}

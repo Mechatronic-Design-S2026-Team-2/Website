@@ -3,7 +3,7 @@ title: "System Implementation"
 ---
 
 {% include nav.html %}
-{% include page-assets.html cards=true implementation=true media_gallery=true model_viewer=true svg_diagram=true %}
+{% include page-assets.html cards=true implementation=true media_gallery=true model_viewer=true svg_diagram=true carousel=true %}
 
 <div class="t2-card" id="implementation-status">
   <h2>Implementation</h2>
@@ -21,12 +21,21 @@ title: "System Implementation"
   </div>
 </div>
 
+<div class="t2-card" id="implementation-sequence">
+  <h2>Build and Test Sequence</h2>
+  <p>
+    The implementation sequence moved from raw material and linkage fabrication through electronics packaging, motor bring-up, unloaded motion, final walking, and integrated mapping visualization. The carousel below is ordered to show that progression rather than grouping media by file type.
+  </p>
+  {% include carousel.html key="implementation_sequence" %}
+</div>
+
 <div class="t2-card" id="hardware-build">
   <h2>Hardware Build</h2>
   <p>
     The final physical implementation combines the Klann linkage chassis, six motor/gearbox leg modules, the high-current power path, the compute/control electronics, and a cover/lid system. The robot was assembled as a serviceable prototype: the internal layout remains accessible for debugging, while the final cover gives the machine a cleaner stage-facing exterior.
   </p>
   {% include asset-item.html key="build_photos" index=0 layout="wide" caption="With the cover removed, the installed motors, gearboxes, battery path, Jetson, ESP32, and wiring are visible as a single integrated assembly. This view documents how the final machine was physically packaged before enclosure." %}
+  {% include asset-item.html key="build_photos" index=1 layout="wide" caption="The chassis-and-early-board photo captures the intermediate integration phase between bare mechanical fabrication and the final serviceable electronics package." %}
   {% include asset-item.html key="circuit_photos" index=1 layout="wide" caption="Electrical integration moved from bench wiring to a mounted mainboard and PCB support structure. The intermediate build state captures the cable routing, soldering, and packaging work needed to make the high-current power path and low-voltage control electronics serviceable inside the chassis." %}
 </div>
 
@@ -100,7 +109,7 @@ title: "System Implementation"
   <p>
     The final bring-up sequence starts with safe power sequencing and motor readiness, then validates encoder telemetry, then starts the Jetson SLAM process, then launches the ROS 2 mapping/control stack, and only then enables teleop or waypoint commands. This ordering prevents TF/map debugging from being confused with lower-level motor or power faults.
   </p>
-  {% include asset-item.html key="build_photos" index=4 layout="wide" caption="Final bring-up required repeated hardware access, laptop/Jetson inspection, RS485/micro-ROS validation, and mapping tests on the assembled platform. The debugging media documents that integration loop rather than an isolated subsystem test." %}
+  {% include asset-item.html key="build_photos" index=5 layout="wide" caption="Final bring-up required repeated hardware access, laptop/Jetson inspection, RS485/micro-ROS validation, and mapping tests on the assembled platform. The debugging media documents that integration loop rather than an isolated subsystem test." %}
   <ol>
     <li>Bring up low-voltage control, precharge the motor bus, close the contactor, and release the shared servo-enable path.</li>
     <li>Verify ESP32 micro-ROS connection and six-drive raw encoder telemetry.</li>

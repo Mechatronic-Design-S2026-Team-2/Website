@@ -1,176 +1,249 @@
 team_picture:
   title: Team picture
   items:
-    - type: image
-      path: /assets/img/team_picture.jpg
-      title: Team 2 with final hexapod
-      caption: Group photo of Team 2 with the completed class-final robot.
-      pending: false
-
-# WebM files are represented as silent looping animations.
-
+  - type: image
+    path: /assets/img/team_picture.jpg
+    title: Team 2 with final hexapod
+    caption: Group photo of Team 2 with the completed class-final robot.
+    pending: false
 build_photos:
   title: Final hardware and build photos
   items:
-    - type: image
-      path: /assets/hardware/full_assembly_no_lid.jpg
-      title: Full assembly without lid
-      caption: Top-side build photo showing the final chassis, drive layout, and exposed electronics before the lid/cover is installed.
-      pending: false
-    - type: image
-      path: /assets/hardware/front_final_cover.JPG
-      title: Final front cover
-      caption: Final front cover and stage-facing robot appearance.
-      pending: false
-    - type: image
-      path: /assets/hardware/angled_final_cover.JPG
-      title: Angled final cover
-      caption: Angled view of the final cover and exterior shell, useful for showing the final stage-facing form factor.
-      pending: false
-    - type: image
-      path: /assets/hardware/working_on_bot.jpg
-      title: Working on the robot
-      caption: Integration/debugging photo for final assembly and software bring-up.
-      pending: false
-    - type: image
-      path: /assets/hardware/debugging.jpg
-      title: Debugging session
-      caption: Field/debugging photo for the final hardware and autonomy stack.
-      pending: false
-
+  - type: image
+    path: /assets/hardware/full_assembly_no_lid.jpg
+    title: Full assembly without lid
+    caption: Top-side build photo showing the final chassis, drive layout, and exposed electronics before the lid/cover is
+      installed.
+    pending: false
+  - type: image
+    path: /assets/hardware/chassis_and_early_board.jpg
+    title: Chassis and early board
+    caption: Early chassis integration with the board/electronics package visible before final mounting, routing, and cover
+      installation.
+    pending: false
+  - type: image
+    path: /assets/hardware/front_final_cover.JPG
+    title: Final front cover
+    caption: Final front cover and stage-facing robot appearance.
+    pending: false
+  - type: image
+    path: /assets/hardware/angled_final_cover.JPG
+    title: Angled final cover
+    caption: Angled view of the final cover and exterior shell, useful for showing the final stage-facing form factor.
+    pending: false
+  - type: image
+    path: /assets/hardware/working_on_bot.jpg
+    title: Working on the robot
+    caption: Integration/debugging photo for final assembly and software bring-up.
+    pending: false
+  - type: image
+    path: /assets/hardware/debugging.jpg
+    title: Debugging session
+    caption: Field/debugging photo for the final hardware and autonomy stack.
+    pending: false
 fabrication:
   title: Fabrication and linkage photos
   items:
-    - type: image
-      path: /assets/fabrication/building_chassis.jpg
-      title: Building chassis
-      caption: Chassis fabrication photo showing the raw structural build before final enclosure and integration.
-      pending: false
-    - type: image
-      path: /assets/fabrication/raw_aluminum.jpg
-      title: Raw aluminum stock
-      caption: Raw aluminum material before chassis and linkage fabrication.
-      pending: false
-    - type: image
-      path: /assets/fabrication/first_assembled_linkage.jpg
-      title: First assembled linkage
-      caption: First metal Klann linkage assembly used to verify fit and motion before building the remaining legs.
-      pending: false
-    - type: image
-      path: /assets/fabrication/finished_elbows.jpg
-      title: Finished elbows
-      caption: Finished elbow/linkage components after machining and preparation.
-      pending: false
-    - type: image
-      path: /assets/fabrication/elbow_drillpress.jpg
-      title: Elbow drill-press operation
-      caption: Drill-press operation for linkage elbow components.
-      pending: false
-    - type: image
-      path: /assets/fabrication/crank_finished.jpg
-      title: Finished crank
-      caption: Finished crank component for one Klann leg module.
-      pending: false
-
+  - type: image
+    path: /assets/fabrication/building_chassis.jpg
+    title: Building chassis
+    caption: Chassis fabrication photo showing the raw structural build before final enclosure and integration.
+    pending: false
+  - type: image
+    path: /assets/fabrication/raw_aluminum.jpg
+    title: Raw aluminum stock
+    caption: Raw aluminum material before chassis and linkage fabrication.
+    pending: false
+  - type: image
+    path: /assets/fabrication/linkage_bar_assembly.jpg
+    title: Linkage bar assembly
+    caption: Linkage bars assembled into a Klann leg module, showing the physical mechanism that converts motor crank rotation
+      into the foot trajectory.
+    pending: false
+  - type: animation
+    path: /assets/fabrication/single_linkage_running.mp4
+    mime: video/mp4
+    title: Single linkage running
+    caption: Single Klann linkage motion test used to verify bar clearances, crank behavior, and foot-path motion before full
+      six-leg integration.
+    pending: false
+  - type: image
+    path: /assets/fabrication/first_assembled_linkage.jpg
+    title: First assembled linkage
+    caption: First metal Klann linkage assembly used to verify fit and motion before building the remaining legs.
+    pending: false
+  - type: image
+    path: /assets/fabrication/finished_elbows.jpg
+    title: Finished elbows
+    caption: Finished elbow/linkage components after machining and preparation.
+    pending: false
+  - type: image
+    path: /assets/fabrication/elbow_drillpress.jpg
+    title: Elbow drill-press operation
+    caption: Drill-press operation for linkage elbow components.
+    pending: false
+  - type: image
+    path: /assets/fabrication/crank_finished.jpg
+    title: Finished crank
+    caption: Finished crank component for one Klann leg module.
+    pending: false
 circuit_photos:
   title: Electrical integration photos
   items:
-    - type: image
-      path: /assets/hardware/full_circuit_mainboard.jpg
-      title: Full circuit mainboard
-      caption: Final mainboard/circuit photo for power management, ESP32 control, and servo-drive integration.
-      pending: false
-    - type: image
-      path: /assets/hardware/mainboard_in_progress.jpg
-      title: Mainboard in progress
-      caption: Intermediate mainboard wiring and soldering state.
-      pending: false
-    - type: image
-      path: /assets/hardware/pcb_mount_prototype.jpg
-      title: PCB mount prototype
-      caption: Prototype PCB mounting hardware used during electrical integration and packaging.
-      pending: false
-
+  - type: image
+    path: /assets/hardware/full_circuit_mainboard.jpg
+    title: Full circuit mainboard
+    caption: Final mainboard/circuit photo for power management, ESP32 control, and servo-drive integration.
+    pending: false
+  - type: image
+    path: /assets/hardware/mainboard_in_progress.jpg
+    title: Mainboard in progress
+    caption: Intermediate mainboard wiring and soldering state.
+    pending: false
+  - type: image
+    path: /assets/hardware/pcb_mount_prototype.jpg
+    title: PCB mount prototype
+    caption: Prototype PCB mounting hardware used during electrical integration and packaging.
+    pending: false
 software_visuals:
   title: Mapping, model, and simulation visuals
   items:
-    - type: image
-      path: /assets/software/rviz_hexapod_model.png
-      title: RViz hexapod model
-      caption: RViz view of occupancy grid, ORB-SLAM points, and the Klann skeleton in the common frame tree.
-      pending: false
-    - type: iframe
-      url: https://www.desmos.com/3d/18nie5ecgp?embed
-      fallback_url: https://www.desmos.com/3d/18nie5ecgp
-      title: Desmos 3D Klann linkage model
-      caption: Public 3D Desmos model used to communicate and validate the linkage geometry. If an iframe is blocked, use the fallback link.
-      pending: false
-    - type: model
-      path: /assets/designs/klann_final.glb
-      title: Final Klann leg model
-      caption: Final GLB export for the Klann linkage and leg-module geometry.
-      pending: false
-    - type: model
-      path: /assets/designs/v5_final_assembly.glb
-      title: Final assembly GLB
-      caption: Final GLB export for the v5 full robot assembly.
-      pending: false
-    - type: file
-      path: /assets/designs/linkage_schematic.dwg
-      title: Linkage schematic DWG
-      caption: Source drawing for the Klann linkage schematic, provided as a downloadable CAD file.
-      pending: false
-
+  - type: image
+    path: /assets/software/orbslam_and_ogm_and_robot_visual.jpg
+    title: ORB-SLAM, occupancy grid, and robot visual
+    caption: Integrated visualization showing ORB-SLAM output, occupancy-grid mapping, and the robot model together in the
+      ROS visualization workflow.
+    pending: false
+  - type: image
+    path: /assets/software/rviz_hexapod_model.png
+    title: RViz hexapod model
+    caption: RViz view of occupancy grid, ORB-SLAM points, and the Klann skeleton in the common frame tree.
+    pending: false
+  - type: iframe
+    url: https://www.desmos.com/3d/18nie5ecgp?embed
+    fallback_url: https://www.desmos.com/3d/18nie5ecgp
+    title: Desmos 3D Klann linkage model
+    caption: Large interactive Desmos 3D linkage model used to communicate the measured Klann geometry and verify the kinematic
+      assumptions behind the lookup-table/odometry model.
+    pending: false
 videos:
   title: Final motion, SLAM, and simulation animations
   items:
-    - type: animation
-      path: /assets/videos/unloaded_all_legs_motion.webm
-      title: Unloaded all-legs motion
-      caption: Final unloaded six-leg motion test.
-      pending: false
-    - type: animation
-      path: /assets/videos/walking_outside.webm
-      title: Walking outside
-      caption: Outdoor walking demonstration.
-      pending: false
-    - type: animation
-      path: /assets/videos/walking_outside2.webm
-      title: Walking outside 2
-      caption: Additional outdoor walking demonstration.
-      pending: false
-    - type: animation
-      path: /assets/videos/first_motor_test_single.webm
-      title: First single-motor test
-      caption: Initial single motor/leg actuation validation.
-      pending: false
-    - type: animation
-      path: /assets/videos/first_motor_test_multi.webm
-      title: First multi-motor test
-      caption: Initial multi-motor RS485 drive test.
-      pending: false
-    - type: animation
-      path: /assets/fabrication/cnc_elbow.webm
-      title: CNC elbow fabrication
-      caption: CNC machining clip for linkage elbow components.
-      pending: false
-    - type: animation
-      path: /assets/software/orbslam_odom_test.webm
-      title: ORB-SLAM odometry test
-      caption: ORB-SLAM2 CUDA odometry and ROS 2 bridge test.
-      pending: false
-    - type: animation
-      path: /assets/software/mjx_rollout_example.webm
-      title: MJX rollout example
-      caption: MJX/JAX rollout or controller-tuning visualization.
-      pending: false
-    - type: animation
-      path: /assets/software/mujoco_arc.webm
-      title: MuJoCo arc trajectory
-      caption: MuJoCo arc/curvilinear trajectory test.
-      pending: false
-    - type: animation
-      path: /assets/software/mujoco_straight.webm
-      title: MuJoCo straight trajectory
-      caption: MuJoCo straight-line trajectory test.
-      pending: false
+  - type: animation
+    path: /assets/videos/unloaded_all_legs_motion.webm
+    title: Unloaded all-legs motion
+    caption: Final unloaded six-leg motion test.
+    pending: false
+  - type: animation
+    path: /assets/videos/walking_outside.webm
+    title: Walking outside
+    caption: Outdoor walking demonstration.
+    pending: false
+  - type: animation
+    path: /assets/videos/walking_outside2.webm
+    title: Walking outside 2
+    caption: Additional outdoor walking demonstration.
+    pending: false
+  - type: animation
+    path: /assets/videos/first_motor_test_single.webm
+    title: First single-motor test
+    caption: Initial single motor/leg actuation validation.
+    pending: false
+  - type: animation
+    path: /assets/videos/first_motor_test_multi.webm
+    title: First multi-motor test
+    caption: Initial multi-motor RS485 drive test.
+    pending: false
+  - type: animation
+    path: /assets/fabrication/cnc_elbow.webm
+    title: CNC elbow fabrication
+    caption: CNC machining clip for linkage elbow components.
+    pending: false
+  - type: animation
+    path: /assets/software/orbslam_odom_test.webm
+    title: ORB-SLAM odometry test
+    caption: ORB-SLAM2 CUDA odometry and ROS 2 bridge test.
+    pending: false
+  - type: animation
+    path: /assets/software/mjx_rollout_example.webm
+    title: MJX rollout example
+    caption: MJX/JAX rollout or controller-tuning visualization.
+    pending: false
+  - type: animation
+    path: /assets/software/mujoco_arc.webm
+    title: MuJoCo arc trajectory
+    caption: MuJoCo arc/curvilinear trajectory test.
+    pending: false
+  - type: animation
+    path: /assets/software/mujoco_straight.webm
+    title: MuJoCo straight trajectory
+    caption: MuJoCo straight-line trajectory test.
+    pending: false
+fusion_cad:
+  title: Fusion 360 embeds with local PDF/GLB fallbacks
+  items:
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e9dfa33a78d59a97?mode=embed
+    use_fallback: false
+    title: Linkage schematic — Fusion 360 embed
+    caption: Primary browser embed for the linkage schematic drawing. The local PDF remains available as the static fallback
+      if Autodesk/Fusion sharing is unavailable.
+    fallback_path: /assets/designs/linkage_schematic.pdf
+    fallback_type: file
+    fallback_label: Open local PDF fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811d4ad9f04a672e4a9?mode=embed
+    use_fallback: false
+    title: Final design v5 — Fusion 360 embed
+    caption: Primary browser embed for the final v5 full assembly. The local GLB export remains available as the static fallback
+      model.
+    fallback_path: /assets/designs/v5_final_assembly.glb
+    fallback_type: model
+    fallback_label: Open local GLB fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811ebbdf478379c001c?mode=embed
+    use_fallback: false
+    title: Final Klann linkage — Fusion 360 embed
+    caption: Primary browser embed for the final Klann linkage. The local GLB export remains available as the static fallback
+      model.
+    fallback_path: /assets/designs/klann_final.glb
+    fallback_type: model
+    fallback_label: Open local GLB fallback
+    pending: false
+  - type: model
+    path: /assets/designs/hexapod-v1.glb
+    title: Version 1 assembly — local GLB viewer
+    caption: First overall assembly iteration retained as a local GLB viewer. No Fusion 360 embed is configured for this earliest version.
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028115eddcfc090724d85?mode=embed
+    use_fallback: false
+    title: Version 2 assembly — Fusion 360 embed
+    caption: Earlier overall assembly iteration retained for design-evolution comparison. The local v2 GLB remains available
+      as the static fallback model.
+    fallback_path: /assets/designs/hexapod-v2.glb
+    fallback_type: model
+    fallback_label: Open local GLB fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b6028113353606288e33908?mode=embed
+    use_fallback: false
+    title: Version 3 assembly — Fusion 360 embed
+    caption: Intermediate overall assembly iteration retained for design-evolution comparison. The local v3 GLB remains available
+      as the static fallback model.
+    fallback_path: /assets/designs/hexapod-v3.glb
+    fallback_type: model
+    fallback_label: Open local GLB fallback
+    pending: false
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e0782a2169d822e3?mode=embed
+    use_fallback: false
+    title: Version 4 assembly — Fusion 360 embed
+    caption: Late pre-final overall assembly iteration retained for design-evolution comparison. The local v4 GLB remains
+      available as the static fallback model.
+    fallback_path: /assets/designs/hexapod-v4.glb
+    fallback_type: model
+    fallback_label: Open local GLB fallback
+    pending: false

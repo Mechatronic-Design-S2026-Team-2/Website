@@ -2,88 +2,174 @@ home_hero:
   aria_label: Robot highlights
   autoplay_ms: 5000
   slides:
-    - type: image
-      src: /assets/hardware/angled_final_cover.JPG
-      alt: Final covered hexapod, angled front view
-      caption: Final Covered Hexapod
-      loading: eager
-      pending: false
-    - type: animation
-      src: /assets/videos/walking_outside.webm
-      alt: Final robot walking outdoors
-      caption: Final Walking Demonstration
-      loading: lazy
-      pending: false
-    - type: image
-      src: /assets/hardware/full_assembly_no_lid.jpg
-      alt: Full robot assembly with top cover removed
-      caption: Final Assembly Without Lid
-      loading: lazy
-      pending: false
-    - type: animation
-      src: /assets/videos/unloaded_all_legs_motion.webm
-      alt: Six legs moving unloaded during final bring-up
-      caption: Unloaded Six-Leg Motion
-      loading: lazy
-      pending: false
-    - type: image
-      src: /assets/software/rviz_hexapod_model.png
-      alt: RViz showing hexapod model, map, and robot visualization
-      caption: ROS 2 Mapping and Robot Model
-      loading: lazy
-      pending: false
-    - type: image
-      src: /assets/img/linkage_MK1.gif
-      alt: First iteration linkage
-      caption: Early Linkage Prototype
-      loading: lazy
-    - type: animation
-      src: /assets/img/cpg_humanoid.webm
-      alt: CPG gait with humanoid rider demonstration
-      caption: Early CPG with Humanoid Rider
-      loading: lazy
-
+  - type: image
+    src: /assets/hardware/angled_final_cover.JPG
+    alt: Final covered hexapod, angled front view
+    caption: Final Covered Hexapod
+    loading: eager
+    pending: false
+  - type: animation
+    src: /assets/videos/walking_outside.webm
+    alt: Final robot walking outdoors
+    caption: Final Walking Demonstration
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/full_assembly_no_lid.jpg
+    alt: Full robot assembly with top cover removed
+    caption: Final Assembly Without Lid
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/chassis_and_early_board.jpg
+    alt: Chassis and early board during robot integration
+    caption: Chassis and Early Board Integration
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/videos/unloaded_all_legs_motion.webm
+    alt: Six legs moving unloaded during final bring-up
+    caption: Unloaded Six-Leg Motion
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/software/orbslam_and_ogm_and_robot_visual.jpg
+    alt: ORB-SLAM, occupancy-grid map, and robot visualization
+    caption: ORB-SLAM, OGM, and Robot Visualization
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/img/linkage_MK1.gif
+    alt: First iteration linkage
+    caption: Early Linkage Prototype
+    loading: lazy
+  - type: animation
+    src: /assets/img/cpg_humanoid.webm
+    alt: CPG gait with humanoid rider demonstration
+    caption: Early CPG with Humanoid Rider
+    loading: lazy
 lab_highlights:
   aria_label: Motors/Sensors lab highlights
   autoplay_ms: 5000
   slides:
-    - type: image
-      src: /assets/img/lab-1.jpg
-      alt: Lab highlight photo 1
-      caption: Sensors lab setup
-      loading: eager
-    - type: image
-      src: /assets/img/lab-2.jpg
-      alt: Lab highlight photo 2
-      caption: Motors lab setup
-      loading: lazy
-    - type: image
-      src: /assets/img/lab-3.gif
-      alt: Lab highlight GIF
-      caption: Bring-up motion test
-      loading: lazy
-
+  - type: image
+    src: /assets/img/lab-1.jpg
+    alt: Lab highlight photo 1
+    caption: Sensors lab setup
+    loading: eager
+  - type: image
+    src: /assets/img/lab-2.jpg
+    alt: Lab highlight photo 2
+    caption: Motors lab setup
+    loading: lazy
+  - type: image
+    src: /assets/img/lab-3.gif
+    alt: Lab highlight GIF
+    caption: Bring-up motion test
+    loading: lazy
 overall_assembly_evolution:
   aria_label: Overall assembly model evolution
   autoplay_ms: 0
   slides:
-    - type: model
-      src: /assets/designs/v5_final_assembly.glb
-      alt: Final v5 full hexapod assembly
-      caption: Final v5 assembly
-    - type: model
-      src: /assets/designs/hexapod-v1.glb
-      alt: Overall assembly iteration 1
-      caption: Overall assembly — Iteration 1
-    - type: model
-      src: /assets/designs/hexapod-v2.glb
-      alt: Overall assembly iteration 2
-      caption: Overall assembly — Iteration 2
-    - type: model
-      src: /assets/designs/hexapod-v3.glb
-      alt: Overall assembly iteration 3
-      caption: Overall assembly — Iteration 3
-    - type: model
-      src: /assets/designs/hexapod-v4.glb
-      alt: Overall assembly iteration 4
-      caption: Overall assembly — Iteration 4
+  - type: model
+    src: /assets/designs/v5_final_assembly.glb
+    alt: Final v5 full hexapod assembly
+    caption: Final v5 assembly
+  - type: model
+    src: /assets/designs/hexapod-v1.glb
+    alt: Overall assembly iteration 1
+    caption: Overall assembly — Iteration 1
+  - type: model
+    src: /assets/designs/hexapod-v2.glb
+    alt: Overall assembly iteration 2
+    caption: Overall assembly — Iteration 2
+  - type: model
+    src: /assets/designs/hexapod-v3.glb
+    alt: Overall assembly iteration 3
+    caption: Overall assembly — Iteration 3
+  - type: model
+    src: /assets/designs/hexapod-v4.glb
+    alt: Overall assembly iteration 4
+    caption: Overall assembly — Iteration 4
+implementation_sequence:
+  aria_label: Implementation build and test sequence
+  autoplay_ms: 5500
+  slides:
+  - type: image
+    src: /assets/fabrication/raw_aluminum.jpg
+    alt: Raw aluminum stock before fabrication
+    caption: Raw aluminum stock
+    loading: eager
+    pending: false
+  - type: image
+    src: /assets/fabrication/building_chassis.jpg
+    alt: Chassis fabrication in progress
+    caption: Chassis fabrication
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/fabrication/linkage_bar_assembly.jpg
+    alt: Klann linkage bar assembly
+    caption: Linkage bar assembly
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/fabrication/single_linkage_running.mp4
+    alt: Single Klann linkage running as a mechanism test
+    caption: Single-linkage motion test
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/fabrication/first_assembled_linkage.jpg
+    alt: First assembled metal linkage
+    caption: First assembled linkage
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/chassis_and_early_board.jpg
+    alt: Chassis and early electronics board integration
+    caption: Chassis and early board
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/mainboard_in_progress.jpg
+    alt: Mainboard wiring in progress
+    caption: Mainboard integration
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/hardware/full_assembly_no_lid.jpg
+    alt: Full robot assembly without lid
+    caption: Full assembly without lid
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/videos/first_motor_test_single.webm
+    alt: First single motor actuation test
+    caption: First single-motor test
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/videos/first_motor_test_multi.webm
+    alt: First multi motor actuation test
+    caption: First multi-motor test
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/videos/unloaded_all_legs_motion.webm
+    alt: Unloaded six-leg motion test
+    caption: Unloaded all-legs motion
+    loading: lazy
+    pending: false
+  - type: animation
+    src: /assets/videos/walking_outside.webm
+    alt: Final robot walking outside
+    caption: Final walking demonstration
+    loading: lazy
+    pending: false
+  - type: image
+    src: /assets/software/orbslam_and_ogm_and_robot_visual.jpg
+    alt: ORB-SLAM, occupancy grid, and robot visualization
+    caption: ORB-SLAM, OGM, and robot visualization
+    loading: lazy
+    pending: false

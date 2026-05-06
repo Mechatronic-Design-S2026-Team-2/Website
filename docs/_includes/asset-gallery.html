@@ -6,17 +6,28 @@
   <div class="asset-grid">
     {%- for item in gallery.items -%}
       {%- assign pending = item.pending | default: false -%}
-      <figure class="asset-card asset-card--{{ item.type }}{% if pending %} is-pending{% endif %}">
+      {%- assign use_fallback = item.use_fallback | default: false -%}
+      <figure class="asset-card asset-card--{{ item.type }}{% if pending %} is-pending{% endif %}{% if use_fallback %} is-fallback{% endif %}">
         <div class="asset-frame">
           {%- if pending -%}
             <div class="asset-placeholder">
               <span class="asset-type">{% if item.type == 'animation' %}ANIMATION{% else %}{{ item.type | upcase }}{% endif %}</span>
-              <code>{{ item.path }}</code>
+              <code>{{ item.path | default: item.url }}</code>
               <span>Pending asset</span>
             </div>
+          {%- elsif use_fallback and item.fallback_path and item.fallback_type == 'model' -%}
+            {% include model-card.html wrap="false" file=item.fallback_path caption="" alt=item.title %}
+          {%- elsif use_fallback and item.fallback_path and item.fallback_type == 'file' -%}
+            <a class="asset-file-card" href="{{ item.fallback_path | relative_url }}" target="_blank" rel="noreferrer">
+              <span class="asset-type">{% if item.fallback_path contains '.pdf' %}PDF fallback{% else %}Local fallback{% endif %}</span>
+              <strong>{{ item.title }}</strong>
+              <span>{{ item.fallback_label | default: 'Open local fallback' }}</span>
+            </a>
           {%- elsif item.type == 'video' or item.type == 'animation' -%}
+            {%- assign media_mime = item.mime | default: 'video/webm' -%}
+            {%- if item.path contains '.mp4' -%}{%- assign media_mime = 'video/mp4' -%}{%- endif -%}
             <video class="asset-media asset-animation" autoplay loop muted playsinline preload="auto" aria-label="{{ item.title | escape }}">
-              <source src="{{ item.path | relative_url }}" type="video/webm">
+              <source src="{{ item.path | relative_url }}" type="{{ media_mime }}">
               Your browser does not support this animation.
             </video>
           {%- elsif item.type == 'image' -%}
@@ -27,7 +38,7 @@
             <iframe class="asset-iframe" src="{{ item.url }}" title="{{ item.title | escape }}" loading="lazy" allowfullscreen></iframe>
           {%- elsif item.type == 'file' -%}
             <a class="asset-file-card" href="{{ item.path | relative_url }}" target="_blank" rel="noreferrer">
-              <span class="asset-type">CAD file</span>
+              <span class="asset-type">{% if item.path contains '.pdf' %}PDF file{% else %}CAD file{% endif %}</span>
               <strong>{{ item.title }}</strong>
               <span>Open or download drawing</span>
             </a>
@@ -36,11 +47,19 @@
         <figcaption class="asset-copy">
           <strong>{{ item.title }}</strong>
           <span>{{ item.caption }}</span>
-          {%- if item.fallback_url -%}
-            <a class="t2-linkbtn" href="{{ item.fallback_url }}" target="_blank" rel="noreferrer">Open externally</a>
-          {%- elsif item.path and pending != true -%}
-            <a class="t2-linkbtn" href="{{ item.path | relative_url }}" target="_blank" rel="noreferrer">{% if item.type == 'animation' %}Open animation{% else %}Open file{% endif %}</a>
-          {%- endif -%}
+          <div class="asset-actions">
+            {%- if item.url -%}
+              <a class="t2-linkbtn" href="{{ item.url }}" target="_blank" rel="noreferrer">Open Fusion 360</a>
+            {%- elsif item.fallback_url -%}
+              <a class="t2-linkbtn" href="{{ item.fallback_url }}" target="_blank" rel="noreferrer">Open externally</a>
+            {%- elsif item.path and pending != true -%}
+              <a class="t2-linkbtn" href="{{ item.path | relative_url }}" target="_blank" rel="noreferrer">{% if item.type == 'animation' %}Open animation{% else %}Open file{% endif %}</a>
+            {%- endif -%}
+            {%- if item.fallback_path -%}
+              <a class="t2-linkbtn" href="{{ item.fallback_path | relative_url }}" target="_blank" rel="noreferrer">{{ item.fallback_label | default: 'Open local fallback' }}</a>
+              <a class="t2-linkbtn" href="{{ item.fallback_path | relative_url }}" download>Download fallback</a>
+            {%- endif -%}
+          </div>
         </figcaption>
       </figure>
     {%- endfor -%}

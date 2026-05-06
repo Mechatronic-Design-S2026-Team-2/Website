@@ -4,6 +4,6 @@ Existing GLB files are used by the site. Add final exports here:
 
 - klann_final.glb
 - v5_final_assembly.glb
-- linkage_schematic.dwg
+- linkage_schematic.pdf
 
-Static GitHub Pages cannot natively preview DWG in-browser. Keep the DWG here for download and add a browser-friendly export beside it, preferably `linkage_schematic.pdf`, `linkage_schematic.svg`, or `linkage_schematic.png`, for inline preview.
+The linkage drawing should be exported as PDF for browser-friendly viewing and downloading. Keep the original DWG in the repo as a source file if useful, but the website now references the PDF.

@@ -8,7 +8,7 @@ title: "Media"
 <div class="t2-card">
   <h2>Media</h2>
   <p>
-    This page collects final build, fabrication, electrical integration, software visualization, CAD/modeling, and robot-motion media. WebM clips are presented as silent looping animations.
+    This page collects final build, fabrication, electrical integration, software visualization, CAD/modeling, and robot-motion media. WebM clips are presented as silent looping animations; the single-linkage MP4 is also rendered as an inline looping mechanism animation.
   </p>
   
 </div>
@@ -38,14 +38,12 @@ title: "Media"
 </div>
 
 <div class="t2-card">
-  <h2>DWG and 3D model handling</h2>
+  <h2>Fusion 360 CAD Embeds and Local Fallbacks</h2>
   <p>
-    GLB files are embedded directly with <code>&lt;model-viewer&gt;</code>. The final linkage and full-assembly models appear alongside the Desmos geometry model and the downloadable DWG schematic.
+    Fusion 360 embeds are the primary detailed CAD views for the schematic, final assembly, final Klann linkage, and later assembly iterations. Each card also exposes the local PDF or GLB fallback so the site still has a usable static artifact if Autodesk sharing is unavailable. Version 1 remains a local GLB viewer because no Fusion embed is configured for it.
   </p>
-  <p>
-    DWG files are different: GitHub Pages does not provide a native DWG renderer. The clean static-site workflow is to store <code>linkage_schematic.dwg</code> under <code>docs/assets/designs/</code> as a download and export a PDF/SVG/PNG preview beside it for inline display. A PDF export is best for drawings that need dimensions and print fidelity; SVG/PNG is best for fast web preview.
+  <p class="t2-note">
+    To force a local fallback, set <code>use_fallback: true</code> on that item in <code>docs/_data/media_assets.yml</code>. Leave it <code>false</code> to use the Fusion 360 iframe by default.
   </p>
-  <p>
-    The Desmos 3D model is embedded as an iframe in the modeling gallery. The card also includes an external fallback link in case a browser blocks third-party iframe rendering.
-  </p>
+  {% include asset-gallery.html key="fusion_cad" %}
 </div>

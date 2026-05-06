@@ -228,3 +228,32 @@
   text-decoration: none;
   filter: brightness(1.08);
 }
+
+.asset-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.asset-actions .t2-linkbtn {
+  margin: 0;
+}
+
+.asset-card.is-fallback .asset-frame::before {
+  content: "Local fallback view";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.88);
+  color: rgba(0,0,0,0.82);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.asset-card.is-fallback .asset-frame {
+  position: relative;
+}

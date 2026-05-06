@@ -4,7 +4,7 @@
     The software design separates perception/localization, proprioceptive odometry, planning/control, and low-level actuation so that any one subsystem can be tested independently. This section describes why the stack is partitioned this way; the Implementation page lists the concrete ROS 2 packages and firmware behavior.
   </p>
 
-  {% include asset-item.html key="software_visuals" index=0 layout="wide" caption="System-level geometry check: occupancy-grid output, ORB-SLAM points, virtual scan data, and the Klann skeleton share a common scale and transform tree. Sparse ORB points support localization and diagnostics, while the virtual scan and slam_toolbox output provide the occupancy grid used by Nav2." %}
+  {% include asset-item.html key="software_visuals" index=0 layout="wide" caption="Integrated ORB-SLAM, occupancy-grid, and robot visualization showing the mapping stack that connects the camera-derived map products with the robot model used for operator feedback." %}
 
   <details class="t2-acc" open>
     <summary><h3>Frame and estimator ownership</h3></summary>

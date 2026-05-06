@@ -54,7 +54,7 @@ title: "System Performance"
   <p>
     The strongest software result is that encoder-plus-linkage odometry became useful enough to meet the class navigation tolerance after calibration. The host observer unwraps raw 17-bit single-turn motor encoder counts, converts them through the 50:1 gearbox to output crank phase, evaluates measured Klann geometry, and solves a stance-foot no-slip least-squares body twist.
   </p>
-  {% include asset-item.html key="software_visuals" index=0 layout="wide" caption="Integrated mapping stack: sparse ORB map points, occupancy-grid output, virtual scan data, and the robot skeleton aligned in a single planar frame tree." %}
+  {% include asset-item.html key="software_visuals" index=0 layout="wide" caption="Integrated mapping stack: ORB-SLAM output, occupancy-grid output, and the robot visualization aligned in the ROS workflow." %}
   <p>
     In the final mapping report, a 73 in physical straight-line trial initially produced about 0.851 m of uncalibrated kinematic forward motion. The final configuration applies a kinematic mirror and a body-twist scale of 2.1786 in x/y. A separate ORB/scan scale calibration is applied consistently to ORB pose, sparse points, and virtual scan ranges.
   </p>

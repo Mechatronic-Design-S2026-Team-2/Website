@@ -1,14 +1,21 @@
 .t2-model-stage {
   position: relative;
   width: 100%;
+  min-height: min(520px, 70vh);
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 600px at 50% 28%, rgba(255,255,255,0.16), rgba(255,255,255,0.04) 42%, rgba(0,0,0,0.94) 100%),
+    #08090c;
 }
 
 .t2-model-viewer {
+  display: block;
   width: 100%;
   height: min(520px, 70vh);
+  min-height: 420px;
   border-radius: 16px;
-  background:
-    radial-gradient(1200px 600px at 50% 30%, rgba(255,255,255,0.12), rgba(255,255,255,0.03) 45%, rgba(0,0,0,0.90) 100%);
+  background: transparent;
 }
 
 .t2-model-caption {

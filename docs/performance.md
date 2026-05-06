@@ -21,9 +21,6 @@ title: "System Performance"
 
 <div class="t2-card" id="motion-evidence">
   <h2>Motion Evidence</h2>
-  <p>
-    The final run video is the main motion-evidence artifact: it shows the completed robot producing real body displacement rather than only bench, suspended, or simulation motion.
-  </p>
   <div class="t2-video">
     <iframe
       src="https://www.youtube-nocookie.com/embed/3NwqyyyJGHU?rel=0"

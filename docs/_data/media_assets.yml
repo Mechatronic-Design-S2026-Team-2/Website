@@ -124,8 +124,8 @@ software_visuals:
     url: https://www.desmos.com/3d/18nie5ecgp?embed
     fallback_url: https://www.desmos.com/3d/18nie5ecgp
     title: Desmos 3D Klann linkage model
-    caption: Large interactive Desmos 3D linkage model used to communicate the measured Klann geometry and verify
-      the kinematic assumptions behind the lookup-table/odometry model.
+    caption: Large interactive Desmos 3D linkage model corresponding to the measured Klann geometry used by the Jetson
+      lookup-table odometry model for foot position, foot velocity, and stance confidence.
     pending: false
     open_label: Open Desmos
 simulation_media:

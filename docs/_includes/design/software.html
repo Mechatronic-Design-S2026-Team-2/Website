@@ -4,9 +4,24 @@
     The software design separates perception/localization, proprioceptive odometry, planning/control, and low-level actuation so that any one subsystem can be tested independently. This section describes why the stack is partitioned this way; the Implementation page lists the concrete ROS 2 packages and firmware behavior.
   </p>
 
-  {% include asset-item.html key="software_visuals" index=0 layout="wide" caption="Integrated ORB-SLAM, occupancy-grid, and robot visualization showing the mapping stack that connects the camera-derived map products with the robot model used for operator feedback." %}
+  {% include asset-item.html key="software_visuals" index=2 layout="wide" caption="Interactive 3D Klann geometry used to communicate the measured crank, coupler, rocker, and foot-path assumptions that run on the Jetson as lookup-table kinematic odometry." %}
 
-  <details class="t2-acc" open>
+  <details class="t2-acc" id="jetson-kinematic-model" open>
+    <summary><h3>Jetson kinematic linkage model</h3></summary>
+    <div class="t2-acc-body">
+      <p>
+        The runtime robot model on the Jetson is a measured Klann-linkage observer, not only a display asset. Raw 17-bit single-turn encoder counts arrive from the ESP32/micro-ROS bridge, are unwrapped across motor rotations, divided by the 50:1 gearbox ratio, and converted into output crank phase for each of the six legs.
+      </p>
+      <p>
+        For each crank phase, the host evaluates the measured linkage geometry as a precomputed lookup table. The table stores foot position, foot velocity, and a stance-confidence estimate over the crank cycle. During odometry, legs with high stance confidence are treated as approximate no-slip contacts; their predicted foot velocities are combined in a least-squares body-twist solve to estimate planar chassis motion.
+      </p>
+      <p>
+        This makes the Jetson model a fallback and fusion component for autonomy. ORB-SLAM2 provides camera-based motion and sparse structure when tracking is good, while the linkage model gives the planner and map stack a proprioceptive motion estimate when visual tracking is weak, delayed, or temporarily unavailable. Calibration terms such as sign/mirror corrections and body-twist scale factors are kept explicit because fabrication tolerances, foot slip, and ground compliance affect the physical robot.
+      </p>
+    </div>
+  </details>
+
+  <details class="t2-acc" id="frame-estimator-ownership">
     <summary><h3>Frame and estimator ownership</h3></summary>
     <div class="t2-acc-body">
       <p>
@@ -15,7 +30,7 @@
     </div>
   </details>
 
-  <details class="t2-acc">
+  <details class="t2-acc" id="navigation-concept">
     <summary><h3>Navigation concept</h3></summary>
     <div class="t2-acc-body">
       {% include svg-diagram.html
@@ -27,15 +42,6 @@
       %}
       <p>
         The autonomy path is intentionally operator-supervised. The robot can run mapping/localization continuously, accept teleop velocities or Nav2 goals from the browser interface, and save/load maps so that a stage environment can be prepared before a performance rather than reconstructed live under time pressure.
-      </p>
-    </div>
-  </details>
-
-  <details class="t2-acc">
-    <summary><h3>Kinematic modeling role</h3></summary>
-    <div class="t2-acc-body">
-      <p>
-        The Klann linkage model is not only for visualization. It translates measured crank phase into foot position/velocity and stance confidence, which makes encoder-based odometry possible when visual tracking is weak. The mapping report treats this model as a fallback and fusion component, not a replacement for RGB-D SLAM.
       </p>
     </div>
   </details>

@@ -57,7 +57,14 @@ For Fusion 360 iframe items, set use_fallback: true in media_assets.yml to rende
           <span>{% if caption_override != '' %}{{ caption_override }}{% else %}{{ item.caption }}{% endif %}</span>
           <div class="asset-actions">
             {%- if item.url -%}
-              <a class="t2-linkbtn" href="{{ item.url }}" target="_blank" rel="noreferrer">Open Fusion 360</a>
+              {%- assign external_label = item.open_label | default: '' -%}
+              {%- if external_label == '' -%}
+                {%- if item.url contains 'desmos.com' -%}{%- assign external_label = 'Open Desmos' -%}
+                {%- elsif item.url contains 'autodesk360.com' -%}{%- assign external_label = 'Open Fusion 360' -%}
+                {%- else -%}{%- assign external_label = 'Open externally' -%}
+                {%- endif -%}
+              {%- endif -%}
+              <a class="t2-linkbtn" href="{{ item.url }}" target="_blank" rel="noreferrer">{{ external_label }}</a>
             {%- elsif item.fallback_url -%}
               <a class="t2-linkbtn" href="{{ item.fallback_url }}" target="_blank" rel="noreferrer">Open externally</a>
             {%- elsif item.path and pending != true -%}

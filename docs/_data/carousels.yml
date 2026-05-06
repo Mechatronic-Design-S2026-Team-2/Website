@@ -80,24 +80,6 @@ overall_assembly_evolution:
     alt: Final v5 full hexapod assembly in Fusion 360
     caption: "Final v5 full assembly \u2014 Fusion 360 primary view with local GLB fallback"
     pending: false
-  - type: iframe
-    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811ebbdf478379c001c?mode=embed
-    use_fallback: false
-    fallback_src: /assets/designs/klann_final.glb
-    fallback_type: model
-    fallback_label: Open local final Klann GLB fallback
-    alt: Final Klann linkage in Fusion 360
-    caption: "Final Klann linkage \u2014 Fusion 360 primary view with local GLB fallback"
-    pending: false
-  - type: iframe
-    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e9dfa33a78d59a97?mode=embed
-    use_fallback: false
-    fallback_src: /assets/designs/linkage_schematic.pdf
-    fallback_type: file
-    fallback_label: Open local linkage schematic PDF fallback
-    alt: Leg linkage schematic in Fusion 360
-    caption: "Leg linkage schematic \u2014 Fusion 360 primary view with local PDF fallback"
-    pending: false
   - type: model
     src: /assets/designs/hexapod-v1.glb
     alt: Version 1 overall assembly local GLB
@@ -246,3 +228,29 @@ simulation_validation:
     caption: Power-draw estimation graph
     loading: lazy
     pending: false
+klann_linkage_design:
+  aria_label: Klann linkage CAD and schematic
+  autoplay_ms: 0
+  slides:
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811ebbdf478379c001c?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/klann_final.glb
+    fallback_type: model
+    fallback_label: Open local final Klann GLB fallback
+    alt: Final Klann linkage in Fusion 360
+    caption: "Final Klann linkage \u2014 Fusion 360 primary view with local GLB fallback"
+    pending: false
+    iframe_width: 1024
+    iframe_height: 768
+  - type: iframe
+    url: https://andrew3535.autodesk360.com/shares/public/SH90d2dQT28d5b602811e9dfa33a78d59a97?mode=embed
+    use_fallback: false
+    fallback_src: /assets/designs/linkage_schematic.pdf
+    fallback_type: file
+    fallback_label: Open local linkage schematic PDF fallback
+    alt: Leg linkage schematic in Fusion 360
+    caption: "Leg linkage schematic \u2014 Fusion 360 primary view with local PDF fallback"
+    pending: false
+    iframe_width: 1024
+    iframe_height: 768

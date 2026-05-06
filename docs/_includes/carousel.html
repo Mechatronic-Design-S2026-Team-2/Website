@@ -39,6 +39,12 @@
             loading="lazy"
             reveal="auto">
           </model-viewer>
+          {%- elsif use_fallback and slide.fallback_type == 'file' and slide.fallback_src -%}
+          <a class="carousel-file-fallback" href="{{ slide.fallback_src | relative_url }}" target="_blank" rel="noreferrer">
+            <span class="asset-type">{% if slide.fallback_src contains '.pdf' %}PDF fallback{% else %}Local fallback{% endif %}</span>
+            <strong>{{ slide.caption | default: slide.alt | default: 'Local fallback file' }}</strong>
+            <span>{{ slide.fallback_label | default: 'Open local fallback' }}</span>
+          </a>
           {%- elsif slide.type == 'model' -%}
           <model-viewer
             class="carousel-model-viewer"
@@ -94,7 +100,14 @@
           {%- if slide.url or slide.fallback_src -%}
           <span class="carousel-caption-actions">
             {%- if slide.url -%}
-            <a class="t2-linkbtn" href="{{ slide.url }}" target="_blank" rel="noreferrer">Open Fusion 360</a>
+            {%- assign external_label = slide.open_label | default: '' -%}
+            {%- if external_label == '' -%}
+              {%- if slide.url contains 'desmos.com' -%}{%- assign external_label = 'Open Desmos' -%}
+              {%- elsif slide.url contains 'autodesk360.com' -%}{%- assign external_label = 'Open Fusion 360' -%}
+              {%- else -%}{%- assign external_label = 'Open externally' -%}
+              {%- endif -%}
+            {%- endif -%}
+            <a class="t2-linkbtn" href="{{ slide.url }}" target="_blank" rel="noreferrer">{{ external_label }}</a>
             {%- endif -%}
             {%- if slide.fallback_src -%}
             <a class="t2-linkbtn" href="{{ slide.fallback_src | relative_url }}" target="_blank" rel="noreferrer">{{ slide.fallback_label | default: 'Open local fallback' }}</a>
